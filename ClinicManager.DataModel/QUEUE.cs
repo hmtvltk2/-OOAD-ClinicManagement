@@ -3,8 +3,8 @@ namespace ClinicManager.DataModel
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("QUEUE")]
-    public partial class QUEUE
+    [Table("Queue")]
+    public partial class Queue
     {
         public int QueueID { get; set; }
 
@@ -14,6 +14,6 @@ namespace ClinicManager.DataModel
         [StringLength(200)]
         public string ExamineReason { get; set; }
 
-        public virtual PATIENT PATIENT { get; set; }
+        public virtual Patient Patient { get; set; }
     }
 }

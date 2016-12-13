@@ -8,6 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using ClinicManager.DataBusiness;
+using ClinicManager.DataModel;
 
 namespace ClinicManager.Presentation
 {
@@ -30,7 +32,7 @@ namespace ClinicManager.Presentation
             string error = "";
             if (gridView1.FocusedColumn.FieldName == "PharmacyTypeName")
             {
-                PharmacyTypeForm data = new PharmacyType()
+                PharmacyType data = new PharmacyType()
                 {
                     PharmacyTypeName = (string)e.Value
                 };
@@ -64,12 +66,11 @@ namespace ClinicManager.Presentation
             //Insert, update row
             var row = gridView1.GetFocusedDataRow();
             bool isInsert = row["PharmacyTypeID"].ToString() == "";
-            var PharmacyTypeBusiness = new PharmacyTypeBusiness();
             bool result;
 
             if (isInsert)
             {
-                PharmacyTypeForm PharmacyType = new PharmacyTypeForm()
+                PharmacyType PharmacyType = new PharmacyType()
                 {
                     PharmacyTypeName = (string)row["PharmacyTypeName"]
                 };
@@ -87,7 +88,7 @@ namespace ClinicManager.Presentation
             }
             else
             {
-                PharmacyTypeForm PharmacyType = new PharmacyTypeForm()
+                PharmacyType PharmacyType = new PharmacyType()
                 {
                     PharmacyTypeID = (int)row["PharmacyTypeID"],
                     PharmacyTypeName = (string)row["PharmacyTypeName"]

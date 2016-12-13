@@ -1,25 +1,24 @@
 ﻿using ClinicManager.DataModel;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ClinicManager.DataAccess
 {
-    public class MedicineTypeAccess: BaseDataAcess
+    public class PharmacyTypeAccess : BaseDataAcess
     {
         public override int Insert(object obj)
         {
             int result = base.Insert(obj);
-            if(result > 0)
+            if (result > 0)
             {
                 using (var db = new ClinicDB())
                 {
-                    var query = from d in db.MedicineType orderby d.MedicineTypeID descending select d;
+                    var query = from d in db.PharmacyType orderby d.PharmacyTypeID descending select d;
                     var last = query.First();
-                    result = last.MedicineTypeID;
+                    result = last.PharmacyTypeID;
                 }
             }
 
@@ -28,12 +27,12 @@ namespace ClinicManager.DataAccess
 
         public bool Delete(int id)
         {
-            MedicineType model;
+            PharmacyType model;
             using (var db = new ClinicDB())
             {
-                model = db.MedicineType.Find(id);
+                model = db.PharmacyType.Find(id);
 
-                if(model == null)
+                if (model == null)
                 {
                     return false;
                 }
@@ -42,11 +41,11 @@ namespace ClinicManager.DataAccess
             return base.Delete(model);
         }
 
-        public DataTable GetAll()
+        public System.Data.DataTable GetAll()
         {
             using (var db = new ClinicDB())
             {
-                return db.MedicineType.ToDataTable();
+                return db.PharmacyType.ToDataTable();
             }
         }
     }

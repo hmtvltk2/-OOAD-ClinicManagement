@@ -67,7 +67,7 @@ namespace ClinicManager.Presentation
             //Insert, update row
             var row = gridView1.GetFocusedDataRow();
             bool isInsert = row["MedicineTypeID"].ToString() == "";
-            var medicineTypeBusiness = new MedicineTypeBusiness();
+      
             bool result;
 
             if (isInsert)
@@ -116,12 +116,15 @@ namespace ClinicManager.Presentation
                 var row = gridView1.GetFocusedDataRow();
 
                 bool result = medicineTypeBusiness.Delete((int)row["MedicineTypeID"]);
-                if(result == false)
+                if(result)
+                {
+                    gridView1.DeleteSelectedRows();
+                }
+                else
                 {
                     XtraMessageBox.Show(this, "Xóa thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                gridView1.DeleteSelectedRows();
+                
             }
         }
     }

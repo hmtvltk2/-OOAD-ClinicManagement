@@ -4,13 +4,13 @@ namespace ClinicManager.DataModel
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("BILL")]
-    public partial class BILL
+    [Table("Bill")]
+    public partial class Bill
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public BILL()
+        public Bill()
         {
-            BILL_DETAIL = new HashSet<BILL_DETAIL>();
+            BillDetail = new HashSet<BillDetail>();
         }
 
         public int BillID { get; set; }
@@ -31,11 +31,11 @@ namespace ClinicManager.DataModel
 
         public int UserID { get; set; }
 
-        public virtual USER USER { get; set; }
+        public virtual User User { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BILL_DETAIL> BILL_DETAIL { get; set; }
+        public virtual ICollection<BillDetail> BillDetail { get; set; }
 
-        public virtual MEDICAL_RECORD MEDICAL_RECORD { get; set; }
+        public virtual MedicalRecord MedicalRecord { get; set; }
     }
 }

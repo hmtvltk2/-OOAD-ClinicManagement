@@ -5,14 +5,14 @@ namespace ClinicManager.DataModel
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("PRESCRIPTION")]
-    public partial class PRESCRIPTION
+    [Table("Prescription")]
+    public partial class Prescription
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PRESCRIPTION()
+        public Prescription()
         {
-            MEDICAL_RECORD = new HashSet<MEDICAL_RECORD>();
-            PRESCRIPTION_DETAIL = new HashSet<PRESCRIPTION_DETAIL>();
+            MedicalRecord = new HashSet<MedicalRecord>();
+            PrescriptionDetail = new HashSet<PrescriptionDetail>();
         }
 
         public int PrescriptionID { get; set; }
@@ -29,9 +29,9 @@ namespace ClinicManager.DataModel
         public decimal Amount { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MEDICAL_RECORD> MEDICAL_RECORD { get; set; }
+        public virtual ICollection<MedicalRecord> MedicalRecord { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PRESCRIPTION_DETAIL> PRESCRIPTION_DETAIL { get; set; }
+        public virtual ICollection<PrescriptionDetail> PrescriptionDetail { get; set; }
     }
 }
