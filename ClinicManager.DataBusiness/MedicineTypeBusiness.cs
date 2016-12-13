@@ -12,38 +12,38 @@ namespace ClinicManager.DataBusiness
     public class MedicineTypeBusiness
     {
         #region Contructor
-        private MedicineTypeAccess medicineTypeAccess;
+        private MedicineTypeAccess dataAccess;
 
         public MedicineTypeBusiness()
         {
-            medicineTypeAccess = new MedicineTypeAccess();
+            dataAccess = new MedicineTypeAccess();
         }
         
         #endregion
 
         public int Insert(object data)
         {
-            return medicineTypeAccess.Insert(data);
+            return dataAccess.Insert(data);
         }
 
         public bool Update(object data)
         {
-            return medicineTypeAccess.Update(data);
+            return dataAccess.Update(data);
         }
 
         public bool Delete(int id)
         {
-            return medicineTypeAccess.Delete(id);
+            return dataAccess.Delete(id);
         }
 
         public System.Data.DataTable GetAll()
         {
-            return medicineTypeAccess.GetAll();
+            return dataAccess.GetAll();
         }
 
         public string Validate(object data, string property)
         {
-            return medicineTypeAccess.Validate(data, property);
+            return dataAccess.Validate(data, property);
         }
     }
 }

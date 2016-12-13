@@ -1,4 +1,4 @@
-﻿using ClinicManager.DataAccess;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +17,7 @@ namespace ClinicManager.Presentation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MedicineTypeForm());
+            Application.Run(new MedicineManagerForm());
         
         }
     }

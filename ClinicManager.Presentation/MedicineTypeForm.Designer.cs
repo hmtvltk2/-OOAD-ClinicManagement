@@ -89,6 +89,7 @@
             // 
             this.gridColumn3.ColumnEdit = this.repositoryItemDelete;
             this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.TabStop = false;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 0;
             this.gridColumn3.Width = 40;

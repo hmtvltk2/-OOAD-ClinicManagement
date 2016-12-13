@@ -63,28 +63,124 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateExaminetionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateExaminetionForm.designer.cs">
+      <DependentUpon>CreateExaminetionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreatePatientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreatePatientForm.designer.cs">
+      <DependentUpon>CreatePatientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateScheduleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateScheduleForm.designer.cs">
+      <DependentUpon>CreateScheduleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExamineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExamineForm.designer.cs">
+      <DependentUpon>ExamineForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MedicalRecordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MedicalRecordForm.designer.cs">
+      <DependentUpon>MedicalRecordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MedicineManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MedicineManagerForm.designer.cs">
+      <DependentUpon>MedicineManagerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MedicineTypeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MedicineTypeForm.Designer.cs">
+    <Compile Include="MedicineTypeForm.designer.cs">
       <DependentUpon>MedicineTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientDetailForm.designer.cs">
+      <DependentUpon>PatientDetailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PharmacyTypeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PharmacyTypeForm.Designer.cs">
+    <Compile Include="PharmacyTypeForm.designer.cs">
       <DependentUpon>PharmacyTypeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecivePatientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecivePatientForm.designer.cs">
+      <DependentUpon>RecivePatientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScheduleManagerForm.designer.cs">
+      <DependentUpon>ScheduleManagerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TestForm.Designer.cs">
       <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UnitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnitForm.designer.cs">
+      <DependentUpon>UnitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WayToUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WayToUserForm.designer.cs">
+      <DependentUpon>WayToUserForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CreateExaminetionForm.resx">
+      <DependentUpon>CreateExaminetionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatePatientForm.resx">
+      <DependentUpon>CreatePatientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateScheduleForm.resx">
+      <DependentUpon>CreateScheduleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExamineForm.resx">
+      <DependentUpon>ExamineForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedicalRecordForm.resx">
+      <DependentUpon>MedicalRecordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedicineManagerForm.resx">
+      <DependentUpon>MedicineManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MedicineTypeForm.resx">
       <DependentUpon>MedicineTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientDetailForm.resx">
+      <DependentUpon>PatientDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PharmacyTypeForm.resx">
       <DependentUpon>PharmacyTypeForm.cs</DependentUpon>
@@ -99,9 +195,22 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RecivePatientForm.resx">
+      <DependentUpon>RecivePatientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScheduleManagerForm.resx">
+      <DependentUpon>ScheduleManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UnitForm.resx">
+      <DependentUpon>UnitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WayToUserForm.resx">
+      <DependentUpon>WayToUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClinicManager.Presentation.csproj.bak" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

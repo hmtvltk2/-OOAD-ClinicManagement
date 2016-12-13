@@ -17,7 +17,7 @@ namespace ClinicManager.DataAccess
             {
                 using (var db = new ClinicDB())
                 {
-                    var query = from d in db.MEDICINE_TYPE orderby d.MedicineTypeID descending select d;
+                    var query = from d in db.MedicineType orderby d.MedicineTypeID descending select d;
                     var last = query.First();
                     result = last.MedicineTypeID;
                 }
@@ -28,25 +28,25 @@ namespace ClinicManager.DataAccess
 
         public bool Delete(int id)
         {
+            MedicineType model;
             using (var db = new ClinicDB())
             {
-                MedicineType medicineType = db.MEDICINE_TYPE.Find(id);
+                model = db.MedicineType.Find(id);
 
-                if(medicineType == null)
+                if(model == null)
                 {
                     return false;
                 }
-
-                return base.Delete(medicineType);
             }
-            
+
+            return base.Delete(model);
         }
 
         public DataTable GetAll()
         {
             using (var db = new ClinicDB())
             {
-                return db.MEDICINE_TYPE.ToDataTable();
+                return db.MedicineType.ToDataTable();
             }
         }
     }

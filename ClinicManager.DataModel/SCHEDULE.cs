@@ -4,11 +4,11 @@ namespace ClinicManager.DataModel
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("SCHEDULE")]
-    public partial class SCHEDULE
+    [Table("Schedule")]
+    public partial class Schedule
     {
         [Key]
-        public int PetientScheduleID { get; set; }
+        public int PatientScheduleID { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -31,6 +31,6 @@ namespace ClinicManager.DataModel
 
         public int ScheduleInfoID { get; set; }
 
-        public virtual SCHEDULE_INFO SCHEDULE_INFO { get; set; }
+        public virtual ScheduleInfo ScheduleInfo { get; set; }
     }
 }

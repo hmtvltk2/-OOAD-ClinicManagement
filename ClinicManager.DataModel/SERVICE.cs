@@ -4,13 +4,13 @@ namespace ClinicManager.DataModel
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("SERVICE")]
-    public partial class SERVICE
+    [Table("Service")]
+    public partial class Service
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public SERVICE()
+        public Service()
         {
-            SERVICE_DETAIL = new HashSet<SERVICE_DETAIL>();
+            Detail = new HashSet<Detail>();
         }
 
         public int ServiceID { get; set; }
@@ -23,6 +23,6 @@ namespace ClinicManager.DataModel
         public decimal ServiceFee { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SERVICE_DETAIL> SERVICE_DETAIL { get; set; }
+        public virtual ICollection<Detail> Detail { get; set; }
     }
 }

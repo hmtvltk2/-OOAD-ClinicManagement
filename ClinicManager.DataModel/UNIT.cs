@@ -4,13 +4,13 @@ namespace ClinicManager.DataModel
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("UNIT")]
-    public partial class UNIT
+    [Table("Unit")]
+    public partial class Unit
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public UNIT()
+        public Unit()
         {
-            MEDICINE = new HashSet<MEDICINE>();
+            Medicine = new HashSet<Medicine>();
         }
 
         public int UnitID { get; set; }
@@ -20,6 +20,6 @@ namespace ClinicManager.DataModel
         public string UnitName { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MEDICINE> MEDICINE { get; set; }
+        public virtual ICollection<Medicine> Medicine { get; set; }
     }
 }

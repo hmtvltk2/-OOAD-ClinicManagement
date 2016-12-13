@@ -4,183 +4,184 @@ namespace ClinicManager.DataAccess
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+    using DataModel;
 
     public partial class ClinicDB : DbContext
     {
         public ClinicDB()
-            : base("name=ClinicDB1")
+            : base("name=ClinicDB")
         {
         }
 
-        public virtual DbSet<BILL> BILL { get; set; }
-        public virtual DbSet<BILL_DETAIL> BILL_DETAIL { get; set; }
-        public virtual DbSet<MEDICAL_RECORD> MEDICAL_RECORD { get; set; }
-        public virtual DbSet<MEDICINE> MEDICINE { get; set; }
-        public virtual DbSet<MEDICINE_TYPE> MEDICINE_TYPE { get; set; }
-        public virtual DbSet<PATIENT> PATIENT { get; set; }
-        public virtual DbSet<PERMISSION> PERMISSION { get; set; }
-        public virtual DbSet<PRESCRIPTION> PRESCRIPTION { get; set; }
-        public virtual DbSet<PRESCRIPTION_DETAIL> PRESCRIPTION_DETAIL { get; set; }
-        public virtual DbSet<PHARMACY_TYPE> PHARMACY_TYPE { get; set; }
-        public virtual DbSet<QUEUE> QUEUE { get; set; }
-        public virtual DbSet<SCHEDULE> SCHEDULE { get; set; }
-        public virtual DbSet<SCHEDULE_INFO> SCHEDULE_INFO { get; set; }
-        public virtual DbSet<SERVICE> SERVICE { get; set; }
-        public virtual DbSet<SERVICE_DETAIL> SERVICE_DETAIL { get; set; }
-        public virtual DbSet<UNIT> UNIT { get; set; }
-        public virtual DbSet<USER> USER { get; set; }
-        public virtual DbSet<USER_GROUP> USER_GROUP { get; set; }
-        public virtual DbSet<WAY_TO_USE> WAY_TO_USE { get; set; }
+        public virtual DbSet<Bill> Bill { get; set; }
+        public virtual DbSet<BillDetail> BillDetail { get; set; }
+        public virtual DbSet<Detail> Detail { get; set; }
+        public virtual DbSet<MedicalRecord> MedicalRecord { get; set; }
+        public virtual DbSet<Medicine> Medicine { get; set; }
+        public virtual DbSet<MedicineType> MedicineType { get; set; }
+        public virtual DbSet<Patient> Patient { get; set; }
+        public virtual DbSet<Permission> Permission { get; set; }
+        public virtual DbSet<Prescription> Prescription { get; set; }
+        public virtual DbSet<PrescriptionDetail> PrescriptionDetail { get; set; }
+        public virtual DbSet<PharmacyType> PharmacyType { get; set; }
+        public virtual DbSet<Queue> Queue { get; set; }
+        public virtual DbSet<Schedule> Schedule { get; set; }
+        public virtual DbSet<ScheduleInfo> ScheduleInfo { get; set; }
+        public virtual DbSet<Service> Service { get; set; }
+        public virtual DbSet<Unit> Unit { get; set; }
+        public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<UserGroup> UserGroup { get; set; }
+        public virtual DbSet<WayToUse> WayToUse { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<BILL>()
+            modelBuilder.Entity<Bill>()
                 .Property(e => e.ServiceFee)
                 .HasPrecision(19, 4);
 
-            modelBuilder.Entity<BILL>()
+            modelBuilder.Entity<Bill>()
                 .Property(e => e.MedicineFee)
                 .HasPrecision(19, 4);
 
-            modelBuilder.Entity<BILL>()
+            modelBuilder.Entity<Bill>()
                 .Property(e => e.Amount)
                 .HasPrecision(19, 4);
 
-            modelBuilder.Entity<BILL>()
-                .HasMany(e => e.BILL_DETAIL)
-                .WithRequired(e => e.BILL)
+            modelBuilder.Entity<Bill>()
+                .HasMany(e => e.BillDetail)
+                .WithRequired(e => e.Bill)
                 .HasForeignKey(e => e.ServiceID)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<BILL_DETAIL>()
+            modelBuilder.Entity<BillDetail>()
                 .Property(e => e.ServiceFee)
                 .HasPrecision(19, 4);
 
-            modelBuilder.Entity<MEDICAL_RECORD>()
-                .HasMany(e => e.BILL)
-                .WithRequired(e => e.MEDICAL_RECORD)
+            modelBuilder.Entity<Detail>()
+                .Property(e => e.ServiceFee)
+                .HasPrecision(19, 4);
+
+            modelBuilder.Entity<MedicalRecord>()
+                .HasMany(e => e.Bill)
+                .WithRequired(e => e.MedicalRecord)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<MEDICAL_RECORD>()
-                .HasMany(e => e.SERVICE_DETAIL)
-                .WithRequired(e => e.MEDICAL_RECORD)
+            modelBuilder.Entity<MedicalRecord>()
+                .HasMany(e => e.Detail)
+                .WithRequired(e => e.MedicalRecord)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<MEDICINE>()
+            modelBuilder.Entity<Medicine>()
                 .Property(e => e.Price)
                 .HasPrecision(19, 4);
 
-            modelBuilder.Entity<MEDICINE>()
-                .HasMany(e => e.PRESCRIPTION_DETAIL)
-                .WithRequired(e => e.MEDICINE)
+            modelBuilder.Entity<Medicine>()
+                .HasMany(e => e.PrescriptionDetail)
+                .WithRequired(e => e.Medicine)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<MEDICINE_TYPE>()
-                .HasMany(e => e.MEDICINE)
-                .WithRequired(e => e.MEDICINE_TYPE)
+            modelBuilder.Entity<MedicineType>()
+                .HasMany(e => e.Medicine)
+                .WithRequired(e => e.MedicineType)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<PATIENT>()
+            modelBuilder.Entity<Patient>()
                 .Property(e => e.Phone)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<PATIENT>()
-                .HasMany(e => e.MEDICAL_RECORD)
-                .WithRequired(e => e.PATIENT)
+            modelBuilder.Entity<Patient>()
+                .HasMany(e => e.MedicalRecord)
+                .WithRequired(e => e.Patient)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<PATIENT>()
-                .HasMany(e => e.QUEUE)
-                .WithRequired(e => e.PATIENT)
+            modelBuilder.Entity<Patient>()
+                .HasMany(e => e.Queue)
+                .WithRequired(e => e.Patient)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<PERMISSION>()
-                .HasMany(e => e.USER_GROUP)
-                .WithMany(e => e.PERMISSION)
-                .Map(m => m.ToTable("PERMISSION_DETAIL").MapLeftKey("PermissionID").MapRightKey("UserGroupID"));
+            modelBuilder.Entity<Permission>()
+                .HasMany(e => e.UserGroup)
+                .WithMany(e => e.Permission)
+                .Map(m => m.ToTable("PermissionDetail").MapLeftKey("PermissionID").MapRightKey("UserGroupID"));
 
-            modelBuilder.Entity<PRESCRIPTION>()
+            modelBuilder.Entity<Prescription>()
                 .Property(e => e.Amount)
                 .HasPrecision(19, 4);
 
-            modelBuilder.Entity<PRESCRIPTION>()
-                .HasMany(e => e.MEDICAL_RECORD)
-                .WithRequired(e => e.PRESCRIPTION)
+            modelBuilder.Entity<Prescription>()
+                .HasMany(e => e.MedicalRecord)
+                .WithRequired(e => e.Prescription)
                 .HasForeignKey(e => e.PrescriptionsID)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<PRESCRIPTION>()
-                .HasMany(e => e.PRESCRIPTION_DETAIL)
-                .WithRequired(e => e.PRESCRIPTION)
+            modelBuilder.Entity<Prescription>()
+                .HasMany(e => e.PrescriptionDetail)
+                .WithRequired(e => e.Prescription)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<PRESCRIPTION_DETAIL>()
+            modelBuilder.Entity<PrescriptionDetail>()
                 .Property(e => e.MedicineFee)
                 .HasPrecision(19, 4);
 
-            modelBuilder.Entity<PHARMACY_TYPE>()
-                .HasMany(e => e.MEDICINE)
-                .WithRequired(e => e.PHARMACY_TYPE)
+            modelBuilder.Entity<PharmacyType>()
+                .HasMany(e => e.Medicine)
+                .WithRequired(e => e.PharmacyType)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<SCHEDULE>()
+            modelBuilder.Entity<Schedule>()
                 .Property(e => e.Phone)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<SCHEDULE_INFO>()
-                .HasMany(e => e.SCHEDULE)
-                .WithRequired(e => e.SCHEDULE_INFO)
+            modelBuilder.Entity<ScheduleInfo>()
+                .HasMany(e => e.Schedule)
+                .WithRequired(e => e.ScheduleInfo)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<SERVICE>()
+            modelBuilder.Entity<Service>()
                 .Property(e => e.ServiceFee)
                 .HasPrecision(19, 4);
 
-            modelBuilder.Entity<SERVICE>()
-                .HasMany(e => e.SERVICE_DETAIL)
-                .WithRequired(e => e.SERVICE)
+            modelBuilder.Entity<Service>()
+                .HasMany(e => e.Detail)
+                .WithRequired(e => e.Service)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<SERVICE_DETAIL>()
-                .Property(e => e.ServiceFee)
-                .HasPrecision(19, 4);
-
-            modelBuilder.Entity<UNIT>()
-                .HasMany(e => e.MEDICINE)
-                .WithRequired(e => e.UNIT)
+            modelBuilder.Entity<Unit>()
+                .HasMany(e => e.Medicine)
+                .WithRequired(e => e.Unit)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<USER>()
+            modelBuilder.Entity<User>()
                 .Property(e => e.Email)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<USER>()
+            modelBuilder.Entity<User>()
                 .Property(e => e.Username)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<USER>()
+            modelBuilder.Entity<User>()
                 .Property(e => e.Password)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<USER>()
-                .HasMany(e => e.BILL)
-                .WithRequired(e => e.USER)
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.Bill)
+                .WithRequired(e => e.User)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<USER>()
-                .HasMany(e => e.MEDICAL_RECORD)
-                .WithRequired(e => e.USER)
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.MedicalRecord)
+                .WithRequired(e => e.User)
                 .HasForeignKey(e => e.DoctorID)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<USER_GROUP>()
-                .HasMany(e => e.USER)
-                .WithRequired(e => e.USER_GROUP)
+            modelBuilder.Entity<UserGroup>()
+                .HasMany(e => e.User)
+                .WithRequired(e => e.UserGroup)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<WAY_TO_USE>()
-                .HasMany(e => e.MEDICINE)
-                .WithRequired(e => e.WAY_TO_USE)
+            modelBuilder.Entity<WayToUse>()
+                .HasMany(e => e.Medicine)
+                .WithRequired(e => e.WayToUse)
                 .WillCascadeOnDelete(false);
         }
     }

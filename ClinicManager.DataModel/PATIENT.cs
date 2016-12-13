@@ -5,14 +5,14 @@ namespace ClinicManager.DataModel
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("PATIENT")]
-    public partial class PATIENT
+    [Table("Patient")]
+    public partial class Patient
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PATIENT()
+        public Patient()
         {
-            MEDICAL_RECORD = new HashSet<MEDICAL_RECORD>();
-            QUEUE = new HashSet<QUEUE>();
+            MedicalRecord = new HashSet<MedicalRecord>();
+            Queue = new HashSet<Queue>();
         }
 
         public int PatientID { get; set; }
@@ -45,9 +45,9 @@ namespace ClinicManager.DataModel
         public DateTime CreateDate { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MEDICAL_RECORD> MEDICAL_RECORD { get; set; }
+        public virtual ICollection<MedicalRecord> MedicalRecord { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<QUEUE> QUEUE { get; set; }
+        public virtual ICollection<Queue> Queue { get; set; }
     }
 }

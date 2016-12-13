@@ -4,13 +4,13 @@ namespace ClinicManager.DataModel
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("PERMISSION")]
-    public partial class PERMISSION
+    [Table("Permission")]
+    public partial class Permission
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PERMISSION()
+        public Permission()
         {
-            USER_GROUP = new HashSet<USER_GROUP>();
+            UserGroup = new HashSet<UserGroup>();
         }
 
         public int PermissionID { get; set; }
@@ -20,6 +20,6 @@ namespace ClinicManager.DataModel
         public string PermissionsName { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<USER_GROUP> USER_GROUP { get; set; }
+        public virtual ICollection<UserGroup> UserGroup { get; set; }
     }
 }
