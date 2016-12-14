@@ -75,6 +75,12 @@
     <Compile Include="PharmacyTypeForm.Designer.cs">
       <DependentUpon>PharmacyTypeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrescribingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrescribingForm.Designer.cs">
+      <DependentUpon>PrescribingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MedicineTypeForm.resx">
@@ -82,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PharmacyTypeForm.resx">
       <DependentUpon>PharmacyTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrescribingForm.resx">
+      <DependentUpon>PrescribingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -108,10 +117,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClinicManager.DataAccess\ClinicManager.DataAccess.csproj">
-      <Project>{8110EEE0-2562-467F-86C8-BE755DDBE5ED}</Project>
-      <Name>ClinicManager.DataAccess</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ClinicManager.DataBusiness\ClinicManager.DataBusiness.csproj">
       <Project>{fd48d870-db5f-43f9-b47f-d04a1df37281}</Project>
       <Name>ClinicManager.DataBusiness</Name>
