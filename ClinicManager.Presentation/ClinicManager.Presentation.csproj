@@ -125,6 +125,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+
     <Compile Include="RecivePatientForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +171,7 @@
     <EmbeddedResource Include="MedicineManagerForm.resx">
       <DependentUpon>MedicineManagerForm.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="MedicineTypeForm.resx">
       <DependentUpon>MedicineTypeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -190,6 +192,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+
     <EmbeddedResource Include="RecivePatientForm.resx">
       <DependentUpon>RecivePatientForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +206,7 @@
       <DependentUpon>WayToUserForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClinicManager.Presentation.csproj.bak" />
+
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
