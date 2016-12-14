@@ -3,24 +3,18 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
 
 namespace ClinicManager.Presentation
 {
-    public partial class TestForm : DevExpress.XtraEditors.XtraForm
+    public partial class LoginForm : Form
     {
-        public TestForm()
+        public LoginForm()
         {
             InitializeComponent();
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

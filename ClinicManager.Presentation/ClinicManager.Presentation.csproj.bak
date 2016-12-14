@@ -33,14 +33,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v15.2.Reporting.Extensions, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v15.2.Core, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -52,6 +61,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,132 +73,73 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreateExaminetionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreateExaminetionForm.designer.cs">
-      <DependentUpon>CreateExaminetionForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="CreatePatientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreatePatientForm.designer.cs">
+    <Compile Include="CreatePatientForm.Designer.cs">
       <DependentUpon>CreatePatientForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateScheduleForm.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateScheduleForm.designer.cs">
-      <DependentUpon>CreateScheduleForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ExamineForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ExamineForm.designer.cs">
-      <DependentUpon>ExamineForm.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.designer.cs">
+    <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MedicalRecordForm.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MedicalRecordForm.designer.cs">
-      <DependentUpon>MedicalRecordForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MedicineManagerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MedicineManagerForm.designer.cs">
-      <DependentUpon>MedicineManagerForm.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MedicineTypeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MedicineTypeForm.designer.cs">
+    <Compile Include="MedicineTypeForm.Designer.cs">
       <DependentUpon>MedicineTypeForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PatientDetailForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PatientDetailForm.designer.cs">
-      <DependentUpon>PatientDetailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PharmacyTypeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PharmacyTypeForm.designer.cs">
+    <Compile Include="PharmacyTypeForm.Designer.cs">
       <DependentUpon>PharmacyTypeForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PrescribingForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PrescribingForm.Designer.cs">
-      <DependentUpon>PrescribingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-
     <Compile Include="RecivePatientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RecivePatientForm.designer.cs">
+    <Compile Include="RecivePatientForm.Designer.cs">
       <DependentUpon>RecivePatientForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ScheduleManagerForm.cs">
+    <Compile Include="TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScheduleManagerForm.designer.cs">
-      <DependentUpon>ScheduleManagerForm.cs</DependentUpon>
+    <Compile Include="TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UnitForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UnitForm.designer.cs">
-      <DependentUpon>UnitForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="WayToUserForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WayToUserForm.designer.cs">
-      <DependentUpon>WayToUserForm.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="CreateExaminetionForm.resx">
-      <DependentUpon>CreateExaminetionForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CreatePatientForm.resx">
       <DependentUpon>CreatePatientForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateScheduleForm.resx">
-      <DependentUpon>CreateScheduleForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ExamineForm.resx">
-      <DependentUpon>ExamineForm.cs</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MedicalRecordForm.resx">
-      <DependentUpon>MedicalRecordForm.cs</DependentUpon>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MedicineManagerForm.resx">
-      <DependentUpon>MedicineManagerForm.cs</DependentUpon>
-    </EmbeddedResource>
-
     <EmbeddedResource Include="MedicineTypeForm.resx">
       <DependentUpon>MedicineTypeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PatientDetailForm.resx">
-      <DependentUpon>PatientDetailForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PharmacyTypeForm.resx">
       <DependentUpon>PharmacyTypeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PrescribingForm.resx">
-      <DependentUpon>PrescribingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -201,21 +152,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-
     <EmbeddedResource Include="RecivePatientForm.resx">
       <DependentUpon>RecivePatientForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScheduleManagerForm.resx">
-      <DependentUpon>ScheduleManagerForm.cs</DependentUpon>
+    <EmbeddedResource Include="TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UnitForm.resx">
-      <DependentUpon>UnitForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="WayToUserForm.resx">
-      <DependentUpon>WayToUserForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="ClinicManager.Presentation.csproj.bak" />
-
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -231,12 +173,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ClinicManager.DataAccess\ClinicManager.DataAccess.csproj">
+      <Project>{8110eee0-2562-467f-86c8-be755ddbe5ed}</Project>
+      <Name>ClinicManager.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ClinicManager.DataBusiness\ClinicManager.DataBusiness.csproj">
       <Project>{fd48d870-db5f-43f9-b47f-d04a1df37281}</Project>
       <Name>ClinicManager.DataBusiness</Name>
     </ProjectReference>
     <ProjectReference Include="..\ClinicManager.DataModel\ClinicManager.DataModel.csproj">
-      <Project>{EA70F873-8671-400C-9AA2-CA5446FA499C}</Project>
+      <Project>{ea70f873-8671-400c-9aa2-ca5446fa499c}</Project>
       <Name>ClinicManager.DataModel</Name>
     </ProjectReference>
   </ItemGroup>
