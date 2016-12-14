@@ -117,6 +117,12 @@
     <Compile Include="PatientDetailForm.designer.cs">
       <DependentUpon>PatientDetailForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentForm.Designer.cs">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PharmacyTypeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,7 +131,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-
     <Compile Include="RecivePatientForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +142,12 @@
     </Compile>
     <Compile Include="ScheduleManagerForm.designer.cs">
       <DependentUpon>ScheduleManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchPatientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchPatientForm.Designer.cs">
+      <DependentUpon>SearchPatientForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UnitForm.cs">
       <SubType>Form</SubType>
@@ -171,12 +182,14 @@
     <EmbeddedResource Include="MedicineManagerForm.resx">
       <DependentUpon>MedicineManagerForm.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="MedicineTypeForm.resx">
       <DependentUpon>MedicineTypeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PatientDetailForm.resx">
       <DependentUpon>PatientDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentForm.resx">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PharmacyTypeForm.resx">
       <DependentUpon>PharmacyTypeForm.cs</DependentUpon>
@@ -192,12 +205,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-
     <EmbeddedResource Include="RecivePatientForm.resx">
       <DependentUpon>RecivePatientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScheduleManagerForm.resx">
       <DependentUpon>ScheduleManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchPatientForm.resx">
+      <DependentUpon>SearchPatientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UnitForm.resx">
       <DependentUpon>UnitForm.cs</DependentUpon>
@@ -206,7 +221,6 @@
       <DependentUpon>WayToUserForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClinicManager.Presentation.csproj.bak" />
-
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -237,6 +251,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile-icon-png-909.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

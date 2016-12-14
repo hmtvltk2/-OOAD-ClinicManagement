@@ -84,7 +84,6 @@
             // gridColumn1
             // 
             this.gridColumn1.ColumnEdit = this.repositoryItemDelete;
-            this.gridColumn1.Image = ((System.Drawing.Image)(resources.GetObject("gridColumn1.Image")));
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.TabStop = false;
             this.gridColumn1.Visible = true;
