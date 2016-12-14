@@ -137,12 +137,6 @@
     <Compile Include="ScheduleManagerForm.designer.cs">
       <DependentUpon>ScheduleManagerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TestForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TestForm.Designer.cs">
-      <DependentUpon>TestForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="UnitForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,15 +188,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RecivePatientForm.resx">
       <DependentUpon>RecivePatientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScheduleManagerForm.resx">
       <DependentUpon>ScheduleManagerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TestForm.resx">
-      <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UnitForm.resx">
       <DependentUpon>UnitForm.cs</DependentUpon>
@@ -238,6 +230,9 @@
       <Project>{EA70F873-8671-400C-9AA2-CA5446FA499C}</Project>
       <Name>ClinicManager.DataModel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
