@@ -63,12 +63,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssignPermissionFrom.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AssignPermissionFrom.Designer.cs">
-      <DependentUpon>AssignPermissionFrom.cs</DependentUpon>
-    </Compile>
     <Compile Include="ChangePasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +135,12 @@
     <Compile Include="PaymentForm.Designer.cs">
       <DependentUpon>PaymentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PermissionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PermissionForm.designer.cs">
+      <DependentUpon>PermissionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PharmacyTypeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,21 +179,12 @@
     <Compile Include="UserForm.Designer.cs">
       <DependentUpon>UserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserManagerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserManagerForm.Designer.cs">
-      <DependentUpon>UserManagerForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="WayToUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WayToUserForm.designer.cs">
       <DependentUpon>WayToUserForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AssignPermissionFrom.resx">
-      <DependentUpon>AssignPermissionFrom.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ChangePasswordForm.resx">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,6 +221,9 @@
     <EmbeddedResource Include="PaymentForm.resx">
       <DependentUpon>PaymentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PermissionForm.resx">
+      <DependentUpon>PermissionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PharmacyTypeForm.resx">
       <DependentUpon>PharmacyTypeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -258,9 +252,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserManagerForm.resx">
-      <DependentUpon>UserManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WayToUserForm.resx">
       <DependentUpon>WayToUserForm.cs</DependentUpon>
