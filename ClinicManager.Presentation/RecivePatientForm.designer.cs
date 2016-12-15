@@ -36,6 +36,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecivePatientForm));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.gridSearchList = new DevExpress.XtraGrid.GridControl();
+            this.gridSearch = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.buttonSearch = new DevExpress.XtraEditors.SimpleButton();
             this.comboGender = new DevExpress.XtraEditors.ComboBoxEdit();
             this.dateDateOfBirth = new DevExpress.XtraEditors.DateEdit();
@@ -72,16 +78,12 @@
             this.emptySpaceItem9 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem10 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem11 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.gridSearchList = new DevExpress.XtraGrid.GridControl();
-            this.gridSearch = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSearchList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboGender.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDateOfBirth.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDateOfBirth.Properties)).BeginInit();
@@ -108,10 +110,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSearchList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -133,6 +133,58 @@
             this.layoutControl1.Size = new System.Drawing.Size(1058, 518);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // gridSearchList
+            // 
+            this.gridSearchList.Location = new System.Drawing.Point(24, 68);
+            this.gridSearchList.MainView = this.gridSearch;
+            this.gridSearchList.Name = "gridSearchList";
+            this.gridSearchList.Size = new System.Drawing.Size(1010, 207);
+            this.gridSearchList.TabIndex = 10;
+            this.gridSearchList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridSearch});
+            // 
+            // gridSearch
+            // 
+            this.gridSearch.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn2});
+            this.gridSearch.GridControl = this.gridSearchList;
+            this.gridSearch.Name = "gridSearch";
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Họ tên";
+            this.gridColumn1.FieldName = "FullName";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Giới tính";
+            this.gridColumn3.FieldName = "Gender";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Ngày sinh";
+            this.gridColumn4.FieldName = "DateOfBirth";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Địa chỉ";
+            this.gridColumn2.FieldName = "Address";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
             // 
             // buttonSearch
             // 
@@ -477,34 +529,6 @@
             this.emptySpaceItem11.Size = new System.Drawing.Size(17, 26);
             this.emptySpaceItem11.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // emptySpaceItem4
-            // 
-            this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 289);
-            this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(283, 26);
-            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // gridSearchList
-            // 
-            this.gridSearchList.Location = new System.Drawing.Point(24, 68);
-            this.gridSearchList.MainView = this.gridSearch;
-            this.gridSearchList.Name = "gridSearchList";
-            this.gridSearchList.Size = new System.Drawing.Size(1010, 207);
-            this.gridSearchList.TabIndex = 10;
-            this.gridSearchList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridSearch});
-            // 
-            // gridSearch
-            // 
-            this.gridSearch.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn2});
-            this.gridSearch.GridControl = this.gridSearchList;
-            this.gridSearch.Name = "gridSearch";
-            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.gridSearchList;
@@ -514,37 +538,13 @@
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
-            // gridColumn1
+            // emptySpaceItem4
             // 
-            this.gridColumn1.Caption = "Họ tên";
-            this.gridColumn1.FieldName = "FullName";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Địa chỉ";
-            this.gridColumn2.FieldName = "Address";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Giới tính";
-            this.gridColumn3.FieldName = "Gender";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Ngày sinh";
-            this.gridColumn4.FieldName = "DateOfBirth";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
+            this.emptySpaceItem4.AllowHotTrack = false;
+            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 289);
+            this.emptySpaceItem4.Name = "emptySpaceItem4";
+            this.emptySpaceItem4.Size = new System.Drawing.Size(283, 26);
+            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // RecivePatientForm
             // 
@@ -558,6 +558,8 @@
             this.Text = "Tiếp nhận bệnh nhân";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridSearchList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboGender.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDateOfBirth.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDateOfBirth.Properties)).EndInit();
@@ -584,10 +586,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSearchList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             this.ResumeLayout(false);
 
         }

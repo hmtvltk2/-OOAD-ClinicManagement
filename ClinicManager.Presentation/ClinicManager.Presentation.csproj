@@ -63,6 +63,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssignPermissionFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssignPermissionFrom.Designer.cs">
+      <DependentUpon>AssignPermissionFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePasswordForm.Designer.cs">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateExaminetionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +98,12 @@
     </Compile>
     <Compile Include="ExamineForm.designer.cs">
       <DependentUpon>ExamineForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreatePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreatePassword.Designer.cs">
+      <DependentUpon>CreatePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -155,14 +173,35 @@
     <Compile Include="UnitForm.designer.cs">
       <DependentUpon>UnitForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserManagerForm.Designer.cs">
+      <DependentUpon>UserManagerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WayToUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WayToUserForm.designer.cs">
       <DependentUpon>WayToUserForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AssignPermissionFrom.resx">
+      <DependentUpon>AssignPermissionFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePasswordForm.resx">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateExaminetionForm.resx">
       <DependentUpon>CreateExaminetionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatePassword.resx">
+      <DependentUpon>CreatePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreatePatientForm.resx">
       <DependentUpon>CreatePatientForm.cs</DependentUpon>
@@ -217,6 +256,12 @@
     <EmbeddedResource Include="UnitForm.resx">
       <DependentUpon>UnitForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserManagerForm.resx">
+      <DependentUpon>UserManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WayToUserForm.resx">
       <DependentUpon>WayToUserForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,6 +299,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\profile-icon-png-909.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forgot-password-icon-18350.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

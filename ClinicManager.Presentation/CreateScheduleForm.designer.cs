@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateScheduleForm));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.buttonCreate = new DevExpress.XtraEditors.SimpleButton();
-            this.buttonExit = new DevExpress.XtraEditors.SimpleButton();
             this.textNote = new System.Windows.Forms.RichTextBox();
             this.dateDateSchedule = new DevExpress.XtraEditors.DateEdit();
             this.comboDoctor = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -59,6 +57,8 @@
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.buttonCreate = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonExit = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -110,26 +110,6 @@
             this.layoutControl1.Size = new System.Drawing.Size(388, 451);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
-            // 
-            // buttonCreate
-            // 
-            this.buttonCreate.Image = ((System.Drawing.Image)(resources.GetObject("buttonCreate.Image")));
-            this.buttonCreate.Location = new System.Drawing.Point(12, 417);
-            this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(175, 22);
-            this.buttonCreate.StyleController = this.layoutControl1;
-            this.buttonCreate.TabIndex = 15;
-            this.buttonCreate.Text = "Tạo";
-            // 
-            // buttonExit
-            // 
-            this.buttonExit.Image = ((System.Drawing.Image)(resources.GetObject("buttonExit.Image")));
-            this.buttonExit.Location = new System.Drawing.Point(201, 417);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(175, 22);
-            this.buttonExit.StyleController = this.layoutControl1;
-            this.buttonExit.TabIndex = 14;
-            this.buttonExit.Text = "Hủy";
             // 
             // textNote
             // 
@@ -395,6 +375,26 @@
             this.emptySpaceItem5.Name = "emptySpaceItem5";
             this.emptySpaceItem5.Size = new System.Drawing.Size(10, 26);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // buttonCreate
+            // 
+            this.buttonCreate.Image = ((System.Drawing.Image)(resources.GetObject("buttonCreate.Image")));
+            this.buttonCreate.Location = new System.Drawing.Point(12, 417);
+            this.buttonCreate.Name = "buttonCreate";
+            this.buttonCreate.Size = new System.Drawing.Size(175, 22);
+            this.buttonCreate.StyleController = this.layoutControl1;
+            this.buttonCreate.TabIndex = 15;
+            this.buttonCreate.Text = "Tạo";
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.Image = ((System.Drawing.Image)(resources.GetObject("buttonExit.Image")));
+            this.buttonExit.Location = new System.Drawing.Point(201, 417);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(175, 22);
+            this.buttonExit.StyleController = this.layoutControl1;
+            this.buttonExit.TabIndex = 14;
+            this.buttonExit.Text = "Hủy";
             // 
             // layoutControlItem10
             // 
