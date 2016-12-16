@@ -156,11 +156,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RecivePatientForm.cs">
+    <Compile Include="ReceivePatientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RecivePatientForm.designer.cs">
-      <DependentUpon>RecivePatientForm.cs</DependentUpon>
+    <Compile Include="ReceivePatientForm.designer.cs">
+      <DependentUpon>ReceivePatientForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ScheduleManagerForm.cs">
       <SubType>Form</SubType>
@@ -168,11 +168,11 @@
     <Compile Include="ScheduleManagerForm.designer.cs">
       <DependentUpon>ScheduleManagerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SearchPatientForm.cs">
+    <Compile Include="PatientManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SearchPatientForm.Designer.cs">
-      <DependentUpon>SearchPatientForm.cs</DependentUpon>
+    <Compile Include="PatientManagerForm.Designer.cs">
+      <DependentUpon>PatientManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UnitForm.cs">
       <SubType>Form</SubType>
@@ -254,14 +254,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RecivePatientForm.resx">
-      <DependentUpon>RecivePatientForm.cs</DependentUpon>
+    <EmbeddedResource Include="ReceivePatientForm.resx">
+      <DependentUpon>ReceivePatientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScheduleManagerForm.resx">
       <DependentUpon>ScheduleManagerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SearchPatientForm.resx">
-      <DependentUpon>SearchPatientForm.cs</DependentUpon>
+    <EmbeddedResource Include="PatientManagerForm.resx">
+      <DependentUpon>PatientManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UnitForm.resx">
       <DependentUpon>UnitForm.cs</DependentUpon>
@@ -272,8 +272,8 @@
     <EmbeddedResource Include="UserManagerForm.resx">
       <DependentUpon>UserManagerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WayToUserForm.resx">
-      <DependentUpon>WayToUserForm.cs</DependentUpon>
+    <EmbeddedResource Include="WayToUseForm.resx">
+      <DependentUpon>WayToUseForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClinicManager.Presentation.csproj.bak" />
     <None Include="packages.config" />

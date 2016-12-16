@@ -25,9 +25,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangePasswordForm));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.textOldPass = new DevExpress.XtraEditors.TextEdit();
+            this.buttonSave = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonExit = new DevExpress.XtraEditors.SimpleButton();
             this.textConfirmPassword = new DevExpress.XtraEditors.TextEdit();
             this.textNewPass = new DevExpress.XtraEditors.TextEdit();
+            this.pictureDefault = new DevExpress.XtraEditors.PictureEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -36,21 +41,19 @@
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.textOldPass = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.buttonSave = new DevExpress.XtraEditors.SimpleButton();
-            this.buttonExit = new DevExpress.XtraEditors.SimpleButton();
-            this.pictureDefault = new DevExpress.XtraEditors.PictureEdit();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textOldPass.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textConfirmPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNewPass.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDefault.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
@@ -59,13 +62,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textOldPass.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureDefault.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -84,6 +84,34 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // textOldPass
+            // 
+            this.textOldPass.Location = new System.Drawing.Point(250, 61);
+            this.textOldPass.Name = "textOldPass";
+            this.textOldPass.Size = new System.Drawing.Size(174, 20);
+            this.textOldPass.StyleController = this.layoutControl1;
+            this.textOldPass.TabIndex = 9;
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Image = ((System.Drawing.Image)(resources.GetObject("buttonSave.Image")));
+            this.buttonSave.Location = new System.Drawing.Point(156, 190);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(132, 22);
+            this.buttonSave.StyleController = this.layoutControl1;
+            this.buttonSave.TabIndex = 8;
+            this.buttonSave.Text = "Lưu";
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.Image = ((System.Drawing.Image)(resources.GetObject("buttonExit.Image")));
+            this.buttonExit.Location = new System.Drawing.Point(292, 190);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(132, 22);
+            this.buttonExit.StyleController = this.layoutControl1;
+            this.buttonExit.TabIndex = 7;
+            this.buttonExit.Text = "Thoát";
+            // 
             // textConfirmPassword
             // 
             this.textConfirmPassword.Location = new System.Drawing.Point(250, 129);
@@ -100,6 +128,17 @@
             this.textNewPass.Size = new System.Drawing.Size(174, 20);
             this.textNewPass.StyleController = this.layoutControl1;
             this.textNewPass.TabIndex = 5;
+            // 
+            // pictureDefault
+            // 
+            this.pictureDefault.EditValue = global::ClinicManager.Presentation.Properties.Resources.forgot_password_icon_18350;
+            this.pictureDefault.Location = new System.Drawing.Point(12, 48);
+            this.pictureDefault.Name = "pictureDefault";
+            this.pictureDefault.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureDefault.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pictureDefault.Size = new System.Drawing.Size(123, 130);
+            this.pictureDefault.StyleController = this.layoutControl1;
+            this.pictureDefault.TabIndex = 4;
             // 
             // layoutControlGroup1
             // 
@@ -124,6 +163,15 @@
             this.layoutControlGroup1.Size = new System.Drawing.Size(436, 224);
             this.layoutControlGroup1.TextVisible = false;
             // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.pictureDefault;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 36);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(127, 134);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
@@ -135,9 +183,9 @@
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 157);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 170);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(127, 47);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(127, 34);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem3
@@ -145,7 +193,7 @@
             this.emptySpaceItem3.AllowHotTrack = false;
             this.emptySpaceItem3.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(127, 25);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(127, 36);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
@@ -190,71 +238,6 @@
             this.emptySpaceItem6.Size = new System.Drawing.Size(17, 204);
             this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // textOldPass
-            // 
-            this.textOldPass.Location = new System.Drawing.Point(250, 61);
-            this.textOldPass.Name = "textOldPass";
-            this.textOldPass.Size = new System.Drawing.Size(174, 20);
-            this.textOldPass.StyleController = this.layoutControl1;
-            this.textOldPass.TabIndex = 9;
-            // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.textOldPass;
-            this.layoutControlItem6.Location = new System.Drawing.Point(144, 49);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(272, 24);
-            this.layoutControlItem6.Text = "Mật khẩu cũ";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(91, 13);
-            // 
-            // emptySpaceItem7
-            // 
-            this.emptySpaceItem7.AllowHotTrack = false;
-            this.emptySpaceItem7.Location = new System.Drawing.Point(144, 73);
-            this.emptySpaceItem7.Name = "emptySpaceItem7";
-            this.emptySpaceItem7.Size = new System.Drawing.Size(272, 10);
-            this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.Image = ((System.Drawing.Image)(resources.GetObject("buttonSave.Image")));
-            this.buttonSave.Location = new System.Drawing.Point(156, 190);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(132, 22);
-            this.buttonSave.StyleController = this.layoutControl1;
-            this.buttonSave.TabIndex = 8;
-            this.buttonSave.Text = "Lưu";
-            // 
-            // buttonExit
-            // 
-            this.buttonExit.Image = ((System.Drawing.Image)(resources.GetObject("buttonExit.Image")));
-            this.buttonExit.Location = new System.Drawing.Point(292, 190);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(132, 22);
-            this.buttonExit.StyleController = this.layoutControl1;
-            this.buttonExit.TabIndex = 7;
-            this.buttonExit.Text = "Thoát";
-            // 
-            // pictureDefault
-            // 
-            this.pictureDefault.EditValue = global::ClinicManager.Presentation.Properties.Resources.forgot_password_icon_18350;
-            this.pictureDefault.Location = new System.Drawing.Point(12, 37);
-            this.pictureDefault.Name = "pictureDefault";
-            this.pictureDefault.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureDefault.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureDefault.Size = new System.Drawing.Size(123, 128);
-            this.pictureDefault.StyleController = this.layoutControl1;
-            this.pictureDefault.TabIndex = 4;
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.pictureDefault;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 25);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(127, 132);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextVisible = false;
-            // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.buttonExit;
@@ -273,6 +256,23 @@
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.textOldPass;
+            this.layoutControlItem6.Location = new System.Drawing.Point(144, 49);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(272, 24);
+            this.layoutControlItem6.Text = "Mật khẩu cũ";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(91, 13);
+            // 
+            // emptySpaceItem7
+            // 
+            this.emptySpaceItem7.AllowHotTrack = false;
+            this.emptySpaceItem7.Location = new System.Drawing.Point(144, 73);
+            this.emptySpaceItem7.Name = "emptySpaceItem7";
+            this.emptySpaceItem7.Size = new System.Drawing.Size(272, 10);
+            this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
+            // 
             // ChangePasswordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,9 +287,12 @@
             this.Text = "Đổi mật khẩu";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.textOldPass.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textConfirmPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textNewPass.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDefault.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
@@ -298,13 +301,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textOldPass.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureDefault.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
             this.ResumeLayout(false);
 
         }

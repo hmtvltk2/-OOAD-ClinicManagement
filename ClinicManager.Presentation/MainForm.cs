@@ -18,27 +18,69 @@ namespace ClinicManager.Presentation
             InitializeComponent();
         }
 
-        private void OpenMDIForm<T>()
+        private void barButtonReceivePatient_ItemClick(object sender, ItemClickEventArgs e)
         {
             
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ribbon_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void barButtonExamine_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var examineFrom = new ExamineForm();
 
         }
 
+        private void barButtonPayment_ItemClick(object sender, ItemClickEventArgs e)
+        {
 
+        }
+
+        private void barButtonPatientManager_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonMedicine_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonMedicineType_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonPharmacyType_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonWayToUse_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonUnit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonSchedule_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonMedicineExport_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonNumberOfExamine_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonRevenue_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }

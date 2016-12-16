@@ -72,8 +72,8 @@
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxUserGroup.Properties)).BeginInit();
@@ -107,8 +107,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -159,9 +159,9 @@
             // buttonDelete
             // 
             this.buttonDelete.Image = ((System.Drawing.Image)(resources.GetObject("buttonDelete.Image")));
-            this.buttonDelete.Location = new System.Drawing.Point(242, 484);
+            this.buttonDelete.Location = new System.Drawing.Point(640, 186);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(111, 22);
+            this.buttonDelete.Size = new System.Drawing.Size(137, 22);
             this.buttonDelete.StyleController = this.layoutControl1;
             this.buttonDelete.TabIndex = 16;
             this.buttonDelete.Text = "Xóa";
@@ -169,9 +169,9 @@
             // buttonAdd
             // 
             this.buttonAdd.Image = ((System.Drawing.Image)(resources.GetObject("buttonAdd.Image")));
-            this.buttonAdd.Location = new System.Drawing.Point(26, 484);
+            this.buttonAdd.Location = new System.Drawing.Point(490, 186);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(104, 22);
+            this.buttonAdd.Size = new System.Drawing.Size(146, 22);
             this.buttonAdd.StyleController = this.layoutControl1;
             this.buttonAdd.TabIndex = 15;
             this.buttonAdd.Text = "Thêm";
@@ -179,9 +179,9 @@
             // buttonSave
             // 
             this.buttonSave.Image = ((System.Drawing.Image)(resources.GetObject("buttonSave.Image")));
-            this.buttonSave.Location = new System.Drawing.Point(134, 484);
+            this.buttonSave.Location = new System.Drawing.Point(781, 186);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(104, 22);
+            this.buttonSave.Size = new System.Drawing.Size(132, 22);
             this.buttonSave.StyleController = this.layoutControl1;
             this.buttonSave.TabIndex = 14;
             this.buttonSave.Text = "Lưu";
@@ -189,9 +189,9 @@
             // buttonClose
             // 
             this.buttonClose.Image = ((System.Drawing.Image)(resources.GetObject("buttonClose.Image")));
-            this.buttonClose.Location = new System.Drawing.Point(357, 484);
+            this.buttonClose.Location = new System.Drawing.Point(917, 186);
             this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(113, 22);
+            this.buttonClose.Size = new System.Drawing.Size(129, 22);
             this.buttonClose.StyleController = this.layoutControl1;
             this.buttonClose.TabIndex = 13;
             this.buttonClose.Text = "Đóng";
@@ -267,10 +267,10 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(24, 206);
+            this.gridControl1.Location = new System.Drawing.Point(24, 242);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1010, 262);
+            this.gridControl1.Size = new System.Drawing.Size(1010, 252);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -359,12 +359,12 @@
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup2,
             this.layoutControlGroup3,
-            this.layoutControlItem10,
-            this.layoutControlItem11,
-            this.layoutControlItem12,
             this.emptySpaceItem1,
-            this.emptySpaceItem4,
-            this.layoutControlItem13});
+            this.layoutControlItem10,
+            this.layoutControlItem13,
+            this.layoutControlItem12,
+            this.layoutControlItem11,
+            this.emptySpaceItem4});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(1058, 518);
@@ -374,9 +374,9 @@
             // 
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 164);
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 200);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(1038, 308);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(1038, 298);
             this.layoutControlGroup2.Text = "Danh sách người dùng";
             // 
             // layoutControlItem1
@@ -384,7 +384,7 @@
             this.layoutControlItem1.Control = this.gridControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1014, 266);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1014, 256);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -516,54 +516,54 @@
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.buttonClose;
-            this.layoutControlItem10.Location = new System.Drawing.Point(345, 472);
+            this.layoutControlItem10.Location = new System.Drawing.Point(905, 174);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(117, 26);
+            this.layoutControlItem10.Size = new System.Drawing.Size(133, 26);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.buttonSave;
-            this.layoutControlItem11.Location = new System.Drawing.Point(122, 472);
+            this.layoutControlItem11.Location = new System.Drawing.Point(769, 174);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(108, 26);
+            this.layoutControlItem11.Size = new System.Drawing.Size(136, 26);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
             // 
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.buttonAdd;
-            this.layoutControlItem12.Location = new System.Drawing.Point(14, 472);
+            this.layoutControlItem12.Location = new System.Drawing.Point(478, 174);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(108, 26);
+            this.layoutControlItem12.Size = new System.Drawing.Size(150, 26);
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(462, 472);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 164);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(576, 26);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(1038, 10);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem4
-            // 
-            this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 472);
-            this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(14, 26);
-            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.buttonDelete;
-            this.layoutControlItem13.Location = new System.Drawing.Point(230, 472);
+            this.layoutControlItem13.Location = new System.Drawing.Point(628, 174);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(115, 26);
+            this.layoutControlItem13.Size = new System.Drawing.Size(141, 26);
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem13.TextVisible = false;
+            // 
+            // emptySpaceItem4
+            // 
+            this.emptySpaceItem4.AllowHotTrack = false;
+            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 174);
+            this.emptySpaceItem4.Name = "emptySpaceItem4";
+            this.emptySpaceItem4.Size = new System.Drawing.Size(478, 26);
+            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // UserForm
             // 
@@ -609,8 +609,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -653,7 +653,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
         private DevExpress.XtraEditors.SimpleButton buttonDelete;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxUserGroup;
@@ -662,5 +661,6 @@
         private DevExpress.XtraEditors.SimpleButton buttonCreatePassword;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem5;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
     }
 }
