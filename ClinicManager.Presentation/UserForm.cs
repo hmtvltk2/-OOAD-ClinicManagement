@@ -2,7 +2,7 @@
 
 namespace ClinicManager.Presentation
 {
-    public partial class UserForm : Form
+    public partial class UserForm : DevExpress.XtraEditors.XtraForm
     {
         public UserForm()
         {

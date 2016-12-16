@@ -37,7 +37,7 @@ namespace ClinicManager.DataAccess
 
             return base.Delete(model);
         }
-
+        
         public DataTable GetAll()
         {
             using (var db = new ClinicDB())

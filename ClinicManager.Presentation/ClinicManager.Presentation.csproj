@@ -247,7 +247,6 @@
     <EmbeddedResource Include="WayToUseForm.resx">
       <DependentUpon>WayToUseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ClinicManager.Presentation.csproj.bak" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
