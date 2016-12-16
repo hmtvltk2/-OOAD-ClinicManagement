@@ -3,8 +3,8 @@ namespace ClinicManager.DataModel
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    [Table("Detail")]
-    public partial class Detail
+    [Table("ServiceDetail")]
+    public partial class ServiceDetail
     {
         [Key]
         [Column(Order = 0)]

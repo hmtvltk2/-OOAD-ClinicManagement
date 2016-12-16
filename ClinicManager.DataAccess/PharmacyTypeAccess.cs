@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace ClinicManager.DataAccess
 {
-    public class PharmacyTypeAccess : BaseDataAcess
+    public class PharmacyTypeAccess : BaseDataAccess
     {
         public override int Insert(object obj)
         {

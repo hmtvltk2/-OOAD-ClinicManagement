@@ -10,7 +10,7 @@ namespace ClinicManager.DataModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Service()
         {
-            Detail = new HashSet<Detail>();
+            ServiceDetail = new HashSet<ServiceDetail>();
         }
 
         public int ServiceID { get; set; }
@@ -23,6 +23,6 @@ namespace ClinicManager.DataModel
         public decimal ServiceFee { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Detail> Detail { get; set; }
+        public virtual ICollection<ServiceDetail> ServiceDetail { get; set; }
     }
 }

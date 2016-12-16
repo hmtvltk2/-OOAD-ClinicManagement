@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseDataAcess.cs" />
+    <Compile Include="BaseDataAccess.cs" />
     <Compile Include="ClinicDB.cs" />
     <Compile Include="MedicineTypeAccess.cs" />
     <Compile Include="PharmacyTypeAccess.cs" />

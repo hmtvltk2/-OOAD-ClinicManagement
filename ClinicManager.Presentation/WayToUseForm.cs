@@ -59,7 +59,7 @@ namespace ClinicManager.Presentation
             //Insert, update row
             var row = gridView1.GetFocusedDataRow();
             bool isInsert = row["WayToUseID"].ToString() == "";
-
+            
             bool result;
 
             if (isInsert)

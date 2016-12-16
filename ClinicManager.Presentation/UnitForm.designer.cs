@@ -80,6 +80,10 @@
             this.gridView1.IndicatorWidth = 50;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.gridView1.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_CustomDrawRowIndicator);
+            this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView1_RowUpdated);
+            this.gridView1.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.gridView1_ValidatingEditor);
+            this.gridView1.InvalidValueException += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.gridView1_InvalidValueException);
             // 
             // gridColumn1
             // 
@@ -97,6 +101,7 @@
             this.repositoryItemDelete.Image = ((System.Drawing.Image)(resources.GetObject("repositoryItemDelete.Image")));
             this.repositoryItemDelete.ImageAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.repositoryItemDelete.Name = "repositoryItemDelete";
+            this.repositoryItemDelete.Click += new System.EventHandler(this.repositoryItemDelete_Click);
             // 
             // gridColumn2
             // 
@@ -150,6 +155,7 @@
             this.Name = "UnitForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đơn vị tính";
+            this.Load += new System.EventHandler(this.UnitForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();

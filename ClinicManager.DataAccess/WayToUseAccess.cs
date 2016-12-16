@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace ClinicManager.DataAccess
 {
-    public class WayToUseAccess : BaseDataAcess
+    public class WayToUseAccess : BaseDataAccess
     {
         public override int Insert(object obj)
         {

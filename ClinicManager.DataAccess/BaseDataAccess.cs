@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace ClinicManager.DataAccess
 {
-    public class BaseDataAcess
+    public class BaseDataAccess
     {
         public virtual int Insert(object obj)
         {
@@ -48,7 +48,7 @@ namespace ClinicManager.DataAccess
                     return db.SaveChanges() > 0;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
