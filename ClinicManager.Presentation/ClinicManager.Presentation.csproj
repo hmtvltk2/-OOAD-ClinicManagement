@@ -186,11 +186,11 @@
     <Compile Include="UserManagerForm.Designer.cs">
       <DependentUpon>UserManagerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="WayToUserForm.cs">
+    <Compile Include="WayToUseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WayToUserForm.designer.cs">
-      <DependentUpon>WayToUserForm.cs</DependentUpon>
+    <Compile Include="WayToUseForm.designer.cs">
+      <DependentUpon>WayToUseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserForm.cs">
       <SubType>Form</SubType>

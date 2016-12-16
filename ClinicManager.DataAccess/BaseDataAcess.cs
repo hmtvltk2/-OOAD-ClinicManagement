@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data.Entity.Validation;
 using System.Linq;
 
 namespace ClinicManager.DataAccess

@@ -1,36 +1,36 @@
-﻿using System;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using ClinicManager.DataBusiness;
+﻿using ClinicManager.DataBusiness;
 using ClinicManager.DataModel;
+using DevExpress.XtraEditors;
+using System;
+using System.Windows.Forms;
 
 namespace ClinicManager.Presentation
 {
-    public partial class PharmacyTypeForm : DevExpress.XtraEditors.XtraForm
+    public partial class WayToUseForm : XtraForm
     {
-        private PharmacyTypeBusiness pharmacyTypeBusiness;
-        public PharmacyTypeForm()
+        private WayToUseBusiness wayToUseBusiness;
+        public WayToUseForm()
         {
             InitializeComponent();
-            pharmacyTypeBusiness = new PharmacyTypeBusiness();
+            wayToUseBusiness = new WayToUseBusiness();
         }
 
-        private void PharmacyTypeForm_Load(object sender, EventArgs e)
+        private void WayToUseForm_Load(object sender, EventArgs e)
         {
-            gridControl1.DataSource = pharmacyTypeBusiness.GetAll();
+            gridControl1.DataSource = wayToUseBusiness.GetAll();
         }
 
         private void gridView1_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
         {
             string error = "";
-            if (gridView1.FocusedColumn.FieldName == "PharmacyTypeName")
+            if (gridView1.FocusedColumn.FieldName == "WayToUseName")
             {
-                PharmacyType data = new PharmacyType()
+                WayToUse data = new WayToUse()
                 {
-                    PharmacyTypeName = (string)e.Value
+                    WayToUseName = (string)e.Value
                 };
 
-                error = pharmacyTypeBusiness.Validate(data, "PharmacyTypeName");
+                error = wayToUseBusiness.Validate(data, "WayToUseName");
             }
 
 
@@ -58,17 +58,18 @@ namespace ClinicManager.Presentation
         {
             //Insert, update row
             var row = gridView1.GetFocusedDataRow();
-            bool isInsert = row["PharmacyTypeID"].ToString() == "";
+            bool isInsert = row["WayToUseID"].ToString() == "";
+
             bool result;
 
             if (isInsert)
             {
-                PharmacyType PharmacyType = new PharmacyType()
+                WayToUse wayToUse = new WayToUse()
                 {
-                    PharmacyTypeName = (string)row["PharmacyTypeName"]
+                    WayToUseName = (string)row["WayToUseName"]
                 };
 
-                int id = pharmacyTypeBusiness.Insert(PharmacyType);
+                int id = wayToUseBusiness.Insert(wayToUse);
                 if (id == 0)
                 {
                     result = false;
@@ -76,18 +77,18 @@ namespace ClinicManager.Presentation
                 else
                 {
                     result = true;
-                    row["PharmacyTypeID"] = id;
+                    row["WayToUseID"] = id;
                 }
             }
             else
             {
-                PharmacyType PharmacyType = new PharmacyType()
+                WayToUse wayToUse = new WayToUse()
                 {
-                    PharmacyTypeID = (int)row["PharmacyTypeID"],
-                    PharmacyTypeName = (string)row["PharmacyTypeName"]
+                    WayToUseID = (int)row["WayToUseID"],
+                    WayToUseName = (string)row["WayToUseName"]
                 };
 
-                result = pharmacyTypeBusiness.Update(PharmacyType);
+                result = wayToUseBusiness.Update(wayToUse);
             }
 
             if (result)
@@ -106,14 +107,17 @@ namespace ClinicManager.Presentation
             {
                 var row = gridView1.GetFocusedDataRow();
 
-                bool result = pharmacyTypeBusiness.Delete((int)row["PharmacyTypeID"]);
-                if (result == false)
+                bool result = wayToUseBusiness.Delete((int)row["WayToUseID"]);
+                if (result)
+                {
+                    gridView1.DeleteSelectedRows();
+                }
+                else
                 {
                     XtraMessageBox.Show(this, "Xóa thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                gridView1.DeleteSelectedRows();
             }
-        }
+        }  
     }
 }
