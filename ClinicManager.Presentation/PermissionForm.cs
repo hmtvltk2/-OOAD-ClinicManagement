@@ -3,23 +3,19 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 
 namespace ClinicManager.Presentation
 {
-    public partial class AssignPermissionFrom : Form
+    public partial class PermissionForm : DevExpress.XtraEditors.XtraForm
     {
-        public AssignPermissionFrom()
+        public PermissionForm()
         {
             InitializeComponent();
-        }
-
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -96,7 +96,6 @@
             // 
             // repositoryItemDelete
             // 
-            this.repositoryItemDelete.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("repositoryItemDelete.Appearance.Image")));
             this.repositoryItemDelete.Appearance.Options.UseImage = true;
             this.repositoryItemDelete.AutoHeight = false;
             this.repositoryItemDelete.Image = ((System.Drawing.Image)(resources.GetObject("repositoryItemDelete.Image")));

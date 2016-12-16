@@ -149,7 +149,7 @@
             this.ClientSize = new System.Drawing.Size(515, 493);
             this.Controls.Add(this.layoutControl1);
             this.Name = "MedicineTypeForm";
-            this.Text = "MedicineTypeForm";
+            this.Text = "Loại  thuốc";
             this.Load += new System.EventHandler(this.MedicineTypeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

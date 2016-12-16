@@ -222,6 +222,7 @@
             this.DateExamine.Name = "DateExamine";
             this.DateExamine.Visible = true;
             this.DateExamine.VisibleIndex = 0;
+            this.DateExamine.Width = 110;
             // 
             // Diagnostic
             // 
@@ -230,6 +231,7 @@
             this.Diagnostic.Name = "Diagnostic";
             this.Diagnostic.Visible = true;
             this.Diagnostic.VisibleIndex = 1;
+            this.Diagnostic.Width = 278;
             // 
             // Doctor
             // 
@@ -238,6 +240,7 @@
             this.Doctor.Name = "Doctor";
             this.Doctor.Visible = true;
             this.Doctor.VisibleIndex = 2;
+            this.Doctor.Width = 149;
             // 
             // label16
             // 

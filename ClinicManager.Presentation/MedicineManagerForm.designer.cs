@@ -32,15 +32,15 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Xóa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemDeleteMedicine = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryItemDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.repositoryItemDeleteMedicine = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.buttonExit = new DevExpress.XtraEditors.SimpleButton();
             this.buttonSave = new DevExpress.XtraEditors.SimpleButton();
             this.buttonSearch = new DevExpress.XtraEditors.SimpleButton();
@@ -61,15 +61,14 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem9 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem10 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDeleteMedicine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDelete)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDeleteMedicine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboMedicineTypeName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
@@ -86,7 +85,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).BeginInit();
             this.SuspendLayout();
@@ -123,7 +121,7 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
+            this.Xóa,
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn4,
@@ -133,13 +131,14 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
-            // gridColumn1
+            // Xóa
             // 
-            this.gridColumn1.Caption = "Mã thuốc";
-            this.gridColumn1.FieldName = "MedicineID";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
+            this.Xóa.Caption = "Mã thuốc";
+            this.Xóa.FieldName = "MedicineID";
+            this.Xóa.Name = "Xóa";
+            this.Xóa.Visible = true;
+            this.Xóa.VisibleIndex = 0;
+            this.Xóa.Width = 141;
             // 
             // gridColumn2
             // 
@@ -148,6 +147,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 141;
             // 
             // gridColumn3
             // 
@@ -156,6 +156,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.Width = 141;
             // 
             // gridColumn4
             // 
@@ -164,6 +165,7 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.Width = 141;
             // 
             // gridColumn5
             // 
@@ -172,6 +174,7 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.Width = 141;
             // 
             // gridColumn6
             // 
@@ -180,20 +183,15 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.Width = 224;
             // 
             // gridColumn7
             // 
-            this.gridColumn7.ColumnEdit = this.repositoryItemDeleteMedicine;
+            this.gridColumn7.ColumnEdit = this.repositoryItemDelete;
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 6;
-            // 
-            // repositoryItemDeleteMedicine
-            // 
-            this.repositoryItemDeleteMedicine.AutoHeight = false;
-            this.repositoryItemDeleteMedicine.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.repositoryItemDeleteMedicine.Name = "repositoryItemDeleteMedicine";
+            this.gridColumn7.Width = 63;
             // 
             // repositoryItemDelete
             // 
@@ -202,12 +200,19 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.repositoryItemDelete.Name = "repositoryItemDelete";
             // 
+            // repositoryItemDeleteMedicine
+            // 
+            this.repositoryItemDeleteMedicine.AutoHeight = false;
+            this.repositoryItemDeleteMedicine.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.repositoryItemDeleteMedicine.Name = "repositoryItemDeleteMedicine";
+            // 
             // buttonExit
             // 
             this.buttonExit.Image = ((System.Drawing.Image)(resources.GetObject("buttonExit.Image")));
-            this.buttonExit.Location = new System.Drawing.Point(920, 110);
+            this.buttonExit.Location = new System.Drawing.Point(913, 110);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(126, 22);
+            this.buttonExit.Size = new System.Drawing.Size(133, 22);
             this.buttonExit.StyleController = this.layoutControl1;
             this.buttonExit.TabIndex = 8;
             this.buttonExit.Text = "Đóng";
@@ -217,7 +222,7 @@
             this.buttonSave.Image = ((System.Drawing.Image)(resources.GetObject("buttonSave.Image")));
             this.buttonSave.Location = new System.Drawing.Point(779, 110);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(117, 22);
+            this.buttonSave.Size = new System.Drawing.Size(130, 22);
             this.buttonSave.StyleController = this.layoutControl1;
             this.buttonSave.TabIndex = 7;
             this.buttonSave.Text = "Lưu";
@@ -259,7 +264,6 @@
             this.layoutControlItem4,
             this.layoutControlItem5,
             this.emptySpaceItem3,
-            this.emptySpaceItem8,
             this.emptySpaceItem9,
             this.emptySpaceItem10});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
@@ -373,16 +377,16 @@
             this.layoutControlItem4.Control = this.buttonSave;
             this.layoutControlItem4.Location = new System.Drawing.Point(767, 98);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(121, 26);
+            this.layoutControlItem4.Size = new System.Drawing.Size(134, 26);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.buttonExit;
-            this.layoutControlItem5.Location = new System.Drawing.Point(908, 98);
+            this.layoutControlItem5.Location = new System.Drawing.Point(901, 98);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(130, 26);
+            this.layoutControlItem5.Size = new System.Drawing.Size(137, 26);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -393,14 +397,6 @@
             this.emptySpaceItem3.Name = "emptySpaceItem3";
             this.emptySpaceItem3.Size = new System.Drawing.Size(767, 26);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem8
-            // 
-            this.emptySpaceItem8.AllowHotTrack = false;
-            this.emptySpaceItem8.Location = new System.Drawing.Point(888, 98);
-            this.emptySpaceItem8.Name = "emptySpaceItem8";
-            this.emptySpaceItem8.Size = new System.Drawing.Size(20, 26);
-            this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem9
             // 
@@ -432,8 +428,8 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDeleteMedicine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDeleteMedicine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboMedicineTypeName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
@@ -450,7 +446,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).EndInit();
             this.ResumeLayout(false);
@@ -462,7 +457,7 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn Xóa;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
@@ -489,10 +484,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem8;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem9;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem10;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemDeleteMedicine;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
     }
 }

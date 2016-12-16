@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
 
 namespace ClinicManager.Presentation
 {
-    public partial class UserForm : DevExpress.XtraEditors.XtraForm
+    public partial class ReceivePatientForm : Form
     {
-        public UserForm()
+        public ReceivePatientForm()
         {
             InitializeComponent();
         }
