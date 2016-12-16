@@ -18,7 +18,7 @@ namespace ClinicManager.Presentation
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new CreateScheduleForm());        
+            Application.Run(new MainForm());        
         }
     }
 }

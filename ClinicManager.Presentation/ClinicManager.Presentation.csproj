@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -312,6 +313,78 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\forgot-password-icon-18350.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\receive patient16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\receive patient32x32x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\examine_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\examine_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\patient16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\patient32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medicine16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medicine32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MedicineType16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MedicineType32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pharmacy16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pharmacy32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Waytouse16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Waytouse32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WaytoUse_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WaytoUse_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\permission16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\permission32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\examineturn16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\examineturn32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medinceExport16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medinceExport32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\revenue16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\revenue32x32..png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

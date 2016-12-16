@@ -118,13 +118,85 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="MedicineType16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MedicineType16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="examine_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\examine_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="medicine16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medicine16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="profile-icon-png-909" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\profile-icon-png-909.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Waytouse32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Waytouse32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Waytouse16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Waytouse16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="patient16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\patient16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MedicineType32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MedicineType32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="medicine32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medicine32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WaytoUse_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WaytoUse_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="permission32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\permission32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="forgot-password-icon-18350" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\forgot-password-icon-18350.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="receive patient16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\receive patient16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pharmacy16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pharmacy16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="permission16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\permission16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WaytoUse_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WaytoUse_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="patient32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\patient32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pharmacy32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pharmacy32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="receive patient32x32x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\receive patient32x32x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="examine_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\examine_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="forgot-password-icon-18350" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\forgot-password-icon-18350.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="examineturn16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\examineturn16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="examineturn32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\examineturn32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="medinceExport16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medinceExport16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="medinceExport32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medinceExport32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="revenue16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\revenue16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="revenue32x32." type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\revenue32x32..png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
