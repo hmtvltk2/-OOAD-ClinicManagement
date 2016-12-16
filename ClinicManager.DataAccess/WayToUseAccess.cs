@@ -4,18 +4,18 @@ using System.Linq;
 
 namespace ClinicManager.DataAccess
 {
-    public class MedicineTypeAccess: BaseDataAcess
+    public class WayToUseAccess : BaseDataAcess
     {
         public override int Insert(object obj)
         {
             int result = base.Insert(obj);
-            if(result > 0)
+            if (result > 0)
             {
                 using (var db = new ClinicDB())
                 {
-                    var query = from d in db.MedicineType orderby d.MedicineTypeID descending select d;
+                    var query = from d in db.WayToUse orderby d.WayToUseID descending select d;
                     var last = query.First();
-                    result = last.MedicineTypeID;
+                    result = last.WayToUseID;
                 }
             }
 
@@ -24,12 +24,12 @@ namespace ClinicManager.DataAccess
 
         public bool Delete(int id)
         {
-            MedicineType model;
+            WayToUse model;
             using (var db = new ClinicDB())
             {
-                model = db.MedicineType.Find(id);
+                model = db.WayToUse.Find(id);
 
-                if(model == null)
+                if (model == null)
                 {
                     return false;
                 }
@@ -42,7 +42,7 @@ namespace ClinicManager.DataAccess
         {
             using (var db = new ClinicDB())
             {
-                return db.MedicineType.ToDataTable();
+                return db.WayToUse.ToDataTable();
             }
         }
     }

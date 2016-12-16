@@ -135,12 +135,6 @@
     <Compile Include="PaymentForm.Designer.cs">
       <DependentUpon>PaymentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PermissionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PermissionForm.designer.cs">
-      <DependentUpon>PermissionForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="PharmacyTypeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,11 +173,11 @@
     <Compile Include="UserForm.Designer.cs">
       <DependentUpon>UserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="WayToUserForm.cs">
+    <Compile Include="WayToUseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WayToUserForm.designer.cs">
-      <DependentUpon>WayToUserForm.cs</DependentUpon>
+    <Compile Include="WayToUseForm.designer.cs">
+      <DependentUpon>WayToUseForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="ChangePasswordForm.resx">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
@@ -221,9 +215,6 @@
     <EmbeddedResource Include="PaymentForm.resx">
       <DependentUpon>PaymentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PermissionForm.resx">
-      <DependentUpon>PermissionForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PharmacyTypeForm.resx">
       <DependentUpon>PharmacyTypeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,8 +244,8 @@
     <EmbeddedResource Include="UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WayToUserForm.resx">
-      <DependentUpon>WayToUserForm.cs</DependentUpon>
+    <EmbeddedResource Include="WayToUseForm.resx">
+      <DependentUpon>WayToUseForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClinicManager.Presentation.csproj.bak" />
     <None Include="packages.config" />
