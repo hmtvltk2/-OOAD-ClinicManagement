@@ -2,16 +2,16 @@
 
 namespace ClinicManager.DataBusiness
 {
-    public class MedicineTypeBusiness
+    public class WayToUseBusiness
     {
         #region Contructor
-        private MedicineTypeAccess dataAccess;
+        private WayToUseAccess dataAccess;
 
-        public MedicineTypeBusiness()
+        public WayToUseBusiness()
         {
-            dataAccess = new MedicineTypeAccess();
+            dataAccess = new WayToUseAccess();
         }
-        
+
         #endregion
 
         public int Insert(object data)
