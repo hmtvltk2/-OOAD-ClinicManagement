@@ -30,12 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExamineForm));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.textNote = new DevExpress.XtraEditors.TextEdit();
+            this.memoDiagnostic = new DevExpress.XtraEditors.MemoEdit();
+            this.memoExamineReason = new DevExpress.XtraEditors.MemoEdit();
             this.buttonCreate = new DevExpress.XtraEditors.SimpleButton();
             this.buttonFinishExamine = new DevExpress.XtraEditors.SimpleButton();
             this.buttonCreatePrescription = new DevExpress.XtraEditors.SimpleButton();
             this.buttonUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.gridServie = new DevExpress.XtraGrid.GridControl();
-            this.gridServiceList = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridViewService = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ServiceID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ServiceName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dateReExamineDay = new DevExpress.XtraEditors.DateEdit();
@@ -54,11 +57,11 @@
             this.DiagnosticExamined = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DoctorExamined = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridQueue = new DevExpress.XtraGrid.GridControl();
-            this.QueueList = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridViewQueue = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.FullNameQueue = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GenderQueue = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DateOfBirthQueue = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.DoctorQueue = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -77,25 +80,25 @@
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.memoExamineReason = new DevExpress.XtraEditors.MemoEdit();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.memoDiagnostic = new DevExpress.XtraEditors.MemoEdit();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.memoNote = new DevExpress.XtraEditors.MemoEdit();
-            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textNote.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoDiagnostic.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoExamineReason.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridServie)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridServiceList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewService)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateReExamineDay.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateReExamineDay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateExamineDay.Properties.CalendarTimeProperties)).BeginInit();
@@ -107,7 +110,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridExminedList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridExamined)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridQueue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.QueueList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewQueue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -126,26 +129,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoExamineReason.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoDiagnostic.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoNote.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.memoNote);
+            this.layoutControl1.Controls.Add(this.textNote);
             this.layoutControl1.Controls.Add(this.memoDiagnostic);
             this.layoutControl1.Controls.Add(this.memoExamineReason);
             this.layoutControl1.Controls.Add(this.buttonCreate);
@@ -170,12 +170,37 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // textNote
+            // 
+            this.textNote.Location = new System.Drawing.Point(737, 243);
+            this.textNote.Name = "textNote";
+            this.textNote.Size = new System.Drawing.Size(297, 20);
+            this.textNote.StyleController = this.layoutControl1;
+            this.textNote.TabIndex = 20;
+            // 
+            // memoDiagnostic
+            // 
+            this.memoDiagnostic.Location = new System.Drawing.Point(471, 162);
+            this.memoDiagnostic.Name = "memoDiagnostic";
+            this.memoDiagnostic.Size = new System.Drawing.Size(187, 67);
+            this.memoDiagnostic.StyleController = this.layoutControl1;
+            this.memoDiagnostic.TabIndex = 19;
+            // 
+            // memoExamineReason
+            // 
+            this.memoExamineReason.Location = new System.Drawing.Point(471, 76);
+            this.memoExamineReason.Name = "memoExamineReason";
+            this.memoExamineReason.Properties.ReadOnly = true;
+            this.memoExamineReason.Size = new System.Drawing.Size(187, 72);
+            this.memoExamineReason.StyleController = this.layoutControl1;
+            this.memoExamineReason.TabIndex = 18;
+            // 
             // buttonCreate
             // 
             this.buttonCreate.Image = ((System.Drawing.Image)(resources.GetObject("buttonCreate.Image")));
-            this.buttonCreate.Location = new System.Drawing.Point(502, 313);
+            this.buttonCreate.Location = new System.Drawing.Point(580, 313);
             this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(155, 22);
+            this.buttonCreate.Size = new System.Drawing.Size(108, 22);
             this.buttonCreate.StyleController = this.layoutControl1;
             this.buttonCreate.TabIndex = 17;
             this.buttonCreate.Text = "Tạo bệnh án";
@@ -193,9 +218,9 @@
             // buttonCreatePrescription
             // 
             this.buttonCreatePrescription.Image = ((System.Drawing.Image)(resources.GetObject("buttonCreatePrescription.Image")));
-            this.buttonCreatePrescription.Location = new System.Drawing.Point(793, 313);
+            this.buttonCreatePrescription.Location = new System.Drawing.Point(807, 313);
             this.buttonCreatePrescription.Name = "buttonCreatePrescription";
-            this.buttonCreatePrescription.Size = new System.Drawing.Size(122, 22);
+            this.buttonCreatePrescription.Size = new System.Drawing.Size(108, 22);
             this.buttonCreatePrescription.StyleController = this.layoutControl1;
             this.buttonCreatePrescription.TabIndex = 15;
             this.buttonCreatePrescription.Text = "Kê toa";
@@ -203,9 +228,9 @@
             // buttonUpdate
             // 
             this.buttonUpdate.Image = ((System.Drawing.Image)(resources.GetObject("buttonUpdate.Image")));
-            this.buttonUpdate.Location = new System.Drawing.Point(661, 313);
+            this.buttonUpdate.Location = new System.Drawing.Point(692, 313);
             this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(128, 22);
+            this.buttonUpdate.Size = new System.Drawing.Size(111, 22);
             this.buttonUpdate.StyleController = this.layoutControl1;
             this.buttonUpdate.TabIndex = 14;
             this.buttonUpdate.Text = "Cập nhật";
@@ -213,20 +238,23 @@
             // gridServie
             // 
             this.gridServie.Location = new System.Drawing.Point(674, 106);
-            this.gridServie.MainView = this.gridServiceList;
+            this.gridServie.MainView = this.gridViewService;
             this.gridServie.Name = "gridServie";
             this.gridServie.Size = new System.Drawing.Size(348, 111);
             this.gridServie.TabIndex = 7;
             this.gridServie.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridServiceList});
+            this.gridViewService});
             // 
-            // gridServiceList
+            // gridViewService
             // 
-            this.gridServiceList.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridViewService.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.ServiceID,
             this.ServiceName});
-            this.gridServiceList.GridControl = this.gridServie;
-            this.gridServiceList.Name = "gridServiceList";
+            this.gridViewService.GridControl = this.gridServie;
+            this.gridViewService.Name = "gridViewService";
+            this.gridViewService.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
+            this.gridViewService.OptionsView.ShowGroupPanel = false;
+            this.gridViewService.OptionsView.ShowIndicator = false;
             // 
             // ServiceID
             // 
@@ -235,6 +263,7 @@
             this.ServiceID.Name = "ServiceID";
             this.ServiceID.Visible = true;
             this.ServiceID.VisibleIndex = 0;
+            this.ServiceID.Width = 124;
             // 
             // ServiceName
             // 
@@ -243,6 +272,7 @@
             this.ServiceName.Name = "ServiceName";
             this.ServiceName.Visible = true;
             this.ServiceName.VisibleIndex = 1;
+            this.ServiceName.Width = 222;
             // 
             // dateReExamineDay
             // 
@@ -337,8 +367,9 @@
             this.DiagnosticExamined,
             this.DoctorExamined});
             this.gridExamined.GridControl = this.gridExminedList;
-            this.gridExamined.IndicatorWidth = 30;
+            this.gridExamined.IndicatorWidth = 50;
             this.gridExamined.Name = "gridExamined";
+            this.gridExamined.OptionsBehavior.ReadOnly = true;
             // 
             // FullNameExamined
             // 
@@ -397,22 +428,34 @@
             // gridQueue
             // 
             this.gridQueue.Location = new System.Drawing.Point(24, 42);
-            this.gridQueue.MainView = this.QueueList;
+            this.gridQueue.MainView = this.gridViewQueue;
             this.gridQueue.Name = "gridQueue";
             this.gridQueue.Size = new System.Drawing.Size(344, 229);
             this.gridQueue.TabIndex = 0;
             this.gridQueue.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.QueueList});
+            this.gridViewQueue});
             // 
-            // QueueList
+            // gridViewQueue
             // 
-            this.QueueList.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridViewQueue.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
             this.FullNameQueue,
             this.GenderQueue,
-            this.DateOfBirthQueue,
-            this.DoctorQueue});
-            this.QueueList.GridControl = this.gridQueue;
-            this.QueueList.Name = "QueueList";
+            this.DateOfBirthQueue});
+            this.gridViewQueue.GridControl = this.gridQueue;
+            this.gridViewQueue.Name = "gridViewQueue";
+            this.gridViewQueue.OptionsBehavior.ReadOnly = true;
+            this.gridViewQueue.OptionsView.ShowGroupPanel = false;
+            this.gridViewQueue.OptionsView.ShowIndicator = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Mã bệnh nhân";
+            this.gridColumn1.FieldName = "PatientID";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 80;
             // 
             // FullNameQueue
             // 
@@ -420,8 +463,8 @@
             this.FullNameQueue.FieldName = "FullName";
             this.FullNameQueue.Name = "FullNameQueue";
             this.FullNameQueue.Visible = true;
-            this.FullNameQueue.VisibleIndex = 0;
-            this.FullNameQueue.Width = 115;
+            this.FullNameQueue.VisibleIndex = 1;
+            this.FullNameQueue.Width = 135;
             // 
             // GenderQueue
             // 
@@ -429,8 +472,8 @@
             this.GenderQueue.FieldName = "Gender";
             this.GenderQueue.Name = "GenderQueue";
             this.GenderQueue.Visible = true;
-            this.GenderQueue.VisibleIndex = 1;
-            this.GenderQueue.Width = 48;
+            this.GenderQueue.VisibleIndex = 2;
+            this.GenderQueue.Width = 56;
             // 
             // DateOfBirthQueue
             // 
@@ -438,17 +481,8 @@
             this.DateOfBirthQueue.FieldName = "DateOfBirth";
             this.DateOfBirthQueue.Name = "DateOfBirthQueue";
             this.DateOfBirthQueue.Visible = true;
-            this.DateOfBirthQueue.VisibleIndex = 2;
-            this.DateOfBirthQueue.Width = 56;
-            // 
-            // DoctorQueue
-            // 
-            this.DoctorQueue.Caption = "Bác sỹ khám";
-            this.DoctorQueue.FieldName = "FullName";
-            this.DoctorQueue.Name = "DoctorQueue";
-            this.DoctorQueue.Visible = true;
-            this.DoctorQueue.VisibleIndex = 3;
-            this.DoctorQueue.Width = 90;
+            this.DateOfBirthQueue.VisibleIndex = 3;
+            this.DateOfBirthQueue.Width = 71;
             // 
             // layoutControlGroup1
             // 
@@ -641,50 +675,6 @@
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem13.TextVisible = false;
             // 
-            // layoutControlItem14
-            // 
-            this.layoutControlItem14.Control = this.buttonUpdate;
-            this.layoutControlItem14.Location = new System.Drawing.Point(649, 301);
-            this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(132, 26);
-            this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem14.TextVisible = false;
-            // 
-            // layoutControlItem15
-            // 
-            this.layoutControlItem15.Control = this.buttonCreatePrescription;
-            this.layoutControlItem15.Location = new System.Drawing.Point(781, 301);
-            this.layoutControlItem15.Name = "layoutControlItem15";
-            this.layoutControlItem15.Size = new System.Drawing.Size(126, 26);
-            this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem15.TextVisible = false;
-            // 
-            // layoutControlItem16
-            // 
-            this.layoutControlItem16.Control = this.buttonFinishExamine;
-            this.layoutControlItem16.Location = new System.Drawing.Point(907, 301);
-            this.layoutControlItem16.Name = "layoutControlItem16";
-            this.layoutControlItem16.Size = new System.Drawing.Size(131, 26);
-            this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem16.TextVisible = false;
-            // 
-            // layoutControlItem17
-            // 
-            this.layoutControlItem17.Control = this.buttonCreate;
-            this.layoutControlItem17.Location = new System.Drawing.Point(490, 301);
-            this.layoutControlItem17.Name = "layoutControlItem17";
-            this.layoutControlItem17.Size = new System.Drawing.Size(159, 26);
-            this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem17.TextVisible = false;
-            // 
-            // emptySpaceItem2
-            // 
-            this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(372, 301);
-            this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(118, 26);
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
             // emptySpaceItem5
             // 
             this.emptySpaceItem5.AllowHotTrack = false;
@@ -717,15 +707,6 @@
             this.emptySpaceItem8.Size = new System.Drawing.Size(642, 10);
             this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // memoExamineReason
-            // 
-            this.memoExamineReason.Location = new System.Drawing.Point(471, 76);
-            this.memoExamineReason.Name = "memoExamineReason";
-            this.memoExamineReason.Properties.ReadOnly = true;
-            this.memoExamineReason.Size = new System.Drawing.Size(187, 72);
-            this.memoExamineReason.StyleController = this.layoutControl1;
-            this.memoExamineReason.TabIndex = 18;
-            // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.memoExamineReason;
@@ -734,14 +715,6 @@
             this.layoutControlItem7.Size = new System.Drawing.Size(266, 76);
             this.layoutControlItem7.Text = "Lý do khám";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(72, 13);
-            // 
-            // memoDiagnostic
-            // 
-            this.memoDiagnostic.Location = new System.Drawing.Point(471, 162);
-            this.memoDiagnostic.Name = "memoDiagnostic";
-            this.memoDiagnostic.Size = new System.Drawing.Size(187, 67);
-            this.memoDiagnostic.StyleController = this.layoutControl1;
-            this.memoDiagnostic.TabIndex = 19;
             // 
             // layoutControlItem8
             // 
@@ -752,22 +725,58 @@
             this.layoutControlItem8.Text = "Chuẩn đoán";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(72, 13);
             // 
-            // memoNote
-            // 
-            this.memoNote.Location = new System.Drawing.Point(737, 243);
-            this.memoNote.Name = "memoNote";
-            this.memoNote.Size = new System.Drawing.Size(297, 20);
-            this.memoNote.StyleController = this.layoutControl1;
-            this.memoNote.TabIndex = 20;
-            // 
             // layoutControlItem11
             // 
-            this.layoutControlItem11.Control = this.memoNote;
+            this.layoutControlItem11.Control = this.textNote;
             this.layoutControlItem11.Location = new System.Drawing.Point(266, 201);
             this.layoutControlItem11.Name = "layoutControlItem11";
             this.layoutControlItem11.Size = new System.Drawing.Size(376, 24);
             this.layoutControlItem11.Text = "Ghi chú";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(72, 13);
+            // 
+            // layoutControlItem14
+            // 
+            this.layoutControlItem14.Control = this.buttonUpdate;
+            this.layoutControlItem14.Location = new System.Drawing.Point(680, 301);
+            this.layoutControlItem14.Name = "layoutControlItem14";
+            this.layoutControlItem14.Size = new System.Drawing.Size(115, 26);
+            this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem14.TextVisible = false;
+            // 
+            // layoutControlItem15
+            // 
+            this.layoutControlItem15.Control = this.buttonCreatePrescription;
+            this.layoutControlItem15.Location = new System.Drawing.Point(795, 301);
+            this.layoutControlItem15.Name = "layoutControlItem15";
+            this.layoutControlItem15.Size = new System.Drawing.Size(112, 26);
+            this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem15.TextVisible = false;
+            // 
+            // layoutControlItem16
+            // 
+            this.layoutControlItem16.Control = this.buttonFinishExamine;
+            this.layoutControlItem16.Location = new System.Drawing.Point(907, 301);
+            this.layoutControlItem16.Name = "layoutControlItem16";
+            this.layoutControlItem16.Size = new System.Drawing.Size(131, 26);
+            this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem16.TextVisible = false;
+            // 
+            // layoutControlItem17
+            // 
+            this.layoutControlItem17.Control = this.buttonCreate;
+            this.layoutControlItem17.Location = new System.Drawing.Point(568, 301);
+            this.layoutControlItem17.Name = "layoutControlItem17";
+            this.layoutControlItem17.Size = new System.Drawing.Size(112, 26);
+            this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem17.TextVisible = false;
+            // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.Location = new System.Drawing.Point(372, 301);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(196, 26);
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // ExamineForm
             // 
@@ -777,12 +786,16 @@
             this.Controls.Add(this.layoutControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ExamineForm";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Khám bệnh";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.textNote.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoDiagnostic.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoExamineReason.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridServie)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridServiceList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewService)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateReExamineDay.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateReExamineDay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateExamineDay.Properties.CalendarTimeProperties)).EndInit();
@@ -794,7 +807,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridExminedList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridExamined)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridQueue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.QueueList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewQueue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -813,21 +826,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoExamineReason.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoDiagnostic.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoNote.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -840,7 +850,7 @@
         private DevExpress.XtraGrid.GridControl gridExminedList;
         private DevExpress.XtraGrid.Views.Grid.GridView gridExamined;
         private DevExpress.XtraGrid.GridControl gridQueue;
-        private DevExpress.XtraGrid.Views.Grid.GridView QueueList;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewQueue;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
@@ -853,9 +863,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn FullNameQueue;
         private DevExpress.XtraGrid.Columns.GridColumn GenderQueue;
         private DevExpress.XtraGrid.Columns.GridColumn DateOfBirthQueue;
-        private DevExpress.XtraGrid.Columns.GridColumn DoctorQueue;
         private DevExpress.XtraGrid.GridControl gridServie;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridServiceList;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewService;
         private DevExpress.XtraEditors.DateEdit dateReExamineDay;
         private DevExpress.XtraEditors.DateEdit dateExamineDay;
         private DevExpress.XtraEditors.ComboBoxEdit comboDoctor;
@@ -891,11 +900,12 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem7;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem8;
-        private DevExpress.XtraEditors.MemoEdit memoNote;
         private DevExpress.XtraEditors.MemoEdit memoDiagnostic;
         private DevExpress.XtraEditors.MemoEdit memoExamineReason;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private DevExpress.XtraEditors.TextEdit textNote;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
     }
 }

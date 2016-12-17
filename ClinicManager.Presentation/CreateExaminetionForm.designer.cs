@@ -37,14 +37,10 @@
             this.dateExamineDay = new DevExpress.XtraEditors.DateEdit();
             this.comboDoctor = new DevExpress.XtraEditors.ComboBoxEdit();
             this.textJob = new DevExpress.XtraEditors.TextEdit();
-            this.dateDateOfBirth = new DevExpress.XtraEditors.DateEdit();
-            this.comboGender = new DevExpress.XtraEditors.ComboBoxEdit();
             this.textFullName = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -61,6 +57,11 @@
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem9 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.textDateOfBirth = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.textGender = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.memoExamineReason.Properties)).BeginInit();
@@ -69,15 +70,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateExamineDay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboDoctor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textJob.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateDateOfBirth.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateDateOfBirth.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboGender.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textFullName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
@@ -94,10 +90,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textDateOfBirth.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textGender.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.textGender);
+            this.layoutControl1.Controls.Add(this.textDateOfBirth);
             this.layoutControl1.Controls.Add(this.memoExamineReason);
             this.layoutControl1.Controls.Add(this.memoAddress);
             this.layoutControl1.Controls.Add(this.simpleExit);
@@ -105,8 +108,6 @@
             this.layoutControl1.Controls.Add(this.dateExamineDay);
             this.layoutControl1.Controls.Add(this.comboDoctor);
             this.layoutControl1.Controls.Add(this.textJob);
-            this.layoutControl1.Controls.Add(this.dateDateOfBirth);
-            this.layoutControl1.Controls.Add(this.comboGender);
             this.layoutControl1.Controls.Add(this.textFullName);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
@@ -126,18 +127,19 @@
             // 
             // memoAddress
             // 
-            this.memoAddress.Location = new System.Drawing.Point(87, 186);
+            this.memoAddress.Location = new System.Drawing.Point(87, 180);
             this.memoAddress.Name = "memoAddress";
-            this.memoAddress.Size = new System.Drawing.Size(232, 70);
+            this.memoAddress.Properties.ReadOnly = true;
+            this.memoAddress.Size = new System.Drawing.Size(232, 50);
             this.memoAddress.StyleController = this.layoutControl1;
             this.memoAddress.TabIndex = 14;
             // 
             // simpleExit
             // 
             this.simpleExit.Image = ((System.Drawing.Image)(resources.GetObject("simpleExit.Image")));
-            this.simpleExit.Location = new System.Drawing.Point(607, 246);
+            this.simpleExit.Location = new System.Drawing.Point(622, 246);
             this.simpleExit.Name = "simpleExit";
-            this.simpleExit.Size = new System.Drawing.Size(125, 22);
+            this.simpleExit.Size = new System.Drawing.Size(110, 22);
             this.simpleExit.StyleController = this.layoutControl1;
             this.simpleExit.TabIndex = 13;
             this.simpleExit.Text = "Hủy";
@@ -145,9 +147,9 @@
             // simpleCreate
             // 
             this.simpleCreate.Image = ((System.Drawing.Image)(resources.GetObject("simpleCreate.Image")));
-            this.simpleCreate.Location = new System.Drawing.Point(482, 246);
+            this.simpleCreate.Location = new System.Drawing.Point(506, 246);
             this.simpleCreate.Name = "simpleCreate";
-            this.simpleCreate.Size = new System.Drawing.Size(121, 22);
+            this.simpleCreate.Size = new System.Drawing.Size(112, 22);
             this.simpleCreate.StyleController = this.layoutControl1;
             this.simpleCreate.TabIndex = 12;
             this.simpleCreate.Text = "Tạo";
@@ -155,7 +157,7 @@
             // dateExamineDay
             // 
             this.dateExamineDay.EditValue = null;
-            this.dateExamineDay.Location = new System.Drawing.Point(410, 146);
+            this.dateExamineDay.Location = new System.Drawing.Point(410, 149);
             this.dateExamineDay.Name = "dateExamineDay";
             this.dateExamineDay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -167,7 +169,7 @@
             // 
             // comboDoctor
             // 
-            this.comboDoctor.Location = new System.Drawing.Point(410, 112);
+            this.comboDoctor.Location = new System.Drawing.Point(410, 113);
             this.comboDoctor.Name = "comboDoctor";
             this.comboDoctor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -177,40 +179,18 @@
             // 
             // textJob
             // 
-            this.textJob.Location = new System.Drawing.Point(87, 152);
+            this.textJob.Location = new System.Drawing.Point(87, 146);
             this.textJob.Name = "textJob";
+            this.textJob.Properties.ReadOnly = true;
             this.textJob.Size = new System.Drawing.Size(232, 20);
             this.textJob.StyleController = this.layoutControl1;
             this.textJob.TabIndex = 7;
-            // 
-            // dateDateOfBirth
-            // 
-            this.dateDateOfBirth.EditValue = null;
-            this.dateDateOfBirth.Location = new System.Drawing.Point(87, 115);
-            this.dateDateOfBirth.Name = "dateDateOfBirth";
-            this.dateDateOfBirth.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateDateOfBirth.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateDateOfBirth.Size = new System.Drawing.Size(232, 20);
-            this.dateDateOfBirth.StyleController = this.layoutControl1;
-            this.dateDateOfBirth.TabIndex = 6;
-            // 
-            // comboGender
-            // 
-            this.comboGender.Location = new System.Drawing.Point(87, 78);
-            this.comboGender.Name = "comboGender";
-            this.comboGender.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboGender.Size = new System.Drawing.Size(232, 20);
-            this.comboGender.StyleController = this.layoutControl1;
-            this.comboGender.TabIndex = 5;
-            this.comboGender.SelectedIndexChanged += new System.EventHandler(this.comboGender_SelectedIndexChanged);
             // 
             // textFullName
             // 
             this.textFullName.Location = new System.Drawing.Point(87, 42);
             this.textFullName.Name = "textFullName";
+            this.textFullName.Properties.ReadOnly = true;
             this.textFullName.Size = new System.Drawing.Size(232, 20);
             this.textFullName.StyleController = this.layoutControl1;
             this.textFullName.TabIndex = 4;
@@ -224,7 +204,8 @@
             this.layoutControlGroup3,
             this.layoutControlItem10,
             this.layoutControlItem9,
-            this.emptySpaceItem8});
+            this.emptySpaceItem8,
+            this.emptySpaceItem9});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(744, 280);
@@ -234,17 +215,17 @@
             // 
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
-            this.layoutControlItem2,
-            this.layoutControlItem3,
             this.layoutControlItem4,
             this.emptySpaceItem5,
             this.emptySpaceItem2,
             this.emptySpaceItem6,
             this.emptySpaceItem7,
-            this.layoutControlItem11});
+            this.layoutControlItem11,
+            this.layoutControlItem3,
+            this.layoutControlItem2});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(323, 260);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(323, 234);
             this.layoutControlGroup2.Text = "Thông tin bệnh nhân";
             // 
             // layoutControlItem1
@@ -257,30 +238,10 @@
             this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Left;
             this.layoutControlItem1.TextSize = new System.Drawing.Size(60, 13);
             // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.comboGender;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 36);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(299, 24);
-            this.layoutControlItem2.Text = "Giới tính";
-            this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(60, 13);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.dateDateOfBirth;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 73);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(299, 24);
-            this.layoutControlItem3.Text = "Ngày sinh";
-            this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(60, 13);
-            // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.textJob;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 110);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 104);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(299, 24);
             this.layoutControlItem4.Text = "Nghề nghiệp";
@@ -300,21 +261,21 @@
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(0, 60);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(299, 13);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(299, 10);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem6
             // 
             this.emptySpaceItem6.AllowHotTrack = false;
-            this.emptySpaceItem6.Location = new System.Drawing.Point(0, 97);
+            this.emptySpaceItem6.Location = new System.Drawing.Point(0, 94);
             this.emptySpaceItem6.Name = "emptySpaceItem6";
-            this.emptySpaceItem6.Size = new System.Drawing.Size(299, 13);
+            this.emptySpaceItem6.Size = new System.Drawing.Size(299, 10);
             this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem7
             // 
             this.emptySpaceItem7.AllowHotTrack = false;
-            this.emptySpaceItem7.Location = new System.Drawing.Point(0, 134);
+            this.emptySpaceItem7.Location = new System.Drawing.Point(0, 128);
             this.emptySpaceItem7.Name = "emptySpaceItem7";
             this.emptySpaceItem7.Size = new System.Drawing.Size(299, 10);
             this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
@@ -324,9 +285,9 @@
             this.layoutControlItem11.AppearanceItemCaption.Options.UseTextOptions = true;
             this.layoutControlItem11.AppearanceItemCaption.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.layoutControlItem11.Control = this.memoAddress;
-            this.layoutControlItem11.Location = new System.Drawing.Point(0, 144);
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 138);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(299, 74);
+            this.layoutControlItem11.Size = new System.Drawing.Size(299, 54);
             this.layoutControlItem11.Text = "Địa chỉ";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(60, 13);
             // 
@@ -347,7 +308,7 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.comboDoctor;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 70);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 71);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(377, 24);
             this.layoutControlItem7.Text = "Bác sỹ";
@@ -357,7 +318,7 @@
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.dateExamineDay;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 104);
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 107);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(377, 24);
             this.layoutControlItem8.Text = "Ngày khám";
@@ -367,9 +328,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 94);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 95);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(377, 10);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(377, 12);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem5
@@ -384,9 +345,9 @@
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 128);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 131);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(377, 64);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(377, 61);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem4
@@ -394,24 +355,24 @@
             this.emptySpaceItem4.AllowHotTrack = false;
             this.emptySpaceItem4.Location = new System.Drawing.Point(0, 60);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(377, 10);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(377, 11);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.simpleExit;
-            this.layoutControlItem10.Location = new System.Drawing.Point(595, 234);
+            this.layoutControlItem10.Location = new System.Drawing.Point(610, 234);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(129, 26);
+            this.layoutControlItem10.Size = new System.Drawing.Size(114, 26);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.simpleCreate;
-            this.layoutControlItem9.Location = new System.Drawing.Point(470, 234);
+            this.layoutControlItem9.Location = new System.Drawing.Point(494, 234);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(125, 26);
+            this.layoutControlItem9.Size = new System.Drawing.Size(116, 26);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
@@ -420,8 +381,52 @@
             this.emptySpaceItem8.AllowHotTrack = false;
             this.emptySpaceItem8.Location = new System.Drawing.Point(323, 234);
             this.emptySpaceItem8.Name = "emptySpaceItem8";
-            this.emptySpaceItem8.Size = new System.Drawing.Size(147, 26);
+            this.emptySpaceItem8.Size = new System.Drawing.Size(171, 26);
             this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem9
+            // 
+            this.emptySpaceItem9.AllowHotTrack = false;
+            this.emptySpaceItem9.Location = new System.Drawing.Point(0, 234);
+            this.emptySpaceItem9.Name = "emptySpaceItem9";
+            this.emptySpaceItem9.Size = new System.Drawing.Size(323, 26);
+            this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // textDateOfBirth
+            // 
+            this.textDateOfBirth.Location = new System.Drawing.Point(87, 112);
+            this.textDateOfBirth.Name = "textDateOfBirth";
+            this.textDateOfBirth.Properties.ReadOnly = true;
+            this.textDateOfBirth.Size = new System.Drawing.Size(232, 20);
+            this.textDateOfBirth.StyleController = this.layoutControl1;
+            this.textDateOfBirth.TabIndex = 16;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.textDateOfBirth;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 70);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(299, 24);
+            this.layoutControlItem3.Text = "Ngày sinh";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(60, 13);
+            // 
+            // textGender
+            // 
+            this.textGender.Location = new System.Drawing.Point(87, 78);
+            this.textGender.Name = "textGender";
+            this.textGender.Properties.ReadOnly = true;
+            this.textGender.Size = new System.Drawing.Size(232, 20);
+            this.textGender.StyleController = this.layoutControl1;
+            this.textGender.TabIndex = 17;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.textGender;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 36);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(299, 24);
+            this.layoutControlItem2.Text = "Giới tính";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(60, 13);
             // 
             // CreateExaminetionForm
             // 
@@ -432,6 +437,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "CreateExaminetionForm";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tạo phiên khám";
             this.Load += new System.EventHandler(this.CreateExaminetionForm_Load);
@@ -443,15 +449,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateExamineDay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboDoctor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textJob.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateDateOfBirth.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateDateOfBirth.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboGender.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textFullName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
@@ -468,6 +469,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textDateOfBirth.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textGender.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -480,13 +486,9 @@
         private DevExpress.XtraEditors.DateEdit dateExamineDay;
         private DevExpress.XtraEditors.ComboBoxEdit comboDoctor;
         private DevExpress.XtraEditors.TextEdit textJob;
-        private DevExpress.XtraEditors.DateEdit dateDateOfBirth;
-        private DevExpress.XtraEditors.ComboBoxEdit comboGender;
         private DevExpress.XtraEditors.TextEdit textFullName;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
@@ -506,5 +508,10 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem8;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem9;
+        private DevExpress.XtraEditors.TextEdit textGender;
+        private DevExpress.XtraEditors.TextEdit textDateOfBirth;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
     }
 }

@@ -104,7 +104,7 @@
             // 
             // textConfirmPassword
             // 
-            this.textConfirmPassword.Location = new System.Drawing.Point(250, 110);
+            this.textConfirmPassword.Location = new System.Drawing.Point(250, 99);
             this.textConfirmPassword.Name = "textConfirmPassword";
             this.textConfirmPassword.Properties.PasswordChar = '*';
             this.textConfirmPassword.Size = new System.Drawing.Size(174, 20);
@@ -113,7 +113,7 @@
             // 
             // textNewPass
             // 
-            this.textNewPass.Location = new System.Drawing.Point(250, 75);
+            this.textNewPass.Location = new System.Drawing.Point(250, 65);
             this.textNewPass.Name = "textNewPass";
             this.textNewPass.Size = new System.Drawing.Size(174, 20);
             this.textNewPass.StyleController = this.layoutControl1;
@@ -122,11 +122,11 @@
             // pictureDefault
             // 
             this.pictureDefault.EditValue = global::ClinicManager.Presentation.Properties.Resources.forgot_password_icon_18350;
-            this.pictureDefault.Location = new System.Drawing.Point(12, 37);
+            this.pictureDefault.Location = new System.Drawing.Point(12, 28);
             this.pictureDefault.Name = "pictureDefault";
             this.pictureDefault.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureDefault.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureDefault.Size = new System.Drawing.Size(123, 128);
+            this.pictureDefault.Size = new System.Drawing.Size(123, 148);
             this.pictureDefault.StyleController = this.layoutControl1;
             this.pictureDefault.TabIndex = 4;
             // 
@@ -154,26 +154,26 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.pictureDefault;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 25);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 16);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(127, 132);
+            this.layoutControlItem1.Size = new System.Drawing.Size(127, 152);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(144, 122);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(144, 111);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(272, 56);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(272, 67);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 157);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 168);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(127, 47);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(127, 36);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem3
@@ -181,13 +181,13 @@
             this.emptySpaceItem3.AllowHotTrack = false;
             this.emptySpaceItem3.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(127, 25);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(127, 16);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.textNewPass;
-            this.layoutControlItem2.Location = new System.Drawing.Point(144, 63);
+            this.layoutControlItem2.Location = new System.Drawing.Point(144, 53);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(272, 24);
             this.layoutControlItem2.Text = "Nhập mật khẩu";
@@ -196,7 +196,7 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.textConfirmPassword;
-            this.layoutControlItem3.Location = new System.Drawing.Point(144, 98);
+            this.layoutControlItem3.Location = new System.Drawing.Point(144, 87);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(272, 24);
             this.layoutControlItem3.Text = "Xác nhận mật khẩu";
@@ -207,15 +207,15 @@
             this.emptySpaceItem4.AllowHotTrack = false;
             this.emptySpaceItem4.Location = new System.Drawing.Point(144, 0);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(272, 63);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(272, 53);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem5
             // 
             this.emptySpaceItem5.AllowHotTrack = false;
-            this.emptySpaceItem5.Location = new System.Drawing.Point(144, 87);
+            this.emptySpaceItem5.Location = new System.Drawing.Point(144, 77);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(272, 11);
+            this.emptySpaceItem5.Size = new System.Drawing.Size(272, 10);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem6
@@ -254,6 +254,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CreatePassword";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tạo mật khẩu";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

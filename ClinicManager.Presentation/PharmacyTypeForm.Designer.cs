@@ -150,6 +150,7 @@
             this.ClientSize = new System.Drawing.Size(515, 493);
             this.Controls.Add(this.layoutControl1);
             this.Name = "PharmacyTypeForm";
+            this.ShowIcon = false;
             this.Text = "Dạng bào chế";
             this.Load += new System.EventHandler(this.PharmacyTypeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

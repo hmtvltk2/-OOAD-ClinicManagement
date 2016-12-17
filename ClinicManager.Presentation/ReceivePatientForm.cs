@@ -16,5 +16,29 @@ namespace ClinicManager.Presentation
         {
             InitializeComponent();
         }
+
+        private void buttonCretePatien_Click(object sender, EventArgs e)
+        {
+            foreach (var form in Application.OpenForms.OfType<CreatePatientForm>())
+            {
+                var fr = form as Form;
+                fr.Activate();
+                return;
+            }
+            var f = new CreatePatientForm();
+            f.ShowDialog();
+        }
+
+        private void buttonCreateExamine_Click(object sender, EventArgs e)
+        {
+            foreach (var form in Application.OpenForms.OfType<CreateExaminetionForm>())
+            {
+                var fr = form as Form;
+                fr.Activate();
+                return;
+            }
+            var f = new CreateExaminetionForm();
+            f.ShowDialog();
+        }
     }
 }
