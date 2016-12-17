@@ -104,7 +104,7 @@
             // 
             // textPassword
             // 
-            this.textPassword.Location = new System.Drawing.Point(231, 112);
+            this.textPassword.Location = new System.Drawing.Point(231, 100);
             this.textPassword.Name = "textPassword";
             this.textPassword.Properties.PasswordChar = '*';
             this.textPassword.Size = new System.Drawing.Size(193, 20);
@@ -113,7 +113,7 @@
             // 
             // textUsername
             // 
-            this.textUsername.Location = new System.Drawing.Point(231, 78);
+            this.textUsername.Location = new System.Drawing.Point(231, 66);
             this.textUsername.Name = "textUsername";
             this.textUsername.Size = new System.Drawing.Size(193, 20);
             this.textUsername.StyleController = this.layoutControl1;
@@ -122,11 +122,11 @@
             // pictureDefault
             // 
             this.pictureDefault.EditValue = global::ClinicManager.Presentation.Properties.Resources.login;
-            this.pictureDefault.Location = new System.Drawing.Point(12, 40);
+            this.pictureDefault.Location = new System.Drawing.Point(12, 25);
             this.pictureDefault.Name = "pictureDefault";
             this.pictureDefault.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureDefault.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureDefault.Size = new System.Drawing.Size(123, 144);
+            this.pictureDefault.Size = new System.Drawing.Size(123, 159);
             this.pictureDefault.StyleController = this.layoutControl1;
             this.pictureDefault.TabIndex = 4;
             // 
@@ -154,18 +154,18 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.pictureDefault;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 28);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 13);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(127, 148);
+            this.layoutControlItem1.Size = new System.Drawing.Size(127, 163);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(144, 124);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(144, 112);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(272, 54);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(272, 66);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem2
@@ -181,13 +181,13 @@
             this.emptySpaceItem3.AllowHotTrack = false;
             this.emptySpaceItem3.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(127, 28);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(127, 13);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.textUsername;
-            this.layoutControlItem2.Location = new System.Drawing.Point(144, 66);
+            this.layoutControlItem2.Location = new System.Drawing.Point(144, 54);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(272, 24);
             this.layoutControlItem2.Text = "Tên đăng nhập";
@@ -196,7 +196,7 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.textPassword;
-            this.layoutControlItem3.Location = new System.Drawing.Point(144, 100);
+            this.layoutControlItem3.Location = new System.Drawing.Point(144, 88);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(272, 24);
             this.layoutControlItem3.Text = "Mật khẩu";
@@ -207,13 +207,13 @@
             this.emptySpaceItem4.AllowHotTrack = false;
             this.emptySpaceItem4.Location = new System.Drawing.Point(144, 0);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(272, 66);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(272, 54);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem5
             // 
             this.emptySpaceItem5.AllowHotTrack = false;
-            this.emptySpaceItem5.Location = new System.Drawing.Point(144, 90);
+            this.emptySpaceItem5.Location = new System.Drawing.Point(144, 78);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
             this.emptySpaceItem5.Size = new System.Drawing.Size(272, 10);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);

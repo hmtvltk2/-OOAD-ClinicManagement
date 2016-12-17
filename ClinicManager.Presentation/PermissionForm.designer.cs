@@ -99,7 +99,7 @@
             // 
             // checkedListBoxControl1
             // 
-            this.checkedListBoxControl1.Location = new System.Drawing.Point(24, 213);
+            this.checkedListBoxControl1.Location = new System.Drawing.Point(24, 243);
             this.checkedListBoxControl1.Name = "checkedListBoxControl1";
             this.checkedListBoxControl1.Size = new System.Drawing.Size(1010, 0);
             this.checkedListBoxControl1.StyleController = this.layoutControl1;
@@ -129,7 +129,7 @@
             this.checkedListPermission.Location = new System.Drawing.Point(24, 66);
             this.checkedListPermission.MultiColumn = true;
             this.checkedListPermission.Name = "checkedListPermission";
-            this.checkedListPermission.Size = new System.Drawing.Size(1010, 143);
+            this.checkedListPermission.Size = new System.Drawing.Size(1010, 173);
             this.checkedListPermission.StyleController = this.layoutControl1;
             this.checkedListPermission.TabIndex = 13;
             // 
@@ -153,9 +153,9 @@
             // buttonClose
             // 
             this.buttonClose.Image = ((System.Drawing.Image)(resources.GetObject("buttonClose.Image")));
-            this.buttonClose.Location = new System.Drawing.Point(924, 229);
+            this.buttonClose.Location = new System.Drawing.Point(935, 259);
             this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(122, 22);
+            this.buttonClose.Size = new System.Drawing.Size(111, 22);
             this.buttonClose.StyleController = this.layoutControl1;
             this.buttonClose.TabIndex = 10;
             this.buttonClose.Text = "Đóng";
@@ -163,9 +163,9 @@
             // buttonSave
             // 
             this.buttonSave.Image = ((System.Drawing.Image)(resources.GetObject("buttonSave.Image")));
-            this.buttonSave.Location = new System.Drawing.Point(692, 229);
+            this.buttonSave.Location = new System.Drawing.Point(707, 259);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(114, 22);
+            this.buttonSave.Size = new System.Drawing.Size(109, 22);
             this.buttonSave.StyleController = this.layoutControl1;
             this.buttonSave.TabIndex = 9;
             this.buttonSave.Text = "Lưu";
@@ -173,9 +173,9 @@
             // buttonAdd
             // 
             this.buttonAdd.Image = ((System.Drawing.Image)(resources.GetObject("buttonAdd.Image")));
-            this.buttonAdd.Location = new System.Drawing.Point(552, 229);
+            this.buttonAdd.Location = new System.Drawing.Point(594, 259);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(136, 22);
+            this.buttonAdd.Size = new System.Drawing.Size(109, 22);
             this.buttonAdd.StyleController = this.layoutControl1;
             this.buttonAdd.TabIndex = 8;
             this.buttonAdd.Text = "Thêm";
@@ -183,19 +183,19 @@
             // buttonDelete
             // 
             this.buttonDelete.Image = ((System.Drawing.Image)(resources.GetObject("buttonDelete.Image")));
-            this.buttonDelete.Location = new System.Drawing.Point(810, 229);
+            this.buttonDelete.Location = new System.Drawing.Point(820, 259);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(110, 22);
+            this.buttonDelete.Size = new System.Drawing.Size(111, 22);
             this.buttonDelete.StyleController = this.layoutControl1;
             this.buttonDelete.TabIndex = 7;
             this.buttonDelete.Text = "Xóa";
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(24, 285);
+            this.gridControl1.Location = new System.Drawing.Point(24, 315);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1010, 209);
+            this.gridControl1.Size = new System.Drawing.Size(1010, 179);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -252,9 +252,9 @@
             // 
             this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 243);
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 273);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(1038, 255);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(1038, 225);
             this.layoutControlGroup2.Text = "Danh sách nhóm người dùng";
             // 
             // layoutControlItem1
@@ -262,7 +262,7 @@
             this.layoutControlItem1.Control = this.gridControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1014, 213);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1014, 183);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -275,7 +275,7 @@
             this.layoutControlItem10});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(1038, 217);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(1038, 247);
             this.layoutControlGroup3.Text = "Danh sách quyền";
             // 
             // layoutControlItem7
@@ -292,7 +292,7 @@
             this.layoutControlItem8.Control = this.checkedListPermission;
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(1014, 147);
+            this.layoutControlItem8.Size = new System.Drawing.Size(1014, 177);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
@@ -308,7 +308,7 @@
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.checkedListBoxControl1;
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 171);
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 201);
             this.layoutControlItem10.Name = "layoutControlItem10";
             this.layoutControlItem10.Size = new System.Drawing.Size(1014, 4);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
@@ -317,45 +317,45 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.buttonAdd;
-            this.layoutControlItem4.Location = new System.Drawing.Point(540, 217);
+            this.layoutControlItem4.Location = new System.Drawing.Point(582, 247);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(140, 26);
+            this.layoutControlItem4.Size = new System.Drawing.Size(113, 26);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.buttonDelete;
-            this.layoutControlItem2.Location = new System.Drawing.Point(798, 217);
+            this.layoutControlItem2.Location = new System.Drawing.Point(808, 247);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(114, 26);
+            this.layoutControlItem2.Size = new System.Drawing.Size(115, 26);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.buttonClose;
-            this.layoutControlItem6.Location = new System.Drawing.Point(912, 217);
+            this.layoutControlItem6.Location = new System.Drawing.Point(923, 247);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(126, 26);
+            this.layoutControlItem6.Size = new System.Drawing.Size(115, 26);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.buttonSave;
-            this.layoutControlItem5.Location = new System.Drawing.Point(680, 217);
+            this.layoutControlItem5.Location = new System.Drawing.Point(695, 247);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(118, 26);
+            this.layoutControlItem5.Size = new System.Drawing.Size(113, 26);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 217);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 247);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(540, 26);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(582, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // PermissionForm
@@ -367,6 +367,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "PermissionForm";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phân quyền";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

@@ -33,18 +33,18 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemDelete = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.repositoryItemDelete = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDelete)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -94,14 +94,6 @@
             this.gridColumn3.VisibleIndex = 0;
             this.gridColumn3.Width = 40;
             // 
-            // repositoryItemDelete
-            // 
-            this.repositoryItemDelete.AutoHeight = false;
-            this.repositoryItemDelete.Image = ((System.Drawing.Image)(resources.GetObject("repositoryItemDelete.Image")));
-            this.repositoryItemDelete.ImageAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.repositoryItemDelete.Name = "repositoryItemDelete";
-            this.repositoryItemDelete.Click += new System.EventHandler(this.repositoryItemDelete_Click);
-            // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Mã loại thuốc";
@@ -142,6 +134,13 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
+            // repositoryItemDelete
+            // 
+            this.repositoryItemDelete.AutoHeight = false;
+            this.repositoryItemDelete.Image = ((System.Drawing.Image)(resources.GetObject("repositoryItemDelete.Image")));
+            this.repositoryItemDelete.ImageAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.repositoryItemDelete.Name = "repositoryItemDelete";
+            // 
             // MedicineTypeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,15 +148,16 @@
             this.ClientSize = new System.Drawing.Size(515, 493);
             this.Controls.Add(this.layoutControl1);
             this.Name = "MedicineTypeForm";
+            this.ShowIcon = false;
             this.Text = "Loại  thuốc";
             this.Load += new System.EventHandler(this.MedicineTypeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDelete)).EndInit();
             this.ResumeLayout(false);
 
         }

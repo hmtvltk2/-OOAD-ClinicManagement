@@ -16,5 +16,10 @@ namespace ClinicManager.Presentation
         {
             InitializeComponent();
         }
+
+        private void gridSearchList_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
