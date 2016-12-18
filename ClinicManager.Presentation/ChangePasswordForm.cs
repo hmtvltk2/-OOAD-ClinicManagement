@@ -8,5 +8,10 @@ namespace ClinicManager.Presentation
         {
             InitializeComponent();
         }
+
+        private void ChangePasswordForm_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

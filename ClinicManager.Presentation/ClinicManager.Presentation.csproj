@@ -33,14 +33,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v15.2.Core, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v15.2.Core, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v15.2.Core, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v15.2.Core, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v15.2.UI, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v15.2.Core, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v15.2.Extensions, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -105,6 +116,12 @@
     <Compile Include="LoginForm.designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MedicalRecordForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +152,12 @@
     <Compile Include="PaymentForm.Designer.cs">
       <DependentUpon>PaymentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PermissionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PermissionForm.Designer.cs">
+      <DependentUpon>PermissionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PharmacyTypeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,11 +166,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RecivePatientForm.cs">
+    <Compile Include="ReceivePatientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RecivePatientForm.designer.cs">
-      <DependentUpon>RecivePatientForm.cs</DependentUpon>
+    <Compile Include="ReceivePatientForm.designer.cs">
+      <DependentUpon>ReceivePatientForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ScheduleManagerForm.cs">
       <SubType>Form</SubType>
@@ -155,11 +178,11 @@
     <Compile Include="ScheduleManagerForm.designer.cs">
       <DependentUpon>ScheduleManagerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SearchPatientForm.cs">
+    <Compile Include="PatientManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SearchPatientForm.Designer.cs">
-      <DependentUpon>SearchPatientForm.cs</DependentUpon>
+    <Compile Include="PatientManagerForm.Designer.cs">
+      <DependentUpon>PatientManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UnitForm.cs">
       <SubType>Form</SubType>
@@ -167,17 +190,23 @@
     <Compile Include="UnitForm.designer.cs">
       <DependentUpon>UnitForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserForm.cs">
+    <Compile Include="UserManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserForm.Designer.cs">
-      <DependentUpon>UserForm.cs</DependentUpon>
+    <Compile Include="UserManagerForm.Designer.cs">
+      <DependentUpon>UserManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="WayToUseForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WayToUseForm.designer.cs">
       <DependentUpon>WayToUseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="ChangePasswordForm.resx">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
@@ -200,6 +229,9 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MedicalRecordForm.resx">
       <DependentUpon>MedicalRecordForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +247,9 @@
     <EmbeddedResource Include="PaymentForm.resx">
       <DependentUpon>PaymentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PermissionForm.resx">
+      <DependentUpon>PermissionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PharmacyTypeForm.resx">
       <DependentUpon>PharmacyTypeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -229,20 +264,23 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RecivePatientForm.resx">
-      <DependentUpon>RecivePatientForm.cs</DependentUpon>
+    <EmbeddedResource Include="ReceivePatientForm.resx">
+      <DependentUpon>ReceivePatientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScheduleManagerForm.resx">
       <DependentUpon>ScheduleManagerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SearchPatientForm.resx">
-      <DependentUpon>SearchPatientForm.cs</DependentUpon>
+    <EmbeddedResource Include="PatientManagerForm.resx">
+      <DependentUpon>PatientManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UnitForm.resx">
       <DependentUpon>UnitForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserManagerForm.resx">
+      <DependentUpon>UserManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WayToUseForm.resx">
       <DependentUpon>WayToUseForm.cs</DependentUpon>
@@ -283,6 +321,78 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\forgot-password-icon-18350.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\receive patient16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\receive patient32x32x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\examine_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\examine_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\patient16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\patient32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medicine16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medicine32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MedicineType16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MedicineType32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pharmacy16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pharmacy32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Waytouse16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Waytouse32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WaytoUse_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WaytoUse_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\permission16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\permission32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\examineturn16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\examineturn32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medinceExport16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medinceExport32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\revenue16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\revenue32x32..png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

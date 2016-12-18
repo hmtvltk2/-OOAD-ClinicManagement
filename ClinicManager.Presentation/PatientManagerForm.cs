@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace ClinicManager.Presentation
 {
-    public partial class AssignPermissionFrom : Form
+    public partial class PatientManagerForm : Form
     {
-        public AssignPermissionFrom()
+        public PatientManagerForm()
         {
             InitializeComponent();
         }
 
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void gridSearchList_Click(object sender, EventArgs e)
         {
 
         }

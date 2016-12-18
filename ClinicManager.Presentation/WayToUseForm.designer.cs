@@ -96,7 +96,6 @@
             // 
             // repositoryItemDelete
             // 
-            this.repositoryItemDelete.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("repositoryItemDelete.Appearance.Image")));
             this.repositoryItemDelete.Appearance.Options.UseImage = true;
             this.repositoryItemDelete.AutoHeight = false;
             this.repositoryItemDelete.Image = ((System.Drawing.Image)(resources.GetObject("repositoryItemDelete.Image")));
@@ -154,6 +153,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "WayToUseForm";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đường dùng";
             this.Load += new System.EventHandler(this.WayToUseForm_Load);
