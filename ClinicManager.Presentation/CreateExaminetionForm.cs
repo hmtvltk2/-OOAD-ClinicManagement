@@ -1,11 +1,12 @@
-﻿using System;
+﻿using ClinicManager.DataModel;
+using System;
 using System.Windows.Forms;
 
 namespace ClinicManager.Presentation
 {
     public partial class CreateExaminetionForm : Form
     {
-        public CreateExaminetionForm()
+        public CreateExaminetionForm(Patient patient)
         {
             InitializeComponent();
         }

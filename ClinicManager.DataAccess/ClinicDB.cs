@@ -1,7 +1,7 @@
 namespace ClinicManager.DataAccess
 {
-    using DataModel;
     using System.Data.Entity;
+    using DataModel;
 
     public partial class ClinicDB : DbContext
     {
@@ -161,6 +161,12 @@ namespace ClinicManager.DataAccess
 
             modelBuilder.Entity<User>()
                 .HasMany(e => e.MedicalRecord)
+                .WithRequired(e => e.User)
+                .HasForeignKey(e => e.DoctorID)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.Queue)
                 .WithRequired(e => e.User)
                 .HasForeignKey(e => e.DoctorID)
                 .WillCascadeOnDelete(false);

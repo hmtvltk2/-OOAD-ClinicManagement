@@ -1,15 +1,17 @@
-﻿using ClinicManager.DataAccess;
+﻿using System;
+using ClinicManager.DataAccess;
+using System.Data;
 
 namespace ClinicManager.DataBusiness
 {
-    public class WayToUseBusiness
+    public class QueueBusiness
     {
         #region Contructor
-        private WayToUseAccess dataAccess;
+        private QueueAccess dataAccess;
 
-        public WayToUseBusiness()
+        public QueueBusiness()
         {
-            dataAccess = new WayToUseAccess();
+            dataAccess = new QueueAccess();
         }
 
         #endregion
@@ -34,5 +36,9 @@ namespace ClinicManager.DataBusiness
             return dataAccess.GetAll();
         }
 
-   }
+        public DataTable GetByDate(DateTime today)
+        {
+            return dataAccess.GetByDate(today);
+        }
+    }
 }

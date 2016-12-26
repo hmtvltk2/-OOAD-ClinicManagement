@@ -2,7 +2,7 @@
 using System.Data;
 using System.Reflection;
 
-namespace ClinicManager.DataModel
+namespace ClinicManager.DataAccess
 {
     public static class Helper
     {

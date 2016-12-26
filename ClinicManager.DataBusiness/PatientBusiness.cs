@@ -1,15 +1,16 @@
 ﻿using ClinicManager.DataAccess;
+using System;
 
 namespace ClinicManager.DataBusiness
 {
-    public class WayToUseBusiness
+    public class PatientBusiness
     {
         #region Contructor
-        private WayToUseAccess dataAccess;
+        private PatientAccess dataAccess;
 
-        public WayToUseBusiness()
+        public PatientBusiness()
         {
-            dataAccess = new WayToUseAccess();
+            dataAccess = new PatientAccess();
         }
 
         #endregion
@@ -34,5 +35,9 @@ namespace ClinicManager.DataBusiness
             return dataAccess.GetAll();
         }
 
-   }
+        public System.Data.DataTable Search(string patientName, DateTime dateOfBirth, string gender)
+        {
+            return dataAccess.Search(patientName, dateOfBirth, gender);
+        }
+    }
 }

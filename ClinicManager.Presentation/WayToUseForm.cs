@@ -30,7 +30,7 @@ namespace ClinicManager.Presentation
                     WayToUseName = (string)e.Value
                 };
 
-                error = wayToUseBusiness.Validate(data, "WayToUseName");
+                //error = wayToUseBusiness.Validate(data, "WayToUseName");
             }
 
 

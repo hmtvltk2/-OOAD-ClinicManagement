@@ -30,7 +30,7 @@ namespace ClinicManager.Presentation
                     MedicineTypeName = (string)e.Value
                 };
 
-                error = medicineTypeBusiness.Validate(data, "MedicineTypeName");
+               // error = medicineTypeBusiness.Validate(data, "MedicineTypeName");
             }
            
 

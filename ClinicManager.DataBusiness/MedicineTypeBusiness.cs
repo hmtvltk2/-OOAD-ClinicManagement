@@ -33,10 +33,5 @@ namespace ClinicManager.DataBusiness
         {
             return dataAccess.GetAll();
         }
-
-        public string Validate(object data, string property)
-        {
-            return dataAccess.Validate(data, property);
-        }
     }
 }

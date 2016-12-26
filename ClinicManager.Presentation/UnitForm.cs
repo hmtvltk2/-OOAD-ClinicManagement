@@ -22,23 +22,7 @@ namespace ClinicManager.Presentation
 
         private void gridView1_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
         {
-            string error = "";
-            if (gridView1.FocusedColumn.FieldName == "UnitName")
-            {
-                Unit data = new Unit()
-                {
-                    UnitName = (string)e.Value
-                };
 
-                error = unitBusiness.Validate(data, "UnitName");
-            }
-
-
-            if (error != "")
-            {
-                e.Valid = false;
-                e.ErrorText = error;
-            }
         }
 
         private void gridView1_InvalidValueException(object sender, DevExpress.XtraEditors.Controls.InvalidValueExceptionEventArgs e)
@@ -118,6 +102,16 @@ namespace ClinicManager.Presentation
                 }
 
             }
+        }
+
+        private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
+        {
+
+        }
+
+        private void gridView1_InvalidRowException(object sender, DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventArgs e)
+        {
+
         }
     }
 }

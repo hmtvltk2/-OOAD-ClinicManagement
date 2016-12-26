@@ -34,9 +34,20 @@ namespace ClinicManager.DataBusiness
             return dataAccess.GetAll();
         }
 
-        public string Validate(object data, string property)
+        public string Validate(object data, string propertyName)
         {
-            return dataAccess.Validate(data, property);
+            string result = "";
+
+            if(propertyName == "UnitName")
+            {
+                if (string.IsNullOrWhiteSpace((string)data))
+                {
+                    result = "Tên đơn vị tính không được trống";
+                }
+
+            }
+
+            return result;
         }
     }
 }

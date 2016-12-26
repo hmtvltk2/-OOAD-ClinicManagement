@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 
 namespace ClinicManager.DataAccess
 {
@@ -54,15 +53,15 @@ namespace ClinicManager.DataAccess
             }
         }
 
-        public virtual string Validate(object obj, string property)
-        {
-            using (var db = new ClinicDB())
-            {
-                var validationErrors = db.Entry(obj).GetValidationResult().ValidationErrors;
-                var errors = validationErrors.Where(e => e.PropertyName == property);
+        //public virtual string Validate(object obj, string property)
+        //{
+        //    using (var db = new ClinicDB())
+        //    {
+        //        var validationErrors = db.Entry(obj).GetValidationResult().ValidationErrors;
+        //        var errors = validationErrors.Where(e => e.PropertyName == property);
 
-                return errors.Count() > 0 ? errors.First().ErrorMessage : "";
-            }
-        }
+        //        return errors.Count() > 0 ? errors.First().ErrorMessage : "";
+        //    }
+        //}
     }
 }
