@@ -159,6 +159,7 @@
             this.gridColumn7.ColumnEdit = this.repositoryItemDelete;
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.ReadOnly = true;
+            this.gridColumn7.OptionsColumn.TabStop = false;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 0;
             this.gridColumn7.Width = 43;
@@ -176,7 +177,9 @@
             this.Xóa.Caption = "Mã thuốc";
             this.Xóa.FieldName = "MedicineID";
             this.Xóa.Name = "Xóa";
+            this.Xóa.OptionsColumn.AllowFocus = false;
             this.Xóa.OptionsColumn.ReadOnly = true;
+            this.Xóa.OptionsColumn.TabStop = false;
             this.Xóa.Visible = true;
             this.Xóa.VisibleIndex = 1;
             this.Xóa.Width = 70;

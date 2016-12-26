@@ -55,7 +55,6 @@
     <Compile Include="BaseDataAcess.cs" />
     <Compile Include="ClinicDB.cs" />
     <Compile Include="MedicineAcess.cs" />
-    <Compile Include="MedicineBusiness.cs" />
     <Compile Include="MedicineTypeAccess.cs" />
     <Compile Include="PharmacyTypeAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

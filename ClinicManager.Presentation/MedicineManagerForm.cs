@@ -2,6 +2,7 @@
 using ClinicManager.DataModel;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
 using System;
@@ -90,6 +91,10 @@ namespace ClinicManager.Presentation
 
         private void repositoryItemDelete_Click(object sender, EventArgs e)
         {
+            if (gridViewMedicineList.FocusedRowHandle == GridControl.NewItemRowHandle)
+            {
+                return;
+            }
             if (XtraMessageBox.Show(this, "Bạn chắn chắn xóa dòng này?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 var row = gridViewMedicineList.GetFocusedDataRow(); // get data on one row
