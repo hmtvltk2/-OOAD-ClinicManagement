@@ -33,18 +33,18 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemDelete = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
+            this.MedicineTypeID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MedicineTypeName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.repositoryItemDelete = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDelete)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -74,16 +74,16 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn3,
-            this.gridColumn1,
-            this.gridColumn2});
+            this.MedicineTypeID,
+            this.MedicineTypeName});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.IndicatorWidth = 50;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridView1.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_CustomDrawRowIndicator);
+            this.gridView1.InvalidRowException += new DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventHandler(this.gridView1_InvalidRowException);
+            this.gridView1.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridView1_ValidateRow);
             this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView1_RowUpdated);
-            this.gridView1.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.gridView1_ValidatingEditor);
-            this.gridView1.InvalidValueException += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.gridView1_InvalidValueException);
             // 
             // gridColumn3
             // 
@@ -94,25 +94,33 @@
             this.gridColumn3.VisibleIndex = 0;
             this.gridColumn3.Width = 40;
             // 
-            // gridColumn1
+            // repositoryItemDelete
             // 
-            this.gridColumn1.Caption = "Mã loại thuốc";
-            this.gridColumn1.FieldName = "MedicineTypeID";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.AllowFocus = false;
-            this.gridColumn1.OptionsColumn.ReadOnly = true;
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 1;
-            this.gridColumn1.Width = 86;
+            this.repositoryItemDelete.AutoHeight = false;
+            this.repositoryItemDelete.Image = ((System.Drawing.Image)(resources.GetObject("repositoryItemDelete.Image")));
+            this.repositoryItemDelete.ImageAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.repositoryItemDelete.Name = "repositoryItemDelete";
+            this.repositoryItemDelete.Click += new System.EventHandler(this.repositoryItemDelete_Click);
             // 
-            // gridColumn2
+            // MedicineTypeID
             // 
-            this.gridColumn2.Caption = "Tên loại thuốc";
-            this.gridColumn2.FieldName = "MedicineTypeName";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 2;
-            this.gridColumn2.Width = 346;
+            this.MedicineTypeID.Caption = "Mã loại thuốc";
+            this.MedicineTypeID.FieldName = "MedicineTypeID";
+            this.MedicineTypeID.Name = "MedicineTypeID";
+            this.MedicineTypeID.OptionsColumn.AllowFocus = false;
+            this.MedicineTypeID.OptionsColumn.ReadOnly = true;
+            this.MedicineTypeID.Visible = true;
+            this.MedicineTypeID.VisibleIndex = 1;
+            this.MedicineTypeID.Width = 86;
+            // 
+            // MedicineTypeName
+            // 
+            this.MedicineTypeName.Caption = "Tên loại thuốc";
+            this.MedicineTypeName.FieldName = "MedicineTypeName";
+            this.MedicineTypeName.Name = "MedicineTypeName";
+            this.MedicineTypeName.Visible = true;
+            this.MedicineTypeName.VisibleIndex = 2;
+            this.MedicineTypeName.Width = 346;
             // 
             // layoutControlGroup1
             // 
@@ -134,13 +142,6 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // repositoryItemDelete
-            // 
-            this.repositoryItemDelete.AutoHeight = false;
-            this.repositoryItemDelete.Image = ((System.Drawing.Image)(resources.GetObject("repositoryItemDelete.Image")));
-            this.repositoryItemDelete.ImageAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.repositoryItemDelete.Name = "repositoryItemDelete";
-            // 
             // MedicineTypeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,15 +150,16 @@
             this.Controls.Add(this.layoutControl1);
             this.Name = "MedicineTypeForm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Loại  thuốc";
             this.Load += new System.EventHandler(this.MedicineTypeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDelete)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -169,8 +171,8 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn MedicineTypeID;
+        private DevExpress.XtraGrid.Columns.GridColumn MedicineTypeName;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemDelete;
     }

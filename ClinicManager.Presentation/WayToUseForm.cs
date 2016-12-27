@@ -1,6 +1,8 @@
 ﻿using ClinicManager.DataBusiness;
 using ClinicManager.DataModel;
 using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraGrid;
 using System;
 using System.Windows.Forms;
 
@@ -20,32 +22,6 @@ namespace ClinicManager.Presentation
             gridControl1.DataSource = wayToUseBusiness.GetAll();
         }
 
-        private void gridView1_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
-        {
-            string error = "";
-            if (gridView1.FocusedColumn.FieldName == "WayToUseName")
-            {
-                WayToUse data = new WayToUse()
-                {
-                    WayToUseName = (string)e.Value
-                };
-
-                //error = wayToUseBusiness.Validate(data, "WayToUseName");
-            }
-
-
-            if (error != "")
-            {
-                e.Valid = false;
-                e.ErrorText = error;
-            }
-        }
-
-        private void gridView1_InvalidValueException(object sender, DevExpress.XtraEditors.Controls.InvalidValueExceptionEventArgs e)
-        {
-            e.ExceptionMode = DevExpress.XtraEditors.Controls.ExceptionMode.DisplayError;
-        }
-
         private void gridView1_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
         {
             if (e.Info.IsRowIndicator && e.RowHandle >= 0)
@@ -53,7 +29,32 @@ namespace ClinicManager.Presentation
                 e.Info.DisplayText = (e.RowHandle + 1).ToString();
             }
         }
+        private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
+        {
+            var row = gridView1.GetFocusedDataRow();
+            if (row["WayToUseName"].ToString() == "")
+            {
+                e.Valid = false;
+                e.ErrorText = "Chưa nhập đường dùng";
+                gridView1.SetColumnError(WayToUseName, e.ErrorText);
+            }
+            if (row["WayToUseName"].ToString() != "")
+            {
+                e.ErrorText = "";
+                gridView1.SetColumnError(WayToUseName, e.ErrorText);
+            }
+                if (row.IsNull("WayToUseName"))
+            {
+                e.Valid = false;
+                e.ErrorText = "Chưa nhập đường dùng";
+                gridView1.SetColumnError(WayToUseName, e.ErrorText);
+            }
+        }
 
+        private void gridView1_InvalidRowException(object sender, DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventArgs e)
+        {
+            e.ExceptionMode = ExceptionMode.NoAction;
+        }
         private void gridView1_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
         {
             //Insert, update row
@@ -103,6 +104,10 @@ namespace ClinicManager.Presentation
 
         private void repositoryItemDelete_Click(object sender, EventArgs e)
         {
+            if (gridView1.FocusedRowHandle == GridControl.NewItemRowHandle)
+            {
+                return;
+            }
             if (XtraMessageBox.Show(this, "Bạn chắc chắn xóa dòng này?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 var row = gridView1.GetFocusedDataRow();
@@ -118,6 +123,8 @@ namespace ClinicManager.Presentation
                 }
 
             }
-        }  
-    }
+        }
+
+
 }
+    }

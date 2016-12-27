@@ -123,6 +123,8 @@
             this.gridColumn5.Caption = "Mã bệnh nhân";
             this.gridColumn5.FieldName = "PatientID";
             this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowFocus = false;
+            this.gridColumn5.OptionsColumn.TabStop = false;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 0;
             this.gridColumn5.Width = 82;

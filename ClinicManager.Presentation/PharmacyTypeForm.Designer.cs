@@ -35,7 +35,7 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDelete = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.PharmacyTypeName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -75,15 +75,15 @@
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn2,
-            this.gridColumn3});
+            this.PharmacyTypeName});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.IndicatorWidth = 50;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridView1.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_CustomDrawRowIndicator);
+            this.gridView1.InvalidRowException += new DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventHandler(this.gridView1_InvalidRowException);
+            this.gridView1.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridView1_ValidateRow);
             this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView1_RowUpdated);
-            this.gridView1.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.gridView1_ValidatingEditor);
-            this.gridView1.InvalidValueException += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.gridView1_InvalidValueException);
             // 
             // gridColumn1
             // 
@@ -104,7 +104,7 @@
             // 
             // gridColumn2
             // 
-            this.gridColumn2.Caption = "Mã loại điều chế";
+            this.gridColumn2.Caption = "Mã dạng bào chế";
             this.gridColumn2.FieldName = "PharmacyTypeID";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowFocus = false;
@@ -114,14 +114,14 @@
             this.gridColumn2.VisibleIndex = 1;
             this.gridColumn2.Width = 101;
             // 
-            // gridColumn3
+            // PharmacyTypeName
             // 
-            this.gridColumn3.Caption = "Tên loại điều chế";
-            this.gridColumn3.FieldName = "PharmacyTypeName";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 301;
+            this.PharmacyTypeName.Caption = "Tên dạng bào chế";
+            this.PharmacyTypeName.FieldName = "PharmacyTypeName";
+            this.PharmacyTypeName.Name = "PharmacyTypeName";
+            this.PharmacyTypeName.Visible = true;
+            this.PharmacyTypeName.VisibleIndex = 2;
+            this.PharmacyTypeName.Width = 301;
             // 
             // layoutControlGroup1
             // 
@@ -151,6 +151,7 @@
             this.Controls.Add(this.layoutControl1);
             this.Name = "PharmacyTypeForm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dạng bào chế";
             this.Load += new System.EventHandler(this.PharmacyTypeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -173,7 +174,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemDelete;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn PharmacyTypeName;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
     }
 }

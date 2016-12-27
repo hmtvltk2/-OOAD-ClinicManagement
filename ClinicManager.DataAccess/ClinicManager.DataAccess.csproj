@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="BaseDataAccess.cs" />
     <Compile Include="ClinicDB.cs" />
+    <Compile Include="MedicineAcess.cs" />
     <Compile Include="MedicineTypeAccess.cs" />
     <Compile Include="PatientAccess.cs" />
     <Compile Include="PharmacyTypeAccess.cs" />

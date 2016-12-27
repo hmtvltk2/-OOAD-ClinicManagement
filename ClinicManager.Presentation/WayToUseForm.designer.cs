@@ -34,8 +34,8 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDelete = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.WayToUseID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.WayToUseName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -74,16 +74,16 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3});
+            this.WayToUseID,
+            this.WayToUseName});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.IndicatorWidth = 50;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridView1.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridView1_CustomDrawRowIndicator);
+            this.gridView1.InvalidRowException += new DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventHandler(this.gridView1_InvalidRowException);
+            this.gridView1.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridView1_ValidateRow);
             this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView1_RowUpdated);
-            this.gridView1.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.gridView1_ValidatingEditor);
-            this.gridView1.InvalidValueException += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.gridView1_InvalidValueException);
             // 
             // gridColumn1
             // 
@@ -103,26 +103,26 @@
             this.repositoryItemDelete.Name = "repositoryItemDelete";
             this.repositoryItemDelete.Click += new System.EventHandler(this.repositoryItemDelete_Click);
             // 
-            // gridColumn2
+            // WayToUseID
             // 
-            this.gridColumn2.Caption = "Mã đường dùng";
-            this.gridColumn2.FieldName = "WayToUseID";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.OptionsColumn.AllowFocus = false;
-            this.gridColumn2.OptionsColumn.ReadOnly = true;
-            this.gridColumn2.OptionsColumn.TabStop = false;
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 101;
+            this.WayToUseID.Caption = "Mã đường dùng";
+            this.WayToUseID.FieldName = "WayToUseID";
+            this.WayToUseID.Name = "WayToUseID";
+            this.WayToUseID.OptionsColumn.AllowFocus = false;
+            this.WayToUseID.OptionsColumn.ReadOnly = true;
+            this.WayToUseID.OptionsColumn.TabStop = false;
+            this.WayToUseID.Visible = true;
+            this.WayToUseID.VisibleIndex = 1;
+            this.WayToUseID.Width = 101;
             // 
-            // gridColumn3
+            // WayToUseName
             // 
-            this.gridColumn3.Caption = "Tên đường dùng";
-            this.gridColumn3.FieldName = "WayToUseName";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 301;
+            this.WayToUseName.Caption = "Tên đường dùng";
+            this.WayToUseName.FieldName = "WayToUseName";
+            this.WayToUseName.Name = "WayToUseName";
+            this.WayToUseName.Visible = true;
+            this.WayToUseName.VisibleIndex = 2;
+            this.WayToUseName.Width = 301;
             // 
             // layoutControlGroup1
             // 
@@ -176,8 +176,8 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemDelete;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn WayToUseID;
+        private DevExpress.XtraGrid.Columns.GridColumn WayToUseName;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
     }
 }

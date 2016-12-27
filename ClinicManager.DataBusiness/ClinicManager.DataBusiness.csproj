@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="QueueBusiness.cs" />
+ 	<Compile Include="MedicineBusiness.cs" />
     <Compile Include="MedicineTypeBusiness.cs" />
     <Compile Include="PatientBusiness.cs" />
     <Compile Include="PharmacyTypeBusiness.cs" />
