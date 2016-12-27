@@ -15,7 +15,7 @@ namespace ClinicManager.Presentation
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new UnitForm());        
+            Application.Run(new MedicineManagerForm());        
         }
     }
 }

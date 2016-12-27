@@ -4,22 +4,15 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Columns;
-using DevExpress.XtraGrid.Views.Grid;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ClinicManager.Presentation
 {
     public partial class MedicineManagerForm : XtraForm
     {
-        private MedicineBusiness medicineBusiness ;
+        private MedicineBusiness medicineBusiness;
         public MedicineManagerForm()
         {
             InitializeComponent();
@@ -47,8 +40,8 @@ namespace ClinicManager.Presentation
             LookUpWay.DisplayMember = "WayToUseName";
             LookUpWay.Columns.Add(new LookUpColumnInfo("WayToUseName", "Đường dùng"));
             //Pharamcy
-            PharmacyTypeBusiness pharmacyType = new PharmacyTypeBusiness();
-            LookUpPharmacy.DataSource = pharmacyType.GetAll();
+            PharmacyTypeBusiness medicine = new PharmacyTypeBusiness();
+            LookUpPharmacy.DataSource = medicine.GetAll();
             LookUpPharmacy.ValueMember = "PharmacyTypeID";
             LookUpPharmacy.DisplayMember = "PharmacyTypeName";
             LookUpPharmacy.Columns.Add(new LookUpColumnInfo("PharmacyTypeName", "Dạng bào chế"));
@@ -60,8 +53,7 @@ namespace ClinicManager.Presentation
             LookUpUnit.Columns.Add(new LookUpColumnInfo("UnitName", "Đơn vị"));
             // Load data for comboboxedit MedicinType
             // Add default row "Tất cả"
-            MedicineTypeBusiness medicineTypeBusinessLoopkup = new MedicineTypeBusiness();
-            DataTable datasource = medicineTypeBusinessLoopkup.GetAll();
+            DataTable datasource = medicineTypeBusiness.GetAll();
             var row = datasource.NewRow();
             row["MedicineTypeID"] = 0;
             row["MedicineTypeName"] = "Tất cả";
@@ -73,12 +65,7 @@ namespace ClinicManager.Presentation
                                                                //Add column to chose
                                                                //LookUpType.Columns.Add(new LookUpColumnInfo("MedicineTypeID", "Mã loại thuốc"));
             lookUpEditType.Properties.Columns.Add(new LookUpColumnInfo("MedicineTypeName", "Chọn"));
-            
-
         }
-
-
-
 
         // Draw index column
         private void gridViewMedicineList_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
@@ -95,6 +82,7 @@ namespace ClinicManager.Presentation
             {
                 return;
             }
+
             if (XtraMessageBox.Show(this, "Bạn chắn chắn xóa dòng này?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 var row = gridViewMedicineList.GetFocusedDataRow(); // get data on one row
@@ -112,93 +100,34 @@ namespace ClinicManager.Presentation
         }
         private void gridViewMedicineList_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
         {
-           
-            var row = gridViewMedicineList.GetFocusedDataRow(); // Get data from focusrow
-            //Check null one column in row variable
-            if (row.IsNull("MedicineName"))
+            var row = gridViewMedicineList.GetFocusedDataRow();
+            foreach (GridColumn col in gridViewMedicineList.Columns)
             {
-                e.ErrorText = "Chưa nhập tên"; // Value to display when error.An empty string to clear the assigned error. 
-                gridViewMedicineList.SetColumnError(gridColumnName, e.ErrorText); // Set error
-                e.Valid = false;
-
+                if (col.ColumnEditName == repositoryItemDelete.Name)
+                {
+                    continue;
+                }
+                var a = row[col.FieldName];
+                e.ErrorText = medicineBusiness.Validate(row[col.FieldName], col.FieldName);
+                if (e.ErrorText != "")
+                {
+                    e.Valid = false;     
+                }
+  
+                gridViewMedicineList.SetColumnError(col, e.ErrorText);
             }
-            // Condition when user type input and delete all character, so this is string = "",
-            else if (!row.IsNull("MedicineName"))
-            {
-
-                e.ErrorText = "";
-                gridViewMedicineList.SetColumnError(gridColumnName, e.ErrorText); 
-            }
-             if (row["MedicineName"].ToString() == "")
-            {
-                e.ErrorText = "Chưa nhập tên";
-                gridViewMedicineList.SetColumnError(gridColumnName, e.ErrorText);
-                e.Valid = false;
-            }
-
-            if (row.IsNull("MedicineTypeID"))
-            {
-                e.Valid = false;
-                e.ErrorText = "Chưa chọn loại thuốc";
-                gridViewMedicineList.SetColumnError(gridColumnType, e.ErrorText);
-            }
-            else if (!row.IsNull("MedicineTypeID"))
-            {     
-                e.ErrorText = "";
-                gridViewMedicineList.SetColumnError(gridColumnType, e.ErrorText);
-            }
-
-            if (row.IsNull("WayToUseID"))
-            {
-                e.Valid = false;
-                e.ErrorText = "Chưa chọn đường dùng";
-                gridViewMedicineList.SetColumnError(gridColumnWay, e.ErrorText);
-
-            }
-            else if (!row.IsNull("WayToUseID"))
-            {              
-                e.ErrorText = "";
-                gridViewMedicineList.SetColumnError(gridColumnWay, e.ErrorText);
-            }
-
-            if (row.IsNull("PharmacyTypeID"))
-            {
-                e.Valid = false;
-                e.ErrorText = "Chưa chọng dạng điều chế";
-                gridViewMedicineList.SetColumnError(gridColumnPhramacy, e.ErrorText);
-            }
-            else if (!row.IsNull("PharmacyTypeID"))
-            {
-                e.ErrorText = "";
-                gridViewMedicineList.SetColumnError(gridColumnPhramacy, e.ErrorText);
-            }
-            if (row.IsNull("UnitID"))
-            {
-                e.Valid = false;
-                e.ErrorText = "Chưa chọn đơn vị tính";
-                gridViewMedicineList.SetColumnError(gridColumnUnit, e.ErrorText);
-            }
-            else if (!row.IsNull("UnitID"))
-            {             
-                e.ErrorText = "";
-                gridViewMedicineList.SetColumnError(gridColumnUnit, e.ErrorText);
-            }
-
         }
-
-
-
-
-
- 
 
         private void gridViewMedicineList_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
         {
             //Get data in focus row
-            var row = gridViewMedicineList.GetFocusedDataRow();
-            // if isInsert ="" mean focusrow at add new row else at edit row
-            bool isInsert = row["MedicineID"].ToString() == "";
+            var row = (e.Row as DataRowView).Row;
+            if (row == null)
+            {
+                return;
+            }
             // status of upate/insert into db
+            bool isInsert = row["MedicineID"].ToString() == "";
             bool result;
             //insert
             if (isInsert)
@@ -237,15 +166,12 @@ namespace ClinicManager.Presentation
                 };
 
                 result = medicineBusiness.Update(medicine);
-
-
-
             }
 
             if (result)
             {
                 XtraMessageBox.Show(this, "Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                gridViewMedicineList.FocusedRowHandle = GridControl.NewItemRowHandle;
             }
             else
             {
@@ -305,8 +231,6 @@ namespace ClinicManager.Presentation
         {
             this.Close();
         }
-    }
-
-        
-    }
+    }    
+}
 

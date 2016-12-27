@@ -54,7 +54,7 @@
   <ItemGroup>
     <Compile Include="BaseDataAccess.cs" />
     <Compile Include="ClinicDB.cs" />
-    <Compile Include="MedicineAcess.cs" />
+    <Compile Include="MedicineAccess.cs" />
     <Compile Include="MedicineTypeAccess.cs" />
     <Compile Include="PatientAccess.cs" />
     <Compile Include="PharmacyTypeAccess.cs" />
@@ -86,9 +86,7 @@
       <Name>ClinicManager.DataModel</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataBase\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

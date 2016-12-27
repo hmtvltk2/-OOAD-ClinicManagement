@@ -1,5 +1,4 @@
 ﻿using ClinicManager.DataBusiness;
-using ClinicManager.DataModel;
 using DevExpress.XtraEditors;
 using System;
 using System.Windows.Forms;

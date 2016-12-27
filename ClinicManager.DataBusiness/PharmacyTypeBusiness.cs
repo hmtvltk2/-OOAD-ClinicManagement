@@ -33,5 +33,20 @@ namespace ClinicManager.DataBusiness
         {
             return dataAccess.GetAll();
         }
+
+        public string Validate(object data, string propertyName)
+        {
+            string result = "";
+
+            if (propertyName == "PharmacyType")
+            {
+                if (string.IsNullOrWhiteSpace((string)data))
+                {
+                    result = "Tên dạng bào chế không được trống";
+                }
+            }
+
+            return result;
+        }
     }
 }

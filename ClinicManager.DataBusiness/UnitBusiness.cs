@@ -44,7 +44,6 @@ namespace ClinicManager.DataBusiness
                 {
                     result = "Tên đơn vị tính không được trống";
                 }
-
             }
 
             return result;
