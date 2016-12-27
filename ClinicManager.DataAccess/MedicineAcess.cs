@@ -61,9 +61,9 @@ namespace ClinicManager.DataAccess
             {
 
                 var medicine = from b in db.Medicine
-                            where (b.MedicineName == medicineName && b.MedicineTypeID == medicineTypeID)                           
+                            where (b.MedicineName.Contains(medicineName) && b.MedicineTypeID == medicineTypeID)
+                               //b.MedicineName.Contains(medicineName) is query same LIKE query
                             select b;
-
                 return medicine.ToDataTable();
             }
         }
@@ -74,7 +74,7 @@ namespace ClinicManager.DataAccess
             {
 
                 var medicine = from b in db.Medicine
-                               where (b.MedicineName == medicineName)
+                               where (b.MedicineName.Contains(medicineName))
                                select b;
 
                 return medicine.ToDataTable();

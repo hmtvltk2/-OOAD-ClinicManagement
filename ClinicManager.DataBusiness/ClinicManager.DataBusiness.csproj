@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MedicineBusiness.cs" />
     <Compile Include="MedicineTypeBusiness.cs" />
     <Compile Include="PharmacyTypeBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
