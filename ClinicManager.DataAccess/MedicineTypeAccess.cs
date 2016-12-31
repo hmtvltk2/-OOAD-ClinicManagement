@@ -2,9 +2,9 @@
 using System.Data;
 using System.Linq;
 
-namespace ClinicManager.DataAccess
+namespace ClinicManager.DataModel
 {
-    public class MedicineTypeAccess: BaseDataAcess
+    public class MedicineTypeAccess: BaseDataAccess
     {
         public override int Insert(object obj)
         {

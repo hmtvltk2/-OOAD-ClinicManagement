@@ -19,6 +19,12 @@ namespace ClinicManager.DataModel
         [Column(TypeName = "money")]
         public decimal MedicineFee { get; set; }
 
+        public int Quantity { get; set; }
+
+        [Required]
+        [StringLength(200)]
+        public string HowToUse { get; set; }
+
         public virtual Medicine Medicine { get; set; }
 
         public virtual Prescription Prescription { get; set; }

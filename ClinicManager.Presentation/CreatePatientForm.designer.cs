@@ -30,76 +30,82 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreatePatientForm));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.memoAddress = new DevExpress.XtraEditors.MemoEdit();
             this.comboGender = new DevExpress.XtraEditors.ComboBoxEdit();
             this.memoNote = new DevExpress.XtraEditors.MemoEdit();
             this.buttonCreate = new DevExpress.XtraEditors.SimpleButton();
-            this.dateCreateDay = new DevExpress.XtraEditors.DateEdit();
-            this.textPhone = new DevExpress.XtraEditors.TextEdit();
+            this.dateCreateDate = new DevExpress.XtraEditors.DateEdit();
             this.textJob = new DevExpress.XtraEditors.TextEdit();
             this.dateDateOfBirth = new DevExpress.XtraEditors.DateEdit();
             this.textFullName = new DevExpress.XtraEditors.TextEdit();
+            this.textPhone = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem9 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.memoAddress = new DevExpress.XtraEditors.MemoEdit();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.buttonCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.memoAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboGender.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoNote.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateCreateDay.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateCreateDay.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textPhone.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateCreateDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateCreateDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textJob.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDateOfBirth.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDateOfBirth.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textFullName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textPhone.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoAddress.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.buttonCancel);
             this.layoutControl1.Controls.Add(this.memoAddress);
             this.layoutControl1.Controls.Add(this.comboGender);
             this.layoutControl1.Controls.Add(this.memoNote);
             this.layoutControl1.Controls.Add(this.buttonCreate);
-            this.layoutControl1.Controls.Add(this.dateCreateDay);
-            this.layoutControl1.Controls.Add(this.textPhone);
+            this.layoutControl1.Controls.Add(this.dateCreateDate);
             this.layoutControl1.Controls.Add(this.textJob);
             this.layoutControl1.Controls.Add(this.dateDateOfBirth);
             this.layoutControl1.Controls.Add(this.textFullName);
+            this.layoutControl1.Controls.Add(this.textPhone);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -108,57 +114,63 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // memoAddress
+            // 
+            this.memoAddress.Location = new System.Drawing.Point(87, 144);
+            this.memoAddress.Name = "memoAddress";
+            this.memoAddress.Size = new System.Drawing.Size(437, 35);
+            this.memoAddress.StyleController = this.layoutControl1;
+            this.memoAddress.TabIndex = 15;
+            this.memoAddress.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.memoAddress_InvalidValue);
+            this.memoAddress.Validating += new System.ComponentModel.CancelEventHandler(this.memoAddress_Validating);
+            // 
             // comboGender
             // 
-            this.comboGender.Location = new System.Drawing.Point(330, 42);
+            this.comboGender.EditValue = "Nam";
+            this.comboGender.Location = new System.Drawing.Point(403, 42);
             this.comboGender.Name = "comboGender";
             this.comboGender.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboGender.Properties.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.comboGender.Size = new System.Drawing.Size(194, 20);
+            this.comboGender.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.comboGender.Size = new System.Drawing.Size(121, 20);
             this.comboGender.StyleController = this.layoutControl1;
             this.comboGender.TabIndex = 14;
+            this.comboGender.UseWaitCursor = true;
             // 
             // memoNote
             // 
-            this.memoNote.Location = new System.Drawing.Point(87, 197);
+            this.memoNote.Location = new System.Drawing.Point(87, 193);
             this.memoNote.Name = "memoNote";
-            this.memoNote.Size = new System.Drawing.Size(437, 39);
+            this.memoNote.Size = new System.Drawing.Size(437, 17);
             this.memoNote.StyleController = this.layoutControl1;
             this.memoNote.TabIndex = 13;
             // 
             // buttonCreate
             // 
             this.buttonCreate.Image = ((System.Drawing.Image)(resources.GetObject("buttonCreate.Image")));
-            this.buttonCreate.Location = new System.Drawing.Point(408, 274);
+            this.buttonCreate.Location = new System.Drawing.Point(304, 274);
             this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(116, 22);
+            this.buttonCreate.Size = new System.Drawing.Size(110, 22);
             this.buttonCreate.StyleController = this.layoutControl1;
             this.buttonCreate.TabIndex = 12;
             this.buttonCreate.Text = "Tạo hồ sơ";
+            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
             // 
-            // dateCreateDay
+            // dateCreateDate
             // 
-            this.dateCreateDay.EditValue = null;
-            this.dateCreateDay.Location = new System.Drawing.Point(87, 250);
-            this.dateCreateDay.Name = "dateCreateDay";
-            this.dateCreateDay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dateCreateDate.EditValue = null;
+            this.dateCreateDate.Location = new System.Drawing.Point(87, 250);
+            this.dateCreateDate.Name = "dateCreateDate";
+            this.dateCreateDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateCreateDay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dateCreateDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateCreateDay.Size = new System.Drawing.Size(437, 20);
-            this.dateCreateDay.StyleController = this.layoutControl1;
-            this.dateCreateDay.TabIndex = 11;
-            // 
-            // textPhone
-            // 
-            this.textPhone.Location = new System.Drawing.Point(330, 76);
-            this.textPhone.Name = "textPhone";
-            this.textPhone.Size = new System.Drawing.Size(194, 20);
-            this.textPhone.StyleController = this.layoutControl1;
-            this.textPhone.TabIndex = 8;
+            this.dateCreateDate.Size = new System.Drawing.Size(249, 20);
+            this.dateCreateDate.StyleController = this.layoutControl1;
+            this.dateCreateDate.TabIndex = 11;
             // 
             // textJob
             // 
@@ -177,17 +189,31 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateDateOfBirth.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateDateOfBirth.Size = new System.Drawing.Size(176, 20);
+            this.dateDateOfBirth.Size = new System.Drawing.Size(249, 20);
             this.dateDateOfBirth.StyleController = this.layoutControl1;
             this.dateDateOfBirth.TabIndex = 6;
+            this.dateDateOfBirth.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.dateDateOfBirth_InvalidValue);
+            this.dateDateOfBirth.Validating += new System.ComponentModel.CancelEventHandler(this.dateDateOfBirth_Validating);
             // 
             // textFullName
             // 
             this.textFullName.Location = new System.Drawing.Point(87, 42);
             this.textFullName.Name = "textFullName";
-            this.textFullName.Size = new System.Drawing.Size(176, 20);
+            this.textFullName.Size = new System.Drawing.Size(249, 20);
             this.textFullName.StyleController = this.layoutControl1;
             this.textFullName.TabIndex = 4;
+            this.textFullName.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.textFullName_InvalidValue);
+            this.textFullName.Validating += new System.ComponentModel.CancelEventHandler(this.textFullName_Validating);
+            // 
+            // textPhone
+            // 
+            this.textPhone.Location = new System.Drawing.Point(403, 76);
+            this.textPhone.Name = "textPhone";
+            this.textPhone.Properties.Mask.EditMask = "N00";
+            this.textPhone.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textPhone.Size = new System.Drawing.Size(121, 20);
+            this.textPhone.StyleController = this.layoutControl1;
+            this.textPhone.TabIndex = 8;
             // 
             // layoutControlGroup1
             // 
@@ -217,7 +243,9 @@
             this.layoutControlItem5,
             this.layoutControlItem10,
             this.emptySpaceItem7,
-            this.emptySpaceItem5});
+            this.emptySpaceItem5,
+            this.emptySpaceItem6,
+            this.layoutControlItem6});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Size = new System.Drawing.Size(528, 300);
@@ -228,27 +256,17 @@
             this.layoutControlItem1.Control = this.textFullName;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(243, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(316, 24);
             this.layoutControlItem1.Text = "Họ và tên";
             this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Left;
             this.layoutControlItem1.TextSize = new System.Drawing.Size(60, 13);
             // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.textJob;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 68);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(504, 24);
-            this.layoutControlItem4.Text = "Nghề nghiệp";
-            this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(60, 13);
-            // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.buttonCreate;
-            this.layoutControlItem9.Location = new System.Drawing.Point(384, 232);
+            this.layoutControlItem9.Location = new System.Drawing.Point(280, 232);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(120, 26);
+            this.layoutControlItem9.Size = new System.Drawing.Size(114, 26);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
@@ -263,9 +281,9 @@
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(243, 58);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(316, 58);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(261, 10);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(188, 10);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem2
@@ -273,28 +291,83 @@
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(0, 232);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(384, 26);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(280, 26);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // layoutControlItem5
+            // emptySpaceItem9
             // 
-            this.layoutControlItem5.Control = this.textPhone;
-            this.layoutControlItem5.Location = new System.Drawing.Point(243, 34);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(261, 24);
-            this.layoutControlItem5.Text = "Điện thoại";
-            this.layoutControlItem5.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(60, 13);
+            this.emptySpaceItem9.AllowHotTrack = false;
+            this.emptySpaceItem9.Location = new System.Drawing.Point(0, 141);
+            this.emptySpaceItem9.Name = "emptySpaceItem9";
+            this.emptySpaceItem9.Size = new System.Drawing.Size(504, 10);
+            this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.dateCreateDate;
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 208);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(316, 24);
+            this.layoutControlItem8.Text = "Ngày tạo";
+            this.layoutControlItem8.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(60, 13);
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.memoNote;
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 151);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(504, 21);
+            this.layoutControlItem7.Text = "Ghi chú";
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(60, 13);
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.comboGender;
+            this.layoutControlItem2.Location = new System.Drawing.Point(316, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(188, 24);
+            this.layoutControlItem2.Text = "Giới tính";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(60, 13);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.dateDateOfBirth;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 34);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(243, 34);
+            this.layoutControlItem3.Size = new System.Drawing.Size(316, 34);
             this.layoutControlItem3.Text = "Ngày sinh";
             this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Left;
             this.layoutControlItem3.TextSize = new System.Drawing.Size(60, 13);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.textJob;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 68);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(504, 24);
+            this.layoutControlItem4.Text = "Nghề nghiệp";
+            this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(60, 13);
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.textPhone;
+            this.layoutControlItem5.Location = new System.Drawing.Point(316, 34);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(188, 24);
+            this.layoutControlItem5.Text = "Điện thoại";
+            this.layoutControlItem5.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(60, 13);
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.memoAddress;
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 102);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(504, 39);
+            this.layoutControlItem10.Text = "Địa chỉ";
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(60, 13);
             // 
             // emptySpaceItem7
             // 
@@ -304,41 +377,21 @@
             this.emptySpaceItem7.Size = new System.Drawing.Size(504, 10);
             this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // emptySpaceItem9
+            // emptySpaceItem5
             // 
-            this.emptySpaceItem9.AllowHotTrack = false;
-            this.emptySpaceItem9.Location = new System.Drawing.Point(0, 145);
-            this.emptySpaceItem9.Name = "emptySpaceItem9";
-            this.emptySpaceItem9.Size = new System.Drawing.Size(504, 10);
-            this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
+            this.emptySpaceItem5.AllowHotTrack = false;
+            this.emptySpaceItem5.Location = new System.Drawing.Point(0, 172);
+            this.emptySpaceItem5.Name = "emptySpaceItem5";
+            this.emptySpaceItem5.Size = new System.Drawing.Size(504, 36);
+            this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // layoutControlItem8
+            // emptySpaceItem6
             // 
-            this.layoutControlItem8.Control = this.dateCreateDay;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 208);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(504, 24);
-            this.layoutControlItem8.Text = "Ngày tạo";
-            this.layoutControlItem8.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(60, 13);
-            // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.Control = this.memoNote;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 155);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(504, 43);
-            this.layoutControlItem7.Text = "Ghi chú";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(60, 13);
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.comboGender;
-            this.layoutControlItem2.Location = new System.Drawing.Point(243, 0);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(261, 24);
-            this.layoutControlItem2.Text = "Giới tính";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(60, 13);
+            this.emptySpaceItem6.AllowHotTrack = false;
+            this.emptySpaceItem6.Location = new System.Drawing.Point(316, 208);
+            this.emptySpaceItem6.Name = "emptySpaceItem6";
+            this.emptySpaceItem6.Size = new System.Drawing.Size(188, 24);
+            this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem1
             // 
@@ -348,30 +401,25 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(393, 215);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // memoAddress
+            // buttonCancel
             // 
-            this.memoAddress.Location = new System.Drawing.Point(87, 144);
-            this.memoAddress.Name = "memoAddress";
-            this.memoAddress.Size = new System.Drawing.Size(437, 39);
-            this.memoAddress.StyleController = this.layoutControl1;
-            this.memoAddress.TabIndex = 15;
+            this.buttonCancel.Image = ((System.Drawing.Image)(resources.GetObject("buttonCancel.Image")));
+            this.buttonCancel.Location = new System.Drawing.Point(418, 274);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(106, 22);
+            this.buttonCancel.StyleController = this.layoutControl1;
+            this.buttonCancel.TabIndex = 16;
+            this.buttonCancel.Text = "Hủy ";
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // layoutControlItem10
+            // layoutControlItem6
             // 
-            this.layoutControlItem10.Control = this.memoAddress;
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 102);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(504, 43);
-            this.layoutControlItem10.Text = "Địa chỉ";
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(60, 13);
-            // 
-            // emptySpaceItem5
-            // 
-            this.emptySpaceItem5.AllowHotTrack = false;
-            this.emptySpaceItem5.Location = new System.Drawing.Point(0, 198);
-            this.emptySpaceItem5.Name = "emptySpaceItem5";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(504, 10);
-            this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.Control = this.buttonCancel;
+            this.layoutControlItem6.Location = new System.Drawing.Point(394, 232);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(110, 26);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.TextVisible = false;
             // 
             // CreatePatientForm
             // 
@@ -385,37 +433,40 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tạo hồ sơ mới";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreatePatientForm_FormClosed);
             this.Load += new System.EventHandler(this.CreatePatientForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.memoAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboGender.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoNote.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateCreateDay.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateCreateDay.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textPhone.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateCreateDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateCreateDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textJob.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDateOfBirth.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDateOfBirth.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textFullName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textPhone.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoAddress.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -425,8 +476,7 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraEditors.SimpleButton buttonCreate;
-        private DevExpress.XtraEditors.DateEdit dateCreateDay;
-        private DevExpress.XtraEditors.TextEdit textPhone;
+        private DevExpress.XtraEditors.DateEdit dateCreateDate;
         private DevExpress.XtraEditors.TextEdit textJob;
         private DevExpress.XtraEditors.DateEdit dateDateOfBirth;
         private DevExpress.XtraEditors.TextEdit textFullName;
@@ -450,5 +500,9 @@
         private DevExpress.XtraEditors.MemoEdit memoAddress;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem5;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
+        private DevExpress.XtraEditors.TextEdit textPhone;
+        private DevExpress.XtraEditors.SimpleButton buttonCancel;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
     }
 }

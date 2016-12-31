@@ -29,8 +29,8 @@ namespace ClinicManager.DataModel
         [Column(TypeName = "smalldatetime")]
         public DateTime ScheduleDate { get; set; }
 
-        public int ScheduleInfoID { get; set; }
-
-        public virtual ScheduleInfo ScheduleInfo { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string ScheduleType { get; set; }
     }
 }

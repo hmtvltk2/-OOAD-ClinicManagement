@@ -2,9 +2,9 @@
 using System.Data;
 using System.Linq;
 
-namespace ClinicManager.DataAccess
+namespace ClinicManager.DataModel
 {
-    public class WayToUseAccess : BaseDataAcess
+    public class WayToUseAccess : BaseDataAccess
     {
         public override int Insert(object obj)
         {
@@ -37,7 +37,7 @@ namespace ClinicManager.DataAccess
 
             return base.Delete(model);
         }
-
+        
         public DataTable GetAll()
         {
             using (var db = new ClinicDB())

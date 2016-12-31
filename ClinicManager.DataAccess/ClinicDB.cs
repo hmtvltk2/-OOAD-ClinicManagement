@@ -1,4 +1,4 @@
-namespace ClinicManager.DataAccess
+namespace ClinicManager.DataModel
 {
     using System.Data.Entity;
     using DataModel;
@@ -12,7 +12,6 @@ namespace ClinicManager.DataAccess
 
         public virtual DbSet<Bill> Bill { get; set; }
         public virtual DbSet<BillDetail> BillDetail { get; set; }
-        public virtual DbSet<Detail> Detail { get; set; }
         public virtual DbSet<MedicalRecord> MedicalRecord { get; set; }
         public virtual DbSet<Medicine> Medicine { get; set; }
         public virtual DbSet<MedicineType> MedicineType { get; set; }
@@ -23,8 +22,8 @@ namespace ClinicManager.DataAccess
         public virtual DbSet<PharmacyType> PharmacyType { get; set; }
         public virtual DbSet<Queue> Queue { get; set; }
         public virtual DbSet<Schedule> Schedule { get; set; }
-        public virtual DbSet<ScheduleInfo> ScheduleInfo { get; set; }
         public virtual DbSet<Service> Service { get; set; }
+        public virtual DbSet<ServiceDetail> ServiceDetail { get; set; }
         public virtual DbSet<Unit> Unit { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<UserGroup> UserGroup { get; set; }
@@ -54,17 +53,13 @@ namespace ClinicManager.DataAccess
                 .Property(e => e.ServiceFee)
                 .HasPrecision(19, 4);
 
-            modelBuilder.Entity<Detail>()
-                .Property(e => e.ServiceFee)
-                .HasPrecision(19, 4);
-
             modelBuilder.Entity<MedicalRecord>()
                 .HasMany(e => e.Bill)
                 .WithRequired(e => e.MedicalRecord)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<MedicalRecord>()
-                .HasMany(e => e.Detail)
+                .HasMany(e => e.ServiceDetail)
                 .WithRequired(e => e.MedicalRecord)
                 .WillCascadeOnDelete(false);
 
@@ -129,19 +124,18 @@ namespace ClinicManager.DataAccess
                 .Property(e => e.Phone)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<ScheduleInfo>()
-                .HasMany(e => e.Schedule)
-                .WithRequired(e => e.ScheduleInfo)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<Service>()
                 .Property(e => e.ServiceFee)
                 .HasPrecision(19, 4);
 
             modelBuilder.Entity<Service>()
-                .HasMany(e => e.Detail)
+                .HasMany(e => e.ServiceDetail)
                 .WithRequired(e => e.Service)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<ServiceDetail>()
+                .Property(e => e.ServiceFee)
+                .HasPrecision(19, 4);
 
             modelBuilder.Entity<Unit>()
                 .HasMany(e => e.Medicine)
@@ -167,6 +161,12 @@ namespace ClinicManager.DataAccess
 
             modelBuilder.Entity<User>()
                 .HasMany(e => e.MedicalRecord)
+                .WithRequired(e => e.User)
+                .HasForeignKey(e => e.DoctorID)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.Queue)
                 .WithRequired(e => e.User)
                 .HasForeignKey(e => e.DoctorID)
                 .WillCascadeOnDelete(false);

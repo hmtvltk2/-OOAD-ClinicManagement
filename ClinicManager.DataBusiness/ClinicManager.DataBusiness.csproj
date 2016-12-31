@@ -49,11 +49,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="QueueBusiness.cs" />
     <Compile Include="MedicineBusiness.cs" />
     <Compile Include="MedicineTypeBusiness.cs" />
+    <Compile Include="PatientBusiness.cs" />
     <Compile Include="PharmacyTypeBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitBusiness.cs" />
+    <Compile Include="UserBusiness.cs" />
     <Compile Include="WayToUseBusiness.cs" />
   </ItemGroup>
   <ItemGroup>

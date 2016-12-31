@@ -1,44 +1,91 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ClinicManager.DataBusiness;
+using ClinicManager.DataModel;
+using DevExpress.XtraEditors;
+using System;
 using System.Windows.Forms;
 
 namespace ClinicManager.Presentation
 {
     public partial class ReceivePatientForm : Form
     {
+        private PatientBusiness patientBusiness;
+        private QueueBusiness queueBusiness;
         public ReceivePatientForm()
         {
             InitializeComponent();
+            patientBusiness = new PatientBusiness();
+            queueBusiness = new QueueBusiness();
         }
 
-        private void buttonCretePatien_Click(object sender, EventArgs e)
+        private void gridviewSearchList_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
         {
-            foreach (var form in Application.OpenForms.OfType<CreatePatientForm>())
+            if (e.Info.IsRowIndicator && e.RowHandle >= 0)
             {
-                var fr = form as Form;
-                fr.Activate();
-                return;
+                e.Info.DisplayText = (e.RowHandle + 1).ToString();
             }
-            var f = new CreatePatientForm();
-            f.ShowDialog();
         }
 
+        private void ReceivePatientForm_Load(object sender, EventArgs e)
+        {
+            LoadPatientList();
+            LoadQueueList();
+        }
+
+        private void gridViewExamineList_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
+        {
+            if (e.Info.IsRowIndicator && e.RowHandle >= 0)
+            {
+                e.Info.DisplayText = (e.RowHandle + 1).ToString();
+            }
+        }
+
+        // Search patient (PatientName, DateOfBirth, Gender) order by CreateDate desc
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            gridSearchList.DataSource = patientBusiness.Search(
+                                                textPatientName.Text,
+                                                dateDateOfBirth.EditValue,
+                                                comboGender.Text);
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        // Open "CreatePatientForm"
+        private void buttonAddPatient_Click(object sender, EventArgs e)
+        {
+            var patientForm = new CreatePatientForm(this);
+            patientForm.Show();
+            
+            //LoadPatientList();
+        }
+
+        // Open "CreateExamnineForm" with param is the selected Patient
         private void buttonCreateExamine_Click(object sender, EventArgs e)
         {
-            foreach (var form in Application.OpenForms.OfType<CreateExaminetionForm>())
+            var row = gridviewSearchList.GetFocusedDataRow();
+
+            if(row == null)
             {
-                var fr = form as Form;
-                fr.Activate();
+                XtraMessageBox.Show(this, "Bạn chưa chọn bệnh nhân", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            var f = new CreateExaminetionForm();
-            f.ShowDialog();
+
+            var examineForm = new CreateExaminetionForm(this, Helper.ConvertDataRowTo<Patient>(row));
+            examineForm.Show();
+        }
+
+        // Load patient list order by CreateDate desc
+        public void LoadPatientList()
+        {
+            gridSearchList.DataSource = patientBusiness.GetAll();
+        }
+
+        public void LoadQueueList()
+        {
+            GridExamineList.DataSource = queueBusiness.GetByDate(DateTime.Today);
         }
     }
 }

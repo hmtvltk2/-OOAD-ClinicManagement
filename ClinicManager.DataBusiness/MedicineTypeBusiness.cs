@@ -1,4 +1,4 @@
-﻿using ClinicManager.DataAccess;
+﻿using ClinicManager.DataModel;
 
 namespace ClinicManager.DataBusiness
 {
@@ -34,9 +34,19 @@ namespace ClinicManager.DataBusiness
             return dataAccess.GetAll();
         }
 
-        public string Validate(object data, string property)
+        public string Validate(object data, string propertyName)
         {
-            return dataAccess.Validate(data, property);
+            string result = "";
+
+            if (propertyName == "MedicineTypeName")
+            {
+                if (string.IsNullOrWhiteSpace((string)data))
+                {
+                    result = "Tên loại thuốc không được trống";
+                }
+            }
+
+            return result;
         }
     }
 }

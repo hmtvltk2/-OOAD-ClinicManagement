@@ -12,7 +12,7 @@ namespace ClinicManager.DataModel
         public MedicalRecord()
         {
             Bill = new HashSet<Bill>();
-            Detail = new HashSet<Detail>();
+            ServiceDetail = new HashSet<ServiceDetail>();
         }
 
         public int MedicalRecordID { get; set; }
@@ -32,6 +32,9 @@ namespace ClinicManager.DataModel
         [Column(TypeName = "smalldatetime")]
         public DateTime ExamineDate { get; set; }
 
+        [Column(TypeName = "smalldatetime")]
+        public DateTime ReExamineDate { get; set; }
+
         [StringLength(200)]
         public string Note { get; set; }
 
@@ -41,7 +44,7 @@ namespace ClinicManager.DataModel
         public virtual ICollection<Bill> Bill { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Detail> Detail { get; set; }
+        public virtual ICollection<ServiceDetail> ServiceDetail { get; set; }
 
         public virtual Patient Patient { get; set; }
 
