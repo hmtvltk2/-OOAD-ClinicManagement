@@ -3,6 +3,7 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
 using DevExpress.XtraTabbedMdi;
+using DevExpress.XtraEditors;
 
 namespace ClinicManager.Presentation
 {
@@ -11,6 +12,69 @@ namespace ClinicManager.Presentation
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            XtraTabbedMdiManager mdiManager = new XtraTabbedMdiManager();
+            mdiManager.MdiParent = this;
+        }
+
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
+            if (!TryConnect()) return;
+            if (!Login()) return;
+            ShowSystemInfo();
+            SetRule();
+        }
+
+        private void SetRule()
+        {
+            
+        }
+
+        private void ShowSystemInfo()
+        {
+            throw new NotImplementedException();
+        }
+
+        private bool Login()
+        {
+            var login = new LoginForm();
+            do
+            {
+                if (login.ShowDialog().Equals(DialogResult.OK))
+                {
+                    return true;
+                }
+                if (XtraMessageBox.Show("Bạn muốn thoát chương trình",
+                    "Thoát",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question)
+                    .Equals(DialogResult.No)) continue;
+                Application.Exit();
+                return false;
+            } while (true);
+        }
+
+        private static bool TryConnect()
+        {
+            if (ConfigService.TryConnect())
+                return true;
+            var ciForm = new ConfigForm();
+            do
+            {
+                if (ciForm.ShowDialog().Equals(DialogResult.OK))
+                    return true;
+
+                if (XtraMessageBox.Show(@"Bạn muốn thoát chương trình",
+                    @"Thoát",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question)
+                    .Equals(DialogResult.No)) continue;
+                break;
+            } while (true);
+            return false;
         }
 
         private void OpenMDIForm<T>()
@@ -111,13 +175,7 @@ namespace ClinicManager.Presentation
 
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            XtraTabbedMdiManager mdiManager = new XtraTabbedMdiManager();
-            mdiManager.MdiParent = this;
-          
-
-        }
+        
 
         private void barButtonUser_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -133,5 +191,7 @@ namespace ClinicManager.Presentation
         {
             OpenMDIForm<PermissionForm>();
         }
+
+        
     }
 }

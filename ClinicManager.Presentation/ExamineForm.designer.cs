@@ -204,6 +204,7 @@
             this.buttonCreate.StyleController = this.layoutControl1;
             this.buttonCreate.TabIndex = 17;
             this.buttonCreate.Text = "Tạo bệnh án";
+            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
             // 
             // buttonFinishExamine
             // 
@@ -214,6 +215,7 @@
             this.buttonFinishExamine.StyleController = this.layoutControl1;
             this.buttonFinishExamine.TabIndex = 16;
             this.buttonFinishExamine.Text = "Kết thúc phiên khám";
+            this.buttonFinishExamine.Click += new System.EventHandler(this.buttonFinishExamine_Click);
             // 
             // buttonCreatePrescription
             // 
@@ -224,6 +226,7 @@
             this.buttonCreatePrescription.StyleController = this.layoutControl1;
             this.buttonCreatePrescription.TabIndex = 15;
             this.buttonCreatePrescription.Text = "Kê toa";
+            this.buttonCreatePrescription.Click += new System.EventHandler(this.buttonCreatePrescription_Click);
             // 
             // buttonUpdate
             // 
@@ -234,6 +237,7 @@
             this.buttonUpdate.StyleController = this.layoutControl1;
             this.buttonUpdate.TabIndex = 14;
             this.buttonUpdate.Text = "Cập nhật";
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // gridServie
             // 
@@ -346,6 +350,7 @@
             this.buttonRefresh.StyleController = this.layoutControl1;
             this.buttonRefresh.TabIndex = 2;
             this.buttonRefresh.Text = "Làm mới dữ liệu";
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
             // gridExminedList
             // 
@@ -370,6 +375,7 @@
             this.gridExamined.IndicatorWidth = 50;
             this.gridExamined.Name = "gridExamined";
             this.gridExamined.OptionsBehavior.ReadOnly = true;
+            this.gridExamined.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridExamined_CustomDrawRowIndicator);
             // 
             // FullNameExamined
             // 
@@ -789,6 +795,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Khám bệnh";
+            this.Load += new System.EventHandler(this.ExamineForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.textNote.Properties)).EndInit();
