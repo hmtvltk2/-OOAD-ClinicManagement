@@ -1,4 +1,5 @@
-﻿using ClinicManager.DataAccess;
+﻿using ClinicManager.DataModel;
+using System;
 
 namespace ClinicManager.DataBusiness
 {
@@ -36,7 +37,44 @@ namespace ClinicManager.DataBusiness
 
         public string Validate(object data, string property)
         {
-            return dataAccess.Validate(data, property);
+            string error = "";
+            switch (property)
+            {
+                case "MedicineName":
+                    if (string.IsNullOrWhiteSpace(data as string))
+                    {
+                        error = "Chưa nhập tên thuốc";
+                    }
+                    break;
+                case "MedicineTypeID":
+                    if(data == DBNull.Value)
+                    {
+                        error = "Chưa chọn loại thuốc";
+                    }
+                    break;
+                case "WayToUseID":
+                    if(data == DBNull.Value)
+                    {
+                        error = "Chưa chọn đường dùng"; 
+                    }
+                    break;
+                case "PharmacyTypeID":
+                    if(data == DBNull.Value)
+                    {
+                        error = "Chưa chọng dạng điều chế"; 
+                    }
+                    break;
+                case "UnitID":
+                    if(data == DBNull.Value)
+                    {
+                        error = "Chưa chọn đơn vị tính";
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+            return error;
         }
         public System.Data.DataTable GetByCondition(string medicineName, int medicineTypeID)
         {

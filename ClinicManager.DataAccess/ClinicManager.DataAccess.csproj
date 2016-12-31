@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseDataAcess.cs" />
+    <Compile Include="BaseDataAccess.cs" />
     <Compile Include="ClinicDB.cs" />
     <Compile Include="MedicalRecordAccess.cs" />
     <Compile Include="MedicineAccess.cs" />
@@ -67,6 +67,7 @@
     </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="ScheduleAccess.cs" />
+    <Compile Include="QueueAccess.cs" />
     <Compile Include="UnitAccess.cs" />
     <Compile Include="UserAccess.cs" />
     <Compile Include="WayToUseAccess.cs" />

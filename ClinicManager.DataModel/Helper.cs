@@ -2,19 +2,21 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Linq;
 using System.Reflection;
 
-namespace ClinicManager.DataAccess
+namespace ClinicManager.DataModel
 {
     public static class Helper
     {
         public static DataTable ToDataTable<T>(this IEnumerable<T> items)
         {
-            PropertyDescriptorCollection properties =
-           TypeDescriptor.GetProperties(typeof(T));
+            PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(typeof(T));
             DataTable table = new DataTable();
             foreach (PropertyDescriptor prop in properties)
+            {
                 table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+            }
             foreach (T item in items)
             {
                 DataRow row = table.NewRow();
@@ -23,6 +25,17 @@ namespace ClinicManager.DataAccess
                 table.Rows.Add(row);
             }
             return table;
+        }
+
+        public static T ConvertDataRowTo<T>(DataRow row) where T : new()
+        {
+            IList<PropertyInfo> properties = typeof(T).GetProperties().ToList();
+            T item = new T();
+            foreach (var property in properties)
+            {
+                property.SetValue(item, row[property.Name], null);
+            }
+            return item;
         }
     }
 }

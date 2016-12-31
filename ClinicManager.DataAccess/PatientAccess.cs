@@ -1,7 +1,7 @@
 ﻿using ClinicManager.DataModel;
-using System;
 using System.Data;
 using System.Linq;
+using System;
 
 namespace ClinicManager.DataAccess
 {
@@ -39,13 +39,16 @@ namespace ClinicManager.DataAccess
             return base.Delete(model);
         }
 
-        public DataTable GetAll()
+        // Get all orderby CreateDate desc
+		public DataTable GetAll()
         {
             using (var db = new ClinicDB())
             {
-                return db.Patient.ToDataTable();
+                var result = from d in db.Patient orderby d.PatientID descending select d;
+                return result.ToDataTable();
             }
         }
+        
         public DataTable GetById(int id)
         {
             using (var db = new ClinicDB())
@@ -115,6 +118,33 @@ namespace ClinicManager.DataAccess
 
             }
             return result;
+
+              
+            }
+        }
+
+        public DataTable Search(string patientName, object dateOfBirth, string gender)
+        {
+            using (var db = new ClinicDB())
+            {
+                if (dateOfBirth == null)
+                {
+                    var result = from d in db.Patient
+                                 where d.FullName.Contains(patientName) && d.Gender.Contains(gender)
+                                 select d;
+                    return result.ToDataTable();
+                }
+                else
+                {
+                    var result = from d in db.Patient
+                                 where d.FullName.Contains(patientName) && d.Gender.Contains(gender)
+                                        && d.DateOfBirth == (DateTime)dateOfBirth
+                                 select d;
+                    return result.ToDataTable();
+                }
+            }
+            
+
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using ClinicManager.DataAccess;
+using System;
+using ClinicManager.DataAccess;
+using System.Data;
 
 namespace ClinicManager.DataBusiness
 {
@@ -34,13 +36,26 @@ namespace ClinicManager.DataBusiness
             return dataAccess.GetAll();
         }
 
-        public string Validate(object data, string property)
-        {
-            return dataAccess.Validate(data, property);
-        }
-        public System.Data.DataTable GetByUserGroup(int userGroupID)
+ 		public System.Data.DataTable GetByUserGroup(int userGroupID)
         {
             return dataAccess.GetByUserGroup(userGroupID);
+        }
+        public string Validate(object data, string propertyName)
+        {
+            string result = "";
+
+
+            return result;
+        }
+
+        public DataTable GetAllDoctor()
+        {
+            return dataAccess.GetAllDoctor();
+        }
+
+        public DataTable GetAllDoctorWithQueue()
+        {
+            return dataAccess.GetAllDoctorWithQueue();
         }
     }
 }

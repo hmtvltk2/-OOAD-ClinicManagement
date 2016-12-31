@@ -1,4 +1,4 @@
-﻿using ClinicManager.DataBusiness;
+using ClinicManager.DataBusiness;
 using ClinicManager.DataModel;
 using System;
 using System.Collections.Generic;

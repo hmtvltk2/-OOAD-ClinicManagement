@@ -2,49 +2,66 @@
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using ClinicManager.DataBusiness;
-using ClinicManager.DataModel;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraGrid;
+using ClinicManager.DataModel;
+using DevExpress.XtraGrid.Columns;
 
 namespace ClinicManager.Presentation
 {
     public partial class MedicineTypeForm : DevExpress.XtraEditors.XtraForm
     {
         private MedicineTypeBusiness medicineTypeBusiness;
+
         public MedicineTypeForm()
         {
             InitializeComponent();
             medicineTypeBusiness = new MedicineTypeBusiness();
         }
-
         private void MedicineTypeForm_Load(object sender, EventArgs e)
         {
             gridControl1.DataSource = medicineTypeBusiness.GetAll();
         }
+        private void repositoryItemDelete_Click(object sender, EventArgs e)
+        {
+            if (gridView1.FocusedRowHandle == GridControl.NewItemRowHandle)
+            {
+                return;
+            }
 
+            if (XtraMessageBox.Show(this, "Bạn chắc chắn xóa dòng này?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                var row = gridView1.GetFocusedDataRow();
+
+                bool result = medicineTypeBusiness.Delete((int)row["MedicineTypeID"]);
+                if (result)
+                {
+                    gridView1.DeleteSelectedRows();
+                }
+                else
+                {
+                    XtraMessageBox.Show(this, "Xóa thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
 
         private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
         {
             var row = gridView1.GetFocusedDataRow();
-            if (row["MedicineTypeName"].ToString() == "")
+            foreach (GridColumn col in gridView1.Columns)
             {
-                e.Valid = false;
-                e.ErrorText = "Chưa nhập tên thể loại";
-                gridView1.SetColumnError(MedicineTypeName, e.ErrorText);
-            }
-            else if (row["MedicineTypeName"].ToString() != "")
-            {
-                e.ErrorText = "";
-                gridView1.SetColumnError(MedicineTypeName, e.ErrorText);
-            }
-            if (row.IsNull("MedicineTypeName"))
-            {
-                e.Valid = false;
-                e.ErrorText = "Chưa nhập tên thể loại";
-                gridView1.SetColumnError(MedicineTypeName, e.ErrorText);
-            }
+                if (col.ColumnEditName == repositoryItemDelete.Name)
+                {
+                    continue;
+                }
 
-
+                e.ErrorText = medicineTypeBusiness.Validate(row[col.FieldName], col.FieldName);
+                if (e.ErrorText != "")
+                {
+                    e.Valid = false;
+                    gridView1.SetColumnError(col, e.ErrorText);
+                }
+            }
         }
 
         private void gridView1_InvalidRowException(object sender, DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventArgs e)
@@ -52,32 +69,22 @@ namespace ClinicManager.Presentation
             e.ExceptionMode = ExceptionMode.NoAction;
         }
 
-
-        private void gridView1_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
-        {
-            if (e.Info.IsRowIndicator && e.RowHandle >= 0)
-            {
-                e.Info.DisplayText = (e.RowHandle + 1).ToString();
-            }
-        }
-
         private void gridView1_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
         {
             //Insert, update row
-            var row = gridView1.GetFocusedDataRow();
-            bool isInsert = row["MedicineTypeID"].ToString() == "";
-      
+            var row = (e.Row as System.Data.DataRowView).Row;
             bool result;
 
-            if (isInsert)
+            if (gridView1.IsNewItemRow(e.RowHandle))
             {
-                MedicineType medicineType = new MedicineType()
+                //insert
+                MedicineType MedicineType = new MedicineType()
                 {
                     MedicineTypeName = (string)row["MedicineTypeName"]
                 };
 
-                int id = medicineTypeBusiness.Insert(medicineType);
-                if(id == 0)
+                int id = medicineTypeBusiness.Insert(MedicineType);
+                if (id == 0)
                 {
                     result = false;
                 }
@@ -89,18 +96,20 @@ namespace ClinicManager.Presentation
             }
             else
             {
-                MedicineType medicineType = new MedicineType()
+                //update
+                MedicineType MedicineType = new MedicineType()
                 {
                     MedicineTypeID = (int)row["MedicineTypeID"],
                     MedicineTypeName = (string)row["MedicineTypeName"]
                 };
 
-                result = medicineTypeBusiness.Update(medicineType);
+                result = medicineTypeBusiness.Update(MedicineType);
             }
 
             if (result)
             {
                 XtraMessageBox.Show(this, "Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                gridView1.FocusedRowHandle = GridControl.NewItemRowHandle;
             }
             else
             {
@@ -108,32 +117,12 @@ namespace ClinicManager.Presentation
             }
         }
 
-        private void repositoryItemDelete_Click(object sender, EventArgs e)
+        private void gridView1_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
         {
-            if (gridView1.FocusedRowHandle == GridControl.NewItemRowHandle)
+            if (e.Info.IsRowIndicator && e.RowHandle >= 0)
             {
-                return;
-            }
-            
-                if (XtraMessageBox.Show(this, "Bạn chắc chắn xóa dòng này?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
-                {
-                    var row = gridView1.GetFocusedDataRow();
-
-
-
-                    bool result = medicineTypeBusiness.Delete((int)row["MedicineTypeID"]);
-                    if (result)
-                    {
-                        gridView1.DeleteSelectedRows();
-                    }
-                    else
-                    {
-                        XtraMessageBox.Show(this, "Xóa thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-
-                
+                e.Info.DisplayText = (e.RowHandle + 1).ToString();
             }
         }
-
     }
 }

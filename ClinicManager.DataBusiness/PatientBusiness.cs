@@ -1,4 +1,4 @@
-﻿using ClinicManager.DataAccess;
+using ClinicManager.DataAccess;
 using ClinicManager.DataModel;
 using System;
 using System.Data;
@@ -36,7 +36,8 @@ namespace ClinicManager.DataBusiness
         {
             return dataAccess.GetAll();
         }
-        public System.Data.DataTable GetByCondition(string name, DateTime dateOfBirth, string gender)
+
+         public System.Data.DataTable GetByCondition(string name, DateTime dateOfBirth, string gender)
         {
             return dataAccess.GetByCondition(name,dateOfBirth,gender);
         }
@@ -59,10 +60,40 @@ namespace ClinicManager.DataBusiness
             }
             return patient;
         }
-
-        public string Validate(object data, string property)
+         public System.Data.DataTable Search(string patientName, object dateOfBirth, string gender)
         {
-            return dataAccess.Validate(data, property);
+            return dataAccess.Search(patientName, dateOfBirth, gender);
+        }
+
+        public string Validate(object data, string propertyName)
+        {
+            string result = "";
+
+            switch (propertyName)
+            {
+                case "FullName":
+                    if(string.IsNullOrWhiteSpace(data as string))
+                    {
+                        result = "Chưa nhập tên bệnh nhân";
+                    }
+                    break;
+                case "Address":
+                    if(string.IsNullOrWhiteSpace(data as string))
+                    {
+                        result = "Chưa nhập địa chỉ";
+                    }
+                    break;
+                case "DateOfBirth":
+                    if(data == null)
+                    {
+                        result = "Chưa nhập ngày sinh";
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+            return result;
         }
     }
 }
