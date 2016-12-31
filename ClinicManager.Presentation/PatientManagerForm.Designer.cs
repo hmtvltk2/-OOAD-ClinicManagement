@@ -37,6 +37,10 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.buttonSearch = new DevExpress.XtraEditors.SimpleButton();
             this.comboGender = new DevExpress.XtraEditors.ComboBoxEdit();
             this.dateDateOfBirth = new DevExpress.XtraEditors.DateEdit();
@@ -104,7 +108,6 @@
             this.gridSearchList.TabIndex = 10;
             this.gridSearchList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewSearchList});
-            this.gridSearchList.Click += new System.EventHandler(this.gridSearchList_Click);
             // 
             // gridViewSearchList
             // 
@@ -113,13 +116,22 @@
             this.gridColumn1,
             this.gridColumn3,
             this.gridColumn4,
-            this.gridColumn2});
+            this.gridColumn2,
+            this.gridColumn6,
+            this.gridColumn7,
+            this.gridColumn8,
+            this.gridColumn9});
             this.gridViewSearchList.GridControl = this.gridSearchList;
             this.gridViewSearchList.IndicatorWidth = 50;
             this.gridViewSearchList.Name = "gridViewSearchList";
+            this.gridViewSearchList.OptionsBehavior.ReadOnly = true;
+            this.gridViewSearchList.DoubleClick += new System.EventHandler(this.gridViewSearchList_DoubleClick);
             // 
             // gridColumn5
             // 
+            this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn5.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn5.Caption = "Mã bệnh nhân";
             this.gridColumn5.FieldName = "PatientID";
             this.gridColumn5.Name = "gridColumn5";
@@ -127,43 +139,87 @@
             this.gridColumn5.OptionsColumn.TabStop = false;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 0;
-            this.gridColumn5.Width = 82;
+            this.gridColumn5.Width = 88;
             // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Họ tên";
             this.gridColumn1.FieldName = "FullName";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowFocus = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 1;
-            this.gridColumn1.Width = 218;
+            this.gridColumn1.Width = 123;
             // 
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Giới tính";
             this.gridColumn3.FieldName = "Gender";
             this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowFocus = false;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 137;
+            this.gridColumn3.Width = 73;
             // 
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Ngày sinh";
             this.gridColumn4.FieldName = "DateOfBirth";
             this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowFocus = false;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 125;
+            this.gridColumn4.Width = 87;
             // 
             // gridColumn2
             // 
             this.gridColumn2.Caption = "Địa chỉ";
             this.gridColumn2.FieldName = "Address";
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowFocus = false;
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 4;
-            this.gridColumn2.Width = 396;
+            this.gridColumn2.VisibleIndex = 6;
+            this.gridColumn2.Width = 170;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Nghề nghiệp";
+            this.gridColumn6.FieldName = "Job";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowFocus = false;
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.Width = 76;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "Số điện thoại";
+            this.gridColumn7.FieldName = "Phone";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowFocus = false;
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 4;
+            this.gridColumn7.Width = 80;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Ghi chú";
+            this.gridColumn8.FieldName = "Note";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.OptionsColumn.AllowFocus = false;
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 7;
+            this.gridColumn8.Width = 170;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "Ngày tạo";
+            this.gridColumn9.FieldName = "CreateDate";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.OptionsColumn.AllowFocus = false;
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 8;
+            this.gridColumn9.Width = 91;
             // 
             // buttonSearch
             // 
@@ -174,6 +230,7 @@
             this.buttonSearch.StyleController = this.layoutControl1;
             this.buttonSearch.TabIndex = 4;
             this.buttonSearch.Text = "Tìm";
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // comboGender
             // 
@@ -182,8 +239,10 @@
             this.comboGender.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboGender.Properties.Items.AddRange(new object[] {
+            "Tất cả",
             "Nam",
             "Nữ"});
+            this.comboGender.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboGender.Size = new System.Drawing.Size(125, 20);
             this.comboGender.StyleController = this.layoutControl1;
             this.comboGender.TabIndex = 3;
@@ -197,6 +256,8 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateDateOfBirth.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateDateOfBirth.Properties.MaxValue = new System.DateTime(2016, 12, 29, 0, 0, 0, 0);
+            this.dateDateOfBirth.Properties.NullText = "Tất cả";
             this.dateDateOfBirth.Size = new System.Drawing.Size(162, 20);
             this.dateDateOfBirth.StyleController = this.layoutControl1;
             this.dateDateOfBirth.TabIndex = 2;
@@ -218,6 +279,7 @@
             this.buttonExit.StyleController = this.layoutControl1;
             this.buttonExit.TabIndex = 8;
             this.buttonExit.Text = "Đóng";
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // layoutControlGroup1
             // 
@@ -354,6 +416,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý bệnh nhân";
+            this.Load += new System.EventHandler(this.PatientManagerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridSearchList)).EndInit();
@@ -407,5 +470,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace ClinicManager.DataAccess
 {
-    public class WayToUseAccess : BaseDataAcess
+    public class MedicalRecordAccess : BaseDataAcess
     {
         public override int Insert(object obj)
         {
@@ -13,9 +13,9 @@ namespace ClinicManager.DataAccess
             {
                 using (var db = new ClinicDB())
                 {
-                    var query = from d in db.WayToUse orderby d.WayToUseID descending select d;
+                    var query = from d in db.MedicalRecord orderby d.MedicalRecordID descending select d;
                     var last = query.First();
-                    result = last.WayToUseID;
+                    result = last.MedicalRecordID;
                 }
             }
 
@@ -24,10 +24,10 @@ namespace ClinicManager.DataAccess
 
         public bool Delete(int id)
         {
-            WayToUse model;
+            MedicalRecord model;
             using (var db = new ClinicDB())
-            { 
-                model = db.WayToUse.Find(id);
+            {
+                model = db.MedicalRecord.Find(id);
 
                 if (model == null)
                 {
@@ -42,8 +42,19 @@ namespace ClinicManager.DataAccess
         {
             using (var db = new ClinicDB())
             {
-                return db.WayToUse.ToDataTable();
+                return db.MedicalRecord.ToDataTable();
             }
+        }
+        public DataTable GetById(int Id)
+        {
+            using (var db = new ClinicDB())
+            {
+                var medicalRecord = from m in db.MedicalRecord
+                                    where m.PatientID == Id
+                                    select m;
+                return medicalRecord.ToDataTable();
+            }
+           
         }
     }
 }

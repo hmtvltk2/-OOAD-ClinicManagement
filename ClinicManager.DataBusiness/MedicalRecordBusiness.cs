@@ -1,0 +1,45 @@
+﻿using ClinicManager.DataAccess;
+
+namespace ClinicManager.DataBusiness
+{
+    public class MedicalRecordBusiness
+    {
+        #region Contructor
+        private MedicalRecordAccess dataAccess;
+
+        public MedicalRecordBusiness()
+        {
+            dataAccess = new MedicalRecordAccess();
+        }
+        
+        #endregion
+
+        public int Insert(object data)
+        {
+            return dataAccess.Insert(data);
+        }
+
+        public bool Update(object data)
+        {
+            return dataAccess.Update(data);
+        }
+
+        public bool Delete(int id)
+        {
+            return dataAccess.Delete(id);
+        }
+
+        public System.Data.DataTable GetAll()
+        {
+            return dataAccess.GetAll();
+        }
+        public System.Data.DataTable GetById(int Id)
+        {
+            return dataAccess.GetById(Id);
+        }
+        public string Validate(object data, string property)
+        {
+            return dataAccess.Validate(data, property);
+        }
+    }
+}

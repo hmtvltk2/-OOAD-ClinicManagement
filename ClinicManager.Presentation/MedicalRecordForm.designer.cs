@@ -188,6 +188,7 @@
             this.simpleButton1.StyleController = this.layoutControl1;
             this.simpleButton1.TabIndex = 14;
             this.simpleButton1.Text = "Đóng";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // textMedicalRecordID
             // 

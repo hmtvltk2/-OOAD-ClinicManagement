@@ -73,7 +73,8 @@ namespace ClinicManager.Presentation
                                                                //Add column to chose
                                                                //LookUpType.Columns.Add(new LookUpColumnInfo("MedicineTypeID", "Mã loại thuốc"));
             lookUpEditType.Properties.Columns.Add(new LookUpColumnInfo("MedicineTypeName", "Chọn"));
-            
+            lookUpEditType.ItemIndex = datasource.Rows.IndexOf(row);
+
 
         }
 
@@ -87,6 +88,7 @@ namespace ClinicManager.Presentation
             {
                 e.Info.DisplayText = (e.RowHandle + 1).ToString();
             }
+          
         }
 
         private void repositoryItemDelete_Click(object sender, EventArgs e)
@@ -195,7 +197,7 @@ namespace ClinicManager.Presentation
         private void gridViewMedicineList_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
         {
             //Get data in focus row
-            var row = gridViewMedicineList.GetFocusedDataRow();
+            var row = (e.Row as DataRowView).Row;
             // if isInsert ="" mean focusrow at add new row else at edit row
             bool isInsert = row["MedicineID"].ToString() == "";
             // status of upate/insert into db
@@ -260,19 +262,9 @@ namespace ClinicManager.Presentation
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            // select all
-            if (textMedicineName.Text == "" && lookUpEditType.EditValue == null)
-            {
-                gridCMedicineList.DataSource = medicineBusiness.GetAll();
-            }
-            // select with name and all Type (begin as null)
-            else if (textMedicineName.Text != "" && lookUpEditType.EditValue == null)
-            {
-                gridCMedicineList.DataSource = medicineBusiness.GetByCondition(textMedicineName.Text.ToString());
-
-            }
+          
             // select with all;
-            else if (textMedicineName.Text == "" && (int)lookUpEditType.EditValue == 0)
+             if (textMedicineName.Text == "" && (int)lookUpEditType.EditValue == 0)
             {
                 gridCMedicineList.DataSource = medicineBusiness.GetAll();
 
@@ -289,9 +281,6 @@ namespace ClinicManager.Presentation
                 gridCMedicineList.DataSource = medicineBusiness.GetByCondition(textMedicineName.Text.ToString(), int.Parse(lookUpEditType.EditValue.ToString()));
             }
           
-          
-           
-            
             //select with all name belong one Type
             else if (textMedicineName.Text == "" && lookUpEditType.EditValue != null)
             {
