@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ClinicManager.DataAccess
+namespace ClinicManager.DataModel
 {
     public class BaseDataAccess
     {

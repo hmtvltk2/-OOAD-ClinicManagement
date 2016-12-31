@@ -1,15 +1,17 @@
-﻿using ClinicManager.DataModel;
+﻿using System;
+using ClinicManager.DataModel;
+using System.Data;
 
 namespace ClinicManager.DataBusiness
 {
-    public class UnitBusiness
+    public class UserBusiness
     {
         #region Contructor
-        private UnitAccess dataAccess;
+        private UserAccess dataAccess;
 
-        public UnitBusiness()
+        public UserBusiness()
         {
-            dataAccess = new UnitAccess();
+            dataAccess = new UserAccess();
         }
 
         #endregion
@@ -38,15 +40,18 @@ namespace ClinicManager.DataBusiness
         {
             string result = "";
 
-            if(propertyName == "UnitName")
-            {
-                if (string.IsNullOrWhiteSpace((string)data))
-                {
-                    result = "Tên đơn vị tính không được trống";
-                }
-            }
 
             return result;
+        }
+
+        public DataTable GetAllDoctor()
+        {
+            return dataAccess.GetAllDoctor();
+        }
+
+        public DataTable GetAllDoctorWithQueue()
+        {
+            return dataAccess.GetAllDoctorWithQueue();
         }
     }
 }

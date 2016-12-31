@@ -3,7 +3,7 @@ using System.Data;
 using System.Linq;
 using System;
 
-namespace ClinicManager.DataAccess
+namespace ClinicManager.DataModel
 {
     public class PatientAccess : BaseDataAccess
     {
@@ -49,9 +49,26 @@ namespace ClinicManager.DataAccess
             }
         }
 
-        public DataTable Search(string patientName, DateTime dateOfBirth, string gender)
+        public DataTable Search(string patientName, object dateOfBirth, string gender)
         {
-            throw new NotImplementedException();
+            using (var db = new ClinicDB())
+            {
+                if (dateOfBirth == null)
+                {
+                    var result = from d in db.Patient
+                                 where d.FullName.Contains(patientName) && d.Gender.Contains(gender)
+                                 select d;
+                    return result.ToDataTable();
+                }
+                else
+                {
+                    var result = from d in db.Patient
+                                 where d.FullName.Contains(patientName) && d.Gender.Contains(gender)
+                                        && d.DateOfBirth == (DateTime)dateOfBirth
+                                 select d;
+                    return result.ToDataTable();
+                }
+            }
             
         }
     }

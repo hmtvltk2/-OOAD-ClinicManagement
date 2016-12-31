@@ -1,4 +1,4 @@
-namespace ClinicManager.DataAccess
+namespace ClinicManager.DataModel
 {
     using System.Data.Entity;
     using DataModel;

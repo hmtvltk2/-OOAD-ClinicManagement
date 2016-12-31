@@ -2,7 +2,7 @@
 using System.Data;
 using System.Linq;
 
-namespace ClinicManager.DataAccess
+namespace ClinicManager.DataModel
 {
     public class UnitAccess : BaseDataAccess
     {

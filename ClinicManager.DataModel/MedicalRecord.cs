@@ -32,6 +32,9 @@ namespace ClinicManager.DataModel
         [Column(TypeName = "smalldatetime")]
         public DateTime ExamineDate { get; set; }
 
+        [Column(TypeName = "smalldatetime")]
+        public DateTime ReExamineDate { get; set; }
+
         [StringLength(200)]
         public string Note { get; set; }
 

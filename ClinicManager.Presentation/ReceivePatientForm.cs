@@ -1,4 +1,5 @@
 ﻿using ClinicManager.DataBusiness;
+using ClinicManager.DataModel;
 using DevExpress.XtraEditors;
 using System;
 using System.Windows.Forms;
@@ -43,7 +44,7 @@ namespace ClinicManager.Presentation
         {
             gridSearchList.DataSource = patientBusiness.Search(
                                                 textPatientName.Text,
-                                                (DateTime)dateDateOfBirth.EditValue,
+                                                dateDateOfBirth.EditValue,
                                                 comboGender.Text);
         }
 
@@ -55,9 +56,10 @@ namespace ClinicManager.Presentation
         // Open "CreatePatientForm"
         private void buttonAddPatient_Click(object sender, EventArgs e)
         {
-            var patientForm = new CreatePatientForm();
+            var patientForm = new CreatePatientForm(this);
             patientForm.Show();
-            LoadPatientList();
+            
+            //LoadPatientList();
         }
 
         // Open "CreateExamnineForm" with param is the selected Patient
@@ -71,21 +73,19 @@ namespace ClinicManager.Presentation
                 return;
             }
 
-            //var examineForm = new CreateExaminetionForm(new Patient(row));
-            //examineForm.Show();
-
-            LoadQueueList();
+            var examineForm = new CreateExaminetionForm(this, Helper.ConvertDataRowTo<Patient>(row));
+            examineForm.Show();
         }
 
         // Load patient list order by CreateDate desc
-        private void LoadPatientList()
+        public void LoadPatientList()
         {
             gridSearchList.DataSource = patientBusiness.GetAll();
         }
 
-        private void LoadQueueList()
+        public void LoadQueueList()
         {
-            gridSearchList.DataSource = queueBusiness.GetByDate(DateTime.Today);
+            GridExamineList.DataSource = queueBusiness.GetByDate(DateTime.Today);
         }
     }
 }

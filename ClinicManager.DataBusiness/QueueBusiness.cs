@@ -1,5 +1,5 @@
 ﻿using System;
-using ClinicManager.DataAccess;
+using ClinicManager.DataModel;
 using System.Data;
 
 namespace ClinicManager.DataBusiness
@@ -31,7 +31,7 @@ namespace ClinicManager.DataBusiness
             return dataAccess.Delete(id);
         }
 
-        public System.Data.DataTable GetAll()
+        public DataTable GetAll()
         {
             return dataAccess.GetAll();
         }
@@ -39,6 +39,31 @@ namespace ClinicManager.DataBusiness
         public DataTable GetByDate(DateTime today)
         {
             return dataAccess.GetByDate(today);
+        }
+
+        public string Validate(object data, string propertyName)
+        {
+            string result = "";
+
+            switch (propertyName)
+            {
+                case "ExamineReason":
+                    if (string.IsNullOrWhiteSpace(data as string))
+                    {
+                        result = "Chưa nhập lý do khám";
+                    }
+                    break;
+                case "DoctorId":
+                    if (data == null || (int)data == 0)
+                    {
+                        result = "Chưa chọn bác sĩ";
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+            return result;
         }
     }
 }

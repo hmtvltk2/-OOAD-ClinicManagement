@@ -1,7 +1,7 @@
 ﻿using ClinicManager.DataModel;
 using System.Linq;
 
-namespace ClinicManager.DataAccess
+namespace ClinicManager.DataModel
 {
     public class PharmacyTypeAccess : BaseDataAccess
     {

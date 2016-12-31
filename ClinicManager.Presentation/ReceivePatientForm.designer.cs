@@ -59,11 +59,9 @@
             this.buttonAddPatient = new DevExpress.XtraEditors.SimpleButton();
             this.buttonCreateExamine = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -89,11 +87,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridExamineList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewExamineList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
@@ -126,7 +122,7 @@
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(685, 463, 250, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(1058, 707);
+            this.layoutControl1.Size = new System.Drawing.Size(1058, 506);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -135,7 +131,7 @@
             this.gridSearchList.Location = new System.Drawing.Point(24, 78);
             this.gridSearchList.MainView = this.gridviewSearchList;
             this.gridSearchList.Name = "gridSearchList";
-            this.gridSearchList.Size = new System.Drawing.Size(1010, 252);
+            this.gridSearchList.Size = new System.Drawing.Size(1010, 154);
             this.gridSearchList.TabIndex = 10;
             this.gridSearchList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridviewSearchList});
@@ -236,10 +232,10 @@
             // 
             // GridExamineList
             // 
-            this.GridExamineList.Location = new System.Drawing.Point(24, 422);
+            this.GridExamineList.Location = new System.Drawing.Point(24, 304);
             this.GridExamineList.MainView = this.gridViewExamineList;
             this.GridExamineList.Name = "GridExamineList";
-            this.GridExamineList.Size = new System.Drawing.Size(1010, 261);
+            this.GridExamineList.Size = new System.Drawing.Size(1010, 178);
             this.GridExamineList.TabIndex = 9;
             this.GridExamineList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewExamineList});
@@ -263,6 +259,7 @@
             // FullNameToday
             // 
             this.FullNameToday.Caption = "Họ tên";
+            this.FullNameToday.FieldName = "FullName";
             this.FullNameToday.Name = "FullNameToday";
             this.FullNameToday.Visible = true;
             this.FullNameToday.VisibleIndex = 0;
@@ -271,6 +268,7 @@
             // GenderToday
             // 
             this.GenderToday.Caption = "Giới tính";
+            this.GenderToday.FieldName = "Gender";
             this.GenderToday.Name = "GenderToday";
             this.GenderToday.Visible = true;
             this.GenderToday.VisibleIndex = 1;
@@ -279,6 +277,7 @@
             // AddressToday
             // 
             this.AddressToday.Caption = "Địa chỉ";
+            this.AddressToday.FieldName = "Address";
             this.AddressToday.Name = "AddressToday";
             this.AddressToday.Visible = true;
             this.AddressToday.VisibleIndex = 4;
@@ -287,6 +286,7 @@
             // DateOfBirthToday
             // 
             this.DateOfBirthToday.Caption = "Ngày sinh";
+            this.DateOfBirthToday.FieldName = "DateOfBirth";
             this.DateOfBirthToday.Name = "DateOfBirthToday";
             this.DateOfBirthToday.Visible = true;
             this.DateOfBirthToday.VisibleIndex = 2;
@@ -295,6 +295,7 @@
             // PhoneToday
             // 
             this.PhoneToday.Caption = "Điện thoại";
+            this.PhoneToday.FieldName = "Phone";
             this.PhoneToday.Name = "PhoneToday";
             this.PhoneToday.Visible = true;
             this.PhoneToday.VisibleIndex = 3;
@@ -303,6 +304,7 @@
             // ExamineReason
             // 
             this.ExamineReason.Caption = "Lý do khám";
+            this.ExamineReason.FieldName = "ExamineReason";
             this.ExamineReason.Name = "ExamineReason";
             this.ExamineReason.Visible = true;
             this.ExamineReason.VisibleIndex = 5;
@@ -311,6 +313,7 @@
             // Doctor
             // 
             this.Doctor.Caption = "Bác sĩ khám";
+            this.Doctor.FieldName = "DoctorName";
             this.Doctor.Name = "Doctor";
             this.Doctor.Visible = true;
             this.Doctor.VisibleIndex = 6;
@@ -319,7 +322,7 @@
             // buttonClose
             // 
             this.buttonClose.Image = ((System.Drawing.Image)(resources.GetObject("buttonClose.Image")));
-            this.buttonClose.Location = new System.Drawing.Point(936, 356);
+            this.buttonClose.Location = new System.Drawing.Point(936, 248);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(110, 22);
             this.buttonClose.StyleController = this.layoutControl1;
@@ -330,7 +333,7 @@
             // buttonAddPatient
             // 
             this.buttonAddPatient.Image = ((System.Drawing.Image)(resources.GetObject("buttonAddPatient.Image")));
-            this.buttonAddPatient.Location = new System.Drawing.Point(713, 356);
+            this.buttonAddPatient.Location = new System.Drawing.Point(713, 248);
             this.buttonAddPatient.Name = "buttonAddPatient";
             this.buttonAddPatient.Size = new System.Drawing.Size(110, 22);
             this.buttonAddPatient.StyleController = this.layoutControl1;
@@ -341,7 +344,7 @@
             // buttonCreateExamine
             // 
             this.buttonCreateExamine.Image = ((System.Drawing.Image)(resources.GetObject("buttonCreateExamine.Image")));
-            this.buttonCreateExamine.Location = new System.Drawing.Point(827, 356);
+            this.buttonCreateExamine.Location = new System.Drawing.Point(827, 248);
             this.buttonCreateExamine.Name = "buttonCreateExamine";
             this.buttonCreateExamine.Size = new System.Drawing.Size(105, 22);
             this.buttonCreateExamine.StyleController = this.layoutControl1;
@@ -354,31 +357,21 @@
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.emptySpaceItem1,
             this.layoutControlItem4,
             this.layoutControlItem5,
             this.layoutControlItem6,
-            this.emptySpaceItem7,
             this.layoutControlGroup4,
             this.layoutControlGroup2,
             this.emptySpaceItem4});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1058, 707);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1058, 506);
             this.layoutControlGroup1.TextVisible = false;
-            // 
-            // emptySpaceItem1
-            // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 370);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(1038, 10);
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.buttonCreateExamine;
-            this.layoutControlItem4.Location = new System.Drawing.Point(815, 344);
+            this.layoutControlItem4.Location = new System.Drawing.Point(815, 236);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(109, 26);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
@@ -387,7 +380,7 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.buttonAddPatient;
-            this.layoutControlItem5.Location = new System.Drawing.Point(701, 344);
+            this.layoutControlItem5.Location = new System.Drawing.Point(701, 236);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(114, 26);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
@@ -396,28 +389,20 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.buttonClose;
-            this.layoutControlItem6.Location = new System.Drawing.Point(924, 344);
+            this.layoutControlItem6.Location = new System.Drawing.Point(924, 236);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(114, 26);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
-            // 
-            // emptySpaceItem7
-            // 
-            this.emptySpaceItem7.AllowHotTrack = false;
-            this.emptySpaceItem7.Location = new System.Drawing.Point(0, 334);
-            this.emptySpaceItem7.Name = "emptySpaceItem7";
-            this.emptySpaceItem7.Size = new System.Drawing.Size(1038, 10);
-            this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlGroup4
             // 
             this.layoutControlGroup4.CustomizationFormText = "layoutControlGroup2";
             this.layoutControlGroup4.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
-            this.layoutControlGroup4.Location = new System.Drawing.Point(0, 380);
+            this.layoutControlGroup4.Location = new System.Drawing.Point(0, 262);
             this.layoutControlGroup4.Name = "layoutControlGroup4";
-            this.layoutControlGroup4.Size = new System.Drawing.Size(1038, 307);
+            this.layoutControlGroup4.Size = new System.Drawing.Size(1038, 224);
             this.layoutControlGroup4.Text = "Danh sách phiên khám trong ngày";
             // 
             // layoutControlItem1
@@ -425,7 +410,7 @@
             this.layoutControlItem1.Control = this.GridExamineList;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1014, 265);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1014, 182);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -444,7 +429,7 @@
             this.emptySpaceItem3});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(1038, 334);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(1038, 236);
             this.layoutControlGroup2.Text = "Tìm kiếm bệnh nhân";
             // 
             // layoutControlItem2
@@ -520,7 +505,7 @@
             this.layoutControlItem3.Control = this.gridSearchList;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 36);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(1014, 256);
+            this.layoutControlItem3.Size = new System.Drawing.Size(1014, 158);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -535,7 +520,7 @@
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 344);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 236);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
             this.emptySpaceItem4.Size = new System.Drawing.Size(701, 26);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
@@ -544,7 +529,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1058, 707);
+            this.ClientSize = new System.Drawing.Size(1058, 506);
             this.Controls.Add(this.layoutControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ReceivePatientForm";
@@ -563,11 +548,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridExamineList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewExamineList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
@@ -590,14 +573,12 @@
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraEditors.SimpleButton buttonClose;
         private DevExpress.XtraEditors.SimpleButton buttonAddPatient;
         private DevExpress.XtraEditors.SimpleButton buttonCreateExamine;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem7;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup4;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
         private DevExpress.XtraEditors.TextEdit textPatientName;

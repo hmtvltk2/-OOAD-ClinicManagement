@@ -34,12 +34,12 @@
             this.textDateOfBirth = new DevExpress.XtraEditors.TextEdit();
             this.memoExamineReason = new DevExpress.XtraEditors.MemoEdit();
             this.memoAddress = new DevExpress.XtraEditors.MemoEdit();
-            this.simpleExit = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleCreate = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonCreate = new DevExpress.XtraEditors.SimpleButton();
             this.dateExamineDay = new DevExpress.XtraEditors.DateEdit();
-            this.comboDoctor = new DevExpress.XtraEditors.ComboBoxEdit();
             this.textJob = new DevExpress.XtraEditors.TextEdit();
             this.textFullName = new DevExpress.XtraEditors.TextEdit();
+            this.lookupDoctor = new DevExpress.XtraEditors.LookUpEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -69,9 +69,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.memoAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateExamineDay.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateExamineDay.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboDoctor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textJob.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textFullName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookupDoctor.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -101,12 +101,12 @@
             this.layoutControl1.Controls.Add(this.textDateOfBirth);
             this.layoutControl1.Controls.Add(this.memoExamineReason);
             this.layoutControl1.Controls.Add(this.memoAddress);
-            this.layoutControl1.Controls.Add(this.simpleExit);
-            this.layoutControl1.Controls.Add(this.simpleCreate);
+            this.layoutControl1.Controls.Add(this.buttonCancel);
+            this.layoutControl1.Controls.Add(this.buttonCreate);
             this.layoutControl1.Controls.Add(this.dateExamineDay);
-            this.layoutControl1.Controls.Add(this.comboDoctor);
             this.layoutControl1.Controls.Add(this.textJob);
             this.layoutControl1.Controls.Add(this.textFullName);
+            this.layoutControl1.Controls.Add(this.lookupDoctor);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -123,6 +123,7 @@
             this.textGender.Size = new System.Drawing.Size(232, 20);
             this.textGender.StyleController = this.layoutControl1;
             this.textGender.TabIndex = 17;
+            this.textGender.TabStop = false;
             // 
             // textDateOfBirth
             // 
@@ -132,6 +133,7 @@
             this.textDateOfBirth.Size = new System.Drawing.Size(232, 20);
             this.textDateOfBirth.StyleController = this.layoutControl1;
             this.textDateOfBirth.TabIndex = 16;
+            this.textDateOfBirth.TabStop = false;
             // 
             // memoExamineReason
             // 
@@ -139,7 +141,9 @@
             this.memoExamineReason.Name = "memoExamineReason";
             this.memoExamineReason.Size = new System.Drawing.Size(310, 55);
             this.memoExamineReason.StyleController = this.layoutControl1;
-            this.memoExamineReason.TabIndex = 15;
+            this.memoExamineReason.TabIndex = 1;
+            this.memoExamineReason.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.memoExamineReason_InvalidValue);
+            this.memoExamineReason.Validating += new System.ComponentModel.CancelEventHandler(this.memoExamineReason_Validating);
             // 
             // memoAddress
             // 
@@ -149,26 +153,29 @@
             this.memoAddress.Size = new System.Drawing.Size(232, 41);
             this.memoAddress.StyleController = this.layoutControl1;
             this.memoAddress.TabIndex = 14;
+            this.memoAddress.TabStop = false;
             // 
-            // simpleExit
+            // buttonCancel
             // 
-            this.simpleExit.Image = ((System.Drawing.Image)(resources.GetObject("simpleExit.Image")));
-            this.simpleExit.Location = new System.Drawing.Point(638, 246);
-            this.simpleExit.Name = "simpleExit";
-            this.simpleExit.Size = new System.Drawing.Size(94, 22);
-            this.simpleExit.StyleController = this.layoutControl1;
-            this.simpleExit.TabIndex = 13;
-            this.simpleExit.Text = "Hủy";
+            this.buttonCancel.Image = ((System.Drawing.Image)(resources.GetObject("buttonCancel.Image")));
+            this.buttonCancel.Location = new System.Drawing.Point(638, 246);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(94, 22);
+            this.buttonCancel.StyleController = this.layoutControl1;
+            this.buttonCancel.TabIndex = 5;
+            this.buttonCancel.Text = "Hủy";
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // simpleCreate
+            // buttonCreate
             // 
-            this.simpleCreate.Image = ((System.Drawing.Image)(resources.GetObject("simpleCreate.Image")));
-            this.simpleCreate.Location = new System.Drawing.Point(536, 246);
-            this.simpleCreate.Name = "simpleCreate";
-            this.simpleCreate.Size = new System.Drawing.Size(98, 22);
-            this.simpleCreate.StyleController = this.layoutControl1;
-            this.simpleCreate.TabIndex = 12;
-            this.simpleCreate.Text = "Tạo";
+            this.buttonCreate.Image = ((System.Drawing.Image)(resources.GetObject("buttonCreate.Image")));
+            this.buttonCreate.Location = new System.Drawing.Point(536, 246);
+            this.buttonCreate.Name = "buttonCreate";
+            this.buttonCreate.Size = new System.Drawing.Size(98, 22);
+            this.buttonCreate.StyleController = this.layoutControl1;
+            this.buttonCreate.TabIndex = 4;
+            this.buttonCreate.Text = "Tạo";
+            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
             // 
             // dateExamineDay
             // 
@@ -181,17 +188,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateExamineDay.Size = new System.Drawing.Size(310, 20);
             this.dateExamineDay.StyleController = this.layoutControl1;
-            this.dateExamineDay.TabIndex = 11;
-            // 
-            // comboDoctor
-            // 
-            this.comboDoctor.Location = new System.Drawing.Point(410, 112);
-            this.comboDoctor.Name = "comboDoctor";
-            this.comboDoctor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboDoctor.Size = new System.Drawing.Size(310, 20);
-            this.comboDoctor.StyleController = this.layoutControl1;
-            this.comboDoctor.TabIndex = 10;
+            this.dateExamineDay.TabIndex = 3;
             // 
             // textJob
             // 
@@ -201,6 +198,7 @@
             this.textJob.Size = new System.Drawing.Size(232, 20);
             this.textJob.StyleController = this.layoutControl1;
             this.textJob.TabIndex = 7;
+            this.textJob.TabStop = false;
             // 
             // textFullName
             // 
@@ -210,6 +208,22 @@
             this.textFullName.Size = new System.Drawing.Size(232, 20);
             this.textFullName.StyleController = this.layoutControl1;
             this.textFullName.TabIndex = 4;
+            this.textFullName.TabStop = false;
+            // 
+            // lookupDoctor
+            // 
+            this.lookupDoctor.Location = new System.Drawing.Point(410, 112);
+            this.lookupDoctor.Name = "lookupDoctor";
+            this.lookupDoctor.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookupDoctor.Properties.NullText = "Chọn bác sĩ";
+            this.lookupDoctor.Properties.PopupSizeable = false;
+            this.lookupDoctor.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.lookupDoctor.Size = new System.Drawing.Size(310, 20);
+            this.lookupDoctor.StyleController = this.layoutControl1;
+            this.lookupDoctor.TabIndex = 2;
+            this.lookupDoctor.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.lookupDoctor_InvalidValue);
+            this.lookupDoctor.Validating += new System.ComponentModel.CancelEventHandler(this.lookupDoctor_Validating);
             // 
             // layoutControlGroup1
             // 
@@ -340,7 +354,7 @@
             // 
             // layoutControlItem7
             // 
-            this.layoutControlItem7.Control = this.comboDoctor;
+            this.layoutControlItem7.Control = this.lookupDoctor;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 70);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(377, 24);
@@ -393,7 +407,7 @@
             // 
             // layoutControlItem10
             // 
-            this.layoutControlItem10.Control = this.simpleExit;
+            this.layoutControlItem10.Control = this.buttonCancel;
             this.layoutControlItem10.Location = new System.Drawing.Point(626, 234);
             this.layoutControlItem10.Name = "layoutControlItem10";
             this.layoutControlItem10.Size = new System.Drawing.Size(98, 26);
@@ -402,7 +416,7 @@
             // 
             // layoutControlItem9
             // 
-            this.layoutControlItem9.Control = this.simpleCreate;
+            this.layoutControlItem9.Control = this.buttonCreate;
             this.layoutControlItem9.Location = new System.Drawing.Point(524, 234);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Size = new System.Drawing.Size(102, 26);
@@ -429,6 +443,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tạo phiên khám";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreateExaminetionForm_FormClosed);
             this.Load += new System.EventHandler(this.CreateExaminetionForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
@@ -438,9 +453,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.memoAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateExamineDay.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateExamineDay.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboDoctor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textJob.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textFullName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookupDoctor.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -470,9 +485,8 @@
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraEditors.SimpleButton simpleExit;
+        private DevExpress.XtraEditors.SimpleButton buttonCancel;
         private DevExpress.XtraEditors.DateEdit dateExamineDay;
-        private DevExpress.XtraEditors.ComboBoxEdit comboDoctor;
         private DevExpress.XtraEditors.TextEdit textJob;
         private DevExpress.XtraEditors.TextEdit textFullName;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
@@ -487,7 +501,7 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem7;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
-        private DevExpress.XtraEditors.SimpleButton simpleCreate;
+        private DevExpress.XtraEditors.SimpleButton buttonCreate;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraEditors.MemoEdit memoExamineReason;
@@ -500,5 +514,6 @@
         private DevExpress.XtraEditors.TextEdit textDateOfBirth;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraEditors.LookUpEdit lookupDoctor;
     }
 }

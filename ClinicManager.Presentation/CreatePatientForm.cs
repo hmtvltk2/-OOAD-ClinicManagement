@@ -8,9 +8,13 @@ namespace ClinicManager.Presentation
 {
     public partial class CreatePatientForm : Form
     {
-        public CreatePatientForm()
+        private PatientBusiness patientBusiness;
+        private ReceivePatientForm parentsForm;
+        public CreatePatientForm(ReceivePatientForm parentsForm)
         {
             InitializeComponent();
+            patientBusiness = new PatientBusiness();
+            this.parentsForm = parentsForm;
         }
 
         private void CreatePatientForm_Load(object sender, EventArgs e)
@@ -26,8 +30,7 @@ namespace ClinicManager.Presentation
             {
                 return;
             }
-
-            PatientBusiness patientBusiness = new PatientBusiness();
+  
             var patient = new Patient
             {
                 Address = memoAddress.Text,
@@ -54,30 +57,89 @@ namespace ClinicManager.Presentation
 
         private bool IsValidated()
         {
-            string message = "";
-            if(string.IsNullOrWhiteSpace(textFullName.Text))
+            string error = "";
+            bool result = true;
+
+            error = patientBusiness.Validate(textFullName.Text, "FullName");
+            if(error != "")
             {
-                message = "Tên bệnh nhân không được trống";
+                textFullName.ErrorText = error;
+                textFullName.Invalidate();
+                result = false;
             }
-            else if (dateDateOfBirth.EditValue == null)
+
+            error = patientBusiness.Validate(dateDateOfBirth.EditValue, "DateOfBirth");
+            if (error != "")
             {
-                message = "Ngày sinh không được trống";
+                dateDateOfBirth.ErrorText = error;
+                dateDateOfBirth.Invalidate();
+                result = false;
             }
-            else if (string.IsNullOrWhiteSpace(memoAddress.Text))
+
+            error = patientBusiness.Validate(memoAddress.EditValue, "Address");
+            if (error != "")
             {
-                message = "Địa chỉ không được trống";
+                memoAddress.ErrorText = error;
+                memoAddress.Invalidate();
+                result = false;
             }
-            
-            if(message != "")
+
+            return result;
+        }
+
+        private void textFullName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string error = patientBusiness.Validate(textFullName.Text, "FullName");
+            if (error != "")
             {
-                XtraMessageBox.Show(this, message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            else
+                textFullName.ErrorText = error;
+                e.Cancel = true;
+            } 
+        }
+
+        private void textFullName_InvalidValue(object sender, DevExpress.XtraEditors.Controls.InvalidValueExceptionEventArgs e)
+        {
+            e.ExceptionMode = DevExpress.XtraEditors.Controls.ExceptionMode.DisplayError;
+        }
+
+        private void dateDateOfBirth_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string error = patientBusiness.Validate(dateDateOfBirth.EditValue, "DateOfBirth");
+            if(error != "")
             {
-                return true;
+                dateDateOfBirth.ErrorText = error;
+                e.Cancel = true;
             }
         }
-       
+
+        private void dateDateOfBirth_InvalidValue(object sender, DevExpress.XtraEditors.Controls.InvalidValueExceptionEventArgs e)
+        {
+            e.ExceptionMode = DevExpress.XtraEditors.Controls.ExceptionMode.DisplayError;
+        }
+
+        private void memoAddress_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            string error = patientBusiness.Validate(memoAddress.Text, "DateOfBirth");
+            if (error != "")
+            {
+                memoAddress.ErrorText = error;
+                e.Cancel = true;
+            }
+        }
+
+        private void memoAddress_InvalidValue(object sender, DevExpress.XtraEditors.Controls.InvalidValueExceptionEventArgs e)
+        {
+            e.ExceptionMode = DevExpress.XtraEditors.Controls.ExceptionMode.DisplayError;
+        }
+
+        private void CreatePatientForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            parentsForm.LoadPatientList();
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

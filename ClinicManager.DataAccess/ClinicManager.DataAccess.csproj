@@ -64,9 +64,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Helper.cs" />
     <Compile Include="QueueAccess.cs" />
     <Compile Include="UnitAccess.cs" />
+    <Compile Include="UserAccess.cs" />
     <Compile Include="WayToUseAccess.cs" />
   </ItemGroup>
   <ItemGroup>

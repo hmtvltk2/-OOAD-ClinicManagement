@@ -3,7 +3,7 @@ using System.Data;
 using System.Linq;
 using System;
 
-namespace ClinicManager.DataAccess
+namespace ClinicManager.DataModel
 {
     public class QueueAccess : BaseDataAccess
     {
@@ -51,7 +51,14 @@ namespace ClinicManager.DataAccess
         {
             using (var db = new ClinicDB())
             {
-                var result = from d in db.Queue where d.ExamineDate == today orderby d.QueueID descending select d;
+                var result = from q in db.Queue
+                             join u in db.User on q.DoctorID equals u.UserID
+                             join ug in db.UserGroup on u.UserGroupID equals ug.UserGroupID
+                             join patient in db.Patient on q.PatientID equals patient.PatientID
+                             where q.ExamineDate == today orderby q.QueueID descending
+                             select new { q.ExamineReason, patient.FullName, patient.Gender,
+                                 patient.DateOfBirth, patient.Address, patient.Phone,
+                                 DoctorName = u.FullName};
                 return result.ToDataTable();
             }
         }
