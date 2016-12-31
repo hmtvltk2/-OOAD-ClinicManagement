@@ -44,7 +44,7 @@ namespace ClinicManager.DataModel
         {
             using (var db = new ClinicDB())
             {
-                var result = from d in db.Patient orderby d.CreateDate descending select d;
+                var result = from d in db.Patient orderby d.PatientID descending select d;
                 return result.ToDataTable();
             }
         }
