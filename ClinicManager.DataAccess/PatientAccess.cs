@@ -1,11 +1,12 @@
-﻿using ClinicManager.DataModel;
+﻿using ClinicManager.DataAccess;
 using System.Data;
 using System.Linq;
 using System;
+using ClinicManager.DataModel;
 
 namespace ClinicManager.DataAccess
 {
-    public class PatientAccess : BaseDataAcess
+    public class PatientAccess : BaseDataAccess
     {
         public override int Insert(object obj)
         {
@@ -120,7 +121,7 @@ namespace ClinicManager.DataAccess
             return result;
 
               
-            }
+            
         }
 
         public DataTable Search(string patientName, object dateOfBirth, string gender)

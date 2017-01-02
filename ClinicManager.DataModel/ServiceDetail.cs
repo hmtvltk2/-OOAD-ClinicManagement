@@ -8,6 +8,7 @@ namespace ClinicManager.DataModel
     {
         [Key]
         [Column(Order = 0)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MedicalRecordID { get; set; }
 
         [Key]

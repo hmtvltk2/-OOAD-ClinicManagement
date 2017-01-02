@@ -1,9 +1,10 @@
-﻿using ClinicManager.DataModel;
+﻿using ClinicManager.DataAccess;
 using System.Data;
 using System.Linq;
 using System;
+using ClinicManager.DataModel;
 
-namespace ClinicManager.DataModel
+namespace ClinicManager.DataAccess
 {
     public class QueueAccess : BaseDataAccess
     {

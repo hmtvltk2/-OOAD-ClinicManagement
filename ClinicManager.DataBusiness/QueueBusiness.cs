@@ -1,6 +1,7 @@
 ﻿using System;
 using ClinicManager.DataModel;
 using System.Data;
+using ClinicManager.DataAccess;
 
 namespace ClinicManager.DataBusiness
 {

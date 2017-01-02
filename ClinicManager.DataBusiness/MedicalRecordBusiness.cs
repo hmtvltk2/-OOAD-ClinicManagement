@@ -37,9 +37,10 @@ namespace ClinicManager.DataBusiness
         {
             return dataAccess.GetById(Id);
         }
-        public string Validate(object data, string property)
+
+        public System.Data.DataTable GetByStatus(string status)
         {
-            return dataAccess.Validate(data, property);
+            return dataAccess.GetByStatus(status);
         }
     }
 }

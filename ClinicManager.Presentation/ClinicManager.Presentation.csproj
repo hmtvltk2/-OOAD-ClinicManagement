@@ -36,6 +36,7 @@
     <Reference Include="DevExpress.BonusSkins.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Charts.v15.2.Core, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v15.2.Core, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v15.2.Core, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -43,6 +44,7 @@
     <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v15.2.UI, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -110,6 +112,18 @@
     <Compile Include="CreatePassword.Designer.cs">
       <DependentUpon>CreatePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExamineTurnRP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ExamineTurnRP.Designer.cs">
+      <DependentUpon>ExamineTurnRP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExaminTurnRPForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExaminTurnRPForm.Designer.cs">
+      <DependentUpon>ExaminTurnRPForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +186,18 @@
     <Compile Include="ReceivePatientForm.designer.cs">
       <DependentUpon>ReceivePatientForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="RevanueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RevanueForm.Designer.cs">
+      <DependentUpon>RevanueForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RevenueRP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RevenueRP.Designer.cs">
+      <DependentUpon>RevenueRP.cs</DependentUpon>
+    </Compile>
     <Compile Include="ScheduleManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +209,12 @@
     </Compile>
     <Compile Include="PatientManagerForm.Designer.cs">
       <DependentUpon>PatientManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceForm.Designer.cs">
+      <DependentUpon>ServiceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UnitForm.cs">
       <SubType>Form</SubType>
@@ -226,6 +258,12 @@
     <EmbeddedResource Include="ExamineForm.resx">
       <DependentUpon>ExamineForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ExamineTurnRP.resx">
+      <DependentUpon>ExamineTurnRP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExaminTurnRPForm.resx">
+      <DependentUpon>ExaminTurnRPForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -267,11 +305,20 @@
     <EmbeddedResource Include="ReceivePatientForm.resx">
       <DependentUpon>ReceivePatientForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RevanueForm.resx">
+      <DependentUpon>RevanueForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RevenueRP.resx">
+      <DependentUpon>RevenueRP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ScheduleManagerForm.resx">
       <DependentUpon>ScheduleManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PatientManagerForm.resx">
       <DependentUpon>PatientManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiceForm.resx">
+      <DependentUpon>ServiceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UnitForm.resx">
       <DependentUpon>UnitForm.cs</DependentUpon>
@@ -297,7 +344,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ClinicManager.DataAccess\ClinicManager.DataAccess.csproj">

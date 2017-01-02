@@ -4,6 +4,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraEditors.DXErrorProvider;
 using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace ClinicManager.Presentation
@@ -249,6 +250,17 @@ namespace ClinicManager.Presentation
             {
                 e.Handled = true;
             }
+        }
+
+        private void textPhone_Validating_1(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (Regex.IsMatch(textPhone.Text, "[^0-9-+]"))
+            {
+                Regex regex = new Regex("[^0-9-+]");
+                string output = regex.Replace(Clipboard.GetText(), "");
+                textPhone.Text = output;
+            }
+
         }
     }
     

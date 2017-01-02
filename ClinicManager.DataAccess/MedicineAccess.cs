@@ -1,8 +1,9 @@
-﻿using ClinicManager.DataModel;
+﻿using ClinicManager.DataAccess;
+using ClinicManager.DataModel;
 using System.Data;
 using System.Linq;
 
-namespace ClinicManager.DataModel
+namespace ClinicManager.DataAccess
 {
     public class MedicineAccess : BaseDataAccess
     {
@@ -47,9 +48,9 @@ namespace ClinicManager.DataModel
                 //        join type in db.MedicineType on medicine.MedicineTypeID equals type.MedicineTypeID
                 //        join way in db.WayToUse on medicine.MedicineID equals way.WayToUseID
                 //        join pharmacy in db.PharmacyType on medicine.PharmacyTypeID equals pharmacy.PharmacyTypeID
-                //        join unit in db.Unit on medicine.MedicineTypeID equals unit.UnitID
+                //        join Service in db.Service on medicine.MedicineTypeID equals Service.ServiceID
 
-                //        select new { medicine.MedicineID, medicine.MedicineName, type.MedicineTypeName, way.WayToUseName, pharmacy.PharmacyTypeName,unit.UnitName };
+                //        select new { medicine.MedicineID, medicine.MedicineName, type.MedicineTypeName, way.WayToUseName, pharmacy.PharmacyTypeName,Service.ServiceName };
 
                 return db.Medicine.ToDataTable();
              //   return m.ToDataTable();

@@ -122,10 +122,12 @@
             // 
             this.textPhone.Location = new System.Drawing.Point(86, 76);
             this.textPhone.Name = "textPhone";
+            this.textPhone.Properties.MaxLength = 15;
             this.textPhone.Size = new System.Drawing.Size(291, 20);
             this.textPhone.StyleController = this.layoutControl1;
             this.textPhone.TabIndex = 24;
             this.textPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPhone_KeyPress);
+            this.textPhone.Validating += new System.ComponentModel.CancelEventHandler(this.textPhone_Validating_1);
             // 
             // simpleButton2
             // 

@@ -32,9 +32,6 @@ namespace ClinicManager.DataModel
         [Column(TypeName = "smalldatetime")]
         public DateTime ExamineDate { get; set; }
 
-        [Column(TypeName = "smalldatetime")]
-        public DateTime ReExamineDate { get; set; }
-
         [StringLength(200)]
         public string Note { get; set; }
 
@@ -42,6 +39,10 @@ namespace ClinicManager.DataModel
 
         [Column(TypeName = "smalldatetime")]
         public DateTime ReExamineDate { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string Status { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bill> Bill { get; set; }

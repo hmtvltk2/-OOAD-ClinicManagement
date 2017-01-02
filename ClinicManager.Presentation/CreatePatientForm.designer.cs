@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreatePatientForm));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.buttonCancel = new DevExpress.XtraEditors.SimpleButton();
             this.memoAddress = new DevExpress.XtraEditors.MemoEdit();
             this.comboGender = new DevExpress.XtraEditors.ComboBoxEdit();
             this.memoNote = new DevExpress.XtraEditors.MemoEdit();
@@ -57,9 +58,8 @@
             this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.buttonCancel = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.memoAddress.Properties)).BeginInit();
@@ -90,8 +90,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -113,6 +113,17 @@
             this.layoutControl1.Size = new System.Drawing.Size(548, 320);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Image = ((System.Drawing.Image)(resources.GetObject("buttonCancel.Image")));
+            this.buttonCancel.Location = new System.Drawing.Point(418, 274);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(106, 22);
+            this.buttonCancel.StyleController = this.layoutControl1;
+            this.buttonCancel.TabIndex = 16;
+            this.buttonCancel.Text = "Hủy ";
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // memoAddress
             // 
@@ -209,11 +220,13 @@
             // 
             this.textPhone.Location = new System.Drawing.Point(403, 76);
             this.textPhone.Name = "textPhone";
-            this.textPhone.Properties.Mask.EditMask = "N00";
-            this.textPhone.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.textPhone.Properties.MaxLength = 15;
             this.textPhone.Size = new System.Drawing.Size(121, 20);
             this.textPhone.StyleController = this.layoutControl1;
             this.textPhone.TabIndex = 8;
+            this.textPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPhone_KeyPress);
+            this.textPhone.Validating += new System.ComponentModel.CancelEventHandler(this.textPhone_Validating);
+            this.textPhone.Validated += new System.EventHandler(this.textPhone_Validated);
             // 
             // layoutControlGroup1
             // 
@@ -393,25 +406,6 @@
             this.emptySpaceItem6.Size = new System.Drawing.Size(188, 24);
             this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // emptySpaceItem1
-            // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 243);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(393, 215);
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.Image = ((System.Drawing.Image)(resources.GetObject("buttonCancel.Image")));
-            this.buttonCancel.Location = new System.Drawing.Point(418, 274);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(106, 22);
-            this.buttonCancel.StyleController = this.layoutControl1;
-            this.buttonCancel.TabIndex = 16;
-            this.buttonCancel.Text = "Hủy ";
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
-            // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.buttonCancel;
@@ -420,6 +414,14 @@
             this.layoutControlItem6.Size = new System.Drawing.Size(110, 26);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 243);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(393, 215);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // CreatePatientForm
             // 
@@ -465,8 +467,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             this.ResumeLayout(false);
 
         }

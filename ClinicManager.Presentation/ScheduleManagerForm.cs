@@ -13,6 +13,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -100,10 +101,10 @@ namespace ClinicManager.Presentation
                 if (e.ErrorText != "")
                 {
                     e.Valid = false;
-                }
-
+                }            
                 gridView1.SetColumnError(col, e.ErrorText);
             }
+           
         }
 
         private void gridView1_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)

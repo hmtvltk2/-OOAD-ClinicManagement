@@ -1,11 +1,12 @@
-﻿using ClinicManager.DataModel;
+﻿using ClinicManager.DataAccess;
+using ClinicManager.DataModel;
 using System;
 using System.Data;
 using System.Linq;
 
 namespace ClinicManager.DataAccess
 {
-    public class ScheduleAccess : BaseDataAcess
+    public class ScheduleAccess : BaseDataAccess
     {
         public override int Insert(object obj)
         {

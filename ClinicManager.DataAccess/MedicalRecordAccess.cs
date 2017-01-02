@@ -1,10 +1,11 @@
-﻿using ClinicManager.DataModel;
+﻿using ClinicManager.DataAccess;
+using ClinicManager.DataModel;
 using System.Data;
 using System.Linq;
 
 namespace ClinicManager.DataAccess
 {
-    public class MedicalRecordAccess : BaseDataAcess
+    public class MedicalRecordAccess : BaseDataAccess
     {
         public override int Insert(object obj)
         {
@@ -55,6 +56,28 @@ namespace ClinicManager.DataAccess
                 return medicalRecord.ToDataTable();
             }
            
+        }
+        public DataTable GetByStatus(string status)
+        {
+            using (var db = new ClinicDB())
+            {
+                var notPaymentTB = from notpm in db.MedicalRecord
+                                   join patient in db.Patient on notpm.PatientID equals patient.PatientID
+                                   where notpm.Status == status
+                                   select new {notpm.MedicalRecordID,
+                                               notpm.PatientID,
+                                               notpm.DoctorID,
+                                               notpm.ExamineReason,
+                                               notpm.Diagnostic,
+                                               notpm.Note,
+                                               notpm.PrescriptionsID,
+                                               notpm.ExamineDate,
+                                               notpm.ReExamineDate,
+                                               notpm.Status,
+                                               patient.FullName, patient.Gender,
+                                               patient.DateOfBirth };
+                return notPaymentTB.ToDataTable();
+            }
         }
     }
 }

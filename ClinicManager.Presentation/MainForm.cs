@@ -98,17 +98,18 @@ namespace ClinicManager.Presentation
 
         private void barButtonMedicineExport_ItemClick(object sender, ItemClickEventArgs e)
         {
+          
 
         }
 
         private void barButtonNumberOfExamine_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            OpenMDIForm<ExaminTurnRPForm>();
         }
 
         private void barButtonRevenue_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            OpenMDIForm<RevanueForm>();
         }
 
         private void MainForm_Load(object sender, EventArgs e)

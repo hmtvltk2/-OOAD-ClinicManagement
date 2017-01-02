@@ -56,17 +56,16 @@ namespace ClinicManager.DataBusiness
                     }               
                     break;
                 case "Phone":
-                    int n;           
+                    float n;           
                     if ((string)data =="")
                     {
                         message = "Chưa nhập số điện thoại";
                     }
-                    
-                    else if (!int.TryParse((string)data, out n))
+                    else if (!float.TryParse((string)data, out n))
                     {
                         message = "Số điện thoại không được chứa kí tự";
-                    } 
-                   
+                    }
+
                     break;
                 case "DoctorID":
                     if (data == null)

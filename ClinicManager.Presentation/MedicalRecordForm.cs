@@ -14,8 +14,10 @@ namespace ClinicManager.Presentation
 {
     public partial class MedicalRecordForm : Form
     {
-        MedicalRecordBusiness mediclRecordBusiness = new MedicalRecordBusiness();
-        PatientBusiness patientBusiness = new PatientBusiness();
+        MedicalRecordBusiness mediclRecordBusiness  ;
+        PatientBusiness patientBusiness;
+        MedicalRecord _medicalRecord = new MedicalRecord();
+        PrescriptionDetailBusiness pretBusiness;
         public MedicalRecordForm()
         {
             InitializeComponent();
@@ -23,21 +25,32 @@ namespace ClinicManager.Presentation
         public MedicalRecordForm(MedicalRecord medicalRecord)
         {
             InitializeComponent();
-            textFullName.Text = patientBusiness.GetbyId(medicalRecord.PatientID).FullName;
-            textPatientID.Text = medicalRecord.PatientID.ToString();
-            textMedicalRecordID.Text = medicalRecord.MedicalRecordID.ToString();
-            memoExamineReason.Text = medicalRecord.ExamineReason;
-            memoDiagnostic.Text = medicalRecord.Diagnostic;
-            textDoctor.Text = medicalRecord.DoctorID.ToString();
-            textExamineDay.Text = medicalRecord.ExamineDate.ToShortDateString();
-            textReExamineDay.Text = medicalRecord.ReExamineDate.ToShortDateString();
-                
-           
+            mediclRecordBusiness = new MedicalRecordBusiness();
+            patientBusiness = new PatientBusiness();
+            
+            pretBusiness = new PrescriptionDetailBusiness();
+            _medicalRecord = medicalRecord;
+
+
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void MedicalRecordForm_Load(object sender, EventArgs e)
+        {
+            textFullName.Text = patientBusiness.GetbyId(_medicalRecord.PatientID).FullName;
+            textPatientID.Text = _medicalRecord.PatientID.ToString();
+            textMedicalRecordID.Text = _medicalRecord.MedicalRecordID.ToString();
+            memoExamineReason.Text = _medicalRecord.ExamineReason;
+            memoDiagnostic.Text = _medicalRecord.Diagnostic;
+            textDoctor.Text = _medicalRecord.DoctorID.ToString();
+            textExamineDay.Text = _medicalRecord.ExamineDate.ToShortDateString();
+            textReExamineDay.Text = _medicalRecord.ReExamineDate.ToShortDateString();
+
+            gridExminedList.DataSource = pretBusiness.GetByPrescriptionID(_medicalRecord.MedicalRecordID);
         }
     }
 }

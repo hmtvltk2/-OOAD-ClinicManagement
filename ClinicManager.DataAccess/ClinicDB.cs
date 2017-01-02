@@ -1,4 +1,4 @@
-namespace ClinicManager.DataModel
+namespace ClinicManager.DataAccess 
 {
     using System;
     using System.Data.Entity;
@@ -55,6 +55,10 @@ namespace ClinicManager.DataModel
             modelBuilder.Entity<BillDetail>()
                 .Property(e => e.ServiceFee)
                 .HasPrecision(19, 4);
+
+            modelBuilder.Entity<MedicalRecord>()
+                .Property(e => e.Status)
+                .IsUnicode(false);
 
             modelBuilder.Entity<MedicalRecord>()
                 .HasMany(e => e.Bill)

@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDataAccess.cs" />
+    <Compile Include="BillAccess.cs" />
     <Compile Include="ClinicDB.cs" />
     <Compile Include="MedicalRecordAccess.cs" />
     <Compile Include="MedicineAccess.cs" />
@@ -60,14 +61,17 @@
     <Compile Include="PatientAccess.cs" />
     <Compile Include="PharmacyTypeAccess.cs" />
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="PrescriptionAccess.cs" />
+    <Compile Include="PrescriptionDetailAccess.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Helper.cs" />
     <Compile Include="ScheduleAccess.cs" />
     <Compile Include="QueueAccess.cs" />
+    <Compile Include="ServiceAccess.cs" />
+    <Compile Include="ServiceDetailAccess.cs" />
     <Compile Include="UnitAccess.cs" />
     <Compile Include="UserAccess.cs" />
     <Compile Include="WayToUseAccess.cs" />

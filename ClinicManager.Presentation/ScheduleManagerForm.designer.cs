@@ -38,7 +38,7 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDate = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnPhone = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextPhone = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -156,7 +156,7 @@
             this.gridColumn8,
             this.gridColumn1,
             this.gridColumn2,
-            this.gridColumn3,
+            this.gridColumnPhone,
             this.gridColumn4,
             this.gridColumn5,
             this.gridColumn6,
@@ -215,19 +215,20 @@
             this.gridColumn2.VisibleIndex = 2;
             this.gridColumn2.Width = 134;
             // 
-            // gridColumn3
+            // gridColumnPhone
             // 
-            this.gridColumn3.Caption = "Điện thoại";
-            this.gridColumn3.ColumnEdit = this.repositoryItemTextPhone;
-            this.gridColumn3.FieldName = "Phone";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 3;
-            this.gridColumn3.Width = 114;
+            this.gridColumnPhone.Caption = "Điện thoại";
+            this.gridColumnPhone.ColumnEdit = this.repositoryItemTextPhone;
+            this.gridColumnPhone.FieldName = "Phone";
+            this.gridColumnPhone.Name = "gridColumnPhone";
+            this.gridColumnPhone.Visible = true;
+            this.gridColumnPhone.VisibleIndex = 3;
+            this.gridColumnPhone.Width = 114;
             // 
             // repositoryItemTextPhone
             // 
             this.repositoryItemTextPhone.AutoHeight = false;
+            this.repositoryItemTextPhone.MaxLength = 15;
             this.repositoryItemTextPhone.Name = "repositoryItemTextPhone";
             this.repositoryItemTextPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.repositoryItemTextPhone_KeyPress);
             // 
@@ -588,7 +589,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnPhone;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
