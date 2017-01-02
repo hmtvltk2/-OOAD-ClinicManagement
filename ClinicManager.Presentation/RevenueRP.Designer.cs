@@ -164,7 +164,7 @@
             // 
             // sqlDataSource1
             // 
-            this.sqlDataSource1.ConnectionName = "desktop-83hicpc\\sqlexpress.ClinicManagement.dbo";
+            this.sqlDataSource1.ConnectionName = "ClinicDB";
             this.sqlDataSource1.Name = "sqlDataSource1";
             storedProcQuery1.Name = "GET_REVANUE";
             queryParameter1.Name = "@DateFrom";
