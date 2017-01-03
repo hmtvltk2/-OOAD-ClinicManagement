@@ -124,11 +124,6 @@ namespace ClinicManager.DataAccess
                 .WithRequired(e => e.Permission)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<PharmacyType>()
-                .HasMany(e => e.Medicine)
-                .WithRequired(e => e.PharmacyType)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<Prescription>()
                 .Property(e => e.Amount)
                 .HasPrecision(19, 4);
@@ -170,6 +165,10 @@ namespace ClinicManager.DataAccess
                 .HasMany(e => e.ServiceDetail)
                 .WithRequired(e => e.Service)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<ServiceDetail>()
+                .Property(e => e.ServiceFee)
+                .HasPrecision(19, 4);
 
             modelBuilder.Entity<Unit>()
                 .HasMany(e => e.Medicine)

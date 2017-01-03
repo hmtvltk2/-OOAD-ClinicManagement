@@ -88,7 +88,6 @@ namespace ClinicManager.Presentation
              Diagnostic= row["Diagnostic"].ToString(),
             ExamineDate = (DateTime)row["ExamineDate"],
              Note= row["Note"].ToString(),
-            PrescriptionsID = (int)row["PrescriptionsID"],
             ReExamineDate = (DateTime)row["ReExamineDate"]
             
           

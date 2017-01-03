@@ -1,8 +1,11 @@
 ﻿using ClinicManager.DataBusiness;
 using ClinicManager.DataModel;
+using DevExpress.Data.XtraReports.ReportGeneration;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraReports.UI;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -38,7 +41,7 @@ namespace ClinicManager.Presentation
             buttonPayment.Enabled = true;
             PrescriptionBusiness presBsn = new PrescriptionBusiness();
             var row = gridViewQueue.GetFocusedDataRow();
-            textMedicalRecordID.Text = row["MedicalRecordID"].ToString();
+            textMedicalRecordID.EditValue = row["MedicalRecordID"];
             textPatientName.Text = row["FullName"].ToString();
             textPatientID.Text = row["PatientID"].ToString();
             textDateOfBirth.Text = ((DateTime)row["DateOfBirth"]).ToShortDateString();
@@ -68,7 +71,7 @@ namespace ClinicManager.Presentation
         {
             buttonPrint.Enabled = true;
             buttonPayment.Enabled = false;
-            bool result;
+            bool result = true;
             BillBusiness billBusiness = new BillBusiness();
             Bill bill = new Bill()
             {
@@ -91,32 +94,9 @@ namespace ClinicManager.Presentation
                 result = true;
 
             }
-            var row = gridViewQueue.GetFocusedDataRow();
-            var medicalRecord = new MedicalRecord()
-            {
-                MedicalRecordID = (int)row["MedicalRecordID"],
-                PatientID = (int)row["PatientID"],
-                DoctorID = (int)row["DoctorID"],
-                ExamineReason = row["ExamineReason"].ToString(),
-                Diagnostic = row["Diagnostic"].ToString(),
-                ExamineDate = (DateTime)row["ExamineDate"],
-                Note = row["Note"].ToString(),
-                PrescriptionsID = (int)row["PrescriptionsID"],
-                ReExamineDate = (DateTime)row["ReExamineDate"],
-                Status = "Payment"
-
-
-            };
-            result = medicalRecordBusiness.Update(medicalRecord);
-            if (id == 0)
-            {
-                result = false;
-            }
-            else
-            {
-                result = true;
-
-            }
+            var medicalRecord = medicalRecordBusiness.GetByMedicalRecordID((int)textMedicalRecordID.EditValue);
+            medicalRecord.Status = "Payment";
+            result = result && medicalRecordBusiness.Update(medicalRecord);           
 
             if (result)
             {
@@ -132,7 +112,25 @@ namespace ClinicManager.Presentation
 
         private void buttonPrint_Click(object sender, EventArgs e)
         {
+            var bill = new List<ReportPayment>();
+            var dt = gridServiceList.DataSource as DataTable;
+            foreach (DataRow item in dt.Rows)
+            {
+                if ((bool)item["NotCalFee"] == false)
+                {
+                    bill.Add(new ReportPayment
+                    {
+                        ServiceFee = (decimal)item["ServiceFee"],
+                        ServiceName = (string)item["ServiceName"]
+                    });
+                }
+            }
 
+            var report = new BillRP(bill, textPatientName.Text, textTotalFee.Text);
+            using (var reportTool = new ReportPrintTool(report))
+            {
+                reportTool.ShowPreviewDialog();
+            }
         }
 
         private void buttonExit_Click(object sender, EventArgs e)

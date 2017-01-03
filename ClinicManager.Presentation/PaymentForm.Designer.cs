@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentForm));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.dateDateOfBill = new DevExpress.XtraEditors.DateEdit();
             this.textDateOfBirth = new DevExpress.XtraEditors.TextEdit();
             this.buttonExit = new DevExpress.XtraEditors.SimpleButton();
             this.buttonPrint = new DevExpress.XtraEditors.SimpleButton();
@@ -64,15 +65,16 @@
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.dateDateOfBill = new DevExpress.XtraEditors.DateEdit();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateDateOfBill.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateDateOfBill.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textDateOfBirth.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textTotalFee.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridServiceList)).BeginInit();
@@ -96,14 +98,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateDateOfBill.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateDateOfBill.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -127,12 +127,28 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // dateDateOfBill
+            // 
+            this.dateDateOfBill.EditValue = null;
+            this.dateDateOfBill.Location = new System.Drawing.Point(566, 448);
+            this.dateDateOfBill.Name = "dateDateOfBill";
+            this.dateDateOfBill.Properties.AllowFocused = false;
+            this.dateDateOfBill.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateDateOfBill.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateDateOfBill.Properties.ReadOnly = true;
+            this.dateDateOfBill.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.dateDateOfBill.Size = new System.Drawing.Size(206, 20);
+            this.dateDateOfBill.StyleController = this.layoutControl1;
+            this.dateDateOfBill.TabIndex = 18;
+            // 
             // textDateOfBirth
             // 
-            this.textDateOfBirth.Location = new System.Drawing.Point(810, 79);
+            this.textDateOfBirth.Location = new System.Drawing.Point(838, 79);
             this.textDateOfBirth.Name = "textDateOfBirth";
             this.textDateOfBirth.Properties.ReadOnly = true;
-            this.textDateOfBirth.Size = new System.Drawing.Size(224, 20);
+            this.textDateOfBirth.Size = new System.Drawing.Size(196, 20);
             this.textDateOfBirth.StyleController = this.layoutControl1;
             this.textDateOfBirth.TabIndex = 17;
             // 
@@ -272,16 +288,16 @@
             this.textPatientName.Location = new System.Drawing.Point(566, 79);
             this.textPatientName.Name = "textPatientName";
             this.textPatientName.Properties.ReadOnly = true;
-            this.textPatientName.Size = new System.Drawing.Size(156, 20);
+            this.textPatientName.Size = new System.Drawing.Size(184, 20);
             this.textPatientName.StyleController = this.layoutControl1;
             this.textPatientName.TabIndex = 7;
             // 
             // textMedicalRecordID
             // 
-            this.textMedicalRecordID.Location = new System.Drawing.Point(810, 42);
+            this.textMedicalRecordID.Location = new System.Drawing.Point(838, 42);
             this.textMedicalRecordID.Name = "textMedicalRecordID";
             this.textMedicalRecordID.Properties.ReadOnly = true;
-            this.textMedicalRecordID.Size = new System.Drawing.Size(224, 20);
+            this.textMedicalRecordID.Size = new System.Drawing.Size(196, 20);
             this.textMedicalRecordID.StyleController = this.layoutControl1;
             this.textMedicalRecordID.TabIndex = 6;
             // 
@@ -290,7 +306,7 @@
             this.textPatientID.Location = new System.Drawing.Point(566, 42);
             this.textPatientID.Name = "textPatientID";
             this.textPatientID.Properties.ReadOnly = true;
-            this.textPatientID.Size = new System.Drawing.Size(156, 20);
+            this.textPatientID.Size = new System.Drawing.Size(184, 20);
             this.textPatientID.StyleController = this.layoutControl1;
             this.textPatientID.TabIndex = 5;
             // 
@@ -441,16 +457,16 @@
             this.layoutControlItem2.Control = this.textPatientID;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(244, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(272, 24);
             this.layoutControlItem2.Text = "Mã bệnh nhân";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(81, 13);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.textMedicalRecordID;
-            this.layoutControlItem3.Location = new System.Drawing.Point(244, 0);
+            this.layoutControlItem3.Location = new System.Drawing.Point(272, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(312, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(284, 24);
             this.layoutControlItem3.Text = "Mã bệnh án";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(81, 13);
             // 
@@ -459,7 +475,7 @@
             this.layoutControlItem4.Control = this.textPatientName;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 37);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(244, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(272, 24);
             this.layoutControlItem4.Text = "Tên bệnh nhân";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(81, 13);
             // 
@@ -485,11 +501,20 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.textDateOfBirth;
-            this.layoutControlItem5.Location = new System.Drawing.Point(244, 37);
+            this.layoutControlItem5.Location = new System.Drawing.Point(272, 37);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(312, 24);
+            this.layoutControlItem5.Size = new System.Drawing.Size(284, 24);
             this.layoutControlItem5.Text = "Ngày sinh";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(81, 13);
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.dateDateOfBill;
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 406);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(294, 24);
+            this.layoutControlItem7.Text = "Ngày thanh toán";
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(81, 13);
             // 
             // emptySpaceItem1
             // 
@@ -534,31 +559,6 @@
             this.emptySpaceItem6.Size = new System.Drawing.Size(304, 26);
             this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // dateDateOfBill
-            // 
-            this.dateDateOfBill.EditValue = null;
-            this.dateDateOfBill.Location = new System.Drawing.Point(566, 448);
-            this.dateDateOfBill.Name = "dateDateOfBill";
-            this.dateDateOfBill.Properties.AllowFocused = false;
-            this.dateDateOfBill.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateDateOfBill.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateDateOfBill.Properties.ReadOnly = true;
-            this.dateDateOfBill.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.dateDateOfBill.Size = new System.Drawing.Size(206, 20);
-            this.dateDateOfBill.StyleController = this.layoutControl1;
-            this.dateDateOfBill.TabIndex = 18;
-            // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.Control = this.dateDateOfBill;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 406);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(294, 24);
-            this.layoutControlItem7.Text = "Ngày thanh toán";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(81, 13);
-            // 
             // PaymentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -574,6 +574,8 @@
             this.Load += new System.EventHandler(this.PaymentForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dateDateOfBill.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateDateOfBill.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textDateOfBirth.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textTotalFee.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridServiceList)).EndInit();
@@ -597,14 +599,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateDateOfBill.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateDateOfBill.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             this.ResumeLayout(false);
 
         }

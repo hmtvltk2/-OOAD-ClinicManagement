@@ -139,7 +139,8 @@ namespace ClinicManager.Presentation
                     MedicineTypeID = (int)row["MedicineTypeID"],
                     WayToUseID = (int)row["WayToUseID"],
                     PharmacyTypeID = (int)row["PharmacyTypeID"],
-                    UnitID = (int)row["UnitID"]
+                    UnitID = (int)row["UnitID"],
+                    Price = (decimal)row["Price"]
                 };
                 //get ID after save into db
                 int id = medicineBusiness.Insert(medicine);
@@ -163,7 +164,8 @@ namespace ClinicManager.Presentation
                     MedicineTypeID = (int)row["MedicineTypeID"],
                     WayToUseID = (int)row["WayToUseID"],
                     PharmacyTypeID = (int)row["PharmacyTypeID"],
-                    UnitID = (int)row["UnitID"]
+                    UnitID = (int)row["UnitID"],
+                    Price = (decimal)row["Price"]
                 };
 
                 result = medicineBusiness.Update(medicine);

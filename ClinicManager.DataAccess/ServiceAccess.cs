@@ -3,6 +3,7 @@ using ClinicManager.DataAccess;
 using ClinicManager.DataModel;
 using System.Data;
 using System.Linq;
+using System;
 
 namespace ClinicManager.DataAccess
 {
@@ -45,6 +46,14 @@ namespace ClinicManager.DataAccess
             using (var db = new ClinicDB())
             {
                 return db.Service.ToDataTable();
+            }
+        }
+
+        public Service GetByServiceID(int serviceID)
+        {
+            using (var db = new ClinicDB())
+            {
+                return db.Service.Find(serviceID);
             }
         }
     }

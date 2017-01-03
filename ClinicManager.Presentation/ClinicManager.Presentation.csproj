@@ -12,6 +12,21 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -76,6 +91,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BillRP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BillRP.Designer.cs">
+      <DependentUpon>BillRP.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChangePasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +279,9 @@
     <Compile Include="UserForm.Designer.cs">
       <DependentUpon>UserForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BillRP.resx">
+      <DependentUpon>BillRP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChangePasswordForm.resx">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -360,6 +384,7 @@
       <DependentUpon>WayToUseForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\ClinicManager.DataModel.ReportPayment.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataModel.ReportPrescription.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -381,12 +406,8 @@
       <Project>{7914E7CE-B025-48C5-B4F2-CAD9123CA4F1}</Project>
       <Name>ClinicManager.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ClinicManager.DataAccess\ClinicManager.DataAccess.csproj">
-      <Project>{8110EEE0-2562-467F-86C8-BE755DDBE5ED}</Project>
-      <Name>ClinicManager.DataAccess</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ClinicManager.DataBusiness\ClinicManager.DataBusiness.csproj">
-      <Project>{fd48d870-db5f-43f9-b47f-d04a1df37281}</Project>
+      <Project>{004e9d5e-fc0c-495c-8440-ae5b412ec20f}</Project>
       <Name>ClinicManager.DataBusiness</Name>
     </ProjectReference>
     <ProjectReference Include="..\ClinicManager.DataModel\ClinicManager.DataModel.csproj">
@@ -480,6 +501,18 @@
     <None Include="Resources\service32x32.png" />
     <None Include="Resources\database_32x32.png" />
     <None Include="Resources\database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

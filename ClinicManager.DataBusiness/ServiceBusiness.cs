@@ -58,5 +58,10 @@ namespace ClinicManager.DataBusiness
            
             return result;
         }
+
+        public Service GetByServiceID(int serviceID)
+        {
+            return dataAccess.GetByServiceID(serviceID);
+        }
     }
 }

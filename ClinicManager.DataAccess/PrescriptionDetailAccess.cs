@@ -52,7 +52,7 @@ namespace ClinicManager.DataAccess
             }
         }
 
-		public DataTable GetByPrescriptionID(int prescriptionID)
+		public DataTable GetDetailByPrescriptionID(int prescriptionID)
         {
             using (var db = new ClinicDB())
             {

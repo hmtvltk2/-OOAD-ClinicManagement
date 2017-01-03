@@ -80,7 +80,14 @@ namespace ClinicManager.DataAccess
                 var query = from pr in db.Prescription
                             where pr.MedicalRecordID == medicalRecordID
                             select pr;
-                return query.First();
+                if (query.Count() > 0)
+                {
+                    return query.First();
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
 

@@ -64,5 +64,10 @@ namespace ClinicManager.DataBusiness
         {
             return dataAccess.GetByPatientID(patientID);
         }
+
+        public MedicalRecord GetByMedicalRecordID(int medicalRecordID)
+        {
+            return dataAccess.GetByMedicalRecordID(medicalRecordID);
+        }
     }
 }

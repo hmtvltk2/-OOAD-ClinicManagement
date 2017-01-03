@@ -72,6 +72,12 @@ namespace ClinicManager.DataBusiness
                         error = "Chưa chọn đơn vị tính";
                     }
                     break;
+                case "Price":
+                    if(data == DBNull.Value)
+                    {
+                        error = "Chưa nhập giá";
+                    }
+                    break;
                 default:
                     break;
             }

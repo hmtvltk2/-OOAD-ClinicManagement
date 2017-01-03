@@ -6,7 +6,7 @@ using System;
 
 namespace ClinicManager.DataAccess
 {
-    public class MedicineAccess : BaseDataAccess
+    public class MedicalRecordAccess : BaseDataAccess
     {
         public override int Insert(object obj)
         {
@@ -15,9 +15,9 @@ namespace ClinicManager.DataAccess
             {
                 using (var db = new ClinicDB())
                 {
-                    var query = from d in db.Medicine orderby d.MedicineID descending select d;
+                    var query = from mr in db.MedicalRecord orderby mr.MedicalRecordID descending select mr;
                     var last = query.First();
-                    result = last.MedicineID;
+                    result = last.MedicalRecordID;
                 }
             }
 
@@ -26,10 +26,10 @@ namespace ClinicManager.DataAccess
 
         public bool Delete(int id)
         {
-            Medicine model;
+            MedicalRecord model;
             using (var db = new ClinicDB())
             {
-                model = db.Medicine.Find(id);
+                model = db.MedicalRecord.Find(id);
 
                 if (model == null)
                 {
@@ -44,69 +44,95 @@ namespace ClinicManager.DataAccess
         {
             using (var db = new ClinicDB())
             {
-                return db.Medicine.ToDataTable();
+                return db.MedicalRecord.ToDataTable();
 
             }
         }
-        public DataTable GetByCondition(string medicineName,int  medicineTypeID)
+
+        public DataTable GetById(int Id)
         {
             using (var db = new ClinicDB())
             {
-
-                var medicine = from b in db.Medicine
-                            where (b.MedicineName.Contains(medicineName) && b.MedicineTypeID == medicineTypeID)
-                               //b.MedicineName.Contains(medicineName) is query same LIKE query
-                            select b;
-                return medicine.ToDataTable();
+                var medicalRecord = from m in db.MedicalRecord
+                                    where m.PatientID == Id
+                                    select m;
+                return medicalRecord.ToDataTable();
             }
+
         }
-        // Chose all Tpye ( lookup null)
-        public DataTable GetByCondition(string medicineName)
+        public DataTable GetByStatus(string status)
         {
             using (var db = new ClinicDB())
             {
-
-                var medicine = from b in db.Medicine
-                               where (b.MedicineName.Contains(medicineName))
-                               select b;
-
-                return medicine.ToDataTable();
+                var notPaymentTB = from notpm in db.MedicalRecord
+                                   join patient in db.Patient on notpm.PatientID equals patient.PatientID
+                                   where notpm.Status == status
+                                   select new
+                                   {
+                                       notpm.MedicalRecordID,
+                                       notpm.PatientID,
+                                       notpm.DoctorID,
+                                       notpm.ExamineReason,
+                                       notpm.Diagnostic,
+                                       notpm.Note,
+                                       notpm.ExamineDate,
+                                       notpm.ReExamineDate,
+                                       notpm.Status,
+                                       patient.FullName,
+                                       patient.Gender,
+                                       patient.DateOfBirth
+                                   };
+                return notPaymentTB.ToDataTable();
             }
         }
 
-        public DataTable GetAllWithUnit()
+        public MedicalRecord GetByMedicalRecordID(int medicalRecordID)
         {
             using (var db =new ClinicDB())
             {
-                var query = from m in db.Medicine
-                            join u in db.Unit on m.UnitID equals u.UnitID
-                            select new { m.MedicineID, m.MedicineName, u.UnitName };
+                return db.MedicalRecord.Find(medicalRecordID);          
+            }
+        }
+
+        public DataTable GetByDoctorId(int id)
+        {
+            using (var db = new ClinicDB())
+            {
+                var query = from mr in db.MedicalRecord
+                            join p in db.Patient on mr.PatientID equals p.PatientID
+                            join d in db.User on mr.DoctorID equals d.UserID
+                            where mr.DoctorID == id && mr.ExamineDate == DateTime.Today
+                            && mr.Status == "NotPayment"
+                            select new
+                            {
+                                p.FullName,
+                                p.Gender,
+                                p.DateOfBirth,
+                                p.Address,
+                                p.PatientID,
+                                mr.Diagnostic,
+                                DoctorName = d.FullName
+                            };
+
                 return query.ToDataTable();
             }
         }
 
-        // Chose all medicin with type
-        public DataTable GetByCondition(int medicineTypeID)
+        public MedicalRecord GetByPatientID(int patientID)
         {
             using (var db = new ClinicDB())
             {
-
-                var medicine = from b in db.Medicine
-                               where (b.MedicineTypeID == medicineTypeID)
-                               select b;
-
-                return medicine.ToDataTable();
-            }
-        }
-
-        public Medicine GetByMedicineID(int medicineID)
-        {
-            using (var db = new ClinicDB())
-            {
-                var query = from m in db.Medicine
-                            where m.MedicineID == medicineID
-                            select m;
-                return query.First();
+                var query = from mr in db.MedicalRecord
+                            where mr.PatientID == patientID && mr.ExamineDate == DateTime.Today
+                            select mr;
+                if (query.Count() > 0)
+                {
+                    return query.First();
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
     }

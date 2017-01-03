@@ -49,11 +49,11 @@ namespace ClinicManager.Presentation
                 textDoctorName.Text = (string)row["DoctorName"];
                 textExamineDate.Text = ((DateTime)row["ExamineDate"]).ToShortDateString();
                 textDiagnostic.Text = (string)row["Diagnostic"];
-                textNote.Text = (string)row["Note"];
+                textNote.Text = row["Note"] as string;
             }
 
             //Load Prescription Detail
-            gridControl1.DataSource = preDetailBusiness.GetByPrescriptionID(prescriptionID);
+            gridControl1.DataSource = preDetailBusiness.GetDetailByPrescriptionID(prescriptionID);
 
             //Load lookupMedicine
             medicineDT = medicineBusiness.GetAllWithUnit();
@@ -85,7 +85,7 @@ namespace ClinicManager.Presentation
                     MedicineID = (int)item["MedicineID"],
                     Quantity = (int)item["Quantity"],
                     PrescriptionID = prescriptionID,
-                    MedicineFee = medicineBusiness.GetByMedicineID((int)item["MedicineID"]).Price
+                    MedicineFee = medicineBusiness.GetByMedicineID((int)item["MedicineID"]).Price * (int)item["Quantity"]
                 };
                 result = result && preDetailBusiness.Insert(preDetail) > 0;
                 if (!result)

@@ -48,7 +48,10 @@ namespace ClinicManager.Presentation
             memoDiagnostic.Text = _medicalRecord.Diagnostic;
             textDoctor.Text = _medicalRecord.DoctorID.ToString();
             textExamineDay.Text = _medicalRecord.ExamineDate.ToShortDateString();
-            textReExamineDay.Text = _medicalRecord.ReExamineDate.ToShortDateString();
+            if(_medicalRecord.ReExamineDate != null)
+            {
+                textReExamineDay.Text = ((DateTime)_medicalRecord.ReExamineDate).ToShortDateString();
+            }
 
             gridExminedList.DataSource = pretBusiness.GetByPrescriptionID(_medicalRecord.MedicalRecordID);
         }

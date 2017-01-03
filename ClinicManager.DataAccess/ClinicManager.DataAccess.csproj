@@ -53,10 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDataAccess.cs" />
- 	<Compile Include="BillAccess.cs" />
-    <Compile Include="ExamineAccess.cs" />
-	<Compile Include="MedicineAccess.cs" />
+    <Compile Include="BillAccess.cs" />
     <Compile Include="MedicalRecordAccess.cs" />
+    <Compile Include="MedicineAccess.cs" />
     <Compile Include="MedicineTypeAccess.cs" />
     <Compile Include="ClinicDB.cs" />
     <Compile Include="PatientAccess.cs" />

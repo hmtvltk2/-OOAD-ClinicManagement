@@ -45,6 +45,8 @@
             this.LookUpPharmacy = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.gridColumnUnit = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LookUpUnit = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemSpinEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.repositoryItemComboType = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.buttonExit = new DevExpress.XtraEditors.SimpleButton();
             this.buttonSearch = new DevExpress.XtraEditors.SimpleButton();
@@ -73,6 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LookUpWay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpPharmacy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpUnit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
@@ -129,7 +132,8 @@
             this.LookUpType,
             this.LookUpWay,
             this.LookUpPharmacy,
-            this.LookUpUnit});
+            this.LookUpUnit,
+            this.repositoryItemSpinEdit1});
             this.gridCMedicineList.Size = new System.Drawing.Size(1010, 354);
             this.gridCMedicineList.TabIndex = 9;
             this.gridCMedicineList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -144,7 +148,8 @@
             this.gridColumnType,
             this.gridColumnWay,
             this.gridColumnPhramacy,
-            this.gridColumnUnit});
+            this.gridColumnUnit,
+            this.gridColumn1});
             this.gridViewMedicineList.GridControl = this.gridCMedicineList;
             this.gridViewMedicineList.IndicatorWidth = 50;
             this.gridViewMedicineList.Name = "gridViewMedicineList";
@@ -162,7 +167,7 @@
             this.gridColumn7.OptionsColumn.TabStop = false;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 0;
-            this.gridColumn7.Width = 43;
+            this.gridColumn7.Width = 39;
             // 
             // repositoryItemDelete
             // 
@@ -182,7 +187,7 @@
             this.Xóa.OptionsColumn.TabStop = false;
             this.Xóa.Visible = true;
             this.Xóa.VisibleIndex = 1;
-            this.Xóa.Width = 70;
+            this.Xóa.Width = 64;
             // 
             // gridColumnName
             // 
@@ -191,7 +196,7 @@
             this.gridColumnName.Name = "gridColumnName";
             this.gridColumnName.Visible = true;
             this.gridColumnName.VisibleIndex = 2;
-            this.gridColumnName.Width = 248;
+            this.gridColumnName.Width = 229;
             // 
             // gridColumnType
             // 
@@ -201,7 +206,7 @@
             this.gridColumnType.Name = "gridColumnType";
             this.gridColumnType.Visible = true;
             this.gridColumnType.VisibleIndex = 3;
-            this.gridColumnType.Width = 161;
+            this.gridColumnType.Width = 199;
             // 
             // LookUpType
             // 
@@ -219,7 +224,7 @@
             this.gridColumnWay.Name = "gridColumnWay";
             this.gridColumnWay.Visible = true;
             this.gridColumnWay.VisibleIndex = 4;
-            this.gridColumnWay.Width = 147;
+            this.gridColumnWay.Width = 106;
             // 
             // LookUpWay
             // 
@@ -237,7 +242,7 @@
             this.gridColumnPhramacy.Name = "gridColumnPhramacy";
             this.gridColumnPhramacy.Visible = true;
             this.gridColumnPhramacy.VisibleIndex = 5;
-            this.gridColumnPhramacy.Width = 157;
+            this.gridColumnPhramacy.Width = 92;
             // 
             // LookUpPharmacy
             // 
@@ -255,7 +260,7 @@
             this.gridColumnUnit.Name = "gridColumnUnit";
             this.gridColumnUnit.Visible = true;
             this.gridColumnUnit.VisibleIndex = 6;
-            this.gridColumnUnit.Width = 132;
+            this.gridColumnUnit.Width = 82;
             // 
             // LookUpUnit
             // 
@@ -264,6 +269,35 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.LookUpUnit.Name = "LookUpUnit";
             this.LookUpUnit.NullText = "";
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Đơn giá";
+            this.gridColumn1.ColumnEdit = this.repositoryItemSpinEdit1;
+            this.gridColumn1.FieldName = "Price";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 7;
+            this.gridColumn1.Width = 147;
+            // 
+            // repositoryItemSpinEdit1
+            // 
+            this.repositoryItemSpinEdit1.AutoHeight = false;
+            this.repositoryItemSpinEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemSpinEdit1.DisplayFormat.FormatString = "{0:#,##0 đ}";
+            this.repositoryItemSpinEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.repositoryItemSpinEdit1.MaxValue = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.repositoryItemSpinEdit1.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.repositoryItemSpinEdit1.Name = "repositoryItemSpinEdit1";
             // 
             // repositoryItemComboType
             // 
@@ -456,6 +490,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LookUpWay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpPharmacy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpUnit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
@@ -511,5 +546,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LookUpUnit;
         private DevExpress.XtraEditors.LookUpEdit lookUpEditType;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit1;
     }
 }
