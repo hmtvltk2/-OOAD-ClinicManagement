@@ -1,4 +1,5 @@
-﻿using System.Data;
+using ClinicManager.DataAccess;
+using System.Data;
 using System.Linq;
 using System;
 using ClinicManager.Common;
@@ -41,13 +42,87 @@ namespace ClinicManager.DataAccess
         }
 
         // Get all orderby CreateDate desc
-        public DataTable GetAll()
+		public DataTable GetAll()
         {
             using (var db = new ClinicDB())
             {
                 var result = from d in db.Patient orderby d.PatientID descending select d;
                 return result.ToDataTable();
             }
+        }
+        
+        public DataTable GetById(int id)
+        {
+            using (var db = new ClinicDB())
+            {
+                var patient = from p in db.Patient
+                              where p.PatientID == id
+                              select p;
+                return patient.ToDataTable();
+            }
+        }
+        public DataTable GetByCondition(string name, DateTime dateOfBirth, string gender)
+        {
+            var result = new DataTable();
+            using (var db = new ClinicDB())
+            {
+
+                if (name == "" && dateOfBirth != null && gender == "Tất cả")
+
+                {
+                    var patient = from p in db.Patient
+                                  where p.DateOfBirth  ==  dateOfBirth 
+                                  select p;
+                    result = patient.ToDataTable();
+                }
+                if (name != "" && dateOfBirth != null && gender == "Tất cả")
+                {
+                    var patient = from p in db.Patient
+                                  where p.DateOfBirth == dateOfBirth && p.FullName.Contains(name)
+                                  select p;
+                    result = patient.ToDataTable();
+                }
+                if (name == "" && dateOfBirth != null && gender != "Tất cả")
+                {
+                    var patient = from p in db.Patient
+                                  where p.DateOfBirth == dateOfBirth &&  p.Gender ==gender
+                                  select p;
+                    result = patient.ToDataTable();
+                }
+                if (name != "" && dateOfBirth != null && gender != "Tất cả")
+                {
+                    var patient = from p in db.Patient
+                                  where p.DateOfBirth == dateOfBirth && p.Gender == gender && p.FullName.Contains(name)
+                                  select p;
+                    result = patient.ToDataTable();
+                }
+                if (name =="" && dateOfBirth == DateTime.Today && gender != "Tất cả")
+                {
+                    var patient = from p in db.Patient
+                                  where  p.Gender == gender   
+                                  select p;
+                    result = patient.ToDataTable();
+                }
+                if (name != "" && dateOfBirth == DateTime.Today && gender == "Tất cả")
+                {
+                    var patient = from p in db.Patient
+                                  where p.FullName.Contains(name)
+                                  select p;
+                    result = patient.ToDataTable();
+                }
+                if (name != "" && dateOfBirth == DateTime.Today && gender != "Tất cả")
+                {
+                    var patient = from p in db.Patient
+                                  where p.FullName.Contains(name) && p.Gender == gender
+                                  select p;
+                    result = patient.ToDataTable();
+                }
+
+            }
+            return result;
+
+              
+            
         }
 
         public DataTable Search(string patientName, object dateOfBirth, string gender)
@@ -71,6 +146,7 @@ namespace ClinicManager.DataAccess
                 }
             }
             
+
         }
     }
 }

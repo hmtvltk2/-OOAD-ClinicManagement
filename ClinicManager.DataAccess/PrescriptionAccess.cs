@@ -1,4 +1,4 @@
-﻿using ClinicManager.Common;
+using ClinicManager.Common;
 using ClinicManager.DataModel;
 using System.Data;
 using System.Linq;
@@ -80,7 +80,14 @@ namespace ClinicManager.DataAccess
                 var query = from pr in db.Prescription
                             where pr.MedicalRecordID == medicalRecordID
                             select pr;
-                return query.First();
+                if (query.Count() > 0)
+                {
+                    return query.First();
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
 
@@ -89,6 +96,18 @@ namespace ClinicManager.DataAccess
             using (var db = new ClinicDB())
             {
                 return db.Prescription.ToDataTable();
+            }
+        }
+        public decimal GetMedicineFee(int medicalReordID)
+        {
+            using (var db = new ClinicDB())
+            {
+                var fees = from prescription in db.Prescription
+                           where prescription.MedicalRecordID == medicalReordID
+                           select prescription;
+                var totalFee = fees.Sum(f => f.Amount);
+                return totalFee;
+
             }
         }
     }

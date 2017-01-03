@@ -223,6 +223,9 @@
             this.textPhone.Size = new System.Drawing.Size(172, 20);
             this.textPhone.StyleController = this.layoutControl1;
             this.textPhone.TabIndex = 8;
+            this.textPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPhone_KeyPress);
+            this.textPhone.Validating += new System.ComponentModel.CancelEventHandler(this.textPhone_Validating);
+            this.textPhone.Validated += new System.EventHandler(this.textPhone_Validated);
             // 
             // layoutControlGroup1
             // 

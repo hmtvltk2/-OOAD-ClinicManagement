@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data;
 using ClinicManager.DataAccess;
 using ClinicManager.DataModel;
@@ -37,6 +37,10 @@ namespace ClinicManager.DataBusiness
             return dataAccess.GetAll();
         }
 
+        public decimal GetMedicineFee(int medicalReordID)
+        {
+            return dataAccess.GetMedicineFee(medicalReordID);
+        }
         public string Validate(object data, string propertyName)
         {
             string result = "";
@@ -82,5 +86,7 @@ namespace ClinicManager.DataBusiness
         {
             return dataAccess.GetByPrescriptionID(prescriptionID);
         }
+
+
     }
 }

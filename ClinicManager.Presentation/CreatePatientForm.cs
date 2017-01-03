@@ -2,6 +2,7 @@
 using ClinicManager.Common;
 using DevExpress.XtraEditors;
 using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using ClinicManager.DataModel;
 
@@ -141,6 +142,30 @@ namespace ClinicManager.Presentation
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void textPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textPhone_Validated(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textPhone_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (Regex.IsMatch(textPhone.Text, "[^0-9-+]"))
+            {
+                Regex regex = new Regex("[^0-9-+]");
+                string output = regex.Replace(Clipboard.GetText(), "");
+                textPhone.Text = output;
+            }
+
         }
     }
 }

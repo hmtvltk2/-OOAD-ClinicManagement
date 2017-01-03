@@ -74,7 +74,7 @@ namespace ClinicManager.Presentation
             }
         }
 
-        private void LoginForm_KeyPress(object sender, KeyPressEventArgs e)
+        private void textPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
             if(e.KeyChar == (char)13)
             {

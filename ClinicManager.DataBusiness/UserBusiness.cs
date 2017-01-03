@@ -1,7 +1,8 @@
-﻿using ClinicManager.Common;
+using System;
 using System.Data;
 using ClinicManager.DataAccess;
 using ClinicManager.DataModel;
+using ClinicManager.Common;
 
 namespace ClinicManager.DataBusiness
 {
@@ -38,6 +39,10 @@ namespace ClinicManager.DataBusiness
             return dataAccess.GetAll();
         }
 
+ 		public System.Data.DataTable GetByUserGroup(int userGroupID)
+        {
+            return dataAccess.GetByUserGroup(userGroupID);
+        }
         public string Validate(object data, string propertyName)
         {
             string result = "";

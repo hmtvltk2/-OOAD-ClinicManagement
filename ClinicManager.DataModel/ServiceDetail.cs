@@ -11,6 +11,9 @@ namespace ClinicManager.DataModel
 
         public int ServiceID { get; set; }
 
+        [Column(TypeName = "money")]
+        public decimal ServiceFee { get; set; }
+
         public virtual MedicalRecord MedicalRecord { get; set; }
 
         public virtual Service Service { get; set; }

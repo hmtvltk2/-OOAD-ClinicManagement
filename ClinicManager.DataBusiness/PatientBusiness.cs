@@ -1,4 +1,7 @@
-﻿using ClinicManager.DataAccess;
+using ClinicManager.DataAccess;
+using ClinicManager.DataModel;
+using System;
+using System.Data;
 
 namespace ClinicManager.DataBusiness
 {
@@ -34,7 +37,30 @@ namespace ClinicManager.DataBusiness
             return dataAccess.GetAll();
         }
 
-        public System.Data.DataTable Search(string patientName, object dateOfBirth, string gender)
+         public System.Data.DataTable GetByCondition(string name, DateTime dateOfBirth, string gender)
+        {
+            return dataAccess.GetByCondition(name,dateOfBirth,gender);
+        }
+        public Patient GetbyId(int id)
+        {
+            Patient patient = new Patient();
+            DataTable patientTable = dataAccess.GetById(id);
+            if (patientTable.Rows.Count >0)
+            {
+                patient.FullName = patientTable.Rows[0]["FullName"].ToString();
+                patient.PatientID = (int)patientTable.Rows[0]["PatientID"];
+                patient.Gender =  patientTable.Rows[0]["Gender"].ToString();
+                patient.Address = patientTable.Rows[0]["Address"].ToString();
+                patient.DateOfBirth = (DateTime)patientTable.Rows[0]["DateOfBirth"] ;
+                patient.Job = patientTable.Rows[0]["Job"].ToString();
+                patient.Job= patientTable.Rows[0]["Job"].ToString();
+                patient.Note= patientTable.Rows[0]["Note"].ToString();
+                patient.CreateDate= (DateTime)patientTable.Rows[0]["CreateDate"] ;
+             
+            }
+            return patient;
+        }
+         public System.Data.DataTable Search(string patientName, object dateOfBirth, string gender)
         {
             return dataAccess.Search(patientName, dateOfBirth, gender);
         }

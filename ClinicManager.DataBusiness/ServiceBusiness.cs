@@ -1,4 +1,6 @@
 ﻿using ClinicManager.DataAccess;
+using ClinicManager.DataModel;
+using System;
 
 namespace ClinicManager.DataBusiness
 {
@@ -42,11 +44,24 @@ namespace ClinicManager.DataBusiness
             {
                 if (string.IsNullOrWhiteSpace((string)data))
                 {
-                    result = "Tên đơn vị tính không được trống";
+                    result = "Tên dịch vụ không được trống";
                 }
             }
-
+            if (propertyName =="ServiceFee")
+            {
+                if ( data == DBNull.Value)
+                {
+                    result = "Phí dịch vụ không được trống";
+                }
+            }
+           
+           
             return result;
+        }
+
+        public Service GetByServiceID(int serviceID)
+        {
+            return dataAccess.GetByServiceID(serviceID);
         }
     }
 }

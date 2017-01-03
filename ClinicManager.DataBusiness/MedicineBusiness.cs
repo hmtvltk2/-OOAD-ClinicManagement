@@ -1,4 +1,4 @@
-﻿using ClinicManager.DataAccess;
+using ClinicManager.DataAccess;
 using ClinicManager.DataModel;
 using System;
 using System.Data;
@@ -70,6 +70,12 @@ namespace ClinicManager.DataBusiness
                     if(data == DBNull.Value)
                     {
                         error = "Chưa chọn đơn vị tính";
+                    }
+                    break;
+                case "Price":
+                    if(data == DBNull.Value)
+                    {
+                        error = "Chưa nhập giá";
                     }
                     break;
                 default:

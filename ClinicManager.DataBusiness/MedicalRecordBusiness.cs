@@ -37,8 +37,17 @@ namespace ClinicManager.DataBusiness
         {
             return dataAccess.GetAll();
         }
+        public System.Data.DataTable GetById(int Id)
+        {
+            return dataAccess.GetById(Id);
+        }
 
-        public string Validate(object data, string propertyName)
+        public System.Data.DataTable GetByStatus(string status)
+        {
+            return dataAccess.GetByStatus(status);
+        }
+
+		public string Validate(object data, string propertyName)
         {
             string result = "";
 
@@ -54,6 +63,11 @@ namespace ClinicManager.DataBusiness
         public MedicalRecord GetByPatientID(int patientID)
         {
             return dataAccess.GetByPatientID(patientID);
+        }
+
+        public MedicalRecord GetByMedicalRecordID(int medicalRecordID)
+        {
+            return dataAccess.GetByMedicalRecordID(medicalRecordID);
         }
     }
 }

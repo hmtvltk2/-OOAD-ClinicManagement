@@ -1,4 +1,5 @@
-﻿using System.Data;
+using ClinicManager.DataAccess;
+using System.Data;
 using System.Linq;
 using System;
 using ClinicManager.Common;
@@ -49,7 +50,7 @@ namespace ClinicManager.DataAccess
             }
         }
 
-        public DataTable GetAllDoctorWithQueue()
+         public DataTable GetAllDoctorWithQueue()
         {
             using (var db = new ClinicDB())
             {
@@ -106,6 +107,18 @@ namespace ClinicManager.DataAccess
                             select user;
                 return query.ToDataTable();
             }
+        }
+        public DataTable GetByUserGroup(int userGroupID)
+        {
+            using (var db = new ClinicDB())
+            {
+                var user = from u in db.User
+                               where (u.UserGroupID == userGroupID)
+                               select u;
+                var u1 = user.ToList().ToDataTable();
+                return user.ToDataTable();
+            }
+            
         }
     }
 }

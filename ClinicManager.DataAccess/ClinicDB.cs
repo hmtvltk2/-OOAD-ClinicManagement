@@ -64,6 +64,10 @@ namespace ClinicManager.DataAccess
                 .HasPrecision(19, 4);
 
             modelBuilder.Entity<MedicalRecord>()
+                .Property(e => e.Status)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<MedicalRecord>()
                 .HasMany(e => e.Bill)
                 .WithRequired(e => e.MedicalRecord)
                 .WillCascadeOnDelete(false);
@@ -161,6 +165,10 @@ namespace ClinicManager.DataAccess
                 .HasMany(e => e.ServiceDetail)
                 .WithRequired(e => e.Service)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<ServiceDetail>()
+                .Property(e => e.ServiceFee)
+                .HasPrecision(19, 4);
 
             modelBuilder.Entity<Unit>()
                 .HasMany(e => e.Medicine)

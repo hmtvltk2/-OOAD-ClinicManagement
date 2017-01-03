@@ -1,5 +1,6 @@
-﻿using ClinicManager.Common;
+using ClinicManager.Common;
 using ClinicManager.DataModel;
+using ClinicManager.DataAccess;
 using System.Linq;
 
 namespace ClinicManager.DataAccess

@@ -1,5 +1,6 @@
-﻿using ClinicManager.Common;
+using ClinicManager.Common;
 using ClinicManager.DataModel;
+using ClinicManager.DataAccess;
 using System.Data;
 using System.Linq;
 
@@ -27,7 +28,7 @@ namespace ClinicManager.DataAccess
         {
             WayToUse model;
             using (var db = new ClinicDB())
-            {
+            { 
                 model = db.WayToUse.Find(id);
 
                 if (model == null)

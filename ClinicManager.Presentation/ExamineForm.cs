@@ -1,11 +1,10 @@
-﻿using ClinicManager.DataBusiness;
-using ClinicManager.Common;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using System;
 using System.Data;
 using System.Windows.Forms;
 using ClinicManager.DataModel;
+using ClinicManager.DataBusiness;
 
 namespace ClinicManager.Presentation
 {
@@ -15,6 +14,7 @@ namespace ClinicManager.Presentation
         private QueueBusiness queueBusiness;
         private MedicalRecordBusiness medicalRecordBusiness;
         private ServiceDetailBusiness serviceDetailBusiness;
+        private ServiceBusiness serviceBusiness;
         private int prescriptionID;
 
         public ExamineForm()
@@ -22,7 +22,8 @@ namespace ClinicManager.Presentation
             InitializeComponent();
             queueBusiness = new QueueBusiness();
             medicalRecordBusiness = new MedicalRecordBusiness();
-            serviceDetailBusiness = new ServiceDetailBusiness();           
+            serviceDetailBusiness = new ServiceDetailBusiness();
+            serviceBusiness = new ServiceBusiness();
         }
 
         private void ExamineForm_Load(object sender, EventArgs e)
@@ -30,7 +31,6 @@ namespace ClinicManager.Presentation
             LoadQueueByDoctor();
             LoadExaminedList();
 
-            var serviceBusiness = new ServiceBusiness();
             repositoryLookUpService.DataSource = serviceBusiness.GetAll();
             repositoryLookUpService.Columns.Add(new LookUpColumnInfo("ServiceName", "Tên dịch vụ"));
             repositoryLookUpService.DisplayMember = "ServiceName";
@@ -70,7 +70,8 @@ namespace ClinicManager.Presentation
                 PatientID = (int)selecteRow["PatientID"],
                 Diagnostic = "",
                 ExamineDate = (DateTime)dateExamineDay.EditValue,
-                ExamineReason = (string)selecteRow["ExamineReason"]
+                ExamineReason = (string)selecteRow["ExamineReason"],
+                Status = "Examining"
             };
 
             var medicalRecordID = medicalRecordBusiness.Insert(medicalRecord);
@@ -94,7 +95,7 @@ namespace ClinicManager.Presentation
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            bool result = UpdateMedicalRecord();
+            bool result = UpdateMedicalRecord("Examining");
             if (!result)
             {
                 XtraMessageBox.Show(this, "Có lỗi trong quá trình lưu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -115,7 +116,7 @@ namespace ClinicManager.Presentation
             f.Show();
         }
 
-        private bool UpdateMedicalRecord()
+        private bool UpdateMedicalRecord(string status)
         {
             bool result;
             //Update medical record
@@ -128,6 +129,7 @@ namespace ClinicManager.Presentation
                 ExamineReason = memoExamineReason.Text,
                 Note = textNote.Text,
                 PatientID = (int)textPatientID.EditValue,
+                Status = status
             };
 
             if (dateReExamineDay.EditValue != null)
@@ -150,6 +152,7 @@ namespace ClinicManager.Presentation
             foreach (DataRow row in services.Rows)
             {
                 serviceDetail.ServiceID = (int)row["ServiceID"];
+                serviceDetail.ServiceFee = serviceBusiness.GetByServiceID(serviceDetail.ServiceID).ServiceFee;
                 result = result && (serviceDetailBusiness.Insert(serviceDetail) > 0);
             }
 
@@ -166,10 +169,10 @@ namespace ClinicManager.Presentation
 
             if(textMedicalRecordID.Text != "")
             {
-                result = UpdateMedicalRecord();
+                result = UpdateMedicalRecord("NotPayment");
             }
 
-            queueBusiness.UpdateStatus((int)selecteRow["QueueID"], "I");   
+            queueBusiness.UpdateStatus((int)selecteRow["QueueID"], "I");
 
             if (!result)
             {

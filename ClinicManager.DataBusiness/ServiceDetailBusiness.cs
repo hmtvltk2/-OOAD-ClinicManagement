@@ -1,5 +1,5 @@
-﻿using System;
 using ClinicManager.DataAccess;
+using ClinicManager.DataModel;
 
 namespace ClinicManager.DataBusiness
 {
@@ -52,6 +52,15 @@ namespace ClinicManager.DataBusiness
         public System.Data.DataTable GetByMedicalRecordID(int medicalRecordID)
         {
             return dataAccess.GetByMedicalRecordID(medicalRecordID);
+        }
+
+		public System.Data.DataTable GetById(int medicalRecordID)
+        {
+            return dataAccess.GetbyId(medicalRecordID);
+        }
+        public decimal GetTotalFee(int medicalReordID)
+        {
+            return dataAccess.GetTotalFee(medicalReordID);
         }
     }
 }

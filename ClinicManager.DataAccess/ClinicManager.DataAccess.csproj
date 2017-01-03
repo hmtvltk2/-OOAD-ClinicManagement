@@ -53,8 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDataAccess.cs" />
-    <Compile Include="ExamineAccess.cs" />
+    <Compile Include="BillAccess.cs" />
     <Compile Include="MedicalRecordAccess.cs" />
+    <Compile Include="MedicineAccess.cs" />
     <Compile Include="MedicineTypeAccess.cs" />
     <Compile Include="ClinicDB.cs" />
     <Compile Include="PatientAccess.cs" />
@@ -69,6 +70,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="ScheduleAccess.cs" />
     <Compile Include="QueueAccess.cs" />
     <Compile Include="ServiceAccess.cs" />
     <Compile Include="ServiceDetailAccess.cs" />

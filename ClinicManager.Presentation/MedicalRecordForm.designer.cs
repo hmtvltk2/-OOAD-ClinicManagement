@@ -188,6 +188,7 @@
             this.simpleButton1.StyleController = this.layoutControl1;
             this.simpleButton1.TabIndex = 14;
             this.simpleButton1.Text = "Đóng";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // textMedicalRecordID
             // 
@@ -523,6 +524,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin bệnh án";
+            this.Load += new System.EventHandler(this.MedicalRecordForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.textReExamineDay.Properties)).EndInit();

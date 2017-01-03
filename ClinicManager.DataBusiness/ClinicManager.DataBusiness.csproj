@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FD48D870-DB5F-43F9-B47F-D04A1DF37281}</ProjectGuid>
+    <ProjectGuid>{004E9D5E-FC0C-495C-8440-AE5B412EC20F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ClinicManager.DataBusiness</RootNamespace>
@@ -30,16 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -49,17 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BillBusiness.cs" />
     <Compile Include="MedicalRecordBusiness.cs" />
-    <Compile Include="PermissionBusiness.cs" />
-    <Compile Include="PermissionDetailBusiness.cs" />
-    <Compile Include="PrescriptionBusiness.cs" />
-    <Compile Include="PrescriptionDetailBusiness.cs" />
-    <Compile Include="QueueBusiness.cs" />
     <Compile Include="MedicineBusiness.cs" />
     <Compile Include="MedicineTypeBusiness.cs" />
     <Compile Include="PatientBusiness.cs" />
+    <Compile Include="PermissionBusiness.cs" />
+    <Compile Include="PermissionDetailBusiness.cs" />
     <Compile Include="PharmacyTypeBusiness.cs" />
+    <Compile Include="PrescriptionBusiness.cs" />
+    <Compile Include="PrescriptionDetailBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueueBusiness.cs" />
+    <Compile Include="ScheduleBusiness.cs" />
     <Compile Include="ServiceBusiness.cs" />
     <Compile Include="ServiceDetailBusiness.cs" />
     <Compile Include="UnitBusiness.cs" />
@@ -69,7 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ClinicManager.Common\ClinicManager.Common.csproj">
-      <Project>{7914E7CE-B025-48C5-B4F2-CAD9123CA4F1}</Project>
+      <Project>{7914e7ce-b025-48c5-b4f2-cad9123ca4f1}</Project>
       <Name>ClinicManager.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\ClinicManager.DataAccess\ClinicManager.DataAccess.csproj">
@@ -80,10 +73,6 @@
       <Project>{EA70F873-8671-400C-9AA2-CA5446FA499C}</Project>
       <Name>ClinicManager.DataModel</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,5 +1,6 @@
-﻿using System;
+using System;
 using ClinicManager.DataAccess;
+using ClinicManager.DataModel;
 using System.Data;
 
 namespace ClinicManager.DataBusiness
@@ -53,6 +54,11 @@ namespace ClinicManager.DataBusiness
         public bool DeteleByPrescriptionID(int prescriptionID)
         {
             return dataAccess.DeteleByPrescriptionID(prescriptionID);
+        }
+
+        public DataTable GetDetailByPrescriptionID(int prescriptionID)
+        {
+            return dataAccess.GetDetailByPrescriptionID(prescriptionID);
         }
     }
 }
