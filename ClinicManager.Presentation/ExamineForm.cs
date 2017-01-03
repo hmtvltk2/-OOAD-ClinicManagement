@@ -107,6 +107,10 @@ namespace ClinicManager.Presentation
 
         private void buttonCreatePrescription_Click(object sender, EventArgs e)
         {
+            if(prescriptionID == 0)
+            {
+                return;
+            }
             var f = new PrescriptionForm(prescriptionID);
             f.Show();
         }

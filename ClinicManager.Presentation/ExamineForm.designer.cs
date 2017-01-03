@@ -192,6 +192,7 @@
             // 
             // buttonCreate
             // 
+            this.buttonCreate.Enabled = false;
             this.buttonCreate.Image = ((System.Drawing.Image)(resources.GetObject("buttonCreate.Image")));
             this.buttonCreate.Location = new System.Drawing.Point(580, 281);
             this.buttonCreate.Name = "buttonCreate";
@@ -225,6 +226,7 @@
             // 
             // buttonUpdate
             // 
+            this.buttonUpdate.Enabled = false;
             this.buttonUpdate.Image = ((System.Drawing.Image)(resources.GetObject("buttonUpdate.Image")));
             this.buttonUpdate.Location = new System.Drawing.Point(692, 281);
             this.buttonUpdate.Name = "buttonUpdate";
