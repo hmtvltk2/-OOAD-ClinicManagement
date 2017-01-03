@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using DevExpress.XtraBars;
 using DevExpress.XtraTabbedMdi;
 using DevExpress.XtraEditors;
+using ClinicManager.Common;
+using ClinicManager.DataBusiness;
 
 namespace ClinicManager.Presentation
 {
@@ -16,8 +18,7 @@ namespace ClinicManager.Presentation
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            XtraTabbedMdiManager mdiManager = new XtraTabbedMdiManager();
-            mdiManager.MdiParent = this;
+         
         }
 
         private void MainForm_Shown(object sender, EventArgs e)
@@ -30,12 +31,77 @@ namespace ClinicManager.Presentation
 
         private void SetRule()
         {
-            
+            var permissionBusiness = new PermissionBusiness();
+            var permissions = permissionBusiness.GetPermissionByUserGroupID(UserBusiness.User.UserGroupID);
+
+            pageGroupReceivePatient.Visible = permissions.Contains("Tiếp nhận bệnh nhân");
+
+            pageGroupExamine.Visible = permissions.Contains("Khám bệnh");
+
+            pageGroupPayment.Visible = permissions.Contains("Thanh toán");
+
+            pageGroupPatientManager.Visible = permissions.Contains("Quản lý bệnh nhân");
+
+            pageGroupScheduleManager.Visible = permissions.Contains("Quản lý lịch hẹn");
+
+            pageGroupService.Visible = permissions.Contains("Dịch vụ");
+
+            pageGroupDatabase.Visible = permissions.Contains("Thay đổi cơ sở dữ liệu");
+
+            barButtonMedicine.Visibility = permissions.Contains("Quản lý thuốc") 
+                                        ? BarItemVisibility.Always 
+                                        : BarItemVisibility.Never;
+
+            barButtonMedicineType.Visibility = permissions.Contains("Loại thuốc") 
+                                        ? BarItemVisibility.Always 
+                                        : BarItemVisibility.Never;
+
+            barButtonPharmacyType.Visibility = permissions.Contains("Dạng bào chế") 
+                                        ? BarItemVisibility.Always 
+                                        : BarItemVisibility.Never;
+
+            barButtonWayToUse.Visibility = permissions.Contains("Đường dùng") 
+                                        ? BarItemVisibility.Always 
+                                        : BarItemVisibility.Never;
+
+            barButtonUnit.Visibility = permissions.Contains("Đơn vị tính") 
+                                        ? BarItemVisibility.Always 
+                                        : BarItemVisibility.Never;
+
+            pageGroupMedicineManager.Visible = 
+                permissions.Contains("Quản lý thuốc") 
+                || permissions.Contains("Loại thuốc") 
+                || permissions.Contains("Dạng bào chế") 
+                || permissions.Contains("Đường dùng") 
+                || permissions.Contains("Đơn vị tính");
+
+            barButtonUserManager.Visibility = permissions.Contains("Quản lý người dùng") 
+                                        ? BarItemVisibility.Always : 
+                                        BarItemVisibility.Never;
+
+            barButtonPermission.Visibility = permissions.Contains("Phân quyền") 
+                                        ? BarItemVisibility.Always 
+                                        : BarItemVisibility.Never;
+
+            pageGroupUserManager.Visible = permissions.Contains("Quản lý người dùng") 
+                                        || permissions.Contains("Phân quyền");
+
+            barButtonNumberOfExamine.Visibility = permissions.Contains("Báo cáo lượt khám") 
+                                        ? BarItemVisibility.Always 
+                                        : BarItemVisibility.Never;
+
+            barButtonRevenue.Visibility = permissions.Contains("Báo cáo doanh thu") 
+                                        ? BarItemVisibility.Always 
+                                        : BarItemVisibility.Never;
+
+            pageGroupReport.Visible = permissions.Contains("Báo cáo doanh thu") 
+                                    || permissions.Contains("Báo cáo lượt khám");
         }
 
         private void ShowSystemInfo()
         {
-            throw new NotImplementedException();
+            barStaticUser.Caption = UserBusiness.User.FullName;
+         
         }
 
         private bool Login()
@@ -79,19 +145,23 @@ namespace ClinicManager.Presentation
 
         private void OpenMDIForm<T>()
         {
+            var f = MdiChildren.FirstOrDefault(i => i is T);
 
-            foreach (Form form in Application.OpenForms)
+            if (f == null)
             {
-                if (form.GetType() == typeof(T))
+                foreach (var form in MdiChildren)
                 {
-                    form.Activate();
-                    return;
-                }      
+                    form.Close();
+                }
+                f = Activator.CreateInstance<T>() as Form;
+                if (f == null) return;
+                f.MdiParent = this;
+                f.Show();
             }
-            var f = Activator.CreateInstance<T>() as Form;
-            if (f == null) return;
-            f.MdiParent = this;
-            f.Show();
+            else
+            {
+                f.Activate();
+            }
         }
 
         private void OpenOtherForm<T>()
@@ -175,8 +245,6 @@ namespace ClinicManager.Presentation
 
         }
 
-        
-
         private void barButtonUser_ItemClick(object sender, ItemClickEventArgs e)
         {
             OpenMDIForm<UserForm>();
@@ -192,6 +260,27 @@ namespace ClinicManager.Presentation
             OpenMDIForm<PermissionForm>();
         }
 
-        
+        private void barButtonAccountManager_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenMDIForm<UserForm>();
+        }
+
+        private void barButtonLogout_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            docManager.View.Controller.CloseAll();
+            barStaticUser.Caption = "________";
+            
+            MainForm_Shown(sender, e);
+        }
+
+        private void barButtonConfigDatabase_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            OpenOtherForm<ConfigForm>();
+        }
+
+        private void barButtonService_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }

@@ -147,6 +147,7 @@
             this.gridviewSearchList.IndicatorWidth = 50;
             this.gridviewSearchList.Name = "gridviewSearchList";
             this.gridviewSearchList.OptionsBehavior.ReadOnly = true;
+            this.gridviewSearchList.OptionsView.ShowGroupPanel = false;
             this.gridviewSearchList.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridviewSearchList_CustomDrawRowIndicator);
             // 
             // gridColumn1

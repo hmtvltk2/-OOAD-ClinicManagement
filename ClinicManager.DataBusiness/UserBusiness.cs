@@ -1,11 +1,13 @@
-﻿using System;
-using ClinicManager.DataModel;
+﻿using ClinicManager.Common;
 using System.Data;
+using ClinicManager.DataAccess;
+using ClinicManager.DataModel;
 
 namespace ClinicManager.DataBusiness
 {
     public class UserBusiness
     {
+        public static User User { get; set; }
         #region Contructor
         private UserAccess dataAccess;
 
@@ -53,5 +55,34 @@ namespace ClinicManager.DataBusiness
         {
             return dataAccess.GetAllDoctorWithQueue();
         }
+
+        public LoginStatus GetLoginUser(string username, string password)
+        {
+            User user = dataAccess.GetByUserName(username);
+            if (user == null)
+            {
+                return LoginStatus.NoAccount;
+            }
+
+            if (Security.Md5Hash(password) != user.Password)
+            {
+                return LoginStatus.WrongPassword;
+            }
+            User = user;
+            return LoginStatus.Success;
+        }
+
+        public DataTable GetAllWithUserGroupName()
+        {
+            return dataAccess.GetAllWithUserGroupName();
+        }
+    }
+
+    public enum LoginStatus
+    {
+        LoginFail,
+        NoAccount,
+        WrongPassword,
+        Success
     }
 }

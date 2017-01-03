@@ -1,8 +1,10 @@
-﻿using ClinicManager.DataModel;
+﻿using ClinicManager.Common;
+using ClinicManager.DataModel;
 using System.Data;
 using System.Linq;
+using System;
 
-namespace ClinicManager.DataModel
+namespace ClinicManager.DataAccess
 {
     public class MedicineAccess : BaseDataAccess
     {
@@ -42,17 +44,8 @@ namespace ClinicManager.DataModel
         {
             using (var db = new ClinicDB())
             {
-
-                //var m = from medicine in db.Medicine
-                //        join type in db.MedicineType on medicine.MedicineTypeID equals type.MedicineTypeID
-                //        join way in db.WayToUse on medicine.MedicineID equals way.WayToUseID
-                //        join pharmacy in db.PharmacyType on medicine.PharmacyTypeID equals pharmacy.PharmacyTypeID
-                //        join unit in db.Unit on medicine.MedicineTypeID equals unit.UnitID
-
-                //        select new { medicine.MedicineID, medicine.MedicineName, type.MedicineTypeName, way.WayToUseName, pharmacy.PharmacyTypeName,unit.UnitName };
-
                 return db.Medicine.ToDataTable();
-             //   return m.ToDataTable();
+
             }
         }
         public DataTable GetByCondition(string medicineName,int  medicineTypeID)
@@ -80,6 +73,18 @@ namespace ClinicManager.DataModel
                 return medicine.ToDataTable();
             }
         }
+
+        public DataTable GetAllWithUnit()
+        {
+            using (var db =new ClinicDB())
+            {
+                var query = from m in db.Medicine
+                            join u in db.Unit on m.UnitID equals u.UnitID
+                            select new { m.MedicineID, m.MedicineName, u.UnitName };
+                return query.ToDataTable();
+            }
+        }
+
         // Chose all medicin with type
         public DataTable GetByCondition(int medicineTypeID)
         {
@@ -94,5 +99,15 @@ namespace ClinicManager.DataModel
             }
         }
 
+        public Medicine GetByMedicineID(int medicineID)
+        {
+            using (var db = new ClinicDB())
+            {
+                var query = from m in db.Medicine
+                            where m.MedicineID == medicineID
+                            select m;
+                return query.First();
+            }
+        }
     }
 }

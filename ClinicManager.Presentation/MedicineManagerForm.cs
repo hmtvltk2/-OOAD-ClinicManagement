@@ -1,5 +1,5 @@
 using ClinicManager.DataBusiness;
-using ClinicManager.DataModel;
+using ClinicManager.Common;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraGrid;
@@ -7,6 +7,7 @@ using DevExpress.XtraGrid.Columns;
 using System;
 using System.Data;
 using System.Windows.Forms;
+using ClinicManager.DataModel;
 
 namespace ClinicManager.Presentation
 {

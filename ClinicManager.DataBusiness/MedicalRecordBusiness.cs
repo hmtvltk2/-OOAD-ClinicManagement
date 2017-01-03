@@ -1,4 +1,8 @@
-﻿using ClinicManager.DataModel;
+﻿using ClinicManager.DataAccess;
+using ClinicManager.Common;
+using System;
+using ClinicManager.DataModel;
+using System.Data;
 
 namespace ClinicManager.DataBusiness
 {
@@ -40,6 +44,16 @@ namespace ClinicManager.DataBusiness
 
 
             return result;
+        }
+
+        public System.Data.DataTable GetByDoctorId(int id)
+        {
+            return dataAccess.GetByDoctorId(id);
+        }
+
+        public MedicalRecord GetByPatientID(int patientID)
+        {
+            return dataAccess.GetByPatientID(patientID);
         }
     }
 }

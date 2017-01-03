@@ -1,8 +1,10 @@
-﻿using ClinicManager.DataModel;
-using System.Data;
+﻿using System.Data;
 using System.Linq;
+using System;
+using ClinicManager.Common;
+using ClinicManager.DataModel;
 
-namespace ClinicManager.DataModel
+namespace ClinicManager.DataAccess
 {
     public class MedicalRecordAccess : BaseDataAccess
     {
@@ -36,6 +38,39 @@ namespace ClinicManager.DataModel
             }
 
             return base.Delete(model);
+        }
+
+        public DataTable GetByDoctorId(int id)
+        {
+            using (var db = new ClinicDB())
+            {
+                var query = from mr in db.MedicalRecord
+                            join p in db.Patient on mr.PatientID equals p.PatientID
+                            join d in db.User on mr.DoctorID equals d.UserID
+                            where mr.DoctorID == id && mr.ExamineDate == DateTime.Today
+                            select new {p.FullName, p.Gender, p.DateOfBirth, p.Address,
+                            p.PatientID, mr.Diagnostic, DoctorName = d.FullName};
+
+                return query.ToDataTable();
+            }
+        }
+
+        public MedicalRecord GetByPatientID(int patientID)
+        {
+            using (var db = new ClinicDB())
+            {
+                var query = from mr in db.MedicalRecord
+                            where mr.PatientID == patientID
+                            select mr;
+                if(query.Count() > 0)
+                {
+                    return query.First();
+                }
+                else
+                {
+                    return null;
+                }
+            }
         }
 
         public DataTable GetAll()

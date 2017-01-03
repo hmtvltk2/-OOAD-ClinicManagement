@@ -4,8 +4,9 @@ using DevExpress.XtraEditors;
 using ClinicManager.DataBusiness;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraGrid;
-using ClinicManager.DataModel;
+using ClinicManager.Common;
 using DevExpress.XtraGrid.Columns;
+using ClinicManager.DataModel;
 
 namespace ClinicManager.Presentation
 {
@@ -78,12 +79,12 @@ namespace ClinicManager.Presentation
             if (gridView1.IsNewItemRow(e.RowHandle))
             {
                 //insert
-                WayToUse WayToUse = new WayToUse()
+                WayToUse wayToUse = new WayToUse()
                 {
                     WayToUseName = (string)row["WayToUseName"]
                 };
 
-                int id = wayToUseBusiness.Insert(WayToUse);
+                int id = wayToUseBusiness.Insert(wayToUse);
                 if (id == 0)
                 {
                     result = false;

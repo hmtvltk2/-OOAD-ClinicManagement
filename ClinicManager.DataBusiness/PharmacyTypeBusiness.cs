@@ -1,4 +1,4 @@
-﻿using ClinicManager.DataModel;
+﻿using ClinicManager.DataAccess;
 
 namespace ClinicManager.DataBusiness
 {

@@ -131,6 +131,7 @@
             this.buttonChagePassword.StyleController = this.layoutControl1;
             this.buttonChagePassword.TabIndex = 15;
             this.buttonChagePassword.Text = "Đổi mật khẩu";
+            this.buttonChagePassword.Click += new System.EventHandler(this.buttonChagePassword_Click);
             // 
             // buttonSave
             // 
@@ -141,6 +142,7 @@
             this.buttonSave.StyleController = this.layoutControl1;
             this.buttonSave.TabIndex = 14;
             this.buttonSave.Text = "Lưu";
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonClose
             // 
@@ -151,6 +153,7 @@
             this.buttonClose.StyleController = this.layoutControl1;
             this.buttonClose.TabIndex = 13;
             this.buttonClose.Text = "Đóng";
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // textEditUsername
             // 
@@ -344,6 +347,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý tài khoản";
+            this.Load += new System.EventHandler(this.UserForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dateDateOfBirth.Properties.CalendarTimeProperties)).EndInit();

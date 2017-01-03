@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ClinicManager.DataModel
+namespace ClinicManager.DataAccess
 {
     public class BaseDataAccess
     {
@@ -14,7 +14,7 @@ namespace ClinicManager.DataModel
                     return db.SaveChanges();
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 return 0;
             }

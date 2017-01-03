@@ -197,7 +197,7 @@
         YemAckaxhd1bVssfI/2W9EGQzVrPjn9go4cyO0KBwR+nGRqWKfsCHQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="simpleButtonAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="buttonCreatePassword.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABJ0RVh0VGl0
         bGUAQmFyQ29kZTtDb2RlYCA/gQAAAjpJREFUOE+lk9lPE1EUh0dcQNH/xugDtkBiBMG4PBktS3yRuiUu
