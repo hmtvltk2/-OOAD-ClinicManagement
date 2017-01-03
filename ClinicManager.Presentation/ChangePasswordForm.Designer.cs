@@ -25,11 +25,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangePasswordForm));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.textOldPass = new DevExpress.XtraEditors.TextEdit();
+            this.textEditOldPassword = new DevExpress.XtraEditors.TextEdit();
             this.buttonSave = new DevExpress.XtraEditors.SimpleButton();
             this.buttonExit = new DevExpress.XtraEditors.SimpleButton();
-            this.textConfirmPassword = new DevExpress.XtraEditors.TextEdit();
-            this.textNewPass = new DevExpress.XtraEditors.TextEdit();
+            this.textEditConfirm = new DevExpress.XtraEditors.TextEdit();
+            this.textEditNewPassword = new DevExpress.XtraEditors.TextEdit();
             this.pictureDefault = new DevExpress.XtraEditors.PictureEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -45,12 +45,11 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textOldPass.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textConfirmPassword.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textNewPass.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditOldPassword.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditConfirm.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditNewPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDefault.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -70,11 +69,11 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.textOldPass);
+            this.layoutControl1.Controls.Add(this.textEditOldPassword);
             this.layoutControl1.Controls.Add(this.buttonSave);
             this.layoutControl1.Controls.Add(this.buttonExit);
-            this.layoutControl1.Controls.Add(this.textConfirmPassword);
-            this.layoutControl1.Controls.Add(this.textNewPass);
+            this.layoutControl1.Controls.Add(this.textEditConfirm);
+            this.layoutControl1.Controls.Add(this.textEditNewPassword);
             this.layoutControl1.Controls.Add(this.pictureDefault);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
@@ -84,13 +83,14 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // textOldPass
+            // textEditOldPassword
             // 
-            this.textOldPass.Location = new System.Drawing.Point(250, 45);
-            this.textOldPass.Name = "textOldPass";
-            this.textOldPass.Size = new System.Drawing.Size(174, 20);
-            this.textOldPass.StyleController = this.layoutControl1;
-            this.textOldPass.TabIndex = 9;
+            this.textEditOldPassword.Location = new System.Drawing.Point(250, 45);
+            this.textEditOldPassword.Name = "textEditOldPassword";
+            this.textEditOldPassword.Properties.PasswordChar = '*';
+            this.textEditOldPassword.Size = new System.Drawing.Size(174, 20);
+            this.textEditOldPassword.StyleController = this.layoutControl1;
+            this.textEditOldPassword.TabIndex = 9;
             // 
             // buttonSave
             // 
@@ -101,6 +101,7 @@
             this.buttonSave.StyleController = this.layoutControl1;
             this.buttonSave.TabIndex = 8;
             this.buttonSave.Text = "Lưu";
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonExit
             // 
@@ -110,24 +111,26 @@
             this.buttonExit.Size = new System.Drawing.Size(132, 22);
             this.buttonExit.StyleController = this.layoutControl1;
             this.buttonExit.TabIndex = 7;
-            this.buttonExit.Text = "Thoát";
+            this.buttonExit.Text = "Đóng";
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
-            // textConfirmPassword
+            // textEditConfirm
             // 
-            this.textConfirmPassword.Location = new System.Drawing.Point(250, 113);
-            this.textConfirmPassword.Name = "textConfirmPassword";
-            this.textConfirmPassword.Properties.PasswordChar = '*';
-            this.textConfirmPassword.Size = new System.Drawing.Size(174, 20);
-            this.textConfirmPassword.StyleController = this.layoutControl1;
-            this.textConfirmPassword.TabIndex = 6;
+            this.textEditConfirm.Location = new System.Drawing.Point(250, 113);
+            this.textEditConfirm.Name = "textEditConfirm";
+            this.textEditConfirm.Properties.PasswordChar = '*';
+            this.textEditConfirm.Size = new System.Drawing.Size(174, 20);
+            this.textEditConfirm.StyleController = this.layoutControl1;
+            this.textEditConfirm.TabIndex = 6;
             // 
-            // textNewPass
+            // textEditNewPassword
             // 
-            this.textNewPass.Location = new System.Drawing.Point(250, 79);
-            this.textNewPass.Name = "textNewPass";
-            this.textNewPass.Size = new System.Drawing.Size(174, 20);
-            this.textNewPass.StyleController = this.layoutControl1;
-            this.textNewPass.TabIndex = 5;
+            this.textEditNewPassword.Location = new System.Drawing.Point(250, 79);
+            this.textEditNewPassword.Name = "textEditNewPassword";
+            this.textEditNewPassword.Properties.PasswordChar = '*';
+            this.textEditNewPassword.Size = new System.Drawing.Size(174, 20);
+            this.textEditNewPassword.StyleController = this.layoutControl1;
+            this.textEditNewPassword.TabIndex = 5;
             // 
             // pictureDefault
             // 
@@ -198,7 +201,7 @@
             // 
             // layoutControlItem2
             // 
-            this.layoutControlItem2.Control = this.textNewPass;
+            this.layoutControlItem2.Control = this.textEditNewPassword;
             this.layoutControlItem2.Location = new System.Drawing.Point(144, 67);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(272, 24);
@@ -207,7 +210,7 @@
             // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.textConfirmPassword;
+            this.layoutControlItem3.Control = this.textEditConfirm;
             this.layoutControlItem3.Location = new System.Drawing.Point(144, 101);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(272, 24);
@@ -258,7 +261,7 @@
             // 
             // layoutControlItem6
             // 
-            this.layoutControlItem6.Control = this.textOldPass;
+            this.layoutControlItem6.Control = this.textEditOldPassword;
             this.layoutControlItem6.Location = new System.Drawing.Point(144, 33);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(272, 24);
@@ -286,12 +289,11 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đổi mật khẩu";
-            this.Load += new System.EventHandler(this.ChangePasswordForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.textOldPass.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textConfirmPassword.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textNewPass.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditOldPassword.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditConfirm.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditNewPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDefault.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -314,8 +316,8 @@
         #endregion
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraEditors.TextEdit textConfirmPassword;
-        private DevExpress.XtraEditors.TextEdit textNewPass;
+        private DevExpress.XtraEditors.TextEdit textEditConfirm;
+        private DevExpress.XtraEditors.TextEdit textEditNewPassword;
         private DevExpress.XtraEditors.PictureEdit pictureDefault;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
@@ -327,12 +329,11 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem5;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private DevExpress.XtraEditors.SimpleButton buttonSave;
         private DevExpress.XtraEditors.SimpleButton buttonExit;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraEditors.TextEdit textOldPass;
+        private DevExpress.XtraEditors.TextEdit textEditOldPassword;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem7;
     }

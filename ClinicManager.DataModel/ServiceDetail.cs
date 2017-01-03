@@ -1,23 +1,15 @@
 namespace ClinicManager.DataModel
 {
-    using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("ServiceDetail")]
     public partial class ServiceDetail
     {
-        [Key]
-        [Column(Order = 0)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int ServiceDetailID { get; set; }
+
         public int MedicalRecordID { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ServiceID { get; set; }
-
-        [Column(TypeName = "money")]
-        public decimal ServiceFee { get; set; }
 
         public virtual MedicalRecord MedicalRecord { get; set; }
 

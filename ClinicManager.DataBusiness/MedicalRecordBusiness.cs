@@ -1,4 +1,8 @@
 ﻿using ClinicManager.DataAccess;
+using ClinicManager.Common;
+using System;
+using ClinicManager.DataModel;
+using System.Data;
 
 namespace ClinicManager.DataBusiness
 {
@@ -11,7 +15,7 @@ namespace ClinicManager.DataBusiness
         {
             dataAccess = new MedicalRecordAccess();
         }
-        
+
         #endregion
 
         public int Insert(object data)
@@ -41,6 +45,24 @@ namespace ClinicManager.DataBusiness
         public System.Data.DataTable GetByStatus(string status)
         {
             return dataAccess.GetByStatus(status);
+        }
+
+		public string Validate(object data, string propertyName)
+        {
+            string result = "";
+
+
+            return result;
+        }
+
+        public System.Data.DataTable GetByDoctorId(int id)
+        {
+            return dataAccess.GetByDoctorId(id);
+        }
+
+        public MedicalRecord GetByPatientID(int patientID)
+        {
+            return dataAccess.GetByPatientID(patientID);
         }
     }
 }

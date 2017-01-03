@@ -1,9 +1,10 @@
 ﻿using ClinicManager.DataBusiness;
-using ClinicManager.DataModel;
+using ClinicManager.Common;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using System;
 using System.Windows.Forms;
+using ClinicManager.DataModel;
 
 namespace ClinicManager.Presentation
 {
@@ -32,9 +33,9 @@ namespace ClinicManager.Presentation
             dateExamineDay.Properties.MaxValue = DateTime.Today;
 
             UserBusiness userBusiness = new UserBusiness();           
-            lookupDoctor.Properties.DataSource = userBusiness.GetAllDoctorWithQueue();
+            lookupDoctor.Properties.DataSource = userBusiness.GetAllDoctor();
             lookupDoctor.Properties.Columns.Add(new LookUpColumnInfo("FullName", "Tên bác sĩ"));
-            lookupDoctor.Properties.Columns.Add(new LookUpColumnInfo("Queue", "Số bệnh nhân"));
+            //lookupDoctor.Properties.Columns.Add(new LookUpColumnInfo("Queue", "Số bệnh nhân"));
             lookupDoctor.Properties.ValueMember = "UserID";
             lookupDoctor.Properties.DisplayMember = "FullName";
         }
@@ -51,6 +52,7 @@ namespace ClinicManager.Presentation
                 DoctorID = (int)lookupDoctor.EditValue,
                 ExamineDate = (DateTime)dateExamineDay.EditValue,
                 ExamineReason = memoExamineReason.Text,
+                Status = "A",
                 PatientID = patient.PatientID
             };
 

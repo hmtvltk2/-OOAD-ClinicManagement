@@ -1,5 +1,4 @@
 ﻿using System;
-using ClinicManager.DataModel;
 using System.Data;
 using ClinicManager.DataAccess;
 
@@ -30,6 +29,11 @@ namespace ClinicManager.DataBusiness
         public bool Delete(int id)
         {
             return dataAccess.Delete(id);
+        }
+
+        public DataTable GetQueueByDoctorId(int id)
+        {
+            return dataAccess.GetQueueByDoctorId(id);
         }
 
         public DataTable GetAll()
@@ -65,6 +69,13 @@ namespace ClinicManager.DataBusiness
             }
 
             return result;
+        }
+
+        public void UpdateStatus(int queueID, string status)
+        {
+            var queue = dataAccess.GetQueueById(queueID);
+            queue.Status = status;
+            dataAccess.Update(queue);
         }
     }
 }

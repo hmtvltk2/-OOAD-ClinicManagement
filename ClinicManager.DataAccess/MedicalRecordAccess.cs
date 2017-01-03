@@ -1,11 +1,12 @@
-﻿using ClinicManager.DataAccess;
+using ClinicManager.Common;
 using ClinicManager.DataModel;
 using System.Data;
 using System.Linq;
+using System;
 
 namespace ClinicManager.DataAccess
 {
-    public class MedicalRecordAccess : BaseDataAccess
+    public class MedicineAccess : BaseDataAccess
     {
         public override int Insert(object obj)
         {
@@ -14,9 +15,9 @@ namespace ClinicManager.DataAccess
             {
                 using (var db = new ClinicDB())
                 {
-                    var query = from d in db.MedicalRecord orderby d.MedicalRecordID descending select d;
+                    var query = from d in db.Medicine orderby d.MedicineID descending select d;
                     var last = query.First();
-                    result = last.MedicalRecordID;
+                    result = last.MedicineID;
                 }
             }
 
@@ -25,10 +26,10 @@ namespace ClinicManager.DataAccess
 
         public bool Delete(int id)
         {
-            MedicalRecord model;
+            Medicine model;
             using (var db = new ClinicDB())
             {
-                model = db.MedicalRecord.Find(id);
+                model = db.Medicine.Find(id);
 
                 if (model == null)
                 {
@@ -43,40 +44,69 @@ namespace ClinicManager.DataAccess
         {
             using (var db = new ClinicDB())
             {
-                return db.MedicalRecord.ToDataTable();
+                return db.Medicine.ToDataTable();
+
             }
         }
-        public DataTable GetById(int Id)
+        public DataTable GetByCondition(string medicineName,int  medicineTypeID)
         {
             using (var db = new ClinicDB())
             {
-                var medicalRecord = from m in db.MedicalRecord
-                                    where m.PatientID == Id
-                                    select m;
-                return medicalRecord.ToDataTable();
+
+                var medicine = from b in db.Medicine
+                            where (b.MedicineName.Contains(medicineName) && b.MedicineTypeID == medicineTypeID)
+                               //b.MedicineName.Contains(medicineName) is query same LIKE query
+                            select b;
+                return medicine.ToDataTable();
             }
-           
         }
-        public DataTable GetByStatus(string status)
+        // Chose all Tpye ( lookup null)
+        public DataTable GetByCondition(string medicineName)
         {
             using (var db = new ClinicDB())
             {
-                var notPaymentTB = from notpm in db.MedicalRecord
-                                   join patient in db.Patient on notpm.PatientID equals patient.PatientID
-                                   where notpm.Status == status
-                                   select new {notpm.MedicalRecordID,
-                                               notpm.PatientID,
-                                               notpm.DoctorID,
-                                               notpm.ExamineReason,
-                                               notpm.Diagnostic,
-                                               notpm.Note,
-                                               notpm.PrescriptionsID,
-                                               notpm.ExamineDate,
-                                               notpm.ReExamineDate,
-                                               notpm.Status,
-                                               patient.FullName, patient.Gender,
-                                               patient.DateOfBirth };
-                return notPaymentTB.ToDataTable();
+
+                var medicine = from b in db.Medicine
+                               where (b.MedicineName.Contains(medicineName))
+                               select b;
+
+                return medicine.ToDataTable();
+            }
+        }
+
+        public DataTable GetAllWithUnit()
+        {
+            using (var db =new ClinicDB())
+            {
+                var query = from m in db.Medicine
+                            join u in db.Unit on m.UnitID equals u.UnitID
+                            select new { m.MedicineID, m.MedicineName, u.UnitName };
+                return query.ToDataTable();
+            }
+        }
+
+        // Chose all medicin with type
+        public DataTable GetByCondition(int medicineTypeID)
+        {
+            using (var db = new ClinicDB())
+            {
+
+                var medicine = from b in db.Medicine
+                               where (b.MedicineTypeID == medicineTypeID)
+                               select b;
+
+                return medicine.ToDataTable();
+            }
+        }
+
+        public Medicine GetByMedicineID(int medicineID)
+        {
+            using (var db = new ClinicDB())
+            {
+                var query = from m in db.Medicine
+                            where m.MedicineID == medicineID
+                            select m;
+                return query.First();
             }
         }
     }

@@ -1,6 +1,7 @@
-﻿using ClinicManager.DataModel;
 using ClinicManager.DataAccess;
+using ClinicManager.DataModel;
 using System;
+using System.Data;
 
 namespace ClinicManager.DataBusiness
 {
@@ -77,6 +78,12 @@ namespace ClinicManager.DataBusiness
 
             return error;
         }
+
+        public DataTable GetAllWithUnit()
+        {
+            return dataAccess.GetAllWithUnit();
+        }
+
         public System.Data.DataTable GetByCondition(string medicineName, int medicineTypeID)
         {
             return dataAccess.GetByCondition(medicineName, medicineTypeID);
@@ -88,6 +95,11 @@ namespace ClinicManager.DataBusiness
         public System.Data.DataTable GetByCondition(int medicineTypeID)
         {
             return dataAccess.GetByCondition(medicineTypeID);
+        }
+
+        public Medicine GetByMedicineID(int medicineID)
+        {
+            return dataAccess.GetByMedicineID(medicineID);
         }
     }
 }

@@ -1,7 +1,8 @@
-﻿using ClinicManager.DataAccess;
+using ClinicManager.DataAccess;
 using System.Data;
 using System.Linq;
 using System;
+using ClinicManager.Common;
 using ClinicManager.DataModel;
 
 namespace ClinicManager.DataAccess

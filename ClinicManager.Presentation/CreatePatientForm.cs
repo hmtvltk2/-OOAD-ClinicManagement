@@ -1,9 +1,10 @@
 ﻿using ClinicManager.DataBusiness;
-using ClinicManager.DataModel;
+using ClinicManager.Common;
 using DevExpress.XtraEditors;
 using System;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using ClinicManager.DataModel;
 
 namespace ClinicManager.Presentation
 {

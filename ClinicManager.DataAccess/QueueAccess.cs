@@ -1,8 +1,9 @@
-﻿using ClinicManager.DataAccess;
 using System.Data;
 using System.Linq;
 using System;
+using ClinicManager.Common;
 using ClinicManager.DataModel;
+using ClinicManager.DataAccess;
 
 namespace ClinicManager.DataAccess
 {
@@ -40,11 +41,34 @@ namespace ClinicManager.DataAccess
             return base.Delete(model);
         }
 
+        public DataTable GetQueueByDoctorId(int id)
+        {
+            using (var db = new ClinicDB())
+            {
+                var query = from q in db.Queue
+                            join p in db.Patient on q.PatientID equals p.PatientID
+                            join u in db.User on q.DoctorID equals u.UserID
+                            where q.DoctorID == id && q.Status == "A" && q.ExamineDate == DateTime.Today
+                            select new {q.QueueID, q.PatientID, q.ExamineReason, p.FullName,
+                            p.Gender, p.DateOfBirth, DoctorName = u.FullName};
+
+                return query.ToDataTable();
+            }
+        }
+
         public DataTable GetAll()
         {
             using (var db = new ClinicDB())
             {
                 return db.Queue.ToDataTable();
+            }
+        }
+
+        public Queue GetQueueById(int queueID)
+        {
+            using (var db = new ClinicDB())
+            {
+                return db.Queue.Find(queueID);
             }
         }
 

@@ -14,7 +14,7 @@ namespace ClinicManager.DataAccess
                     return db.SaveChanges();
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 return 0;
             }

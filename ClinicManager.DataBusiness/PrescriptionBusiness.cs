@@ -1,4 +1,6 @@
-﻿using ClinicManager.DataAccess;
+using System;
+using System.Data;
+using ClinicManager.DataAccess;
 using ClinicManager.DataModel;
 
 namespace ClinicManager.DataBusiness
@@ -43,15 +45,46 @@ namespace ClinicManager.DataBusiness
         {
             string result = "";
 
-            if (propertyName == "PrescriptionName")
+            switch (propertyName)
             {
-                if (string.IsNullOrWhiteSpace((string)data))
-                {
-                    result = "Tên đơn vị tính không được trống";
-                }
+                case "MedicineID":
+                    if(data == DBNull.Value)
+                    {
+                        result = "Chưa chọn thuốc";
+                    }
+                    break;
+                case "Quantity":
+                    if(data == DBNull.Value)
+                    {
+                        result = "Chưa nhập số lượng";
+                    }
+                    break;
+                case "HowToUse":
+                    if(string.IsNullOrWhiteSpace(data as string))
+                    {
+                        result = "Chưa nhập cách dùng";
+                    }
+                    break;
+                default:
+                    break;
             }
 
             return result;
+        }
+
+        public DataRow GetMedicalRecordInfo(int prescriptionID)
+        {
+            return dataAccess.GetMedicalRecordInfo(prescriptionID);
+        }
+
+        public Prescription GetByMedicalRecordID(int medicalRecordID)
+        {
+            return dataAccess.GetByMedicalRecordID(medicalRecordID);
+        }
+
+        public Prescription GetByPrescriptionID(int prescriptionID)
+        {
+            return dataAccess.GetByPrescriptionID(prescriptionID);
         }
     }
 }

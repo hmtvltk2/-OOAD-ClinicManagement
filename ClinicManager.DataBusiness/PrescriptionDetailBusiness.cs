@@ -1,4 +1,5 @@
-﻿using ClinicManager.DataAccess;
+using System;
+using ClinicManager.DataAccess;
 using ClinicManager.DataModel;
 
 namespace ClinicManager.DataBusiness
@@ -30,11 +31,28 @@ namespace ClinicManager.DataBusiness
             return dataAccess.Delete(id);
         }
 
-        public System.Data.DataTable GetByPrescriptionID( int id)
+        public System.Data.DataTable GetAll()
         {
-            return dataAccess.GetByPrescriptionID(id);
+            return dataAccess.GetAll();
         }
 
+        public string Validate(object data, string propertyName)
+        {
+            string result = "";
+
         
+
+            return result;
+        }
+
+        public DataTable GetByPrescriptionID(int prescriptionID)
+        {
+            return dataAccess.GetByPrescriptionID(prescriptionID);
+        }
+
+        public bool DeteleByPrescriptionID(int prescriptionID)
+        {
+            return dataAccess.DeteleByPrescriptionID(prescriptionID);
+        }
     }
 }

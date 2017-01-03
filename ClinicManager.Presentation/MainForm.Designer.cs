@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonReceivePatient = new DevExpress.XtraBars.BarButtonItem();
@@ -41,28 +42,38 @@
             this.barButtonUnit = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonSchedule = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonUserManager = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonUser = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonPermission = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonMedicineExport = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonNumberOfExamine = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonRevenue = new DevExpress.XtraBars.BarButtonItem();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.skinRibbonGalleryBarItem2 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
+            this.barStaticUser = new DevExpress.XtraBars.BarStaticItem();
+            this.barUserMenu = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonAccountManager = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonLogout = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonConfigDatabase = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonService = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.pageGroupReceivePatient = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.pageGroupExamine = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.pageGroupPayment = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.pageGroupPatientManager = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.pageGroupScheduleManager = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.pageGroupMedicineManager = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.pageGroupService = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.pageGroupUserManager = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.pageGroupDatabase = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.pageGroupReport = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.docManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
+            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -81,22 +92,28 @@
             this.barButtonUnit,
             this.barButtonSchedule,
             this.barButtonUserManager,
-            this.barButtonUser,
             this.barButtonPermission,
-            this.barButtonMedicineExport,
             this.barButtonNumberOfExamine,
             this.barButtonRevenue,
             this.skinRibbonGalleryBarItem1,
-            this.skinRibbonGalleryBarItem2});
+            this.skinRibbonGalleryBarItem2,
+            this.barStaticUser,
+            this.barUserMenu,
+            this.barButtonAccountManager,
+            this.barButtonLogout,
+            this.barButtonConfigDatabase,
+            this.barButtonService});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 19;
+            this.ribbon.MaxItemId = 26;
             this.ribbon.Name = "ribbon";
+            this.ribbon.PageHeaderItemLinks.Add(this.barStaticUser);
+            this.ribbon.PageHeaderItemLinks.Add(this.barUserMenu);
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage2,
             this.ribbonPage3,
             this.ribbonPage4});
-            this.ribbon.Size = new System.Drawing.Size(1074, 143);
+            this.ribbon.Size = new System.Drawing.Size(1220, 143);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // barButtonReceivePatient
@@ -198,15 +215,6 @@
             this.barButtonUserManager.Name = "barButtonUserManager";
             this.barButtonUserManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonUserManager_ItemClick);
             // 
-            // barButtonUser
-            // 
-            this.barButtonUser.Caption = "Tài khoản";
-            this.barButtonUser.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonUser.Glyph")));
-            this.barButtonUser.Id = 12;
-            this.barButtonUser.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonUser.LargeGlyph")));
-            this.barButtonUser.Name = "barButtonUser";
-            this.barButtonUser.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonUser_ItemClick);
-            // 
             // barButtonPermission
             // 
             this.barButtonPermission.Caption = "Phân quyền";
@@ -215,15 +223,6 @@
             this.barButtonPermission.LargeGlyph = global::ClinicManager.Presentation.Properties.Resources.permission32x32;
             this.barButtonPermission.Name = "barButtonPermission";
             this.barButtonPermission.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonPermission_ItemClick);
-            // 
-            // barButtonMedicineExport
-            // 
-            this.barButtonMedicineExport.Caption = "Báo cáo thuốc đã xuất";
-            this.barButtonMedicineExport.Glyph = global::ClinicManager.Presentation.Properties.Resources.MedicineType16x16;
-            this.barButtonMedicineExport.Id = 14;
-            this.barButtonMedicineExport.LargeGlyph = global::ClinicManager.Presentation.Properties.Resources.medinceExport32x32;
-            this.barButtonMedicineExport.Name = "barButtonMedicineExport";
-            this.barButtonMedicineExport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonMedicineExport_ItemClick);
             // 
             // barButtonNumberOfExamine
             // 
@@ -255,93 +254,157 @@
             this.skinRibbonGalleryBarItem2.Id = 18;
             this.skinRibbonGalleryBarItem2.Name = "skinRibbonGalleryBarItem2";
             // 
+            // barStaticUser
+            // 
+            this.barStaticUser.Caption = "__________";
+            this.barStaticUser.Glyph = ((System.Drawing.Image)(resources.GetObject("barStaticUser.Glyph")));
+            this.barStaticUser.Id = 19;
+            this.barStaticUser.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barStaticUser.LargeGlyph")));
+            this.barStaticUser.Name = "barStaticUser";
+            this.barStaticUser.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
+            // barUserMenu
+            // 
+            this.barUserMenu.Id = 20;
+            this.barUserMenu.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonAccountManager),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonLogout)});
+            this.barUserMenu.Name = "barUserMenu";
+            // 
+            // barButtonAccountManager
+            // 
+            this.barButtonAccountManager.Caption = "Quản lý tài khoản";
+            this.barButtonAccountManager.Id = 21;
+            this.barButtonAccountManager.Name = "barButtonAccountManager";
+            this.barButtonAccountManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonAccountManager_ItemClick);
+            // 
+            // barButtonLogout
+            // 
+            this.barButtonLogout.Caption = "Đăng xuất";
+            this.barButtonLogout.Id = 22;
+            this.barButtonLogout.Name = "barButtonLogout";
+            this.barButtonLogout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonLogout_ItemClick);
+            // 
+            // barButtonConfigDatabase
+            // 
+            this.barButtonConfigDatabase.Caption = "Thay đổi cơ sở dữ liệu";
+            this.barButtonConfigDatabase.Id = 24;
+            this.barButtonConfigDatabase.LargeGlyph = global::ClinicManager.Presentation.Properties.Resources.database_32x32;
+            this.barButtonConfigDatabase.Name = "barButtonConfigDatabase";
+            this.barButtonConfigDatabase.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonConfigDatabase_ItemClick);
+            // 
+            // barButtonService
+            // 
+            this.barButtonService.Caption = "Dịch vụ";
+            this.barButtonService.Id = 25;
+            this.barButtonService.LargeGlyph = global::ClinicManager.Presentation.Properties.Resources.service32x32;
+            this.barButtonService.Name = "barButtonService";
+            this.barButtonService.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonService_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1,
-            this.ribbonPageGroup2,
-            this.ribbonPageGroup3});
+            this.pageGroupReceivePatient,
+            this.pageGroupExamine,
+            this.pageGroupPayment});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Nghiệp vụ";
             // 
-            // ribbonPageGroup1
+            // pageGroupReceivePatient
             // 
-            this.ribbonPageGroup1.AllowTextClipping = false;
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonReceivePatient);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.ShowCaptionButton = false;
-            this.ribbonPageGroup1.Text = "Tiếp nhận bệnh nhân";
+            this.pageGroupReceivePatient.AllowTextClipping = false;
+            this.pageGroupReceivePatient.ItemLinks.Add(this.barButtonReceivePatient);
+            this.pageGroupReceivePatient.Name = "pageGroupReceivePatient";
+            this.pageGroupReceivePatient.ShowCaptionButton = false;
+            this.pageGroupReceivePatient.Text = "Tiếp nhận bệnh nhân";
             // 
-            // ribbonPageGroup2
+            // pageGroupExamine
             // 
-            this.ribbonPageGroup2.AllowTextClipping = false;
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonExamine);
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.ShowCaptionButton = false;
-            this.ribbonPageGroup2.Text = "Khám bệnh";
+            this.pageGroupExamine.AllowTextClipping = false;
+            this.pageGroupExamine.ItemLinks.Add(this.barButtonExamine);
+            this.pageGroupExamine.Name = "pageGroupExamine";
+            this.pageGroupExamine.ShowCaptionButton = false;
+            this.pageGroupExamine.Text = "Khám bệnh";
             // 
-            // ribbonPageGroup3
+            // pageGroupPayment
             // 
-            this.ribbonPageGroup3.AllowTextClipping = false;
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonPayment);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.ShowCaptionButton = false;
-            this.ribbonPageGroup3.Text = "Thanh toán";
+            this.pageGroupPayment.AllowTextClipping = false;
+            this.pageGroupPayment.ItemLinks.Add(this.barButtonPayment);
+            this.pageGroupPayment.Name = "pageGroupPayment";
+            this.pageGroupPayment.ShowCaptionButton = false;
+            this.pageGroupPayment.Text = "Thanh toán";
             // 
             // ribbonPage2
             // 
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup4,
-            this.ribbonPageGroup5,
-            this.ribbonPageGroup6});
+            this.pageGroupPatientManager,
+            this.pageGroupScheduleManager,
+            this.pageGroupMedicineManager,
+            this.pageGroupService});
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "Quản lý";
             // 
-            // ribbonPageGroup4
+            // pageGroupPatientManager
             // 
-            this.ribbonPageGroup4.AllowTextClipping = false;
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonPatientManager);
-            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            this.ribbonPageGroup4.ShowCaptionButton = false;
-            this.ribbonPageGroup4.Text = "Quản lý bệnh nhân";
+            this.pageGroupPatientManager.AllowTextClipping = false;
+            this.pageGroupPatientManager.ItemLinks.Add(this.barButtonPatientManager);
+            this.pageGroupPatientManager.Name = "pageGroupPatientManager";
+            this.pageGroupPatientManager.ShowCaptionButton = false;
+            this.pageGroupPatientManager.Text = "Quản lý bệnh nhân";
             // 
-            // ribbonPageGroup5
+            // pageGroupScheduleManager
             // 
-            this.ribbonPageGroup5.AllowTextClipping = false;
-            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonMedicine);
-            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonMedicineType);
-            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonPharmacyType);
-            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonWayToUse);
-            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonUnit);
-            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.ShowCaptionButton = false;
-            this.ribbonPageGroup5.Text = "Quản lý thuốc";
+            this.pageGroupScheduleManager.AllowTextClipping = false;
+            this.pageGroupScheduleManager.ItemLinks.Add(this.barButtonSchedule);
+            this.pageGroupScheduleManager.Name = "pageGroupScheduleManager";
+            this.pageGroupScheduleManager.ShowCaptionButton = false;
+            this.pageGroupScheduleManager.Text = "Quản lý lịch hẹn";
             // 
-            // ribbonPageGroup6
+            // pageGroupMedicineManager
             // 
-            this.ribbonPageGroup6.AllowTextClipping = false;
-            this.ribbonPageGroup6.ItemLinks.Add(this.barButtonSchedule);
-            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            this.ribbonPageGroup6.ShowCaptionButton = false;
-            this.ribbonPageGroup6.Text = "Quản lý lịch hẹn";
+            this.pageGroupMedicineManager.AllowTextClipping = false;
+            this.pageGroupMedicineManager.ItemLinks.Add(this.barButtonMedicine);
+            this.pageGroupMedicineManager.ItemLinks.Add(this.barButtonMedicineType);
+            this.pageGroupMedicineManager.ItemLinks.Add(this.barButtonPharmacyType);
+            this.pageGroupMedicineManager.ItemLinks.Add(this.barButtonWayToUse);
+            this.pageGroupMedicineManager.ItemLinks.Add(this.barButtonUnit);
+            this.pageGroupMedicineManager.Name = "pageGroupMedicineManager";
+            this.pageGroupMedicineManager.ShowCaptionButton = false;
+            this.pageGroupMedicineManager.Text = "Quản lý thuốc";
+            // 
+            // pageGroupService
+            // 
+            this.pageGroupService.AllowTextClipping = false;
+            this.pageGroupService.ItemLinks.Add(this.barButtonService);
+            this.pageGroupService.Name = "pageGroupService";
+            this.pageGroupService.ShowCaptionButton = false;
+            this.pageGroupService.Text = "Quản lý dịch vụ";
             // 
             // ribbonPage3
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup7,
+            this.pageGroupUserManager,
+            this.pageGroupDatabase,
             this.ribbonPageGroup9});
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "Hệ thống";
             // 
-            // ribbonPageGroup7
+            // pageGroupUserManager
             // 
-            this.ribbonPageGroup7.AllowTextClipping = false;
-            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonUser);
-            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonUserManager);
-            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonPermission);
-            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
-            this.ribbonPageGroup7.ShowCaptionButton = false;
-            this.ribbonPageGroup7.Text = "Quản lý người dùng";
+            this.pageGroupUserManager.AllowTextClipping = false;
+            this.pageGroupUserManager.ItemLinks.Add(this.barButtonUserManager);
+            this.pageGroupUserManager.ItemLinks.Add(this.barButtonPermission);
+            this.pageGroupUserManager.Name = "pageGroupUserManager";
+            this.pageGroupUserManager.ShowCaptionButton = false;
+            this.pageGroupUserManager.Text = "Quản lý người dùng";
+            // 
+            // pageGroupDatabase
+            // 
+            this.pageGroupDatabase.AllowTextClipping = false;
+            this.pageGroupDatabase.ItemLinks.Add(this.barButtonConfigDatabase);
+            this.pageGroupDatabase.Name = "pageGroupDatabase";
+            this.pageGroupDatabase.ShowCaptionButton = false;
+            this.pageGroupDatabase.Text = "Cơ sở dữ liệu";
             // 
             // ribbonPageGroup9
             // 
@@ -354,42 +417,52 @@
             // ribbonPage4
             // 
             this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup8});
+            this.pageGroupReport});
             this.ribbonPage4.Name = "ribbonPage4";
             this.ribbonPage4.Text = "Báo cáo";
             // 
-            // ribbonPageGroup8
+            // pageGroupReport
             // 
-            this.ribbonPageGroup8.AllowTextClipping = false;
-            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonMedicineExport);
-            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonNumberOfExamine);
-            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonRevenue);
-            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
-            this.ribbonPageGroup8.ShowCaptionButton = false;
-            this.ribbonPageGroup8.Text = "Xem báo cáo";
+            this.pageGroupReport.AllowTextClipping = false;
+            this.pageGroupReport.ItemLinks.Add(this.barButtonNumberOfExamine);
+            this.pageGroupReport.ItemLinks.Add(this.barButtonRevenue);
+            this.pageGroupReport.Name = "pageGroupReport";
+            this.pageGroupReport.ShowCaptionButton = false;
+            this.pageGroupReport.Text = "Xem báo cáo";
             // 
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 668);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1074, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1220, 31);
+            // 
+            // docManager
+            // 
+            this.docManager.MdiParent = this;
+            this.docManager.MenuManager = this.ribbon;
+            this.docManager.View = this.tabbedView1;
+            this.docManager.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
+            this.tabbedView1});
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1074, 699);
+            this.ClientSize = new System.Drawing.Size(1220, 699);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.Ribbon = this.ribbon;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Quản lý phòng khám";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Shown += new System.EventHandler(this.MainForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.docManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,7 +472,7 @@
 
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup pageGroupReceivePatient;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.XtraBars.BarButtonItem barButtonReceivePatient;
         private DevExpress.XtraBars.BarButtonItem barButtonExamine;
@@ -412,23 +485,31 @@
         private DevExpress.XtraBars.BarButtonItem barButtonUnit;
         private DevExpress.XtraBars.BarButtonItem barButtonSchedule;
         private DevExpress.XtraBars.BarButtonItem barButtonUserManager;
-        private DevExpress.XtraBars.BarButtonItem barButtonUser;
         private DevExpress.XtraBars.BarButtonItem barButtonPermission;
-        private DevExpress.XtraBars.BarButtonItem barButtonMedicineExport;
         private DevExpress.XtraBars.BarButtonItem barButtonNumberOfExamine;
         private DevExpress.XtraBars.BarButtonItem barButtonRevenue;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup pageGroupExamine;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup pageGroupPayment;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup pageGroupPatientManager;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup pageGroupMedicineManager;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup pageGroupScheduleManager;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup pageGroupUserManager;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup pageGroupReport;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
+        private DevExpress.XtraBars.BarStaticItem barStaticUser;
+        private DevExpress.XtraBars.BarSubItem barUserMenu;
+        private DevExpress.XtraBars.BarButtonItem barButtonAccountManager;
+        private DevExpress.XtraBars.BarButtonItem barButtonLogout;
+        private DevExpress.XtraBars.Docking2010.DocumentManager docManager;
+        private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
+        private DevExpress.XtraBars.BarButtonItem barButtonConfigDatabase;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup pageGroupDatabase;
+        private DevExpress.XtraBars.BarButtonItem barButtonService;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup pageGroupService;
     }
 }

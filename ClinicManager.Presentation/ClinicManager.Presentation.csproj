@@ -82,6 +82,12 @@
     <Compile Include="ChangePasswordForm.Designer.cs">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfigForm.Designer.cs">
+      <DependentUpon>ConfigForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateExaminetionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,11 +112,11 @@
     <Compile Include="ExamineForm.designer.cs">
       <DependentUpon>ExamineForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreatePassword.cs">
+    <Compile Include="CreatePasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreatePassword.Designer.cs">
-      <DependentUpon>CreatePassword.cs</DependentUpon>
+    <Compile Include="CreatePasswordForm.Designer.cs">
+      <DependentUpon>CreatePasswordForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ExamineTurnRP.cs">
       <SubType>Component</SubType>
@@ -178,6 +184,18 @@
     <Compile Include="PharmacyTypeForm.designer.cs">
       <DependentUpon>PharmacyTypeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrescriptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrescriptionForm.Designer.cs">
+      <DependentUpon>PrescriptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrescriptionRP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PrescriptionRP.Designer.cs">
+      <DependentUpon>PrescriptionRP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReceivePatientForm.cs">
@@ -243,11 +261,14 @@
     <EmbeddedResource Include="ChangePasswordForm.resx">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConfigForm.resx">
+      <DependentUpon>ConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateExaminetionForm.resx">
       <DependentUpon>CreateExaminetionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreatePassword.resx">
-      <DependentUpon>CreatePassword.cs</DependentUpon>
+    <EmbeddedResource Include="CreatePasswordForm.resx">
+      <DependentUpon>CreatePasswordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreatePatientForm.resx">
       <DependentUpon>CreatePatientForm.cs</DependentUpon>
@@ -291,6 +312,12 @@
     <EmbeddedResource Include="PharmacyTypeForm.resx">
       <DependentUpon>PharmacyTypeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PrescriptionForm.resx">
+      <DependentUpon>PrescriptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrescriptionRP.resx">
+      <DependentUpon>PrescriptionRP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -333,6 +360,7 @@
       <DependentUpon>WayToUseForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\ClinicManager.DataModel.ReportPrescription.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -345,10 +373,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
-      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ClinicManager.Common\ClinicManager.Common.csproj">
+      <Project>{7914E7CE-B025-48C5-B4F2-CAD9123CA4F1}</Project>
+      <Name>ClinicManager.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ClinicManager.DataAccess\ClinicManager.DataAccess.csproj">
       <Project>{8110EEE0-2562-467F-86C8-BE755DDBE5ED}</Project>
       <Name>ClinicManager.DataAccess</Name>
@@ -442,6 +474,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\revenue32x32..png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\change_database.png" />
+    <None Include="Resources\service32x32.png" />
+    <None Include="Resources\database_32x32.png" />
+    <None Include="Resources\database.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

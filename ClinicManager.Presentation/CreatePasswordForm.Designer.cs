@@ -1,6 +1,6 @@
 ﻿namespace ClinicManager.Presentation
 {
-    partial class CreatePassword
+    partial class CreatePasswordForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreatePassword));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreatePasswordForm));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.buttonSave = new DevExpress.XtraEditors.SimpleButton();
             this.buttonExit = new DevExpress.XtraEditors.SimpleButton();
-            this.textConfirmPassword = new DevExpress.XtraEditors.TextEdit();
-            this.textNewPass = new DevExpress.XtraEditors.TextEdit();
+            this.textEditConfirm = new DevExpress.XtraEditors.TextEdit();
+            this.textEditPassword = new DevExpress.XtraEditors.TextEdit();
             this.pictureDefault = new DevExpress.XtraEditors.PictureEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -50,8 +50,8 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textConfirmPassword.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textNewPass.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditConfirm.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDefault.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -71,8 +71,8 @@
             // 
             this.layoutControl1.Controls.Add(this.buttonSave);
             this.layoutControl1.Controls.Add(this.buttonExit);
-            this.layoutControl1.Controls.Add(this.textConfirmPassword);
-            this.layoutControl1.Controls.Add(this.textNewPass);
+            this.layoutControl1.Controls.Add(this.textEditConfirm);
+            this.layoutControl1.Controls.Add(this.textEditPassword);
             this.layoutControl1.Controls.Add(this.pictureDefault);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
@@ -91,6 +91,7 @@
             this.buttonSave.StyleController = this.layoutControl1;
             this.buttonSave.TabIndex = 8;
             this.buttonSave.Text = "Lưu";
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonExit
             // 
@@ -100,24 +101,26 @@
             this.buttonExit.Size = new System.Drawing.Size(132, 22);
             this.buttonExit.StyleController = this.layoutControl1;
             this.buttonExit.TabIndex = 7;
-            this.buttonExit.Text = "Thoát";
+            this.buttonExit.Text = "Đóng";
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
-            // textConfirmPassword
+            // textEditConfirm
             // 
-            this.textConfirmPassword.Location = new System.Drawing.Point(250, 99);
-            this.textConfirmPassword.Name = "textConfirmPassword";
-            this.textConfirmPassword.Properties.PasswordChar = '*';
-            this.textConfirmPassword.Size = new System.Drawing.Size(174, 20);
-            this.textConfirmPassword.StyleController = this.layoutControl1;
-            this.textConfirmPassword.TabIndex = 6;
+            this.textEditConfirm.Location = new System.Drawing.Point(250, 99);
+            this.textEditConfirm.Name = "textEditConfirm";
+            this.textEditConfirm.Properties.PasswordChar = '*';
+            this.textEditConfirm.Size = new System.Drawing.Size(174, 20);
+            this.textEditConfirm.StyleController = this.layoutControl1;
+            this.textEditConfirm.TabIndex = 6;
             // 
-            // textNewPass
+            // textEditPassword
             // 
-            this.textNewPass.Location = new System.Drawing.Point(250, 65);
-            this.textNewPass.Name = "textNewPass";
-            this.textNewPass.Size = new System.Drawing.Size(174, 20);
-            this.textNewPass.StyleController = this.layoutControl1;
-            this.textNewPass.TabIndex = 5;
+            this.textEditPassword.Location = new System.Drawing.Point(250, 65);
+            this.textEditPassword.Name = "textEditPassword";
+            this.textEditPassword.Properties.PasswordChar = '*';
+            this.textEditPassword.Size = new System.Drawing.Size(174, 20);
+            this.textEditPassword.StyleController = this.layoutControl1;
+            this.textEditPassword.TabIndex = 5;
             // 
             // pictureDefault
             // 
@@ -186,7 +189,7 @@
             // 
             // layoutControlItem2
             // 
-            this.layoutControlItem2.Control = this.textNewPass;
+            this.layoutControlItem2.Control = this.textEditPassword;
             this.layoutControlItem2.Location = new System.Drawing.Point(144, 53);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(272, 24);
@@ -195,7 +198,7 @@
             // 
             // layoutControlItem3
             // 
-            this.layoutControlItem3.Control = this.textConfirmPassword;
+            this.layoutControlItem3.Control = this.textEditConfirm;
             this.layoutControlItem3.Location = new System.Drawing.Point(144, 87);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(272, 24);
@@ -244,7 +247,7 @@
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
-            // CreatePassword
+            // CreatePasswordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -253,14 +256,14 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "CreatePassword";
+            this.Name = "CreatePasswordForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tạo mật khẩu";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.textConfirmPassword.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textNewPass.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditConfirm.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDefault.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -281,8 +284,8 @@
         #endregion
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraEditors.TextEdit textConfirmPassword;
-        private DevExpress.XtraEditors.TextEdit textNewPass;
+        private DevExpress.XtraEditors.TextEdit textEditConfirm;
+        private DevExpress.XtraEditors.TextEdit textEditPassword;
         private DevExpress.XtraEditors.PictureEdit pictureDefault;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;

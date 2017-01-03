@@ -4,8 +4,9 @@ using DevExpress.XtraEditors;
 using ClinicManager.DataBusiness;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraGrid;
-using ClinicManager.DataModel;
+using ClinicManager.Common;
 using DevExpress.XtraGrid.Columns;
+using ClinicManager.DataModel;
 
 namespace ClinicManager.Presentation
 {
@@ -97,13 +98,13 @@ namespace ClinicManager.Presentation
             else
             {
                 //update
-                PharmacyType PharmacyType = new PharmacyType()
+                PharmacyType pharmacyType = new PharmacyType()
                 {
                     PharmacyTypeID = (int)row["PharmacyTypeID"],
                     PharmacyTypeName = (string)row["PharmacyTypeName"]
                 };
 
-                result = pharmacyTypeBusiness.Update(PharmacyType);
+                result = pharmacyTypeBusiness.Update(pharmacyType);
             }
 
             if (result)

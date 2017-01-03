@@ -1,4 +1,4 @@
-﻿using ClinicManager.DataAccess;
+using ClinicManager.DataAccess;
 using ClinicManager.DataModel;
 
 namespace ClinicManager.DataBusiness
@@ -30,28 +30,37 @@ namespace ClinicManager.DataBusiness
             return dataAccess.Delete(id);
         }
 
-        public System.Data.DataTable GetById(int medicalRecordID)
+        public System.Data.DataTable GetAll()
         {
-            return dataAccess.GetbyId(medicalRecordID);
-        }
-        public decimal GetTotalFee(int medicalReordID)
-        {
-            return dataAccess.GetTotalFee(medicalReordID);
+            return dataAccess.GetAll();
         }
 
         public string Validate(object data, string propertyName)
         {
             string result = "";
 
-            if (propertyName == "ServiceDetailName")
-            {
-                if (string.IsNullOrWhiteSpace((string)data))
-                {
-                    result = "Tên đơn vị tính không được trống";
-                }
-            }
+         
 
             return result;
+        }
+
+        public bool DeleteByMedicalRecordID(int medicalRecordID)
+        {
+            return dataAccess.DeleteByMedicalRecordID(medicalRecordID);
+        }
+
+        public System.Data.DataTable GetByMedicalRecordID(int medicalRecordID)
+        {
+            return dataAccess.GetByMedicalRecordID(medicalRecordID);
+        }
+
+		public System.Data.DataTable GetById(int medicalRecordID)
+        {
+            return dataAccess.GetbyId(medicalRecordID);
+        }
+        public decimal GetTotalFee(int medicalReordID)
+        {
+            return dataAccess.GetTotalFee(medicalReordID);
         }
     }
 }

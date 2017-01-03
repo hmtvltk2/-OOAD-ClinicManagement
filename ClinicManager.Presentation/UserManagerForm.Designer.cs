@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserManagerForm));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.textEditAddress = new DevExpress.XtraEditors.TextEdit();
             this.buttonAdd = new DevExpress.XtraEditors.SimpleButton();
             this.buttonSave = new DevExpress.XtraEditors.SimpleButton();
             this.buttonDelete = new DevExpress.XtraEditors.SimpleButton();
             this.buttonExit = new DevExpress.XtraEditors.SimpleButton();
-            this.textUserID = new DevExpress.XtraEditors.TextEdit();
-            this.dateEditBirthaday = new DevExpress.XtraEditors.DateEdit();
+            this.textEditUserID = new DevExpress.XtraEditors.TextEdit();
+            this.dateEditBirthday = new DevExpress.XtraEditors.DateEdit();
             this.textEditEmail = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButtonAdd = new DevExpress.XtraEditors.SimpleButton();
-            this.textBoAddress = new System.Windows.Forms.TextBox();
+            this.buttonCreatePassword = new DevExpress.XtraEditors.SimpleButton();
             this.lookUpEditUerGroup = new DevExpress.XtraEditors.LookUpEdit();
-            this.textEditUserName = new DevExpress.XtraEditors.TextEdit();
-            this.textEditName = new DevExpress.XtraEditors.TextEdit();
+            this.textEditUsername = new DevExpress.XtraEditors.TextEdit();
+            this.textEditFullName = new DevExpress.XtraEditors.TextEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -60,8 +60,8 @@
             this.layoutControlItemUserName = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -72,13 +72,14 @@
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textUserID.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEditBirthaday.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEditBirthaday.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditAddress.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditUserID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditBirthday.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditBirthday.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditEmail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditUerGroup.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditUserName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditUsername.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditFullName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -90,8 +91,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemUserName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
@@ -104,18 +105,18 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.textEditAddress);
             this.layoutControl1.Controls.Add(this.buttonAdd);
             this.layoutControl1.Controls.Add(this.buttonSave);
             this.layoutControl1.Controls.Add(this.buttonDelete);
             this.layoutControl1.Controls.Add(this.buttonExit);
-            this.layoutControl1.Controls.Add(this.textUserID);
-            this.layoutControl1.Controls.Add(this.dateEditBirthaday);
+            this.layoutControl1.Controls.Add(this.textEditUserID);
+            this.layoutControl1.Controls.Add(this.dateEditBirthday);
             this.layoutControl1.Controls.Add(this.textEditEmail);
-            this.layoutControl1.Controls.Add(this.simpleButtonAdd);
-            this.layoutControl1.Controls.Add(this.textBoAddress);
+            this.layoutControl1.Controls.Add(this.buttonCreatePassword);
             this.layoutControl1.Controls.Add(this.lookUpEditUerGroup);
-            this.layoutControl1.Controls.Add(this.textEditUserName);
-            this.layoutControl1.Controls.Add(this.textEditName);
+            this.layoutControl1.Controls.Add(this.textEditUsername);
+            this.layoutControl1.Controls.Add(this.textEditFullName);
             this.layoutControl1.Controls.Add(this.gridControl1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
@@ -124,6 +125,14 @@
             this.layoutControl1.Size = new System.Drawing.Size(1058, 518);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // textEditAddress
+            // 
+            this.textEditAddress.Location = new System.Drawing.Point(103, 90);
+            this.textEditAddress.Name = "textEditAddress";
+            this.textEditAddress.Size = new System.Drawing.Size(931, 20);
+            this.textEditAddress.StyleController = this.layoutControl1;
+            this.textEditAddress.TabIndex = 14;
             // 
             // buttonAdd
             // 
@@ -134,6 +143,7 @@
             this.buttonAdd.StyleController = this.layoutControl1;
             this.buttonAdd.TabIndex = 13;
             this.buttonAdd.Text = "Thêm";
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonSave
             // 
@@ -144,6 +154,7 @@
             this.buttonSave.StyleController = this.layoutControl1;
             this.buttonSave.TabIndex = 12;
             this.buttonSave.Text = "Lưu";
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonDelete
             // 
@@ -154,6 +165,7 @@
             this.buttonDelete.StyleController = this.layoutControl1;
             this.buttonDelete.TabIndex = 9;
             this.buttonDelete.Text = "Xóa";
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonExit
             // 
@@ -164,28 +176,29 @@
             this.buttonExit.StyleController = this.layoutControl1;
             this.buttonExit.TabIndex = 10;
             this.buttonExit.Text = "Đóng";
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
-            // textUserID
+            // textEditUserID
             // 
-            this.textUserID.Location = new System.Drawing.Point(103, 42);
-            this.textUserID.Name = "textUserID";
-            this.textUserID.Properties.ReadOnly = true;
-            this.textUserID.Size = new System.Drawing.Size(426, 20);
-            this.textUserID.StyleController = this.layoutControl1;
-            this.textUserID.TabIndex = 0;
+            this.textEditUserID.Location = new System.Drawing.Point(103, 42);
+            this.textEditUserID.Name = "textEditUserID";
+            this.textEditUserID.Properties.ReadOnly = true;
+            this.textEditUserID.Size = new System.Drawing.Size(426, 20);
+            this.textEditUserID.StyleController = this.layoutControl1;
+            this.textEditUserID.TabIndex = 0;
             // 
-            // dateEditBirthaday
+            // dateEditBirthday
             // 
-            this.dateEditBirthaday.EditValue = null;
-            this.dateEditBirthaday.Location = new System.Drawing.Point(612, 66);
-            this.dateEditBirthaday.Name = "dateEditBirthaday";
-            this.dateEditBirthaday.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dateEditBirthday.EditValue = null;
+            this.dateEditBirthday.Location = new System.Drawing.Point(612, 66);
+            this.dateEditBirthday.Name = "dateEditBirthday";
+            this.dateEditBirthday.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEditBirthaday.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dateEditBirthday.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEditBirthaday.Size = new System.Drawing.Size(422, 20);
-            this.dateEditBirthaday.StyleController = this.layoutControl1;
-            this.dateEditBirthaday.TabIndex = 4;
+            this.dateEditBirthday.Size = new System.Drawing.Size(422, 20);
+            this.dateEditBirthday.StyleController = this.layoutControl1;
+            this.dateEditBirthday.TabIndex = 4;
             // 
             // textEditEmail
             // 
@@ -195,22 +208,16 @@
             this.textEditEmail.StyleController = this.layoutControl1;
             this.textEditEmail.TabIndex = 6;
             // 
-            // simpleButtonAdd
+            // buttonCreatePassword
             // 
-            this.simpleButtonAdd.Image = ((System.Drawing.Image)(resources.GetObject("simpleButtonAdd.Image")));
-            this.simpleButtonAdd.Location = new System.Drawing.Point(24, 138);
-            this.simpleButtonAdd.Name = "simpleButtonAdd";
-            this.simpleButtonAdd.Size = new System.Drawing.Size(107, 22);
-            this.simpleButtonAdd.StyleController = this.layoutControl1;
-            this.simpleButtonAdd.TabIndex = 8;
-            this.simpleButtonAdd.Text = "Tạo mật khẩu";
-            // 
-            // textBoAddress
-            // 
-            this.textBoAddress.Location = new System.Drawing.Point(103, 90);
-            this.textBoAddress.Name = "textBoAddress";
-            this.textBoAddress.Size = new System.Drawing.Size(931, 20);
-            this.textBoAddress.TabIndex = 5;
+            this.buttonCreatePassword.Image = ((System.Drawing.Image)(resources.GetObject("buttonCreatePassword.Image")));
+            this.buttonCreatePassword.Location = new System.Drawing.Point(24, 138);
+            this.buttonCreatePassword.Name = "buttonCreatePassword";
+            this.buttonCreatePassword.Size = new System.Drawing.Size(107, 22);
+            this.buttonCreatePassword.StyleController = this.layoutControl1;
+            this.buttonCreatePassword.TabIndex = 8;
+            this.buttonCreatePassword.Text = "Tạo mật khẩu";
+            this.buttonCreatePassword.Click += new System.EventHandler(this.buttonCreatePassword_Click);
             // 
             // lookUpEditUerGroup
             // 
@@ -218,28 +225,28 @@
             this.lookUpEditUerGroup.Name = "lookUpEditUerGroup";
             this.lookUpEditUerGroup.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEditUerGroup.Properties.NullText = "Chọn loại người dùng";
             this.lookUpEditUerGroup.Size = new System.Drawing.Size(422, 20);
             this.lookUpEditUerGroup.StyleController = this.layoutControl1;
             this.lookUpEditUerGroup.TabIndex = 2;
             // 
-            // textEditUserName
+            // textEditUsername
             // 
-            this.textEditUserName.EditValue = "";
-            this.textEditUserName.Location = new System.Drawing.Point(612, 114);
-            this.textEditUserName.Name = "textEditUserName";
-            this.textEditUserName.Properties.ReadOnly = true;
-            this.textEditUserName.Size = new System.Drawing.Size(422, 20);
-            this.textEditUserName.StyleController = this.layoutControl1;
-            this.textEditUserName.TabIndex = 7;
+            this.textEditUsername.EditValue = "";
+            this.textEditUsername.Location = new System.Drawing.Point(612, 114);
+            this.textEditUsername.Name = "textEditUsername";
+            this.textEditUsername.Properties.ReadOnly = true;
+            this.textEditUsername.Size = new System.Drawing.Size(422, 20);
+            this.textEditUsername.StyleController = this.layoutControl1;
+            this.textEditUsername.TabIndex = 7;
             // 
-            // textEditName
+            // textEditFullName
             // 
-            this.textEditName.Location = new System.Drawing.Point(103, 66);
-            this.textEditName.Name = "textEditName";
-            this.textEditName.Properties.ReadOnly = true;
-            this.textEditName.Size = new System.Drawing.Size(426, 20);
-            this.textEditName.StyleController = this.layoutControl1;
-            this.textEditName.TabIndex = 3;
+            this.textEditFullName.Location = new System.Drawing.Point(103, 66);
+            this.textEditFullName.Name = "textEditFullName";
+            this.textEditFullName.Size = new System.Drawing.Size(426, 20);
+            this.textEditFullName.StyleController = this.layoutControl1;
+            this.textEditFullName.TabIndex = 3;
             // 
             // gridControl1
             // 
@@ -264,6 +271,7 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.IndicatorWidth = 50;
             this.gridView1.Name = "gridView1";
+            this.gridView1.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.gridView1_FocusedRowObjectChanged);
             // 
             // gridColumn6
             // 
@@ -322,7 +330,7 @@
             // gridColumn5
             // 
             this.gridColumn5.Caption = "Tên đămg nhập";
-            this.gridColumn5.FieldName = "UserName";
+            this.gridColumn5.FieldName = "Username";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
@@ -357,8 +365,8 @@
             this.layoutControlItemUserName,
             this.layoutControlItem6,
             this.layoutControlItem3,
-            this.layoutControlItem4,
-            this.emptySpaceItem1});
+            this.emptySpaceItem1,
+            this.layoutControlItem4});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Size = new System.Drawing.Size(1038, 164);
@@ -366,7 +374,7 @@
             // 
             // layoutControlItem11
             // 
-            this.layoutControlItem11.Control = this.simpleButtonAdd;
+            this.layoutControlItem11.Control = this.buttonCreatePassword;
             this.layoutControlItem11.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem11.Name = "layoutControlItem11";
             this.layoutControlItem11.Size = new System.Drawing.Size(111, 26);
@@ -375,7 +383,7 @@
             // 
             // layoutControlItem2
             // 
-            this.layoutControlItem2.Control = this.textEditName;
+            this.layoutControlItem2.Control = this.textEditFullName;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(509, 24);
@@ -393,7 +401,7 @@
             // 
             // layoutControlItem8
             // 
-            this.layoutControlItem8.Control = this.dateEditBirthaday;
+            this.layoutControlItem8.Control = this.dateEditBirthday;
             this.layoutControlItem8.Location = new System.Drawing.Point(509, 24);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(505, 24);
@@ -402,7 +410,7 @@
             // 
             // layoutControlItemUserName
             // 
-            this.layoutControlItemUserName.Control = this.textEditUserName;
+            this.layoutControlItemUserName.Control = this.textEditUsername;
             this.layoutControlItemUserName.Location = new System.Drawing.Point(509, 72);
             this.layoutControlItemUserName.Name = "layoutControlItemUserName";
             this.layoutControlItemUserName.Size = new System.Drawing.Size(505, 24);
@@ -411,7 +419,7 @@
             // 
             // layoutControlItem6
             // 
-            this.layoutControlItem6.Control = this.textUserID;
+            this.layoutControlItem6.Control = this.textEditUserID;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(509, 24);
@@ -427,15 +435,6 @@
             this.layoutControlItem3.Text = "Loại người dùng";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(76, 13);
             // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.textBoAddress;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(1014, 24);
-            this.layoutControlItem4.Text = "Địa chỉ";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(76, 13);
-            // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
@@ -443,6 +442,15 @@
             this.emptySpaceItem1.Name = "emptySpaceItem1";
             this.emptySpaceItem1.Size = new System.Drawing.Size(903, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.textEditAddress;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(1014, 24);
+            this.layoutControlItem4.Text = "Địa chỉ";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(76, 13);
             // 
             // layoutControlGroup3
             // 
@@ -525,15 +533,17 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lí người dùng";
+            this.Load += new System.EventHandler(this.UserManagerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.textUserID.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEditBirthaday.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEditBirthaday.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditAddress.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditUserID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditBirthday.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditBirthday.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditEmail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditUerGroup.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditUserName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditUsername.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditFullName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -545,8 +555,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemUserName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
@@ -562,17 +572,16 @@
         #endregion
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private System.Windows.Forms.TextBox textBoAddress;
         private DevExpress.XtraEditors.LookUpEdit lookUpEditUerGroup;
-        private DevExpress.XtraEditors.TextEdit textEditUserName;
-        private DevExpress.XtraEditors.TextEdit textEditName;
+        private DevExpress.XtraEditors.TextEdit textEditUsername;
+        private DevExpress.XtraEditors.TextEdit textEditFullName;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonAdd;
+        private DevExpress.XtraEditors.SimpleButton buttonCreatePassword;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
@@ -582,13 +591,12 @@
         private DevExpress.XtraEditors.TextEdit textEditEmail;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItemUserName;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.XtraEditors.DateEdit dateEditBirthaday;
+        private DevExpress.XtraEditors.DateEdit dateEditBirthday;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
-        private DevExpress.XtraEditors.TextEdit textUserID;
+        private DevExpress.XtraEditors.TextEdit textEditUserID;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraEditors.SimpleButton buttonAdd;
         private DevExpress.XtraEditors.SimpleButton buttonSave;
@@ -602,5 +610,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
+        private DevExpress.XtraEditors.TextEdit textEditAddress;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
     }
 }
