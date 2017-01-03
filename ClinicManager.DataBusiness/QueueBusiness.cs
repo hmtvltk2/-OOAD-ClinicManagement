@@ -58,7 +58,7 @@ namespace ClinicManager.DataBusiness
                         result = "Chưa nhập lý do khám";
                     }
                     break;
-                case "DoctorId":
+                case "DoctorID":
                     if (data == null || (int)data == 0)
                     {
                         result = "Chưa chọn bác sĩ";

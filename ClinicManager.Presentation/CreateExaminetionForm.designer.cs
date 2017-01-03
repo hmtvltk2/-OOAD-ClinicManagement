@@ -182,6 +182,7 @@
             this.dateExamineDay.EditValue = null;
             this.dateExamineDay.Location = new System.Drawing.Point(410, 148);
             this.dateExamineDay.Name = "dateExamineDay";
+            this.dateExamineDay.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.dateExamineDay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateExamineDay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
