@@ -209,6 +209,7 @@
             this.LookUpType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.LookUpType.Name = "LookUpType";
+            this.LookUpType.NullText = "";
             // 
             // gridColumnWay
             // 
@@ -226,6 +227,7 @@
             this.LookUpWay.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.LookUpWay.Name = "LookUpWay";
+            this.LookUpWay.NullText = "";
             // 
             // gridColumnPhramacy
             // 
@@ -243,6 +245,7 @@
             this.LookUpPharmacy.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.LookUpPharmacy.Name = "LookUpPharmacy";
+            this.LookUpPharmacy.NullText = "";
             // 
             // gridColumnUnit
             // 
@@ -260,6 +263,7 @@
             this.LookUpUnit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.LookUpUnit.Name = "LookUpUnit";
+            this.LookUpUnit.NullText = "";
             // 
             // repositoryItemComboType
             // 

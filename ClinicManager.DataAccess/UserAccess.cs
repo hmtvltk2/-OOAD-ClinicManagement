@@ -1,10 +1,11 @@
-﻿using ClinicManager.DataModel;
-using System.Data;
+﻿using System.Data;
 using System.Linq;
-using System.Collections.Generic;
 using System;
+using ClinicManager.Common;
+using System.Collections.Generic;
+using ClinicManager.DataModel;
 
-namespace ClinicManager.DataModel
+namespace ClinicManager.DataAccess
 {
     public class UserAccess : BaseDataAccess
     {
@@ -68,6 +69,30 @@ namespace ClinicManager.DataModel
 
                 //var doctors = db.Database.SqlQuery<IEnumerable<string>>(query);
                 return doctors.ToDataTable();
+            }
+        }
+
+        public DataTable GetAllWithUserGroupName()
+        {
+            using (var db = new ClinicDB())
+            {
+                var query = from u in db.User
+                            join ug in db.UserGroup on u.UserGroupID equals ug.UserGroupID
+                            select new {u.Username, u.UserID, u.UserGroupID, u.Password,
+                            u.FullName, u.Email, u.DateOfBirth, u.Address, ug.UserGroupName};
+
+                return query.ToDataTable();
+            }
+        }
+
+        public User GetByUserName(string username)
+        {
+            using (var db = new ClinicDB())
+            {
+                var query = from user in db.User
+                            where user.Username == username
+                            select user;
+                return query.FirstOrDefault();
             }
         }
 

@@ -21,11 +21,9 @@ namespace ClinicManager.DataModel
 
         public int DoctorID { get; set; }
 
-        [Required]
         [StringLength(200)]
         public string ExamineReason { get; set; }
 
-        [Required]
         [StringLength(200)]
         public string Diagnostic { get; set; }
 
@@ -33,12 +31,10 @@ namespace ClinicManager.DataModel
         public DateTime ExamineDate { get; set; }
 
         [Column(TypeName = "smalldatetime")]
-        public DateTime ReExamineDate { get; set; }
+        public DateTime? ReExamineDate { get; set; }
 
         [StringLength(200)]
         public string Note { get; set; }
-
-        public int PrescriptionsID { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bill> Bill { get; set; }
@@ -47,8 +43,6 @@ namespace ClinicManager.DataModel
         public virtual ICollection<ServiceDetail> ServiceDetail { get; set; }
 
         public virtual Patient Patient { get; set; }
-
-        public virtual Prescription Prescription { get; set; }
 
         public virtual User User { get; set; }
     }

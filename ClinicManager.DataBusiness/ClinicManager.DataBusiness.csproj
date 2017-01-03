@@ -49,17 +49,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MedicalRecordBusiness.cs" />
+    <Compile Include="PermissionBusiness.cs" />
+    <Compile Include="PermissionDetailBusiness.cs" />
+    <Compile Include="PrescriptionBusiness.cs" />
+    <Compile Include="PrescriptionDetailBusiness.cs" />
     <Compile Include="QueueBusiness.cs" />
     <Compile Include="MedicineBusiness.cs" />
     <Compile Include="MedicineTypeBusiness.cs" />
     <Compile Include="PatientBusiness.cs" />
     <Compile Include="PharmacyTypeBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceBusiness.cs" />
+    <Compile Include="ServiceDetailBusiness.cs" />
     <Compile Include="UnitBusiness.cs" />
     <Compile Include="UserBusiness.cs" />
+    <Compile Include="UserGroupBusiness.cs" />
     <Compile Include="WayToUseBusiness.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ClinicManager.Common\ClinicManager.Common.csproj">
+      <Project>{7914E7CE-B025-48C5-B4F2-CAD9123CA4F1}</Project>
+      <Name>ClinicManager.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ClinicManager.DataAccess\ClinicManager.DataAccess.csproj">
       <Project>{8110eee0-2562-467f-86c8-be755ddbe5ed}</Project>
       <Name>ClinicManager.DataAccess</Name>

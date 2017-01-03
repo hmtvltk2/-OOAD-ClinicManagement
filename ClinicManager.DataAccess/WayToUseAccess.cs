@@ -1,8 +1,9 @@
-﻿using ClinicManager.DataModel;
+﻿using ClinicManager.Common;
+using ClinicManager.DataModel;
 using System.Data;
 using System.Linq;
 
-namespace ClinicManager.DataModel
+namespace ClinicManager.DataAccess
 {
     public class WayToUseAccess : BaseDataAccess
     {

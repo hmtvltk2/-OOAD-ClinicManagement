@@ -4,9 +4,10 @@ using DevExpress.XtraEditors;
 using ClinicManager.DataBusiness;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraGrid;
-using ClinicManager.DataModel;
+using ClinicManager.Common;
 using DevExpress.XtraGrid.Columns;
 using System.Data;
+using ClinicManager.DataModel;
 
 namespace ClinicManager.Presentation
 {
@@ -98,13 +99,13 @@ namespace ClinicManager.Presentation
             else
             {
                 //update
-                Unit Unit = new Unit()
+                Unit unit = new Unit()
                 {
                     UnitID = (int)row["UnitID"],
                     UnitName = (string)row["UnitName"]
                 };
 
-                result = unitBusiness.Update(Unit);
+                result = unitBusiness.Update(unit);
             }
 
             if (result)

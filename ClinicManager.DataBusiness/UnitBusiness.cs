@@ -1,4 +1,4 @@
-﻿using ClinicManager.DataModel;
+﻿using ClinicManager.DataAccess;
 
 namespace ClinicManager.DataBusiness
 {
@@ -6,7 +6,7 @@ namespace ClinicManager.DataBusiness
     {
         #region Contructor
         private UnitAccess dataAccess;
-
+   
         public UnitBusiness()
         {
             dataAccess = new UnitAccess();

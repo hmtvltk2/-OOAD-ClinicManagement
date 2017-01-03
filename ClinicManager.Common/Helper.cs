@@ -4,8 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Reflection;
+using System.Text.RegularExpressions;
 
-namespace ClinicManager.DataModel
+namespace ClinicManager.Common
 {
     public static class Helper
     {
@@ -36,6 +37,13 @@ namespace ClinicManager.DataModel
                 property.SetValue(item, row[property.Name], null);
             }
             return item;
+        }
+
+        public static bool CheckEmail(string email)
+        {
+            return Regex.IsMatch(email,
+                @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z",
+                RegexOptions.IgnoreCase);
         }
     }
 }
