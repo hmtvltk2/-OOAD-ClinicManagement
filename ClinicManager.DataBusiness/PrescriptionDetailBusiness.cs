@@ -60,5 +60,10 @@ namespace ClinicManager.DataBusiness
         {
             return dataAccess.GetDetailByPrescriptionID(prescriptionID);
         }
+
+        public DataTable GetByMedicalRecordID(int medicalRecordID)
+        {
+            return dataAccess.GetByMedicalRecordID(medicalRecordID);
+        }
     }
 }

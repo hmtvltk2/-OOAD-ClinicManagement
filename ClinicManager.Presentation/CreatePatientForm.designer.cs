@@ -218,8 +218,6 @@
             // 
             this.textPhone.Location = new System.Drawing.Point(385, 76);
             this.textPhone.Name = "textPhone";
-            this.textPhone.Properties.Mask.EditMask = "N00";
-            this.textPhone.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textPhone.Size = new System.Drawing.Size(172, 20);
             this.textPhone.StyleController = this.layoutControl1;
             this.textPhone.TabIndex = 8;

@@ -52,7 +52,23 @@ namespace ClinicManager.DataAccess
             }
         }
 
-		public DataTable GetDetailByPrescriptionID(int prescriptionID)
+        public DataTable GetByMedicalRecordID(int medicalRecordID)
+        {
+            using (var db = new ClinicDB())
+            {
+                var prescription = from pret in db.PrescriptionDetail
+                                   join pr in db.Prescription on pret.PrescriptionID equals pr.PrescriptionID
+                                   join mr in db.MedicalRecord on pr.MedicalRecordID equals mr.MedicalRecordID
+                                   join m in db.Medicine on pret.MedicineID equals m.MedicineID
+                                   join Service in db.Service on pret.MedicineID equals Service.ServiceID
+                                   where pr.MedicalRecordID == medicalRecordID
+                                   select new { pret.MedicineID, m.MedicineName, pret.Quantity, Service.ServiceName, pret.HowToUse };
+                return prescription.ToDataTable();
+
+            }
+        }
+
+        public DataTable GetDetailByPrescriptionID(int prescriptionID)
         {
             using (var db = new ClinicDB())
             {

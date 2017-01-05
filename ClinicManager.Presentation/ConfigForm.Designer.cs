@@ -30,46 +30,46 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigForm));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.textServer = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textUserName = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.buttonConnect = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonCheckServer = new DevExpress.XtraEditors.SimpleButton();
             this.textPassword = new DevExpress.XtraEditors.TextEdit();
+            this.textUserName = new DevExpress.XtraEditors.TextEdit();
+            this.textServer = new DevExpress.XtraEditors.TextEdit();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.comboboxDatabase = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.comboboxDatabase = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.buttonConnect = new DevExpress.XtraEditors.SimpleButton();
-            this.buttonCheckServer = new DevExpress.XtraEditors.SimpleButton();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textServer.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textUserName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textPassword.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textUserName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textServer.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboboxDatabase.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboboxDatabase.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -88,6 +88,72 @@
             this.layoutControl1.Size = new System.Drawing.Size(545, 204);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // buttonConnect
+            // 
+            this.buttonConnect.Image = ((System.Drawing.Image)(resources.GetObject("buttonConnect.Image")));
+            this.buttonConnect.Location = new System.Drawing.Point(425, 170);
+            this.buttonConnect.Name = "buttonConnect";
+            this.buttonConnect.Size = new System.Drawing.Size(108, 22);
+            this.buttonConnect.StyleController = this.layoutControl1;
+            this.buttonConnect.TabIndex = 10;
+            this.buttonConnect.Text = "Kết nối";
+            this.buttonConnect.Click += new System.EventHandler(this.buttonConnect_Click);
+            // 
+            // buttonCheckServer
+            // 
+            this.buttonCheckServer.Image = ((System.Drawing.Image)(resources.GetObject("buttonCheckServer.Image")));
+            this.buttonCheckServer.Location = new System.Drawing.Point(179, 170);
+            this.buttonCheckServer.Name = "buttonCheckServer";
+            this.buttonCheckServer.Size = new System.Drawing.Size(111, 22);
+            this.buttonCheckServer.StyleController = this.layoutControl1;
+            this.buttonCheckServer.TabIndex = 9;
+            this.buttonCheckServer.Text = "Kiểm tra server";
+            this.buttonCheckServer.Click += new System.EventHandler(this.buttonCheckServer_Click);
+            // 
+            // textPassword
+            // 
+            this.textPassword.Location = new System.Drawing.Point(257, 80);
+            this.textPassword.Name = "textPassword";
+            this.textPassword.Size = new System.Drawing.Size(276, 20);
+            this.textPassword.StyleController = this.layoutControl1;
+            this.textPassword.TabIndex = 7;
+            // 
+            // textUserName
+            // 
+            this.textUserName.Location = new System.Drawing.Point(257, 46);
+            this.textUserName.Name = "textUserName";
+            this.textUserName.Size = new System.Drawing.Size(276, 20);
+            this.textUserName.StyleController = this.layoutControl1;
+            this.textUserName.TabIndex = 6;
+            // 
+            // textServer
+            // 
+            this.textServer.Location = new System.Drawing.Point(257, 12);
+            this.textServer.Name = "textServer";
+            this.textServer.Size = new System.Drawing.Size(276, 20);
+            this.textServer.StyleController = this.layoutControl1;
+            this.textServer.TabIndex = 5;
+            // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.EditValue = global::ClinicManager.Presentation.Properties.Resources.database;
+            this.pictureEdit1.Location = new System.Drawing.Point(12, 12);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Size = new System.Drawing.Size(163, 180);
+            this.pictureEdit1.StyleController = this.layoutControl1;
+            this.pictureEdit1.TabIndex = 4;
+            // 
+            // comboboxDatabase
+            // 
+            this.comboboxDatabase.Location = new System.Drawing.Point(257, 114);
+            this.comboboxDatabase.Name = "comboboxDatabase";
+            this.comboboxDatabase.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboboxDatabase.Size = new System.Drawing.Size(276, 20);
+            this.comboboxDatabase.StyleController = this.layoutControl1;
+            this.comboboxDatabase.TabIndex = 8;
             // 
             // layoutControlGroup1
             // 
@@ -111,13 +177,14 @@
             this.layoutControlGroup1.Size = new System.Drawing.Size(545, 204);
             this.layoutControlGroup1.TextVisible = false;
             // 
-            // textServer
+            // layoutControlItem1
             // 
-            this.textServer.Location = new System.Drawing.Point(258, 12);
-            this.textServer.Name = "textServer";
-            this.textServer.Size = new System.Drawing.Size(275, 20);
-            this.textServer.StyleController = this.layoutControl1;
-            this.textServer.TabIndex = 5;
+            this.layoutControlItem1.Control = this.pictureEdit1;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(167, 184);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
@@ -128,14 +195,6 @@
             this.layoutControlItem2.Text = "Server";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(75, 13);
             // 
-            // textUserName
-            // 
-            this.textUserName.Location = new System.Drawing.Point(258, 46);
-            this.textUserName.Name = "textUserName";
-            this.textUserName.Size = new System.Drawing.Size(275, 20);
-            this.textUserName.StyleController = this.layoutControl1;
-            this.textUserName.TabIndex = 6;
-            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.textUserName;
@@ -144,14 +203,6 @@
             this.layoutControlItem3.Size = new System.Drawing.Size(358, 24);
             this.layoutControlItem3.Text = "Tên người dùng";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(75, 13);
-            // 
-            // textPassword
-            // 
-            this.textPassword.Location = new System.Drawing.Point(258, 80);
-            this.textPassword.Name = "textPassword";
-            this.textPassword.Size = new System.Drawing.Size(275, 20);
-            this.textPassword.StyleController = this.layoutControl1;
-            this.textPassword.TabIndex = 7;
             // 
             // layoutControlItem4
             // 
@@ -171,23 +222,14 @@
             this.layoutControlItem5.Text = "Cơ sở dữ liệu";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(75, 13);
             // 
-            // comboboxDatabase
+            // layoutControlItem7
             // 
-            this.comboboxDatabase.Location = new System.Drawing.Point(258, 114);
-            this.comboboxDatabase.Name = "comboboxDatabase";
-            this.comboboxDatabase.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboboxDatabase.Size = new System.Drawing.Size(275, 20);
-            this.comboboxDatabase.StyleController = this.layoutControl1;
-            this.comboboxDatabase.TabIndex = 8;
-            // 
-            // emptySpaceItem1
-            // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(167, 126);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(358, 32);
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem7.Control = this.buttonConnect;
+            this.layoutControlItem7.Location = new System.Drawing.Point(413, 158);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(112, 26);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem7.TextVisible = false;
             // 
             // emptySpaceItem2
             // 
@@ -221,56 +263,6 @@
             this.emptySpaceItem5.Size = new System.Drawing.Size(358, 10);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // buttonConnect
-            // 
-            this.buttonConnect.Image = ((System.Drawing.Image)(resources.GetObject("buttonConnect.Image")));
-            this.buttonConnect.Location = new System.Drawing.Point(425, 170);
-            this.buttonConnect.Name = "buttonConnect";
-            this.buttonConnect.Size = new System.Drawing.Size(108, 22);
-            this.buttonConnect.StyleController = this.layoutControl1;
-            this.buttonConnect.TabIndex = 10;
-            this.buttonConnect.Text = "Kết nối";
-            this.buttonConnect.Click += new System.EventHandler(this.buttonConnect_Click);
-            // 
-            // buttonCheckServer
-            // 
-            this.buttonCheckServer.Image = ((System.Drawing.Image)(resources.GetObject("buttonCheckServer.Image")));
-            this.buttonCheckServer.Location = new System.Drawing.Point(179, 170);
-            this.buttonCheckServer.Name = "buttonCheckServer";
-            this.buttonCheckServer.Size = new System.Drawing.Size(111, 22);
-            this.buttonCheckServer.StyleController = this.layoutControl1;
-            this.buttonCheckServer.TabIndex = 9;
-            this.buttonCheckServer.Text = "Kiểm tra server";
-            this.buttonCheckServer.Click += new System.EventHandler(this.buttonCheckServer_Click);
-            // 
-            // pictureEdit1
-            // 
-            this.pictureEdit1.EditValue = global::ClinicManager.Presentation.Properties.Resources.database;
-            this.pictureEdit1.Location = new System.Drawing.Point(12, 12);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Size = new System.Drawing.Size(163, 180);
-            this.pictureEdit1.StyleController = this.layoutControl1;
-            this.pictureEdit1.TabIndex = 4;
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.pictureEdit1;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(167, 184);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextVisible = false;
-            // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.Control = this.buttonConnect;
-            this.layoutControlItem7.Location = new System.Drawing.Point(413, 158);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(112, 26);
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem7.TextVisible = false;
-            // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.buttonCheckServer;
@@ -280,6 +272,14 @@
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(167, 126);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(358, 32);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
             // ConfigForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,28 +287,29 @@
             this.ClientSize = new System.Drawing.Size(545, 204);
             this.Controls.Add(this.layoutControl1);
             this.Name = "ConfigForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Kết nối cơ sở dữ liệu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConfigForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textServer.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textUserName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textPassword.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textUserName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textServer.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboboxDatabase.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboboxDatabase.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             this.ResumeLayout(false);
 
         }

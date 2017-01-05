@@ -51,7 +51,7 @@ namespace ClinicManager.Presentation
                 textReExamineDay.Text = ((DateTime)_medicalRecord.ReExamineDate).ToShortDateString();
             }
 
-            gridExminedList.DataSource = pretBusiness.GetByPrescriptionID(_medicalRecord.MedicalRecordID);
+            gridExminedList.DataSource = pretBusiness.GetByMedicalRecordID(_medicalRecord.MedicalRecordID);
         }
     }
 }
