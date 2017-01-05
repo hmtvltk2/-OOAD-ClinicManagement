@@ -9,10 +9,8 @@ using System.Windows.Forms;
 
 namespace ClinicManager.Presentation
 {
-    public partial class CreateScheduleForm : Form
-       
+    public partial class CreateScheduleForm : Form      
     {
-
         private ScheduleBusiness scheduleBusiness;
         // use for invalidvaule (controlname)event
        // private int textFullNameCheck;
@@ -35,7 +33,7 @@ namespace ClinicManager.Presentation
         private void CreateScheduleForm_Load(object sender, EventArgs e)
         {
             UserBusiness userbusiness = new UserBusiness();
-            lookUpDoctor.Properties.DataSource = userbusiness.GetByUserGroup(2);
+            lookUpDoctor.Properties.DataSource = userbusiness.GetByUserGroup("Doctor");
             lookUpDoctor.Properties.ValueMember = "UserID";
             lookUpDoctor.Properties.DisplayMember = "FullName";
             lookUpDoctor.Properties.Columns.Add(new LookUpColumnInfo ( "FullName","Bác sỹ"));
@@ -199,8 +197,8 @@ namespace ClinicManager.Presentation
             }
             if (result)
             {
-                XtraMessageBox.Show(this, "Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                //XtraMessageBox.Show(this, "Lưu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Close();
             }
             else
             {
@@ -221,18 +219,7 @@ namespace ClinicManager.Presentation
 
         }
 
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-            textFullName.Text = "";
-            textPhone.Text = "";
-            memoAddress.Text = "";
-            lookUpDoctor.EditValue = null;
-            dateDateSchedule.EditValue = null;
-            memoNote.Text = "";
-            buttonCreate.Enabled = true;
-            dateDateSchedule.Properties.MinValue = DateTime.Now;
-            dateDateSchedule.EditValue = DateTime.Now.AddDays(1);
-        }
+       
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
@@ -246,7 +233,7 @@ namespace ClinicManager.Presentation
 
         private void textPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
             }

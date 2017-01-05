@@ -53,12 +53,6 @@ namespace ClinicManager.DataAccess
                 .HasForeignKey(e => e.ServiceID)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Bill>()
-                .HasMany(e => e.BillDetail1)
-                .WithRequired(e => e.Bill1)
-                .HasForeignKey(e => e.ServiceID)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<BillDetail>()
                 .Property(e => e.ServiceFee)
                 .HasPrecision(19, 4);
@@ -110,13 +104,6 @@ namespace ClinicManager.DataAccess
             modelBuilder.Entity<Patient>()
                 .HasMany(e => e.Queue)
                 .WithRequired(e => e.Patient)
-                .HasForeignKey(e => e.PatientID)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Patient>()
-                .HasMany(e => e.Queue1)
-                .WithRequired(e => e.Patient1)
-                .HasForeignKey(e => e.PatientID)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Permission>()
@@ -131,13 +118,6 @@ namespace ClinicManager.DataAccess
             modelBuilder.Entity<Prescription>()
                 .HasMany(e => e.PrescriptionDetail)
                 .WithRequired(e => e.Prescription)
-                .HasForeignKey(e => e.PrescriptionID)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Prescription>()
-                .HasMany(e => e.PrescriptionDetail1)
-                .WithRequired(e => e.Prescription1)
-                .HasForeignKey(e => e.PrescriptionID)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PrescriptionDetail>()

@@ -71,6 +71,9 @@
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.buttonRefresh = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateDateOfBill.Properties.CalendarTimeProperties)).BeginInit();
@@ -104,10 +107,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.buttonRefresh);
             this.layoutControl1.Controls.Add(this.dateDateOfBill);
             this.layoutControl1.Controls.Add(this.textDateOfBirth);
             this.layoutControl1.Controls.Add(this.buttonExit);
@@ -192,8 +198,7 @@
             this.textTotalFee.Name = "textTotalFee";
             this.textTotalFee.Properties.Appearance.Options.UseTextOptions = true;
             this.textTotalFee.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textTotalFee.Properties.DisplayFormat.FormatString = "{0:#,##0}";
-            this.textTotalFee.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.textTotalFee.Properties.Mask.EditMask = "c0";
             this.textTotalFee.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.textTotalFee.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.textTotalFee.Properties.ReadOnly = true;
@@ -281,7 +286,6 @@
             this.checkEditNotCalcFee.AutoHeight = false;
             this.checkEditNotCalcFee.Name = "checkEditNotCalcFee";
             this.checkEditNotCalcFee.CheckedChanged += new System.EventHandler(this.checkEditNotCalcFee_CheckedChanged);
-            this.checkEditNotCalcFee.CheckStateChanged += new System.EventHandler(this.checkEditNotCalcFee_CheckStateChanged);
             // 
             // textPatientName
             // 
@@ -385,7 +389,9 @@
             this.layoutControlItem10,
             this.layoutControlItem11,
             this.layoutControlItem12,
-            this.emptySpaceItem6});
+            this.emptySpaceItem6,
+            this.layoutControlItem8,
+            this.emptySpaceItem3});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(1058, 518);
@@ -521,7 +527,7 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 472);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(458, 26);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(179, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem10
@@ -558,6 +564,34 @@
             this.emptySpaceItem6.Name = "emptySpaceItem6";
             this.emptySpaceItem6.Size = new System.Drawing.Size(304, 26);
             this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.Image = ((System.Drawing.Image)(resources.GetObject("buttonRefresh.Image")));
+            this.buttonRefresh.Location = new System.Drawing.Point(191, 484);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(123, 22);
+            this.buttonRefresh.StyleController = this.layoutControl1;
+            this.buttonRefresh.TabIndex = 19;
+            this.buttonRefresh.Text = "Làm mới dữ liệu";
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.buttonRefresh;
+            this.layoutControlItem8.Location = new System.Drawing.Point(179, 472);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(127, 26);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem8.TextVisible = false;
+            // 
+            // emptySpaceItem3
+            // 
+            this.emptySpaceItem3.AllowHotTrack = false;
+            this.emptySpaceItem3.Location = new System.Drawing.Point(306, 472);
+            this.emptySpaceItem3.Name = "emptySpaceItem3";
+            this.emptySpaceItem3.Size = new System.Drawing.Size(152, 26);
+            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // PaymentForm
             // 
@@ -605,6 +639,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -653,5 +689,8 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit checkEditNotCalcFee;
         private DevExpress.XtraEditors.DateEdit dateDateOfBill;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private DevExpress.XtraEditors.SimpleButton buttonRefresh;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
     }
 }

@@ -39,9 +39,9 @@ namespace ClinicManager.DataBusiness
             return dataAccess.GetAll();
         }
 
- 		public System.Data.DataTable GetByUserGroup(int userGroupID)
+ 		public System.Data.DataTable GetByUserGroup(string userGroupName)
         {
-            return dataAccess.GetByUserGroup(userGroupID);
+            return dataAccess.GetByUserGroup(userGroupName);
         }
         public string Validate(object data, string propertyName)
         {

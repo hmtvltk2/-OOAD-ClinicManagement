@@ -49,13 +49,26 @@ namespace ClinicManager.DataAccess
             }
         }
 
-        public DataTable GetById(int Id)
+        public DataTable GetAllByPatientId(int Id)
         {
             using (var db = new ClinicDB())
             {
                 var medicalRecord = from m in db.MedicalRecord
+                                    join u in db.User on m.DoctorID equals u.UserID
                                     where m.PatientID == Id
-                                    select m;
+                                    select new
+                                    {
+                                        m.DoctorID,
+                                        m.MedicalRecordID,
+                                        DoctorName = u.FullName,
+                                        m.Diagnostic,
+                                        m.ExamineDate,
+                                        m.ExamineReason,
+                                        m.Note,
+                                        m.PatientID,
+                                        m.ReExamineDate,
+                              
+                                    };
                 return medicalRecord.ToDataTable();
             }
 

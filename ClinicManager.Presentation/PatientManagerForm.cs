@@ -27,9 +27,7 @@ namespace ClinicManager.Presentation
         {
             gridSearchList.DataSource = patientBusiness.GetAll();
             dateDateOfBirth.EditValue = null;
-            comboGender.SelectedIndex = 0;
-            
-          
+            comboGender.SelectedIndex = 0;        
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -37,14 +35,11 @@ namespace ClinicManager.Presentation
             this.Close();
         }
 
-     
-
         private void gridViewSearchList_DoubleClick(object sender, EventArgs e)
         {
             var row = gridViewSearchList.GetFocusedDataRow();
             int id = (int)row["PatientID"];
-
-        
+     
             var f = new PatientDetailForm(id);
             foreach(Form form in Application.OpenForms)
             {

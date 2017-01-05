@@ -306,7 +306,7 @@
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 226);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.Size = new System.Drawing.Size(1038, 272);
-            this.layoutControlGroup3.Text = "Đơn thuôc";
+            this.layoutControlGroup3.Text = "Đơn thuốc";
             // 
             // layoutControlItem2
             // 

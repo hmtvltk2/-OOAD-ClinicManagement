@@ -51,14 +51,11 @@ namespace ClinicManager.DataAccess
             }
         }
         
-        public DataTable GetById(int id)
+        public Patient GetById(int id)
         {
             using (var db = new ClinicDB())
             {
-                var patient = from p in db.Patient
-                              where p.PatientID == id
-                              select p;
-                return patient.ToDataTable();
+                return db.Patient.Find(id);
             }
         }
         public DataTable GetByCondition(string name, DateTime dateOfBirth, string gender)

@@ -11,7 +11,6 @@ namespace ClinicManager.DataModel
         public Bill()
         {
             BillDetail = new HashSet<BillDetail>();
-            BillDetail1 = new HashSet<BillDetail>();
         }
 
         public int BillID { get; set; }
@@ -36,9 +35,6 @@ namespace ClinicManager.DataModel
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BillDetail> BillDetail { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BillDetail> BillDetail1 { get; set; }
 
         public virtual MedicalRecord MedicalRecord { get; set; }
     }

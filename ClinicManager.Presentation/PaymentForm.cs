@@ -14,26 +14,24 @@ namespace ClinicManager.Presentation
 {
     public partial class PaymentForm : Form
     {
-        MedicalRecordBusiness medicalRecordBusiness ;
-      
-       
-        decimal totalFee;
-        decimal medicineFee;
-        decimal serviceFee;
+        private MedicalRecordBusiness medicalRecordBusiness;
+
+        private decimal totalFee;
+        private decimal medicineFee;
+        private decimal serviceFee;
+
         public PaymentForm()
         {
             InitializeComponent();
-            medicalRecordBusiness = new MedicalRecordBusiness();
-          
+            medicalRecordBusiness = new MedicalRecordBusiness();          
         }
 
         private void PaymentForm_Load(object sender, System.EventArgs e)
         {
-            gridQueue.DataSource = medicalRecordBusiness.GetByStatus("NotPayment");
+            LoadMedicalRecordNotPayment();
             buttonPayment.Enabled = false;
             buttonPrint.Enabled = false;
-            dateDateOfBill.EditValue = DateTime.Today;
-            
+            dateDateOfBill.EditValue = DateTime.Today;    
         }
 
         private void gridViewQueue_DoubleClick(object sender, System.EventArgs e)
@@ -107,7 +105,7 @@ namespace ClinicManager.Presentation
             {
                 XtraMessageBox.Show(this, "Lưu thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            gridQueue.DataSource = medicalRecordBusiness.GetByStatus("NotPayment");
+            LoadMedicalRecordNotPayment();
         }
 
         private void buttonPrint_Click(object sender, EventArgs e)
@@ -136,11 +134,7 @@ namespace ClinicManager.Presentation
         private void buttonExit_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-       
-       
-
-        
+        }       
 
         private void checkEditNotCalcFee_CheckedChanged(object sender, EventArgs e)
         {
@@ -167,10 +161,14 @@ namespace ClinicManager.Presentation
 
         }
 
-        private void checkEditNotCalcFee_CheckStateChanged(object sender, EventArgs e)
+        private void buttonRefresh_Click(object sender, EventArgs e)
         {
-            //var checkEdit = (CheckEdit)sender;
+            LoadMedicalRecordNotPayment();
+        }
 
+        private void LoadMedicalRecordNotPayment()
+        {
+            gridQueue.DataSource = medicalRecordBusiness.GetByStatus("NotPayment");
         }
     }
     

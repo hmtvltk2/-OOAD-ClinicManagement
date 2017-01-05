@@ -30,7 +30,5 @@ namespace ClinicManager.DataModel
         public virtual Medicine Medicine1 { get; set; }
 
         public virtual Prescription Prescription { get; set; }
-
-        public virtual Prescription Prescription1 { get; set; }
     }
 }
