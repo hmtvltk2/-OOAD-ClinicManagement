@@ -108,14 +108,15 @@ namespace ClinicManager.DataAccess
                 return query.ToDataTable();
             }
         }
-        public DataTable GetByUserGroup(int userGroupID)
+        public DataTable GetByUserGroup(string userGroupName)
         {
             using (var db = new ClinicDB())
             {
                 var user = from u in db.User
-                               where (u.UserGroupID == userGroupID)
-                               select u;
-                var u1 = user.ToList().ToDataTable();
+                           join ug in db.UserGroup on u.UserGroupID equals ug.UserGroupID
+                            where ug.UserGroupName == userGroupName
+                            select u;
+
                 return user.ToDataTable();
             }
             

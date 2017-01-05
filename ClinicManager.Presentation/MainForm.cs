@@ -230,11 +230,7 @@ namespace ClinicManager.Presentation
             OpenMDIForm<ScheduleManagerForm>();
         }
 
-        private void barButtonMedicineExport_ItemClick(object sender, ItemClickEventArgs e)
-        {
-          
-
-        }
+      
 
         private void barButtonNumberOfExamine_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -281,7 +277,7 @@ namespace ClinicManager.Presentation
 
         private void barButtonService_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            OpenOtherForm<ServiceForm>();
         }
     }
 }

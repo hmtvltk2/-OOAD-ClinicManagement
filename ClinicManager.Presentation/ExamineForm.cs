@@ -173,6 +173,23 @@ namespace ClinicManager.Presentation
             }
 
             queueBusiness.UpdateStatus((int)selecteRow["QueueID"], "I");
+            if(dateReExamineDay.EditValue != null)
+            {
+                var scheduleBusiness = new ScheduleBusiness();
+                var patientBusiness = new PatientBusiness();
+                var patient = patientBusiness.GetbyId((int)selecteRow["PatientID"]);
+                var schedule = new Schedule
+                {
+                    DoctorID = UserBusiness.User.UserID,
+                    FullName = patient.FullName,
+                    ScheduleDate = (DateTime)dateReExamineDay.EditValue,
+                    ScheduleType = "Tái khám",
+                    Phone = patient.Phone,
+                    Address = patient.Address
+                };
+
+                result = result && scheduleBusiness.Insert(schedule) > 0;
+            }          
 
             if (!result)
             {
@@ -203,6 +220,7 @@ namespace ClinicManager.Presentation
             dateReExamineDay.EditValue = null;
             dateExamineDay.EditValue = null;
             gridService.DataSource = null;
+            selecteRow = null;
         }
 
         private void gridViewQueue_DoubleClick(object sender, EventArgs e)

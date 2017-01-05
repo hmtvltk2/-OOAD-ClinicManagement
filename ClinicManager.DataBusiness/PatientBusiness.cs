@@ -43,22 +43,7 @@ namespace ClinicManager.DataBusiness
         }
         public Patient GetbyId(int id)
         {
-            Patient patient = new Patient();
-            DataTable patientTable = dataAccess.GetById(id);
-            if (patientTable.Rows.Count >0)
-            {
-                patient.FullName = patientTable.Rows[0]["FullName"].ToString();
-                patient.PatientID = (int)patientTable.Rows[0]["PatientID"];
-                patient.Gender =  patientTable.Rows[0]["Gender"].ToString();
-                patient.Address = patientTable.Rows[0]["Address"].ToString();
-                patient.DateOfBirth = (DateTime)patientTable.Rows[0]["DateOfBirth"] ;
-                patient.Job = patientTable.Rows[0]["Job"].ToString();
-                patient.Job= patientTable.Rows[0]["Job"].ToString();
-                patient.Note= patientTable.Rows[0]["Note"].ToString();
-                patient.CreateDate= (DateTime)patientTable.Rows[0]["CreateDate"] ;
-             
-            }
-            return patient;
+            return dataAccess.GetById(id);
         }
          public System.Data.DataTable Search(string patientName, object dateOfBirth, string gender)
         {

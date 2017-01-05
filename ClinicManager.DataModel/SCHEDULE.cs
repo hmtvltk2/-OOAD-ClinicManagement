@@ -14,7 +14,6 @@ namespace ClinicManager.DataModel
         [StringLength(50)]
         public string FullName { get; set; }
 
-        [Required]
         [StringLength(15)]
         public string Phone { get; set; }
 

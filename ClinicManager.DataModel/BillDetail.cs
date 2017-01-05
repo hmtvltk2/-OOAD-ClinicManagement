@@ -22,7 +22,5 @@ namespace ClinicManager.DataModel
         public string Note { get; set; }
 
         public virtual Bill Bill { get; set; }
-
-        public virtual Bill Bill1 { get; set; }
     }
 }

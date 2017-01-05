@@ -37,9 +37,9 @@ namespace ClinicManager.DataBusiness
         {
             return dataAccess.GetAll();
         }
-        public System.Data.DataTable GetById(int Id)
+        public System.Data.DataTable GetAllByPatientId(int patientID)
         {
-            return dataAccess.GetById(Id);
+            return dataAccess.GetAllByPatientId(patientID);
         }
 
         public System.Data.DataTable GetByStatus(string status)

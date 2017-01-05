@@ -14,18 +14,18 @@ namespace ClinicManager.Presentation
 {
     public partial class PatientDetailForm : Form
     {
-        private MedicalRecordBusiness medicalRecordBusines = new MedicalRecordBusiness();
-        private Patient _patient = new Patient();
-       private  PatientBusiness patientBusiness = new PatientBusiness();
+        private MedicalRecordBusiness medicalRecordBusines;
+        private Patient _patient;
+        private PatientBusiness patientBusiness;
         public PatientDetailForm()
         {
             InitializeComponent();
         }
         public PatientDetailForm(int id)
         {
-
             InitializeComponent();
-        
+            medicalRecordBusines = new MedicalRecordBusiness();
+            patientBusiness = new PatientBusiness();
             _patient = patientBusiness.GetbyId(id);
             textFullName.Text = _patient.FullName;
             textGender.Text = _patient.Gender;
@@ -38,14 +38,9 @@ namespace ClinicManager.Presentation
             this.Text = "BN: "+_patient.FullName;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+     
         private void buttonCreateSchedule_Click(object sender, EventArgs e)
-        {
-            
+        {       
             foreach (var form in Application.OpenForms.OfType<CreateScheduleForm>())
             {
                 var fr = form as Form;
@@ -57,11 +52,6 @@ namespace ClinicManager.Presentation
              
         }
 
-        private void gridHistory_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -69,29 +59,28 @@ namespace ClinicManager.Presentation
 
         private void PatientDetailForm_Load(object sender, EventArgs e)
         {
-            gridHistory.DataSource = medicalRecordBusines.GetById(_patient.PatientID);
-            UserBusiness user = new UserBusiness();
-            LookUpDoctor.DataSource = user.GetByUserGroup(2);
-            LookUpDoctor.ValueMember = "UserID";
-            LookUpDoctor.DisplayMember = "FullName";
-            //LookUpDoctor.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DoctorID", "Bác sỹ"));
+            gridHistory.DataSource = medicalRecordBusines.GetAllByPatientId(_patient.PatientID);
         }
 
         private void gridViewHistory_DoubleClick(object sender, EventArgs e)
         {
             var row = gridViewHistory.GetFocusedDataRow();
             var medicalRecord = new MedicalRecord()
-            {MedicalRecordID = (int)row["MedicalRecordID"],
-             PatientID = (int)row["PatientID"],
-              DoctorID = (int)row["DoctorID"],
-              ExamineReason  = row["ExamineReason"].ToString(),
-             Diagnostic= row["Diagnostic"].ToString(),
-            ExamineDate = (DateTime)row["ExamineDate"],
-             Note= row["Note"].ToString(),
-            ReExamineDate = (DateTime)row["ReExamineDate"]
-            
-          
-        };  
+            {
+                MedicalRecordID = (int)row["MedicalRecordID"],
+                PatientID = (int)row["PatientID"],
+                DoctorID = (int)row["DoctorID"],
+                ExamineReason = (string)row["ExamineReason"],
+                Diagnostic = (string)row["Diagnostic"],
+                ExamineDate = (DateTime)row["ExamineDate"],
+                Note = (string)row["Note"]
+            };
+
+            if (row["ReExamineDate"] != DBNull.Value)
+            {
+                medicalRecord.ReExamineDate = (DateTime)row["ReExamineDate"];
+            }
+        
             var f = new MedicalRecordForm(medicalRecord);
             foreach (Form form in Application.OpenForms)
             {
@@ -105,6 +94,14 @@ namespace ClinicManager.Presentation
             if (f == null) return;
             f.MdiParent = this.ParentForm;
             f.Show();
+        }
+
+        private void gridViewHistory_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
+        {
+            if (e.Info.IsRowIndicator && e.RowHandle >= 0)
+            {
+                e.Info.DisplayText = (e.RowHandle + 1).ToString();
+            }
         }
     }
 }

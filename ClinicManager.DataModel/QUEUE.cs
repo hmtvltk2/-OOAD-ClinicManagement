@@ -26,8 +26,6 @@ namespace ClinicManager.DataModel
 
         public virtual Patient Patient { get; set; }
 
-        public virtual Patient Patient1 { get; set; }
-
         public virtual User User { get; set; }
     }
 }

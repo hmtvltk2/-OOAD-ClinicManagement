@@ -31,13 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PatientDetailForm));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.textDateOfBirth = new DevExpress.XtraEditors.TextEdit();
-            this.memoNote = new DevExpress.XtraEditors.MemoEdit();
-            this.memoAddress = new DevExpress.XtraEditors.MemoEdit();
             this.textCreateDay = new DevExpress.XtraEditors.TextEdit();
             this.textPhone = new DevExpress.XtraEditors.TextEdit();
             this.textJob = new DevExpress.XtraEditors.TextEdit();
-            this.textGender = new DevExpress.XtraEditors.TextEdit();
             this.textFullName = new DevExpress.XtraEditors.TextEdit();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.buttonCreateSchedule = new DevExpress.XtraEditors.SimpleButton();
@@ -46,7 +42,6 @@
             this.DateExamine = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Diagnostic = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Doctor = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.LookUpDoctor = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -73,20 +68,19 @@
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.memoNote = new DevExpress.XtraEditors.TextEdit();
+            this.memoAddress = new DevExpress.XtraEditors.TextEdit();
+            this.textGender = new DevExpress.XtraEditors.TextEdit();
+            this.textDateOfBirth = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textDateOfBirth.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoNote.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCreateDay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textPhone.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textJob.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textGender.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textFullName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridHistory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewHistory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LookUpDoctor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
@@ -113,22 +107,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoNote.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoAddress.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textGender.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textDateOfBirth.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.simpleButton1);
-            this.layoutControl1.Controls.Add(this.textDateOfBirth);
-            this.layoutControl1.Controls.Add(this.memoNote);
-            this.layoutControl1.Controls.Add(this.memoAddress);
             this.layoutControl1.Controls.Add(this.textCreateDay);
             this.layoutControl1.Controls.Add(this.textPhone);
             this.layoutControl1.Controls.Add(this.textJob);
-            this.layoutControl1.Controls.Add(this.textGender);
             this.layoutControl1.Controls.Add(this.textFullName);
             this.layoutControl1.Controls.Add(this.pictureEdit1);
             this.layoutControl1.Controls.Add(this.buttonCreateSchedule);
             this.layoutControl1.Controls.Add(this.gridHistory);
+            this.layoutControl1.Controls.Add(this.memoNote);
+            this.layoutControl1.Controls.Add(this.memoAddress);
+            this.layoutControl1.Controls.Add(this.textGender);
+            this.layoutControl1.Controls.Add(this.textDateOfBirth);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -148,33 +146,6 @@
             this.simpleButton1.Text = "Đóng";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
-            // textDateOfBirth
-            // 
-            this.textDateOfBirth.Location = new System.Drawing.Point(100, 304);
-            this.textDateOfBirth.Name = "textDateOfBirth";
-            this.textDateOfBirth.Properties.ReadOnly = true;
-            this.textDateOfBirth.Size = new System.Drawing.Size(306, 20);
-            this.textDateOfBirth.StyleController = this.layoutControl1;
-            this.textDateOfBirth.TabIndex = 30;
-            // 
-            // memoNote
-            // 
-            this.memoNote.Location = new System.Drawing.Point(100, 443);
-            this.memoNote.Name = "memoNote";
-            this.memoNote.Properties.ReadOnly = true;
-            this.memoNote.Size = new System.Drawing.Size(306, 17);
-            this.memoNote.StyleController = this.layoutControl1;
-            this.memoNote.TabIndex = 29;
-            // 
-            // memoAddress
-            // 
-            this.memoAddress.Location = new System.Drawing.Point(100, 396);
-            this.memoAddress.Name = "memoAddress";
-            this.memoAddress.Properties.ReadOnly = true;
-            this.memoAddress.Size = new System.Drawing.Size(306, 33);
-            this.memoAddress.StyleController = this.layoutControl1;
-            this.memoAddress.TabIndex = 28;
-            // 
             // textCreateDay
             // 
             this.textCreateDay.Location = new System.Drawing.Point(100, 474);
@@ -183,10 +154,11 @@
             this.textCreateDay.Size = new System.Drawing.Size(306, 20);
             this.textCreateDay.StyleController = this.layoutControl1;
             this.textCreateDay.TabIndex = 27;
+            this.textCreateDay.TabStop = false;
             // 
             // textPhone
             // 
-            this.textPhone.Location = new System.Drawing.Point(100, 362);
+            this.textPhone.Location = new System.Drawing.Point(100, 372);
             this.textPhone.Name = "textPhone";
             this.textPhone.Properties.ReadOnly = true;
             this.textPhone.Size = new System.Drawing.Size(306, 20);
@@ -195,25 +167,16 @@
             // 
             // textJob
             // 
-            this.textJob.Location = new System.Drawing.Point(100, 328);
+            this.textJob.Location = new System.Drawing.Point(100, 338);
             this.textJob.Name = "textJob";
             this.textJob.Properties.ReadOnly = true;
             this.textJob.Size = new System.Drawing.Size(306, 20);
             this.textJob.StyleController = this.layoutControl1;
             this.textJob.TabIndex = 25;
             // 
-            // textGender
-            // 
-            this.textGender.Location = new System.Drawing.Point(100, 270);
-            this.textGender.Name = "textGender";
-            this.textGender.Properties.ReadOnly = true;
-            this.textGender.Size = new System.Drawing.Size(306, 20);
-            this.textGender.StyleController = this.layoutControl1;
-            this.textGender.TabIndex = 24;
-            // 
             // textFullName
             // 
-            this.textFullName.Location = new System.Drawing.Point(100, 236);
+            this.textFullName.Location = new System.Drawing.Point(100, 245);
             this.textFullName.Name = "textFullName";
             this.textFullName.Properties.ReadOnly = true;
             this.textFullName.Size = new System.Drawing.Size(306, 20);
@@ -227,7 +190,7 @@
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.pictureEdit1.Size = new System.Drawing.Size(166, 144);
+            this.pictureEdit1.Size = new System.Drawing.Size(166, 152);
             this.pictureEdit1.StyleController = this.layoutControl1;
             this.pictureEdit1.TabIndex = 22;
             // 
@@ -247,13 +210,10 @@
             this.gridHistory.Location = new System.Drawing.Point(434, 68);
             this.gridHistory.MainView = this.gridViewHistory;
             this.gridHistory.Name = "gridHistory";
-            this.gridHistory.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.LookUpDoctor});
             this.gridHistory.Size = new System.Drawing.Size(600, 426);
             this.gridHistory.TabIndex = 20;
             this.gridHistory.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewHistory});
-            this.gridHistory.Click += new System.EventHandler(this.gridHistory_Click);
             // 
             // gridViewHistory
             // 
@@ -265,6 +225,7 @@
             this.gridViewHistory.IndicatorWidth = 50;
             this.gridViewHistory.Name = "gridViewHistory";
             this.gridViewHistory.OptionsBehavior.ReadOnly = true;
+            this.gridViewHistory.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gridViewHistory_CustomDrawRowIndicator);
             this.gridViewHistory.DoubleClick += new System.EventHandler(this.gridViewHistory_DoubleClick);
             // 
             // DateExamine
@@ -290,22 +251,13 @@
             // Doctor
             // 
             this.Doctor.Caption = "Bác sĩ khám";
-            this.Doctor.ColumnEdit = this.LookUpDoctor;
-            this.Doctor.FieldName = "DoctorID";
+            this.Doctor.FieldName = "DoctorName";
             this.Doctor.Name = "Doctor";
             this.Doctor.OptionsColumn.AllowFocus = false;
             this.Doctor.OptionsColumn.TabStop = false;
             this.Doctor.Visible = true;
             this.Doctor.VisibleIndex = 2;
             this.Doctor.Width = 126;
-            // 
-            // LookUpDoctor
-            // 
-            this.LookUpDoctor.AllowFocused = false;
-            this.LookUpDoctor.AutoHeight = false;
-            this.LookUpDoctor.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.LookUpDoctor.Name = "LookUpDoctor";
             // 
             // layoutControlGroup1
             // 
@@ -354,7 +306,7 @@
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(278, 10);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(108, 148);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(108, 156);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem20
@@ -362,7 +314,7 @@
             this.emptySpaceItem20.AllowHotTrack = false;
             this.emptySpaceItem20.Location = new System.Drawing.Point(0, 10);
             this.emptySpaceItem20.Name = "emptySpaceItem20";
-            this.emptySpaceItem20.Size = new System.Drawing.Size(108, 148);
+            this.emptySpaceItem20.Size = new System.Drawing.Size(108, 156);
             this.emptySpaceItem20.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem21
@@ -376,9 +328,9 @@
             // emptySpaceItem19
             // 
             this.emptySpaceItem19.AllowHotTrack = false;
-            this.emptySpaceItem19.Location = new System.Drawing.Point(0, 158);
+            this.emptySpaceItem19.Location = new System.Drawing.Point(0, 166);
             this.emptySpaceItem19.Name = "emptySpaceItem19";
-            this.emptySpaceItem19.Size = new System.Drawing.Size(386, 10);
+            this.emptySpaceItem19.Size = new System.Drawing.Size(386, 11);
             this.emptySpaceItem19.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem19
@@ -386,14 +338,14 @@
             this.layoutControlItem19.Control = this.pictureEdit1;
             this.layoutControlItem19.Location = new System.Drawing.Point(108, 10);
             this.layoutControlItem19.Name = "layoutControlItem19";
-            this.layoutControlItem19.Size = new System.Drawing.Size(170, 148);
+            this.layoutControlItem19.Size = new System.Drawing.Size(170, 156);
             this.layoutControlItem19.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem19.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.textFullName;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 168);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 177);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(386, 24);
             this.layoutControlItem1.Text = "Họ tên";
@@ -402,7 +354,7 @@
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.textGender;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 202);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 212);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(386, 24);
             this.layoutControlItem2.Text = "Giới tính";
@@ -411,16 +363,16 @@
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.textJob;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 260);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 270);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(386, 24);
-            this.layoutControlItem3.Text = "Ghề nghiệp";
+            this.layoutControlItem3.Text = "Nghề nghiệp";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(73, 13);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.textPhone;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 294);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 304);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(386, 24);
             this.layoutControlItem4.Text = "Điện thoại";
@@ -438,33 +390,33 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.memoAddress;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 328);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 338);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(386, 37);
+            this.layoutControlItem6.Size = new System.Drawing.Size(386, 24);
             this.layoutControlItem6.Text = "Địa chỉ";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(73, 13);
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.memoNote;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 375);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 372);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(386, 21);
+            this.layoutControlItem7.Size = new System.Drawing.Size(386, 24);
             this.layoutControlItem7.Text = "Ghi chú";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(73, 13);
             // 
             // emptySpaceItem12
             // 
             this.emptySpaceItem12.AllowHotTrack = false;
-            this.emptySpaceItem12.Location = new System.Drawing.Point(0, 192);
+            this.emptySpaceItem12.Location = new System.Drawing.Point(0, 201);
             this.emptySpaceItem12.Name = "emptySpaceItem12";
-            this.emptySpaceItem12.Size = new System.Drawing.Size(386, 10);
+            this.emptySpaceItem12.Size = new System.Drawing.Size(386, 11);
             this.emptySpaceItem12.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem14
             // 
             this.emptySpaceItem14.AllowHotTrack = false;
-            this.emptySpaceItem14.Location = new System.Drawing.Point(0, 226);
+            this.emptySpaceItem14.Location = new System.Drawing.Point(0, 236);
             this.emptySpaceItem14.Name = "emptySpaceItem14";
             this.emptySpaceItem14.Size = new System.Drawing.Size(386, 10);
             this.emptySpaceItem14.TextSize = new System.Drawing.Size(0, 0);
@@ -472,7 +424,7 @@
             // emptySpaceItem15
             // 
             this.emptySpaceItem15.AllowHotTrack = false;
-            this.emptySpaceItem15.Location = new System.Drawing.Point(0, 284);
+            this.emptySpaceItem15.Location = new System.Drawing.Point(0, 294);
             this.emptySpaceItem15.Name = "emptySpaceItem15";
             this.emptySpaceItem15.Size = new System.Drawing.Size(386, 10);
             this.emptySpaceItem15.TextSize = new System.Drawing.Size(0, 0);
@@ -480,7 +432,7 @@
             // emptySpaceItem16
             // 
             this.emptySpaceItem16.AllowHotTrack = false;
-            this.emptySpaceItem16.Location = new System.Drawing.Point(0, 318);
+            this.emptySpaceItem16.Location = new System.Drawing.Point(0, 328);
             this.emptySpaceItem16.Name = "emptySpaceItem16";
             this.emptySpaceItem16.Size = new System.Drawing.Size(386, 10);
             this.emptySpaceItem16.TextSize = new System.Drawing.Size(0, 0);
@@ -488,7 +440,7 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 365);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 362);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
             this.emptySpaceItem1.Size = new System.Drawing.Size(386, 10);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
@@ -504,7 +456,7 @@
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.textDateOfBirth;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 236);
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 246);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(386, 24);
             this.layoutControlItem8.Text = "Ngày sinh";
@@ -554,6 +506,42 @@
             this.layoutControlItem18.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem18.TextVisible = false;
             // 
+            // memoNote
+            // 
+            this.memoNote.Location = new System.Drawing.Point(100, 440);
+            this.memoNote.Name = "memoNote";
+            this.memoNote.Properties.ReadOnly = true;
+            this.memoNote.Size = new System.Drawing.Size(306, 20);
+            this.memoNote.StyleController = this.layoutControl1;
+            this.memoNote.TabIndex = 29;
+            // 
+            // memoAddress
+            // 
+            this.memoAddress.Location = new System.Drawing.Point(100, 406);
+            this.memoAddress.Name = "memoAddress";
+            this.memoAddress.Properties.ReadOnly = true;
+            this.memoAddress.Size = new System.Drawing.Size(306, 20);
+            this.memoAddress.StyleController = this.layoutControl1;
+            this.memoAddress.TabIndex = 28;
+            // 
+            // textGender
+            // 
+            this.textGender.Location = new System.Drawing.Point(100, 280);
+            this.textGender.Name = "textGender";
+            this.textGender.Properties.ReadOnly = true;
+            this.textGender.Size = new System.Drawing.Size(306, 20);
+            this.textGender.StyleController = this.layoutControl1;
+            this.textGender.TabIndex = 24;
+            // 
+            // textDateOfBirth
+            // 
+            this.textDateOfBirth.Location = new System.Drawing.Point(100, 314);
+            this.textDateOfBirth.Name = "textDateOfBirth";
+            this.textDateOfBirth.Properties.ReadOnly = true;
+            this.textDateOfBirth.Size = new System.Drawing.Size(306, 20);
+            this.textDateOfBirth.StyleController = this.layoutControl1;
+            this.textDateOfBirth.TabIndex = 30;
+            // 
             // PatientDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -568,18 +556,13 @@
             this.Load += new System.EventHandler(this.PatientDetailForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.textDateOfBirth.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoNote.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCreateDay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textPhone.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textJob.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textGender.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textFullName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridHistory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewHistory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LookUpDoctor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
@@ -606,6 +589,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoNote.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.memoAddress.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textGender.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textDateOfBirth.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -634,12 +621,9 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem21;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem19;
-        private DevExpress.XtraEditors.MemoEdit memoNote;
-        private DevExpress.XtraEditors.MemoEdit memoAddress;
         private DevExpress.XtraEditors.TextEdit textCreateDay;
         private DevExpress.XtraEditors.TextEdit textPhone;
         private DevExpress.XtraEditors.TextEdit textJob;
-        private DevExpress.XtraEditors.TextEdit textGender;
         private DevExpress.XtraEditors.TextEdit textFullName;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
@@ -650,11 +634,13 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
-        private DevExpress.XtraEditors.TextEdit textDateOfBirth;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem5;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LookUpDoctor;
+        private DevExpress.XtraEditors.TextEdit memoNote;
+        private DevExpress.XtraEditors.TextEdit memoAddress;
+        private DevExpress.XtraEditors.TextEdit textGender;
+        private DevExpress.XtraEditors.TextEdit textDateOfBirth;
     }
 }

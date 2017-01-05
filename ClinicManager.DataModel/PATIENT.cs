@@ -13,7 +13,6 @@ namespace ClinicManager.DataModel
         {
             MedicalRecord = new HashSet<MedicalRecord>();
             Queue = new HashSet<Queue>();
-            Queue1 = new HashSet<Queue>();
         }
 
         public int PatientID { get; set; }
@@ -50,8 +49,5 @@ namespace ClinicManager.DataModel
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Queue> Queue { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Queue> Queue1 { get; set; }
     }
 }
