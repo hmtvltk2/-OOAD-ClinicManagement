@@ -1,0 +1,21 @@
+language: csharp
+solution: ClinicManager.sln
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "UAVi21iYm0VkajgPcc2/fHbJgWb0EmPwHRWADn8OhQnPMdBpwvbMV0bwKvzx+KdijY1Kr857k3YjfE0GQSanJrD0BwpYyhFzenIxcpGwU7tVeuBXyXbckT0fIxBkuv+O7S3vrWxcMd85a/gKyeW32EmFR1fwdrG3enTmH1Ga101vjdPTlIha0xUT6bRnpJUbRauWUvsaPOxt9kQdyE6b2KzVf0ehjn8YDYEECAFbFWN0Xo1bloufhYYWsrCCIDBEWqpHdDMztlFl6OMoR2AEhsTqU9NNw+7cSQq+s2DBwOnmGlgPZaL2SjuBp2NDJVi+UC7wP2F1yu/ovezTEp8tQUTwVDHXqvA1ataSgLc50P2k+tj9UQaa5pFcWW0Sp7OyxWsT9g5BT0Vle1t4wopWJNSrLbVAWoXui2wlWa3yipVd04nHi26EQoUV1s26ScZs15/dPsASzbgX0O7w9G1tnzFgU4ONs8u5m0ZbF+jx1FM6lsEgjOCt6ewiFe3aLsElfDeEfHh8qFh2Iz8Nj1jeubeTNrnFtW8ABwgGslPx0dk6AfoZ4aY06tA9FZOLg7RWJNm++vhmbKEnLRxIc2qFegvlBZC1MkMNYRPBuiUHQPssOxJD5caKq4XCboWFuX5hIVZQ1EGGIukXgJaRwURIaDP5YzVxzL1mqBOxJBDj3yc="
+
+before_install:
+      - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
+
+addons:
+  coverity_scan:
+    project:
+      name: "hmtvltk2/OOAD-ClinicManagement"
+      description: "Build submitted via Travis CI"
+    notification_email: huynhminhtri2412@gmail.com
+    build_command_prepend: "msbuild /t:Clean"
+    build_command:   "msbuild /t:Rebuild"
+    branch_pattern: coverity_scan
+  
